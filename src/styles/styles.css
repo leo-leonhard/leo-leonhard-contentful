@@ -3,6 +3,7 @@
 }
 .navbar-light .navbar-brand {
     color: #589AAD;
+    font-size: 2em;
 }
 .navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-brand:hover {
     color: #9ED9EF;
