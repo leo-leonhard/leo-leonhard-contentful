@@ -48,26 +48,19 @@ hr {
     margin-bottom: 1em;
 }
 
-
-
 #basic-navbar-nav {
     width: 42%;
     justify-content: space-between;
 }
-
-
 
 .navbar-nav {
     justify-content: space-between;
     width: 100%;
 }
 
-
-
 .navbar-collapse {
     flex-grow: 0 !important;
 }
-
 
 .navbar-light .navbar-brand {
     color: #589AAD;
@@ -85,4 +78,21 @@ hr {
 
 .navbar-light .navbar-toggler {
     border: none !important;
+}
+
+
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+
+    .werke-container {
+        flex-direction: column;
+    }
+
+    .werk {
+        width: 100% !important;
+        margin: 1em auto;
+    }
 }
