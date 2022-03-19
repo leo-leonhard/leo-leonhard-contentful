@@ -1,16 +1,73 @@
+@font-face {
+  font-family: globalfont;
+  src: url(DINPro-Cond.otf);
+}
+
+@font-face {
+  font-family: globalfontfett;
+  src: url(DINPro-Medium.otf);
+}
+
+
+
+body, html {
+    color: #212529;
+    font-family: globalfont, monospace;
+}
+
+h1 {}
+
+h2 {
+    font-family: globalfontfett;
+    color: #589AAD;
+    margin-bottom: 0.8em;
+}
+
+h3 {
+    font-size: 1rem;
+    font-family: globalfontfett;
+    text-transform: uppercase;
+}
+
+h4 {
+    font-size: 1rem;
+}
+
+.container, .container-lg, .container-md, .container-sm, .container-xl {
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 0;
+}
+
+
+hr {
+    height: 2.3px !important;
+    opacity: 1;
+    color: #589AAD;
+    margin-bottom: 1em;
+}
+
+
+
+
+
+
+
+
 .navbar-collapse {
     flex-grow: 0 !important;
 }
 .navbar-light .navbar-brand {
     color: #589AAD;
     font-size: 2em;
+    font-family: globalfontfett;
 }
 .navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-brand:hover {
     color: #9ED9EF;
 }
 
 .navbar-light .navbar-nav .nav-link {
-
+    color: #212529;
 }
 
 .navbar-light .navbar-toggler {

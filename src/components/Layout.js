@@ -7,7 +7,9 @@ export default function Layout({ children }) {
   return (
       <div>
           <NavBar />
-      {children}
+          <main style={{width: "90%", margin: "0 auto", padding: "2em 0"}}>
+              {children}
+              </main>
     </div>
   )
 }
