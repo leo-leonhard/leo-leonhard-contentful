@@ -50,14 +50,25 @@ hr {
 
 
 
+#basic-navbar-nav {
+    width: 42%;
+    justify-content: space-between;
+}
 
 
+
+.navbar-nav {
+    justify-content: space-between;
+    width: 100%;
+}
 
 
 
 .navbar-collapse {
     flex-grow: 0 !important;
 }
+
+
 .navbar-light .navbar-brand {
     color: #589AAD;
     font-size: 2em;
@@ -69,6 +80,7 @@ hr {
 
 .navbar-light .navbar-nav .nav-link {
     color: #212529;
+    font-family: globalfontfett;
 }
 
 .navbar-light .navbar-toggler {
