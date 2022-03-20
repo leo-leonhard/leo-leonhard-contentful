@@ -33,7 +33,7 @@ const artworks = [
     },
     {
         title: "Häusliche Szene",
-        year: "1984",
+        year: "1985",
         type: "Radierung",
         image: Szene,
         slug: "haeusliche_szene"
