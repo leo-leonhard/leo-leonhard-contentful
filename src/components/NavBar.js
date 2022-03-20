@@ -15,8 +15,8 @@ const NavBar = class extends React.Component {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
               <Nav.Link href="#home">LEBENSLAUF</Nav.Link>
-              <Nav.Link href="/malerei">MALEREI</Nav.Link>
-              <Nav.Link href="#link">GRAFIK</Nav.Link>
+              <Nav.Link href="#malerei">MALEREI</Nav.Link>
+              <Nav.Link href="/grafik">GRAFIK</Nav.Link>
               <Nav.Link href="#link">PUBLIKATIONEN</Nav.Link>
             </Nav>
           </Navbar.Collapse>
