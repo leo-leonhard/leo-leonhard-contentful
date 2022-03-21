@@ -70,6 +70,13 @@ hr {
     color: #9ED9EF;
 }
 
+.navbar-light .navbar-nav .nav-link:active {
+    color: #9ED9EF;
+}
+
+.navbar-light .navbar-brand:focus, .navbar-light .navbar-brand:hover {
+    color: #9ED9EF;
+}
 .navbar-light .navbar-nav .nav-link {
     color: #212529;
     font-family: globalfontfett;
@@ -79,18 +86,11 @@ hr {
     border: none !important;
 }
 
-
 .index-image-container {
     background-image: url(../images/index_laptop.png);
     height: 89vh;
     background-size: cover;
 }
-
-
-
-
-
-
 
 
 /* Portrait Mobile */
@@ -102,7 +102,6 @@ and (orientation: portrait) {
     .werke-container {
         flex-direction: column;
     }
-
     .werk {
         width: 100% !important;
         margin: 1em auto;
@@ -127,7 +126,6 @@ and (orientation : portrait) {
     .werke-container {
         flex-direction: column;
     }
-
     .werk {
         width: 100% !important;
         margin: 1em auto;
