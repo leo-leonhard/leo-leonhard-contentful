@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import Layout from '../components/Layout'
 
 import Hippo from '../images/Hippo.jpg'
@@ -95,7 +95,7 @@ const GrafikPage = ({ data }) => {
                             <h3>{artwork.title},{artwork.year}</h3>
                             <h4>{artwork.type}</h4>
                         </div>
-                        <img style={{width: "100%"}} src={artwork.image}/>
+                        <Link to={artwork.slug}><img style={{width: "100%"}} src={artwork.image}/></Link>
                     </div>
 
                 ))}
