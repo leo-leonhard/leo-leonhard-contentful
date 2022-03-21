@@ -10,7 +10,7 @@ import Blues from '../images/Blues.jpg'
 import Duerer from '../images/Duerer.jpg'
 import Aufgang from '../images/Aufgang.jpg'
 import Ex from '../images/Ex.jpg'
-//import Selbstportraet from '../images/Selbstportraet.jpg'
+import Selbstportraet from '../images/Selbstportraet.jpg'
 
 
 
@@ -70,6 +70,13 @@ const vertical_artworks = [
         image: Ex,
         slug: "ex_libris"
     },
+        {
+        title: "Selbstportraet",
+        year: "1986",
+        type: "Radierung",
+        image: Selbstportraet,
+        slug: "selbstportraet"
+    },
     // {
     //     title: "Selbstporträt",
     //     year: "1989",
@@ -115,7 +122,7 @@ const GrafikPage = ({ data }) => {
                             <h3>{artwork.title},{artwork.year}</h3>
                             <h4>{artwork.type}</h4>
                         </div>
-                        <img style={{width: "100%"}} src={artwork.image}/>
+                        <img style={{width: "100%", maxHeight: "350px"}} src={artwork.image}/>
                     </div>
 
                 ))}
