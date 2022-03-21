@@ -15,7 +15,9 @@ body, html {
     font-family: globalfont, monospace;
 }
 
-h1 {}
+h1 {
+
+}
 
 h2 {
     font-family: globalfontfett;
@@ -83,7 +85,7 @@ hr {
 
 .index-image-container {
     background-image: url(../images/index.png);
-    height: 86vh;
+    height: 89vh;
     background-size: cover;
 }
 
