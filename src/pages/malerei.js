@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React, { useState, useEffect } from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 
@@ -22,7 +22,23 @@ export const query = graphql`
 `
 
 
+
 const MalereiPage = ({ data }) => {
+    const [topImages, setTopImages]=useState([]);
+    const [bottomImages, setBottomImages]=useState([]);
+
+    useEffect(()=>{
+            data.artwork.nodes.map(artwork=>{
+                if(artwork.image.width > window.innerWidth){
+                    setTopImages(topImages.push(artwork))
+                } else{
+                    setBottomImages(bottomImages.push(artwork))
+                }
+            })
+
+    }, [data])
+
+
     return (
         <Layout>
             <h2>DAS ZEICHNERISCHE WERK</h2>
