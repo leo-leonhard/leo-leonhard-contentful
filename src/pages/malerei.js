@@ -23,7 +23,6 @@ export const query = graphql`
 
 
 const MalereiPage = ({ data }) => {
-
     return (
         <Layout>
             <h2>DAS ZEICHNERISCHE WERK</h2>
