@@ -7,7 +7,8 @@ import indeximage from '../images/index.png'
 const IndexPage = () => {
     return (
         <Layout>
-            <img src={indeximage} style={{width: "100%"}}/>
+            <div className="index-image-container">
+            </div>
         </Layout>
     )
 }
