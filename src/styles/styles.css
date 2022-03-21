@@ -8,8 +8,6 @@
     src: url(DINPro-CondMedium.otf);
 }
 
-
-
 body, html {
     color: #212529;
     font-family: globalfont, monospace;
@@ -84,7 +82,7 @@ hr {
 
 
 .index-image-container {
-    background-image: url(../images/index.png);
+    background-image: url(../images/index_laptop.png);
     height: 89vh;
     background-size: cover;
 }
@@ -96,13 +94,12 @@ hr {
 
 
 
-
+/* Portrait Mobile */
 @media only screen
 and (min-device-width: 320px)
 and (max-device-width: 480px)
 and (-webkit-min-device-pixel-ratio: 2)
 and (orientation: portrait) {
-
     .werke-container {
         flex-direction: column;
     }
@@ -113,5 +110,22 @@ and (orientation: portrait) {
     }
     .navbar-light .navbar-brand {
         width: 70%;
+    }
+    .index-image-container {
+        background-image: url(../images/index_mobile.png);
+        height: 120vw;
+        background-size: cover;
+        width: 100%;
+    }
+}
+
+
+/* Portrait Tablet */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : portrait) {
+    .index-image-container {
+        background-position: center;
     }
 }

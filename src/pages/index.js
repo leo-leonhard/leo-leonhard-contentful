@@ -4,7 +4,7 @@ import NavBar from '../components/NavBar'
 
 import '../styles/index.css'
 
-import indeximage from '../images/index.png'
+
 
 const IndexPage = () => {
     return (
