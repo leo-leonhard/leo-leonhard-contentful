@@ -1,11 +1,11 @@
 @font-face {
-  font-family: globalfont;
-  src: url(DINPro-Cond.otf);
+    font-family: globalfont;
+    src: url(DINPro-Cond.otf);
 }
 
 @font-face {
-  font-family: globalfontfett;
-  src: url(DINPro-CondMedium.otf);
+    font-family: globalfontfett;
+    src: url(DINPro-CondMedium.otf);
 }
 
 
@@ -82,10 +82,10 @@ hr {
 
 
 @media only screen
-  and (min-device-width: 320px)
-  and (max-device-width: 480px)
-  and (-webkit-min-device-pixel-ratio: 2)
-  and (orientation: portrait) {
+and (min-device-width: 320px)
+and (max-device-width: 480px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: portrait) {
 
     .werke-container {
         flex-direction: column;
@@ -94,5 +94,8 @@ hr {
     .werk {
         width: 100% !important;
         margin: 1em auto;
+    }
+    .navbar-light .navbar-brand {
+        width: 70%;
     }
 }
