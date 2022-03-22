@@ -170,4 +170,21 @@ and (orientation : portrait) {
     .index-image-container {
         background-position: center;
     }
+    .artwork-detail-container {
+        flex-direction: column;
+    }
+
+    .artwork-detail-image-container{
+
+        margin: 0 auto;
+    }
+    .artwork-detail-image-container img {
+        min-width: 45rem;
+        margin: 0 auto;
+    }
+    .artwork-detail-text {
+        margin-top: 3em;
+        width: 99% !important;
+    }
+
 }
