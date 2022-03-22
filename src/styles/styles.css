@@ -139,6 +139,19 @@ and (orientation: portrait) {
         background-size: cover;
         width: 100%;
     }
+
+    .artwork-detail-container {
+        flex-direction: column;
+    }
+
+    .artwork-detail-image-container img {
+        min-width: 20rem;
+    }
+    .artwork-detail-text {
+        margin-top: 1em;
+        width: 100% !important;
+    }
+
 }
 
 
