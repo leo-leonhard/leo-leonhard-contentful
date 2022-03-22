@@ -21,7 +21,6 @@ export const query = graphql`
 }
 `
 
-
 function GrafikPage({ data }) {
     const [horizontalImages, setHorizontalImages]=useState([]);
     const [verticalImages, setVerticalImages]=useState([]);
@@ -51,7 +50,7 @@ function GrafikPage({ data }) {
                             <h3>{artwork.title},{artwork.year}</h3>
                             <h4>{artwork.type}</h4>
                         </div>
-                        <img style={{width: "100%"}} src={artwork.image.url}/>
+                        <Link to={artwork.slug}><img style={{width: "100%"}} src={artwork.image.url} alt={artwork.title}/></Link>
                     </div>
                 ))}
                 <hr/>
@@ -61,7 +60,7 @@ function GrafikPage({ data }) {
                             <h3>{artwork.title},{artwork.year}</h3>
                             <h4>{artwork.type}</h4>
                         </div>
-                        <Link to={artwork.slug}><img style={{width: "100%"}} src={artwork.image.url}/></Link>
+                        <Link to={artwork.slug}><img style={{width: "100%"}} src={artwork.image.url} alt={artwork.title}/></Link>
                     </div>
                 ))}
             </div>

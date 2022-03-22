@@ -27,7 +27,7 @@ exports.createPages = async ({ graphql, actions }) => {
             path: `${node.category}/${node.slug}`,
             component: require.resolve('./src/templates/artwork.js'),
             context: {
-                title: node.id,
+                artworkPageId: node.id,
             },
         })
     })

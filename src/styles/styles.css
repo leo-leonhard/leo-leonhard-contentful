@@ -98,7 +98,14 @@ hr {
 }
 
 .werk-vertical img {
-    min-height: 360px;
+    min-height: 320px;
+    max-height: 340px;
+}
+
+
+
+.artwork-detail-text {
+    margin: 0 auto;
 }
 
 
