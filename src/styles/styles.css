@@ -152,11 +152,10 @@ and (orientation: portrait) {
 
     }
     .artwork-detail-image-container img {
-        max-width: 340px;
         margin-bottom: 1em;
     }
     .artwork-overview img {
-        max-width: 340px;
+        max-width: 330px;
     }
 
 }
