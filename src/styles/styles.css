@@ -108,17 +108,20 @@ hr {
 
     }
     .artwork-detail-text {
-
+        width: 40%;
     }
     .artwork-overview img {
         min-width: 100px;
         max-width: 270px;
-
         margin: 0 auto;
         heigth: 100%;
     }
     .werk-vertical img {
         min-height: 350px;
+    }
+    .artwork-detail-image-container img {
+        min-height: 35vw;
+        min-width: 500px;
     }
 
 }
@@ -155,6 +158,7 @@ and (orientation: portrait) {
         margin-bottom: 1em;
         max-width: 330px;
     }
+
     .artwork-overview img {
         max-width: 330px;
     }
@@ -181,9 +185,6 @@ and (orientation : portrait) {
         flex-direction: column;
     }
 
-    .artwork-detail-image-container img {
-
-    }
     .artwork-detail-text {
 
 
@@ -195,7 +196,7 @@ and (orientation : portrait) {
     .artwork-detail-image-container img {
         margin-bottom: 1em;
         max-width: 730px;
-        min-width: 530px;
+        min-width: 700px;
         margin-bottom: 3em;
     }
 
