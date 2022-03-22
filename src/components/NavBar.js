@@ -14,10 +14,10 @@ const NavBar = class extends React.Component {
             <Navbar.Toggle aria-controls="basic-navbar-nav"/>
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link href="#home">LEBENSLAUF</Nav.Link>
-              <Nav.Link href="#malerei">MALEREI</Nav.Link>
+              <Nav.Link href="#">LEBENSLAUF</Nav.Link>
+              <Nav.Link href="#">MALEREI</Nav.Link>
               <Nav.Link href="/grafik">GRAFIK</Nav.Link>
-              <Nav.Link href="#link">PUBLIKATIONEN</Nav.Link>
+              <Nav.Link href="#">PUBLIKATIONEN</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
