@@ -153,6 +153,7 @@ and (orientation: portrait) {
     }
     .artwork-detail-image-container img {
         margin-bottom: 1em;
+        max-width: 330px;
     }
     .artwork-overview img {
         max-width: 330px;
@@ -190,6 +191,12 @@ and (orientation : portrait) {
     .artwork-overview {
 
         margin: 0 auto;
+    }
+    .artwork-detail-image-container img {
+        margin-bottom: 1em;
+        max-width: 730px;
+        min-width: 530px;
+        margin-bottom: 3em;
     }
 
     .artwork-overview img {
