@@ -92,20 +92,6 @@ hr {
     background-size: cover;
 }
 
-
-.werk-horizontal img {
-    min-height: 212px;
-}
-
-.werk-vertical img {
-    min-height: 320px;
-    max-height: 340px;
-}
-
-
-
-
-
 .artwork-detail-image-container img {
     margin: 0 auto;
 }
@@ -121,10 +107,18 @@ hr {
     .artwork-detail-image-container img {
 
     }
-
-
     .artwork-detail-text {
 
+    }
+    .artwork-overview img {
+        min-width: 100px;
+        max-width: 270px;
+
+        margin: 0 auto;
+        heigth: 100%;
+    }
+    .werk-vertical img {
+        min-height: 350px;
     }
 
 }
@@ -161,6 +155,9 @@ and (orientation: portrait) {
         max-width: 340px;
         margin-bottom: 1em;
     }
+    .artwork-overview img {
+        max-width: 340px;
+    }
 
 }
 
@@ -190,6 +187,21 @@ and (orientation : portrait) {
     .artwork-detail-text {
 
 
+    }
+    .artwork-overview {
+
+        margin: 0 auto;
+    }
+
+    .artwork-overview img {
+        min-width: 730px;
+        max-width: 750px;
+        margin: 0 auto;
+        heigth: 100%;
+    }
+
+    .werk{
+        margin-bottom: 4em !important;
     }
 
 }
