@@ -104,6 +104,14 @@ hr {
 
 
 
+
+
+.artwork-detail-image-container img {
+    min-width: 30rem;
+    margin: 0 auto;
+}
+
+
 .artwork-detail-text {
     margin: 0 auto;
 }
