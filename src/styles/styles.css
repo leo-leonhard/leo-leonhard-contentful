@@ -107,7 +107,6 @@ hr {
 
 
 .artwork-detail-image-container img {
-    min-width: 30rem;
     margin: 0 auto;
 }
 
@@ -145,11 +144,10 @@ and (orientation: portrait) {
     }
 
     .artwork-detail-image-container img {
-        min-width: 20rem;
+
     }
     .artwork-detail-text {
-        margin-top: 1em;
-        width: 100% !important;
+
     }
 
 }
@@ -176,15 +174,13 @@ and (orientation : portrait) {
 
     .artwork-detail-image-container{
 
-        margin: 0 auto;
     }
     .artwork-detail-image-container img {
-        min-width: 45rem;
-        margin: 0 auto;
+
     }
     .artwork-detail-text {
-        margin-top: 3em;
-        width: 99% !important;
+
+
     }
 
 }
