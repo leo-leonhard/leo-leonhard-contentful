@@ -116,6 +116,20 @@ hr {
 }
 
 
+/* Desktops and laptops ----------- */
+@media only screen  and (min-width : 1224px) {
+    .artwork-detail-image-container img {
+
+    }
+
+
+    .artwork-detail-text {
+
+    }
+
+}
+
+
 /* Portrait Mobile */
 @media only screen
 and (min-device-width: 320px)
@@ -141,13 +155,11 @@ and (orientation: portrait) {
 
     .artwork-detail-container {
         flex-direction: column;
-    }
 
+    }
     .artwork-detail-image-container img {
-
-    }
-    .artwork-detail-text {
-
+        max-width: 340px;
+        margin-bottom: 1em;
     }
 
 }
@@ -172,9 +184,6 @@ and (orientation : portrait) {
         flex-direction: column;
     }
 
-    .artwork-detail-image-container{
-
-    }
     .artwork-detail-image-container img {
 
     }

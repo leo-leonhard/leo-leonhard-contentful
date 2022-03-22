@@ -32,9 +32,9 @@ const ArtworkTemplate = props => {
                 </div>
             <div className="artwork-detail-container d-flex">
                 <div className="artwork-detail-image-container">
-                    <img src={props.data.contentfulArtwork.image.url} />
+                    <img src={props.data.contentfulArtwork.image.url}/>
                     </div>
-                <div className="artwork-detail-text" style={{width: "40%"}}>
+                <div className="artwork-detail-text">
                     <h3>{props.data.contentfulArtwork.title}, {props.data.contentfulArtwork.year}</h3>
                     <h4>{props.data.contentfulArtwork.type}</h4>
                     <p className="pt-4">
