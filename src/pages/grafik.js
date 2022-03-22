@@ -61,7 +61,7 @@ function GrafikPage({ data }) {
                             <h3>{artwork.title},{artwork.year}</h3>
                             <h4>{artwork.type}</h4>
                         </div>
-                        <img style={{width: "100%"}} src={artwork.image.url}/>
+                        <Link to={artwork.slug}><img style={{width: "100%"}} src={artwork.image.url}/></Link>
                     </div>
                 ))}
             </div>
