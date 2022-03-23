@@ -10,7 +10,7 @@ const NavBar = class extends React.Component {
     return (
       <Navbar expand="lg">
         <Container>
-            <Navbar.Brand href="/"><span><img style={{color: "#589AAD", maxWidth: "50px"}} src={signet}/>LEO LEONARD</span></Navbar.Brand>
+            <Navbar.Brand href="/"><span><img style={{color: "#589AAD", maxWidth: "50px"}} src={signet}/>LEO LEONHARD</span></Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav"/>
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
