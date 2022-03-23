@@ -123,6 +123,8 @@ hr {
     .artwork-detail-image-container img {
         min-height: 35vw;
         min-width: 500px;
+        max-width: 600px;
+
     }
 
 }
