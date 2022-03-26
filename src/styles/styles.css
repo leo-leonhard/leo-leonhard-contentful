@@ -199,17 +199,18 @@ and (orientation : portrait) {
     .artwork-overview {
         margin: 0 auto;
     }
+        .artwork-detail-text {
+        width: 100%;
+    }
+    .artwork-detail-image-container {
+        width: 100%;
+    }
     .artwork-detail-image-container img {
         margin-bottom: 1em;
-        max-width: 100%;
-        margin-bottom: 3em;
     }
-
     .artwork-overview img {
         max-width: 100%;
-        margin: 0 auto;
     }
-
     .werk{
         margin-bottom: 4em !important;
     }
