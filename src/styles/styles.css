@@ -92,12 +92,18 @@ hr {
     background-size: cover;
 }
 
+.artwork-detail-image-container {
+    width: 50%;
+}
+
 .artwork-detail-image-container img {
-    margin: 0 auto;
+    width: 100%;
 }
 
 
 .artwork-detail-text {
+    width: 50%;
+    padding: 0 1em;
     margin: 0 auto;
 }
 
@@ -108,22 +114,18 @@ hr {
 
     }
     .artwork-detail-text {
-        width: 40%;
+
     }
     .artwork-overview img {
         min-width: 100px;
         max-width: 270px;
-
         margin: 0 auto;
-        heigth: 100%;
     }
+
     .werk-vertical img {
-        min-height: 350px;
+
     }
     .artwork-detail-image-container img {
-        min-height: 35vw;
-        min-width: 500px;
-        max-width: 600px;
 
     }
 
@@ -155,17 +157,19 @@ and (orientation: portrait) {
 
     .artwork-detail-container {
         flex-direction: column;
-
+    }
+    .artwork-detail-text {
+        width: 100%;
+    }
+    .artwork-detail-image-container {
+        width: 100%;
     }
     .artwork-detail-image-container img {
         margin-bottom: 1em;
-        max-width: 330px;
     }
-
     .artwork-overview img {
         max-width: 330px;
     }
-
 }
 
 
