@@ -45,22 +45,26 @@ function GrafikPage({ data }) {
             <hr />
             <div className="d-flex justify-content-between werke-container flex-wrap">
                 {horizontalImages.map(artwork => (
-                    <div key={`artwork-${artwork.slug}`} className="mt-1 mb-1 d-flex flex-column justify-content-between werk werk-horizontal" style={{width: "23%"}}>
+                    <div key={`artwork-${artwork.slug}`} className="mt-1 mb-1 d-flex flex-column justify-content-between werk werk-horizontal">
                         <div className="mb-3">
                             <h3>{artwork.title},{artwork.year}</h3>
                             <h4>{artwork.type}</h4>
                         </div>
-                        <Link className="artwork-overview" to={artwork.slug}><img src={artwork.image.url} alt={artwork.title}/></Link>
+                        <Link className="artwork-overview" to={artwork.slug}>
+                            <img src={artwork.image.url} alt={artwork.title} width="100%" />
+                        </Link>
                     </div>
                 ))}
                 <hr/>
                 {verticalImages.map(artwork => (
-                    <div key={`artwork-${artwork.slug}`} className="mt-3 d-flex flex-column justify-content-between werk werk-vertical" style={{width: "23%"}}>
+                    <div key={`artwork-${artwork.slug}`} className="mt-3 d-flex flex-column justify-content-between werk werk-vertical" width="100%">
                         <div className="mb-3">
                             <h3>{artwork.title},{artwork.year}</h3>
                             <h4>{artwork.type}</h4>
                         </div>
-                        <Link className="artwork-overview" to={artwork.slug}><img src={artwork.image.url} alt={artwork.title}/></Link>
+                        <Link className="artwork-overview" to={artwork.slug}>
+                            <img src={artwork.image.url} alt={artwork.title}  width="100%"/>
+                        </Link>
                     </div>
                 ))}
             </div>
