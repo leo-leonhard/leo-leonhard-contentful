@@ -160,6 +160,7 @@ and (orientation: portrait) {
     }
     .artwork-detail-text {
         width: 100%;
+        padding: 0;
     }
     .artwork-detail-image-container {
         width: 100%;
@@ -199,8 +200,9 @@ and (orientation : portrait) {
     .artwork-overview {
         margin: 0 auto;
     }
-        .artwork-detail-text {
+    .artwork-detail-text {
         width: 100%;
+        padding: 0;
     }
     .artwork-detail-image-container {
         width: 100%;
