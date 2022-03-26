@@ -168,7 +168,7 @@ and (orientation: portrait) {
         margin-bottom: 1em;
     }
     .artwork-overview img {
-        max-width: 330px;
+        max-width: 100%;
     }
 }
 
@@ -197,21 +197,17 @@ and (orientation : portrait) {
 
     }
     .artwork-overview {
-
         margin: 0 auto;
     }
     .artwork-detail-image-container img {
         margin-bottom: 1em;
-        max-width: 730px;
-        min-width: 700px;
+        max-width: 100%;
         margin-bottom: 3em;
     }
 
     .artwork-overview img {
-        min-width: 730px;
-        max-width: 750px;
+        max-width: 100%;
         margin: 0 auto;
-        heigth: 100%;
     }
 
     .werk{
