@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { graphql } from 'gatsby'
-import NavBar from '../components/NavBar'
+import Layout from '../components/Layout'
 
 import '../styles/index.css'
 
@@ -8,11 +8,10 @@ import '../styles/index.css'
 
 const IndexPage = () => {
     return (
-        <div>
-        <NavBar/>
+        <Layout>
             <div className="index-image-container">
             </div>
-        </div>
+        </Layout>
     )
 }
 
