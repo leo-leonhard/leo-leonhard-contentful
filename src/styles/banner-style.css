@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&family=Montserrat:wght@100&family=Red+Hat+Mono:wght@300&display=swap');
+
+.banner-text {
+    width: 50%;
+    margin: 6.5em 1.5em;
+    float: right;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.banner-text h2 {
+    font-family: 'EB Garamond', serif;
+    font-weight: 400;
+    font-size: 2.3em;
+    line-height: 1.4;
+    color: white;
+}
+
+
+.banner-text h2, .banner-text img{
+    margin-left: auto;
+
+}
+
+.banner-text img{
+    padding: 0 4em;
+}

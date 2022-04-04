@@ -4,6 +4,9 @@ import { StaticQuery, graphql } from "gatsby"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 
+import '../styles/banner-style.css'
+
+import logo from '../images/logo_white.png'
 
 export default class Slidy extends Component {
     render() {
@@ -20,6 +23,10 @@ export default class Slidy extends Component {
                   query SlickQuery {
                     allContentfulSliderImages {
                       nodes {
+                        bannerText {
+                          bannerText
+                        }
+                        imageTitle
                         id
                         sliderImage {
                           resize(width: 1200) {
@@ -28,7 +35,6 @@ export default class Slidy extends Component {
                             src
                           }
                           url
-                          title
                         }
                       }
                     }
@@ -42,6 +48,10 @@ export default class Slidy extends Component {
                                 return(
                                     <div>
                                         <div key={image.id} style={{height: "93vh", backgroundImage: `url(${image.sliderImage.url})`, backgroundSize: "cover"}}>
+                                            {image.imageTitle === 'start'
+                                             ? <div className='banner-text'><h2>{image.bannerText.bannerText}</h2><img src={logo}/></div>
+                                             : ''
+                                            }
                                             </div>
 
                                     </div>
