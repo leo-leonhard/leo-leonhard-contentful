@@ -9,6 +9,7 @@
 }
 
 body, html {
+    background: #FBFBFD;
     color: #212529;
     font-family: globalfont, monospace;
 }
