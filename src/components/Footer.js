@@ -5,7 +5,7 @@ import logo from '../images/logo_white.png'
 import '../styles/footer-style.css'
 
 const Footer = () => (
-    <div className="footer">
+    <div className="footer mt-5">
         <div>
             <Link to="/"><img src={logo}/></Link>
             <div className="address" style={{margin: "1em auto"}}>
@@ -46,7 +46,6 @@ const Footer = () => (
                 <hr/>
             </div>
         </div>
-
     </div>
 )
 
