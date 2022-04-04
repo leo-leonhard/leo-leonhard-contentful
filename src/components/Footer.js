@@ -16,6 +16,7 @@ const Footer = () => (
                 <p>info@leoleonhard.de</p>
             </div>
         </div>
+        <div>
         <div className="d-flex footer-nav">
             <div className="footer-nav-item">
                 <hr/>
@@ -46,6 +47,8 @@ const Footer = () => (
                 <hr/>
             </div>
         </div>
+            <p className="copyright">Copyright © 2022 Leo Leonhard Nachlass. All rights reserved.</p>
+            </div>
     </div>
 )
 
