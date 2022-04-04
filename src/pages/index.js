@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
-
+import Slidy from '../components/Slick'
 import '../styles/index.css'
 
 
@@ -11,7 +11,13 @@ export const query = graphql`
     nodes {
         id
       sliderImage {
+        resize(width: 1200) {
+          width
+          height
+          src
+        }
         url
+        title
       }
     }
   }
@@ -30,9 +36,9 @@ const IndexPage = ({ data }) => {
         <Layout>
             <div>
                 {data.allContentfulSliderImages.nodes.map((image) => (
-                    <div key={image.id} style={{height: "89vh", backgroundImage: `url(${image.sliderImage.url})`, backgroundSize: "cover"}}>
-                        <p>{image.sliderImage.title}</p>
-                    </div>
+                    <>
+                    <Slidy/>
+                    </>
                 ))}
             </div>
         </Layout>
