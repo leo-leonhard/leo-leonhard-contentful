@@ -47,7 +47,7 @@ const Footer = () => (
                 <hr/>
             </div>
         </div>
-            <p className="copyright">Copyright © 2022 Leo Leonhard Nachlass. All rights reserved.</p>
+            <p className="copyright">Copyright © 2022 Leo Leonhard Nachlass. Build by <a style={{textDecoration: "none", color: "white"}}href="https://hannarosenfeld.com/">Hanna Rosenfeld</a>. All rights reserved.</p>
             </div>
     </div>
 )
