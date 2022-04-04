@@ -1,0 +1,36 @@
+.footer {
+    background: #589AAD;
+    width:90%;
+    margin: 0 auto;
+    display: flex;
+    padding: 1em 2em;
+}
+
+.footer img {
+    width: 70%;
+}
+
+.footer .address{
+    line-height: 0.3;
+}
+
+.footer-nav {
+}
+
+
+.footer-nav-item {
+    width: 8em;
+    margin: 0 1em;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-nav-item a {
+    letter-spacing: 0.2em;
+}
+
+
+.footer, .footer-nav-item hr, .footer-nav-item, .footer-nav-item a {
+    color:  #FBFBFD !important;
+    text-decoration: none;
+}

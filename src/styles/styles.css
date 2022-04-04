@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&family=Montserrat:wght@100&family=Red+Hat+Mono:wght@300&family=Roboto+Condensed:wght@300&display=swap');
+
 @font-face {
     font-family: globalfont;
     src: url(DINPro-Cond.otf);
@@ -107,32 +109,15 @@ hr {
     margin: 0 auto;
 }
 
-.footer .address{
-    line-height: 0.3;
-}
 
 
 /* Desktops and laptops ----------- */
 @media only screen  and (min-width : 1224px) {
-    .artwork-detail-image-container img {
-
-    }
-    .artwork-detail-text {
-
-    }
     .artwork-overview img {
         min-width: 100px;
         max-width: 270px;
         margin: 0 auto;
     }
-
-    .werk-vertical img {
-
-    }
-    .artwork-detail-image-container img {
-
-    }
-
 }
 
 
