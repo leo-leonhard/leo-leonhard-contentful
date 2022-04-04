@@ -35,17 +35,19 @@ export default class Slidy extends Component {
                   }
                `}
                 render={data => (
-                    <div>
-                        {data.allContentfulSliderImages.nodes.map((image) => {
-                            console.log()
-                            return(
-                        <div>
-                            <Slider {...settings}>
-                                <img key={image.id} src={image.sliderImage.resize.src}/>
-                            </Slider>
-                        </div>
-                            )
-                        })}
+                    <div className="mb-5">
+                        <Slider {...settings}>
+                            {data.allContentfulSliderImages.nodes.map((image) => {
+                                console.log()
+                                return(
+                                    <div>
+                                        <div key={image.id} style={{height: "93vh", backgroundImage: `url(${image.sliderImage.url})`, backgroundSize: "cover"}}>
+                                            </div>
+
+                                    </div>
+                                    )
+                            })}
+                        </Slider>
                     </div>
                 )}
             />
