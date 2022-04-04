@@ -12,8 +12,11 @@ export default class Slidy extends Component {
     render() {
         const settings = {
             dots: true,
+            autoplay: true,
             infinite: true,
-            speed: 500,
+            fade: true,
+            autoplaySpeed: 8000,
+            speed: 5000,
             slidesToShow: 1,
             slidesToScroll: 1
         };
