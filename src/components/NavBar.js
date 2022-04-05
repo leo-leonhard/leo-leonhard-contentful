@@ -3,7 +3,8 @@ import { Link } from "gatsby"
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { NavDropdown, Navbar, Container, Nav} from "react-bootstrap"
 
-import logo from '../images/logo.png'
+import '../styles/navbar.css'
+import logo from '../images/logo_blue.png'
 import signet from '../images/LL_Signet.png'
 
 const NavBar = class extends React.Component {
@@ -12,8 +13,8 @@ const NavBar = class extends React.Component {
             <Navbar expand="lg">
                 <Container>
                     <Navbar.Brand href="/">
-                        <img style={{color: "#589AAD", maxWidth: "50px"}} src={signet}/>
-                        <img style={{color: "#589AAD", margin: "0 0.3em", maxWidth: "18%"}} src={logo}/>
+                        <img src={signet}/>
+                        <img style={{margin: "0 0.3em"}} src={logo}/>
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                     <Navbar.Collapse id="basic-navbar-nav">
