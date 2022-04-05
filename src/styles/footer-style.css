@@ -47,8 +47,6 @@
 }
 
 
-<<<<<<< HEAD
-=======
 /* MOBILE Portrait */
 @media only screen
   and (min-device-width: 320px)
@@ -75,7 +73,6 @@
         display: unset !important;
     }
 }
->>>>>>> 8f4c6052954d1382577bc83e784fcd1adcc23114
 
 /* TABLET Portrait */
 @media only screen
@@ -83,5 +80,15 @@
   and (max-device-width: 1024px)
   and (orientation: portrait)
   and (-webkit-min-device-pixel-ratio: 1) {
+    .footer-nav {
+        width: 100%;
+        flex-direction: column;
+    }
+    .footer-nav-item {
+        width: 100%;
+    }
+    .hidden-on-tablet {
+        display: none;
+    }
 
 }

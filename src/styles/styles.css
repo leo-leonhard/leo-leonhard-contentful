@@ -139,11 +139,7 @@ and (max-device-width: 480px)
 and (-webkit-min-device-pixel-ratio: 2)
 and (orientation: portrait) {
     body, html {
-<<<<<<< HEAD
-        max-width: 100%;
-=======
           max-width: 100%;
->>>>>>> 8f4c6052954d1382577bc83e784fcd1adcc23114
         overflow-x: hidden;
     }
     .main-layout {
