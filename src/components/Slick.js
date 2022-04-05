@@ -16,7 +16,6 @@ export default class Slidy extends Component {
             infinite: true,
             fade: true,
             autoplaySpeed: 8000,
-            speed: 5000,
             slidesToShow: 1,
             slidesToScroll: 1
         };
