@@ -8,7 +8,7 @@ export default function Layout({ children }) {
     return (
         <>
             <NavBar />
-            <main style={{width: "90%", margin: "0 auto", padding: "0.5em 0"}}>
+            <main className="main-layout">
                 {children}
             </main>
             <Footer/>
