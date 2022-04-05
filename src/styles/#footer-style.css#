@@ -65,4 +65,5 @@
     .hidden-on-tablet {
         display: none;
     }
+
 }

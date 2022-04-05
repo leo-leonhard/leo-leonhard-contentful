@@ -37,6 +37,12 @@ h4 {
     font-size: 0.88rem;
 }
 
+
+p {
+    font-size: 1em;
+}
+
+
 .container, .container-lg, .container-md, .container-sm, .container-xl {
     max-width: 90%;
     margin: 0 auto;
@@ -163,11 +169,18 @@ and (orientation: portrait) {
 }
 
 
+.visible-on-tablet {
+    display: none;
+}
+
 /* Portrait Tablet */
 @media only screen
 and (min-device-width : 768px)
 and (max-device-width : 1024px)
 and (orientation : portrait) {
+    .visible-on-tablet {
+        display: unset;
+    }
     .werke-container {
         flex-direction: column;
     }
@@ -180,11 +193,6 @@ and (orientation : portrait) {
     }
     .artwork-detail-container {
         flex-direction: column;
-    }
-
-    .artwork-detail-text {
-
-
     }
     .artwork-overview {
         margin: 0 auto;

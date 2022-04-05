@@ -15,28 +15,35 @@ const Footer = () => (
                 <p>12345 Stadt</p>
                 <p>info@leoleonhard.de</p>
             </div>
+            <div className="copyright visible-on-tablet">
+                <p>Copyright © 2022 Leo Leonhard Nachlass.
+                    <br/>
+                    All rights reserved.
+                    <br/>
+                Build by <a style={{textDecoration: "none", color: "white"}}href="https://hannarosenfeld.com/">Hanna Rosenfeld.</a></p>
+            </div>
         </div>
-        <div>
+        <div style={{width: "70%"}}>
         <div className="d-flex footer-nav">
             <div className="footer-nav-item">
                 <hr/>
                 <Link to="/lebenslauf">LEBENSLAUF</Link>
-                <hr/>
+                <hr className="hidden-on-tablet"/>
             </div>
             <div className="footer-nav-item">
                 <hr/>
                 <Link to="/malerei">MALEREI</Link>
-                <hr/>
+                <hr className="hidden-on-tablet"/>
             </div>
             <div className="footer-nav-item">
                 <hr/>
                 <Link to="/grafik">GRAFIK</Link>
-                <hr/>
+                <hr className="hidden-on-tablet"/>
             </div>
             <div className="footer-nav-item">
                 <hr/>
                 <Link to="/publikationen">PUBLIKATIONEN</Link>
-                <hr/>
+                <hr className="hidden-on-tablet"/>
             </div>
             <div className="footer-nav-item">
                 <hr/>
@@ -47,7 +54,10 @@ const Footer = () => (
                 <hr/>
             </div>
         </div>
-            <p className="copyright">Copyright © 2022 Leo Leonhard Nachlass. Build by <a style={{textDecoration: "none", color: "white"}}href="https://hannarosenfeld.com/">Hanna Rosenfeld</a>. All rights reserved.</p>
+            <div className="copyright hidden-on-tablet">
+                <p>Copyright © 2022 Leo Leonhard Nachlass. All rights reserved.
+                <br/>Build by <a style={{textDecoration: "none", color: "white"}}href="https://hannarosenfeld.com/">Hanna Rosenfeld.</a></p>
+                </div>
             </div>
     </div>
 )
