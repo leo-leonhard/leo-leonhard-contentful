@@ -8,14 +8,14 @@ const Footer = () => (
     <div className="footer mt-4">
         <div>
             <Link to="/"><img src={logo}/></Link>
-            <div className="address" style={{margin: "1em auto"}}>
-                <p>LEO LEONHARD NACHLASS</p>
-                <p>c/o Florian Leonhard</p>
-                <p>Strasse 12</p>
-                <p>12345 Stadt</p>
-                <p>info@leoleonhard.de</p>
-            </div>
-            <div className="copyright visible-on-tablet">
+            <address style={{margin: "1em auto"}}>
+                LEO LEONHARD NACHLASS<br/>
+                c/o Florian Leonhard<br/>
+                Strasse 12<br/>
+                12345 Stadt<br/>
+                info@leoleonhard.de<br/>
+            </address>
+            <div className="copyright visible-on-tablet visible-on-mobile">
                 <p>Copyright © 2022 Leo Leonhard Nachlass.
                     <br/>
                     All rights reserved.
