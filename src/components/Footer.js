@@ -5,7 +5,7 @@ import logo from '../images/logo_white.png'
 import '../styles/footer-style.css'
 
 const Footer = () => (
-    <div className="footer mt-4">
+    <div className="footer">
         <div>
             <Link to="/"><img src={logo}/></Link>
             <address style={{margin: "1em auto"}}>

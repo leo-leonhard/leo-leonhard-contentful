@@ -43,7 +43,7 @@ export default class Slidy extends Component {
                   }
                `}
                 render={data => (
-                    <div className="homepage-banner">
+                    <div className="homepage-banner mb-5">
                         <Slider {...settings}>
                             {data.allContentfulSliderImages.nodes.map((image) => {
                                 console.log()
