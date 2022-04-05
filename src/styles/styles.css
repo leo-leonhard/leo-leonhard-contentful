@@ -16,6 +16,11 @@ body, html {
     font-family: globalfont, monospace;
 }
 
+.main-layout {
+    width: 90%;
+    margin: 0 auto;
+    padding: 0.5em 0;
+}
 h1 {
 
 }
@@ -133,6 +138,24 @@ and (min-device-width: 320px)
 and (max-device-width: 480px)
 and (-webkit-min-device-pixel-ratio: 2)
 and (orientation: portrait) {
+    body, html {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+    .main-layout {
+        width: 100%;
+    }
+    .homepage-banner {
+        margin: 0;
+    }
+    .banner-text {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    .slick-dots {
+        display: none !important;
+    }
     .werke-container {
         flex-direction: column;
     }
