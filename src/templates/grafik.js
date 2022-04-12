@@ -6,8 +6,8 @@ import Layout from '../components/Layout'
 
 
 export const query = graphql`
-    query ArtworkPageQuery($artworkPageId: String){
-      contentfulArtwork(id : { eq: $artworkPageId }){
+    query GrafikPageQuery($grafikId: String){
+      contentfulGrafik(id : { eq: $grafikId }){
         title
         type
         year
@@ -22,7 +22,7 @@ export const query = graphql`
 
 
 
-const ArtworkTemplate = props => {
+const GrafikTemplate = props => {
     console.log(props)
     return (
         <Layout>
@@ -32,11 +32,11 @@ const ArtworkTemplate = props => {
                 </div>
             <div className="artwork-detail-container d-flex">
                 <div className="artwork-detail-image-container">
-                    <img src={props.data.contentfulArtwork.image.url}/>
+                    <img src={props.data.contentfulGrafik.image.url}/>
                     </div>
                 <div className="artwork-detail-text">
-                    <h3>{props.data.contentfulArtwork.title}, {props.data.contentfulArtwork.year}</h3>
-                    <h4>{props.data.contentfulArtwork.type}</h4>
+                    <h3>{props.data.contentfulGrafik.title}, {props.data.contentfulGrafik.year}</h3>
+                    <h4>{props.data.contentfulGrafik.type}</h4>
                     <p className="pt-4">
                          Lorem ipsum dolor sit amet, consectetur
                          adipiscing elit. In mattis consectetur
@@ -66,4 +66,4 @@ const ArtworkTemplate = props => {
 
 
 
-export default ArtworkTemplate
+export default GrafikTemplate

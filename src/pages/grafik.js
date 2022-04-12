@@ -5,7 +5,7 @@ import Layout from '../components/Layout'
 
 export const query = graphql`
 {
-  artwork: allContentfulArtwork {
+  artwork: allContentfulGrafik {
     nodes {
       title
       year

@@ -3,14 +3,13 @@ const path = require(`path`)
 exports.onPostBuild = ({ reporter }) => {
     reporter.info(`Your Gatsby site has been built!`)
 }
-// Create blog pages dynamically
+// Create grafik page
 exports.createPages = async ({ graphql, actions }) => {
     const { createPage } = actions
-    const blogPostTemplate = path.resolve(`src/templates/artwork.js`)
-
+    const grafikTemplate = path.resolve(`src/templates/grafik.js`)
     const result = await graphql(`
       {
-        allContentfulArtwork {
+        allContentfulGrafik {
           nodes {
             category
             slug
@@ -22,12 +21,12 @@ exports.createPages = async ({ graphql, actions }) => {
 
     console.log(result)
 
-    result.data.allContentfulArtwork.nodes.forEach(node => {
+    result.data.allContentfulGrafik.nodes.forEach(node => {
         createPage({
             path: `${node.category}/${node.slug}`,
-            component: require.resolve('./src/templates/artwork.js'),
+            component: require.resolve('./src/templates/grafik.js'),
             context: {
-                artworkPageId: node.id,
+                grafikId: node.id,
             },
         })
     })
