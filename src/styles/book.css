@@ -1,0 +1,3 @@
+.book-cover img {
+    object-fit: contain !important;
+}

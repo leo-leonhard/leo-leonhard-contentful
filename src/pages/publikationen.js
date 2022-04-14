@@ -5,21 +5,23 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from '../components/Layout'
 import Banner from '../components/Banner'
 
+import '../styles/book.css'
+
 const PublikationenPage = ( { data } ) => {
   const books = data.allContentfulBook.nodes
 
   return(
     <Layout>
     <Banner image={data.allContentfulBannerImage.nodes}/>
-    <div className="d-flex flex-wrap" style={{border: "2px solid lightcoral"}}>
+      <div className="d-flex flex-wrap" style={{width: "100%"}}>
     {books.map(book => {
           const image = getImage(book.coverImage)
           console.log("Image: ",image)
           return(
-            <div key={image.slug} style={{width: "20%", border: "2px solid lightsalmon"}}>
+              <div className="mb-5" key={image.slug} style={{width: "20%"}}>
             <div>
-            <div style={{height: "23vw"}}>
-            <GatsbyImage image={image} alt={image.title} style={{width: "100%", margin: "0 auto"}}/>
+              <div style={{height: "22vw"}}>
+              <GatsbyImage className="book-cover" image={image} alt={image.title} style={{maxHeight: "100%", objectFit: "contain"}}/>
             </div>
             <div className="mt-2">
             <h3>{book.year}</h3>
@@ -60,7 +62,11 @@ query getPublikationenContent {
       slug
       coverImage {
         title
-        gatsbyImageData(width: 180, placeholder: BLURRED)
+        gatsbyImageData(
+          width: 180,
+          placeholder: BLURRED,
+          layout: CONSTRAINED
+        )
       }
     }
   }
