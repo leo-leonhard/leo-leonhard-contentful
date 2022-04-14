@@ -16,7 +16,7 @@ const PublikationenPage = ( { data } ) => {
           const image = getImage(book.coverImage)
           console.log("Image: ",image)
           return(
-            <div key={image.slug} style={{maxWidth: "20%", border: "2px solid lightsalmon"}}>
+            <div key={image.slug} style={{width: "20%", border: "2px solid lightsalmon"}}>
             <div>
             <div style={{height: "23vw"}}>
             <GatsbyImage image={image} alt={image.title} style={{width: "100%", margin: "0 auto"}}/>
