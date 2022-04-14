@@ -19,7 +19,7 @@ const PublikationenPage = ( { data } ) => {
             <div key={image.slug} style={{maxWidth: "20%", border: "2px solid lightsalmon"}}>
             <div>
             <div>
-            <GatsbyImage image={image} alt={image.title} style={{minWidth: "180px", mrgin: "0 auto"}}/>
+            <GatsbyImage image={image} alt={image.title} style={{width: "100%", mrgin: "0 auto"}}/>
             </div>
             <div>
             <h3>{book.year}</h3>
