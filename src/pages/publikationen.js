@@ -11,7 +11,7 @@ const PublikationenPage = ( { data } ) => {
   return(
     <Layout>
     <Banner image={data.allContentfulBannerImage.nodes}/>
-    <div style={{border: "2px solid lightcoral"}}>
+    <div className="d-flex" style={{border: "2px solid lightcoral"}}>
     {books.map(book => {
           const image = getImage(book.coverImage)
           console.log("Image: ",image)
