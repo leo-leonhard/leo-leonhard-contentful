@@ -11,7 +11,7 @@ const PublikationenPage = ( { data } ) => {
   return(
     <Layout>
     <Banner image={data.allContentfulBannerImage.nodes}/>
-    <div className="d-flex" style={{border: "2px solid lightcoral"}}>
+    <div className="d-flex flex-wrap" style={{border: "2px solid lightcoral"}}>
     {books.map(book => {
           const image = getImage(book.coverImage)
           console.log("Image: ",image)
@@ -19,7 +19,7 @@ const PublikationenPage = ( { data } ) => {
             <div key={image.slug} style={{maxWidth: "20%", border: "2px solid lightsalmon"}}>
             <div>
             <div>
-            <GatsbyImage image={image} alt={image.title}/>
+            <GatsbyImage image={image} alt={image.title} style={{minWidth: "180px", mrgin: "0 auto"}}/>
             </div>
             <div>
             <h3>{book.year}</h3>
