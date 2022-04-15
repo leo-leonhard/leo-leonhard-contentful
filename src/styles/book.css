@@ -10,7 +10,7 @@
         flex-direction: column;
     }
     .book-container {
-        width: 100% !important;
+        max-width: 100% !important;
         display: flex;
     }
     .book-cover-container {
@@ -23,6 +23,7 @@
         width: 8em;
     }
     .book-info {
+        width: 100% !important;
         margin: 0 0.6em;
     }
 }
