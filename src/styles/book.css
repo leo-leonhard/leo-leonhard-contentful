@@ -1,3 +1,28 @@
 .book-cover img {
     object-fit: contain !important;
 }
+
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width : 380px) {
+    /* Styles */
+    .books-container {
+        flex-direction: column;
+    }
+    .book-container {
+        width: 100% !important;
+        display: flex;
+    }
+    .book-cover-container {
+        height: auto !important;
+    }
+    .book-cover-container {
+
+    }
+    .book-cover {
+        width: 8em;
+    }
+    .book-info {
+        margin: 0 0.6em;
+    }
+}

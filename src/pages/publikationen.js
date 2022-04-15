@@ -20,13 +20,12 @@ const PublikationenPage = ( { data } ) => {
               <hr style={{width: "100%"}}/>
               <h3>Bücher</h3>
             </div>
-            <div className="d-flex flex-wrap" style={{width: "100%"}}>
+            <div className="books-container d-flex flex-wrap" style={{width: "100%"}}>
               {books.map(book => {
                   const image = getImage(book.coverImage)
                   return(
-                      <div className="mb-5" key={image.slug} style={{width: "20%"}}>
-                        <div>
-                          <div style={{height: "22vw"}}>
+                      <div className="book-container mb-5" key={image.slug} style={{width: "20%"}}>
+                          <div className="book-cover-container" style={{height: "22vw"}}>
                             <GatsbyImage
                               className="book-cover"
                               image={image}
@@ -34,12 +33,11 @@ const PublikationenPage = ( { data } ) => {
                               style={{maxHeight: "100%", objectFit: "contain"}}
                             />
                           </div>
-                          <div className="mt-2">
+                          <div className="book-info mt-2">
                             <h3>{book.year}</h3>
                             <h4 style={{color: "#589AAD"}}>{book.title}</h4>
                             <h4>{book.subtitle}</h4>
                           </div>
-                        </div>
                       </div>
                   )
               }
