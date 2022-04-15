@@ -8,34 +8,40 @@ import Banner from '../components/Banner'
 import '../styles/book.css'
 
 const PublikationenPage = ( { data } ) => {
-  const books = data.allContentfulBook.nodes
+    const books = data.allContentfulBook.nodes
 
-  return(
-    <Layout>
-    <Banner image={data.allContentfulBannerImage.nodes}/>
-      <div className="d-flex flex-wrap" style={{width: "100%"}}>
-    {books.map(book => {
-          const image = getImage(book.coverImage)
-          console.log("Image: ",image)
-          return(
-              <div className="mb-5" key={image.slug} style={{width: "20%"}}>
-            <div>
-              <div style={{height: "22vw"}}>
-              <GatsbyImage className="book-cover" image={image} alt={image.title} style={{maxHeight: "100%", objectFit: "contain"}}/>
+    return(
+        <Layout>
+          <div className="d-flex flex-column">
+            <Banner image={data.allContentfulBannerImage.nodes}/>
+            <div className="mb-4" style={{width: "100%"}}>
+              <hr style={{width: "100%"}}/>
+              <h3>Bücher</h3>
             </div>
-            <div className="mt-2">
-            <h3>{book.year}</h3>
-            <h4 style={{color: "#589AAD"}}>{book.title}</h4>
-            <h4>{book.subtitle}</h4>
+            <div className="d-flex flex-wrap" style={{width: "100%"}}>
+              {books.map(book => {
+                  const image = getImage(book.coverImage)
+                  console.log("Image: ",image)
+                  return(
+                      <div className="mb-5" key={image.slug} style={{width: "20%"}}>
+                        <div>
+                          <div style={{height: "22vw"}}>
+                            <GatsbyImage className="book-cover" image={image} alt={image.title} style={{maxHeight: "100%", objectFit: "contain"}}/>
+                          </div>
+                          <div className="mt-2">
+                            <h3>{book.year}</h3>
+                            <h4 style={{color: "#589AAD"}}>{book.title}</h4>
+                            <h4>{book.subtitle}</h4>
+                          </div>
+                        </div>
+                      </div>
+                  )
+              }
+                        )}
             </div>
-            </div>
-            </div>
-          )
-        }
-      )}
-    </div>
-    </Layout>
-  )
+          </div>
+        </Layout>
+    )
 }
 
 
