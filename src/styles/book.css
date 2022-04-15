@@ -25,6 +25,6 @@
     }
     .book-info {
         width: 100% !important;
-        margin: 0 0.6em;
+        margin: 0 0.6em !important;
     }
 }
