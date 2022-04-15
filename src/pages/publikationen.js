@@ -10,31 +10,6 @@ import '../styles/book.css'
 
 const PublikationenPage = ( { data } ) => {
     const books = data.allContentfulBook.nodes
-    const numray = []
-    const newray = []
-
-    useEffect(() => {
-        {books.map(book => {
-            numray.push(book.year)
-        })}
-        numray.sort(function(a, b) {
-            return a - b;
-        });
-
-        {books.map(book => {
-            for (let i = 0; i < numray.length; i++) {
-                if (numray[i] === book.year) {
-                    newray.push(book.title)
-                    return newray
-                } else {
-                    return console.log('nope')
-                }
-            }
-        })}
-
-    })
-    console.log(newray);
-
 
     return(
         <Layout>
