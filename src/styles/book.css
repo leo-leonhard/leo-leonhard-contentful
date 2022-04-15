@@ -8,6 +8,7 @@
     /* Styles */
     .books-container {
         flex-direction: column;
+        gap: 0 !important;
     }
     .book-container {
         max-width: 100% !important;
@@ -20,7 +21,7 @@
 
     }
     .book-cover {
-        width: 8em;
+
     }
     .book-info {
         width: 100% !important;

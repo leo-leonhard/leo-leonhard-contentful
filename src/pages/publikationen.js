@@ -14,17 +14,17 @@ const PublikationenPage = ( { data } ) => {
 
     return(
         <Layout>
-          <div className="d-flex flex-column">
+          <div className="d-flex flex-column mb-5">
             <Banner image={data.allContentfulBannerImage.nodes}/>
-            <div className="mb-4" style={{width: "100%"}}>
+            <div className="mb-5" style={{width: "100%"}}>
               <hr style={{width: "100%"}}/>
               <h3>Bücher</h3>
             </div>
-            <div className="books-container d-flex flex-wrap justify-content-between" style={{width: "100%"}}>
+            <div className="books-container d-flex flex-wrap" style={{width: "100%", gap: "3.8em"}}>
               {books.map(book => {
                   const image = getImage(book.coverImage)
                   return(
-                      <div className="book-container mb-5" key={image.slug} style={{maxWidth: "21%" ,flex: "1 0 21%"}}>
+                      <div className="book-container mb-3" key={image.slug} style={{maxWidth: "21%" ,flex: "1 0 21%"}}>
                           <div className="book-cover-container" style={{height: "22vw"}}>
                             <GatsbyImage
                               className="book-cover"
