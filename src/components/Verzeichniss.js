@@ -195,7 +195,7 @@ const publications = [
 function Verzeichniss() {
     console.log(publications)
     return(
-        <>
+        <div style={{margin: "1em"}}>
           {publications.map(pub => (
               <div className="mb-3 d-flex">
                 <div>
@@ -208,7 +208,7 @@ function Verzeichniss() {
                 </div>
               </div>
           ))}
-        </>
+        </div>
     )
 }
 
