@@ -48,7 +48,7 @@ const PublikationenPage = ( { data } ) => {
           </div>
           <div>
             <hr/>
-            <h3 className="mb-5">Verzeichnis der Bücher, Kataloge und Zeitschriften mit Abbildungender Arbeiten Leo Leonhards</h3>
+            <h3 className="mb-5">Verzeichnis der Bücher, Kataloge und Zeitschriften mit Abbildungen der Arbeiten Leo Leonhards</h3>
             <Verzeichniss/>
           </div>
         </Layout>
