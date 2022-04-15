@@ -4,6 +4,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 import Layout from '../components/Layout'
 import Banner from '../components/Banner'
+import Verzeichniss from '../components/Verzeichniss'
 
 import '../styles/book.css'
 
@@ -44,6 +45,11 @@ const PublikationenPage = ( { data } ) => {
               }
                         )}
             </div>
+          </div>
+          <div>
+            <hr/>
+            <h3 className="mb-5">Verzeichnis der Bücher, Kataloge und Zeitschriften mit Abbildungender Arbeiten Leo Leonhards</h3>
+            <Verzeichniss/>
           </div>
         </Layout>
     )
