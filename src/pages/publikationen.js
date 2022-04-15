@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import {graphql} from 'gatsby'
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
@@ -7,8 +7,34 @@ import Banner from '../components/Banner'
 
 import '../styles/book.css'
 
+
 const PublikationenPage = ( { data } ) => {
     const books = data.allContentfulBook.nodes
+    const numray = []
+    const newray = []
+
+    useEffect(() => {
+        {books.map(book => {
+            numray.push(book.year)
+        })}
+        numray.sort(function(a, b) {
+            return a - b;
+        });
+
+        {books.map(book => {
+            for (let i = 0; i < numray.length; i++) {
+                if (numray[i] === book.year) {
+                    newray.push(book.title)
+                    return newray
+                } else {
+                    return console.log('nope')
+                }
+            }
+        })}
+
+    })
+    console.log(newray);
+
 
     return(
         <Layout>
@@ -21,12 +47,16 @@ const PublikationenPage = ( { data } ) => {
             <div className="d-flex flex-wrap" style={{width: "100%"}}>
               {books.map(book => {
                   const image = getImage(book.coverImage)
-                  console.log("Image: ",image)
                   return(
                       <div className="mb-5" key={image.slug} style={{width: "20%"}}>
                         <div>
                           <div style={{height: "22vw"}}>
-                            <GatsbyImage className="book-cover" image={image} alt={image.title} style={{maxHeight: "100%", objectFit: "contain"}}/>
+                            <GatsbyImage
+                              className="book-cover"
+                              image={image}
+                              alt={image.title}
+                              style={{maxHeight: "100%", objectFit: "contain"}}
+                            />
                           </div>
                           <div className="mt-2">
                             <h3>{book.year}</h3>
@@ -60,7 +90,7 @@ query getPublikationenContent {
       }
     }
   }
-  allContentfulBook {
+  allContentfulBook(sort: {fields: year, order: ASC}) {
     nodes {
       year
       title
