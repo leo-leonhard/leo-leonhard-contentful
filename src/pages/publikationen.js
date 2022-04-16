@@ -18,7 +18,7 @@ const PublikationenPage = ( { data } ) => {
             <Banner image={data.allContentfulBannerImage.nodes}/>
             <div className="mb-4" style={{width: "100%"}}>
               <hr style={{width: "100%"}}/>
-              <h3 style={{fontSize: "1.3em"}}>Bücher</h3>
+              <h3>Bücher</h3>
             </div>
             <div className="books-container d-flex flex-wrap" style={{width: "100%", gap: "3.8em"}}>
               {books.map(book => {
