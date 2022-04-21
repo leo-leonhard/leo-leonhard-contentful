@@ -51,7 +51,7 @@ export default class Slidy extends Component {
                                     <div>
                                         <div key={image.id} style={{height: "93vh", backgroundImage: `url(${image.sliderImage.url})`, backgroundSize: "cover"}}>
                                             {image.imageTitle === 'start'
-                                             ? <div className='banner-text'><h2>{image.bannerText.bannerText}</h2><img style={{width: "100%"}}src={logo}/></div>
+                                             ? <div className='banner-text'><h2>{image.bannerText.bannerText}</h2><img src={logo}/></div>
                                              : ''
                                             }
                                             </div>
