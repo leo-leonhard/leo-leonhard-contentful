@@ -8,7 +8,7 @@ const Footer = () => (
     <div className="footer">
         <div>
             <Link to="/"><img src={logo}/></Link>
-            <address style={{margin: "1em auto"}}>
+          <address style={{margin: "1em auto"}}>
                 LEO LEONHARD NACHLASS<br/>
                 c/o Florian Leonhard<br/>
                 Strasse 12<br/>
