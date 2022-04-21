@@ -3,12 +3,12 @@
 
 @font-face {
     font-family: globalfont;
-    src: url(DINPro-Cond.otf);
+    src: url(Ubuntu-Light.ttf);
 }
 
 @font-face {
     font-family: globalfontfett;
-    src: url(DINPro-CondMedium.otf);
+    src: url(Ubuntu-Medium.ttf);
 }
 
 body, html {

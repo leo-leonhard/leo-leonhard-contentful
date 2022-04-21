@@ -10,7 +10,7 @@ import signet from '../images/LL_Signet.png'
 const NavBar = class extends React.Component {
     render() {
         return (
-            <Navbar expand="lg">
+            <Navbar expand="lg" style={{width: "93%"}}>
                 <Container>
                     <Navbar.Brand href="/">
                         <img className="signet" src={signet}/>
