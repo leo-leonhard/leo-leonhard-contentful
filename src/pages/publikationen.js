@@ -24,19 +24,19 @@ const PublikationenPage = ( { data } ) => {
               {books.map(book => {
                   const image = getImage(book.coverImage)
                   return(
-                      <div className="book-container mb-3" key={image.slug} style={{maxWidth: "21%" ,flex: "1 0 21%"}}>
-                          <div className="book-cover-container" style={{height: "22vw"}}>
-                            <GatsbyImage
-                              className="book-cover"
-                              image={image}
-                              alt={image.title}
-                              style={{maxHeight: "100%", objectFit: "contain"}}
-                            />
-                          </div>
+                      <div className="book-container" key={image.slug} style={{maxWidth: "21%" ,flex: "1 0 21%", marginBottom: "4em"}}>
+                        <div className="book-cover-container" style={{height: "22vw"}}>
                           <div className="book-info mt-2">
                             <h3>{book.year}</h3>
                             <h4 style={{color: "#589AAD"}}>{book.title}</h4>
                             <h4>{book.subtitle}</h4>
+                          </div>
+                            <GatsbyImage
+                              className="book-cover"
+                              image={image}
+                              alt={image.title}
+                      style={{maxHeight: "100%", objectFit: "contain"}}
+                            />
                           </div>
                       </div>
                   )
