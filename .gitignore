@@ -1,7 +1,8 @@
 node_modules/
 .cache/
 public
-.env
+.env*
 *~
 #*
 .DS_Store
+.#*
