@@ -27,16 +27,18 @@ const PublikationenPage = ( { data } ) => {
                   console.log("IMAGE: ", image)
                   return(
                       <Card key={image.slug} style={{ width: '18em', border: 'none', marginBottom: '2em'}}>
+                        <div style={{textAlign: "left", height: "80%"}}>
                           <GatsbyImage
                             className="book-cover"
                             image={image}
                             alt={image.title}
                             style={{maxHeight: "100%", objectFit: "contain"}}
                           />
-
-                        <Card.Body>
-                          <Card.Title>{book.title}</Card.Title>
-                          <Card.Text>
+                        </div>
+                        <Card.Body style={{textAlign: "left", padding: "0", width: "80%", marginTop: "1em"}}>
+                          <Card.Title style={{fontSize: "0.8em", fontWeight: "bold"}}>{book.year}</Card.Title>
+                          <Card.Title style={{fontSize: "0.8em", fontWeight: "bold", color: "#589aad"}}>{book.title}</Card.Title>
+                          <Card.Text style={{fontSize: "0.8em", fontWeight: "bold"}}>
                               {book.subtitle}
                           </Card.Text>
                         </Card.Body>
@@ -80,7 +82,7 @@ query getPublikationenContent {
       coverImage {
         title
         gatsbyImageData(
-          width: 180,
+          width: 200,
           placeholder: BLURRED,
           layout: CONSTRAINED
         )
