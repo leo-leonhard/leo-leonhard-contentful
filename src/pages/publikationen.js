@@ -26,7 +26,7 @@ const PublikationenPage = ( { data } ) => {
                   const image = getImage(book.coverImage)
                   console.log("IMAGE: ", image)
                   return(
-                      <Card key={image.slug} style={{ width: '18em', border: 'none', marginBottom: '2em'}}>
+                      <Card key={image.slug} style={{ width: '18em', border: 'none', marginBottom: '4em'}}>
                         <div style={{textAlign: "left", height: "80%"}}>
                           <GatsbyImage
                             className="book-cover"
@@ -35,7 +35,7 @@ const PublikationenPage = ( { data } ) => {
                             style={{maxHeight: "100%", objectFit: "contain"}}
                           />
                         </div>
-                        <Card.Body style={{textAlign: "left", padding: "0", width: "80%", marginTop: "1em"}}>
+                        <Card.Body style={{textAlign: "left", padding: "0", width: "80%", marginTop: "0.5em"}}>
                           <Card.Title style={{fontSize: "0.8em", fontWeight: "bold"}}>{book.year}</Card.Title>
                           <Card.Title style={{fontSize: "0.8em", fontWeight: "bold", color: "#589aad"}}>{book.title}</Card.Title>
                           <Card.Text style={{fontSize: "0.8em", fontWeight: "bold"}}>
