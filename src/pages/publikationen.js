@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import {graphql} from 'gatsby'
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import {Card} from "react-bootstrap"
 
 import Layout from '../components/Layout'
 import Banner from '../components/Banner'
@@ -14,31 +15,32 @@ const PublikationenPage = ( { data } ) => {
 
     return(
         <Layout>
-          <div className="d-flex flex-column mb-5">
+          <div className="d-flex flex-column">
             <Banner image={data.allContentfulBannerImage.nodes}/>
-            <div className="mb-4" style={{width: "100%"}}>
+            <div>
               <hr style={{width: "100%"}}/>
               <h3>Bücher</h3>
             </div>
-            <div className="books-container d-flex flex-wrap" style={{width: "100%", gap: "3.8em"}}>
+            <div className="mt-3 d-flex flex-wrap" style={{ width: '100%' }}>
               {books.map(book => {
                   const image = getImage(book.coverImage)
+                  console.log("IMAGE: ", image)
                   return(
-                      <div className="book-container" key={image.slug} style={{maxWidth: "21%" ,flex: "1 0 21%", marginBottom: "4em"}}>
-                        <div className="book-cover-container" style={{height: "22vw"}}>
-                          <div className="book-info mt-2">
-                            <h3>{book.year}</h3>
-                            <h4 style={{color: "#589AAD"}}>{book.title}</h4>
-                            <h4>{book.subtitle}</h4>
-                          </div>
-                            <GatsbyImage
-                              className="book-cover"
-                              image={image}
-                              alt={image.title}
-                      style={{maxHeight: "100%", objectFit: "contain"}}
-                            />
-                          </div>
-                      </div>
+                      <Card key={image.slug} style={{ width: '18em', border: 'none', marginBottom: '2em'}}>
+                          <GatsbyImage
+                            className="book-cover"
+                            image={image}
+                            alt={image.title}
+                            style={{maxHeight: "100%", objectFit: "contain"}}
+                          />
+
+                        <Card.Body>
+                          <Card.Title>{book.title}</Card.Title>
+                          <Card.Text>
+                              {book.subtitle}
+                          </Card.Text>
+                        </Card.Body>
+                      </Card>
                   )
               }
                         )}
@@ -46,7 +48,7 @@ const PublikationenPage = ( { data } ) => {
           </div>
           <div>
             <hr/>
-            <h3 className="mb-5">Verzeichnis der Bücher, Kataloge und Zeitschriften mit Abbildungen der Arbeiten Leo Leonhards</h3>
+            <h3>Verzeichnis der Bücher, Kataloge und Zeitschriften mit Abbildungen der Arbeiten Leo Leonhards</h3>
             <Verzeichniss/>
           </div>
         </Layout>
