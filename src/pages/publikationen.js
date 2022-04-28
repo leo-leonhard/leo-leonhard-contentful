@@ -27,7 +27,7 @@ const PublikationenPage = ( { data } ) => {
                   console.log("IMAGE: ", image)
                   return(
                       <Card key={image.slug} style={{ width: '18em', border: 'none', marginBottom: '4em'}}>
-                        <div style={{textAlign: "left", height: "80%"}}>
+                        <div style={{textAlign: "left", height: "20em"}}>
                           <GatsbyImage
                             className="book-cover"
                             image={image}
@@ -82,7 +82,7 @@ query getPublikationenContent {
       coverImage {
         title
         gatsbyImageData(
-          width: 200,
+          width: 190,
           placeholder: BLURRED,
           layout: CONSTRAINED
         )
