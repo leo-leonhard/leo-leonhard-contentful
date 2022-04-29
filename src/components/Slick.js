@@ -1,12 +1,15 @@
 import React, { Component } from "react";
-import Slider from "react-slick";
 import { StaticQuery, graphql } from "gatsby"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
+
+import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 
 import '../styles/banner-style.css'
 
 import logo from '../images/logo_white.png'
+
 
 export default class Slidy extends Component {
     render() {
@@ -23,19 +26,17 @@ export default class Slidy extends Component {
             <StaticQuery
                 query={graphql`
                   query SlickQuery {
-                    allContentfulSliderImages {
+                    allContentfulSliderImage {
                       nodes {
-                        bannerText {
-                          bannerText
-                        }
+
                         imageTitle
                         id
                         sliderImage {
-                          resize(width: 1200) {
-                            width
-                            height
-                            src
-                          }
+                          gatsbyImageData(
+                          width: 1200,
+                          placeholder: BLURRED,
+                          layout: CONSTRAINED
+                          )
                           url
                         }
                       }
@@ -45,17 +46,17 @@ export default class Slidy extends Component {
                 render={data => (
                     <div className="homepage-banner mb-5">
                         <Slider {...settings}>
-                            {data.allContentfulSliderImages.nodes.map((image) => {
-                                console.log()
+                          {data.allContentfulSliderImage.nodes.map((image) => {
+                              const slickImage = getImage(image.sliderImage)
+                              console.log(slickImage)
                                 return(
-                                    <div>
-                                        <div key={image.id} style={{height: "93vh", backgroundImage: `url(${image.sliderImage.url})`, backgroundSize: "cover"}}>
-                                            {image.imageTitle === 'start'
-                                             ? <div className='banner-text'><h2>{image.bannerText.bannerText}</h2><img src={logo}/></div>
-                                             : ''
-                                            }
-                                            </div>
-
+                                    <div key={slickImage.id} style={{height: "93vh", border: "2px solid red"}}>
+                                      <GatsbyImage
+                                        className=""
+                                        image={slickImage}
+                                        alt={slickImage.imageTitle}
+                                        style={{maxHeight: "100%", objectFit: "contain"}}
+                                      />
                                     </div>
                                     )
                             })}
