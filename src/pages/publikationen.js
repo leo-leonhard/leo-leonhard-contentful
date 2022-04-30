@@ -39,7 +39,7 @@ const PublikationenPage = ( { data } ) => {
                           <Card.Title style={{fontSize: "0.8em", fontWeight: "bold"}}>{book.year}</Card.Title>
                           <Card.Title style={{fontSize: "0.8em", fontWeight: "bold", color: "#589aad"}}>{book.title}</Card.Title>
                           <Card.Text style={{fontSize: "0.8em", fontWeight: "bold"}}>
-                              {book.subtitle}
+                            {book.subtitle}
                           </Card.Text>
                         </Card.Body>
                       </Card>
@@ -82,7 +82,7 @@ query getPublikationenContent {
       coverImage {
         title
         gatsbyImageData(
-          width: 190,
+          width: 180,
           placeholder: BLURRED,
           layout: CONSTRAINED
         )

@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import { StaticQuery, graphql } from "gatsby"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
+
+import { getImage } from 'gatsby-plugin-image';
+import { BgImage } from 'gbimage-bridge';
+import { converToBgImage } from "gbimage-bridge"
 
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"
@@ -14,6 +17,7 @@ import logo from '../images/logo_white.png'
 export default class Slidy extends Component {
     render() {
         const settings = {
+            arrows: true,
             dots: true,
             autoplay: true,
             infinite: true,
@@ -50,13 +54,10 @@ export default class Slidy extends Component {
                               const slickImage = getImage(image.sliderImage)
                               console.log(slickImage)
                                 return(
-                                    <div key={slickImage.id} style={{height: "93vh", border: "2px solid red"}}>
-                                      <GatsbyImage
-                                        className=""
-                                        image={slickImage}
-                                        alt={slickImage.imageTitle}
-                                        style={{maxHeight: "100%", objectFit: "contain"}}
-                                      />
+                                    <div key={slickImage.id}>
+                                      <BgImage  alt={slickImage.imageTitle} image={slickImage} style={{maxHeight: "100%", objectFit: "contain",height: "93vh"}}>
+                                        <div>Hello from BgImage!</div>
+                                      </BgImage>
                                     </div>
                                     )
                             })}
