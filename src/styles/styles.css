@@ -11,6 +11,11 @@
     src: url(Ubuntu-Medium.ttf);
 }
 
+@font-face {
+    font-family: globalfontsuperfett;
+    src: url(Ubuntu-Bold.ttf);
+}
+
 body, html {
     background: #FBFBFD;
     color: #212529;
@@ -48,6 +53,9 @@ p {
     font-size: 1em;
 }
 
+.ubuntu-bold {
+    font-family: globalfontsuperfett;
+}
 
 .container, .container-lg, .container-md, .container-sm, .container-xl {
     max-width: 90%;

@@ -32,8 +32,11 @@ export default class Slidy extends Component {
                   query SlickQuery {
                     allContentfulSliderImage {
                       nodes {
-
                         imageTitle
+                        bannerText {
+                          bannerText
+                        }
+                        subtitle
                         id
                         sliderImage {
                           gatsbyImageData(
@@ -49,14 +52,20 @@ export default class Slidy extends Component {
                `}
                 render={data => (
                     <div className="homepage-banner mb-5">
-                        <Slider {...settings}>
+                      <Slider {...settings}>
                           {data.allContentfulSliderImage.nodes.map((image) => {
                               const slickImage = getImage(image.sliderImage)
                               console.log(slickImage)
                                 return(
                                     <div key={slickImage.id}>
-                                      <BgImage  alt={slickImage.imageTitle} image={slickImage} style={{maxHeight: "100%", objectFit: "contain",height: "93vh"}}>
-                                        <div>Hello from BgImage!</div>
+                                    <BgImage className="d-flex align-items-end" alt={slickImage.imageTitle} image={slickImage} style={{maxHeight: "100%", objectFit: "contain",height: "93vh"}}>
+                                      <div style={{background: "rgba(200, 222, 111, 0.8)", width: "40%", minHeight: "10em", padding: "0.5em 2em", margin: "2em 3em"}}>
+                                          <hr style={{width: "3em", color: "white"}}/>
+                                        <div className="ubuntu-bold" style={{fontSize: "1.6em", color: "white"}}>{image.imageTitle}</div>
+                                          <p style={{color: "black"}}>{image.subtitle}</p>
+                                          <p></p>
+                                          {image.bannerText ? <p>{image.bannerText.bannerText}</p> : null}
+                                        </div>
                                       </BgImage>
                                     </div>
                                     )
