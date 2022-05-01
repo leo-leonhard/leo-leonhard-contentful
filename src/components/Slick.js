@@ -38,6 +38,7 @@ export default class Slidy extends Component {
                         }
                         subtitle
                         id
+                        page
                         sliderImage {
                           gatsbyImageData(
                           width: 1200,
@@ -55,16 +56,15 @@ export default class Slidy extends Component {
                       <Slider {...settings}>
                           {data.allContentfulSliderImage.nodes.map((image) => {
                               const slickImage = getImage(image.sliderImage)
-                              console.log(slickImage)
+                              console.log(image.page)
                                 return(
                                     <div key={slickImage.id}>
                                     <BgImage className="d-flex align-items-end" alt={slickImage.imageTitle} image={slickImage} style={{maxHeight: "100%", objectFit: "contain",height: "93vh"}}>
-                                      <a href="/publikationen" style={{textDecoration: "none",background: "rgba(200, 222, 111, 0.8)", width: "40%", minHeight: "10em", padding: "0.5em 2em", margin: "2em 3em"}}>
-                                          <hr style={{width: "3em", color: "white"}}/>
-                                        <div className="ubuntu-bold" style={{fontSize: "1.6em", color: "white"}}>{image.imageTitle}</div>
+                                      <a href={`/${image.page}`} style={{textDecoration: "none",background: "rgba(200, 222, 111, 0.8)", width: "40%", minHeight: "10em", padding: "0.5em 2em", margin: "2em 3em"}}>
+                                        <hr style={{width: "3em", color: "white"}}/>
+                                        <div className="ubuntu-bold" style={{letterSpacing: "0.1em", fontSize: "1.7em", color: "white"}}>{image.imageTitle}</div>
                                           <p style={{color: "black"}}>{image.subtitle}</p>
-                                          <p></p>
-                                          {image.bannerText ? <p>{image.bannerText.bannerText}</p> : null}
+                                    {image.bannerText ? <p style={{color: "black"}}>{image.bannerText.bannerText}</p> : <section style={{marginBottom: "5em"}}></section>}
                                         </a>
                                       </BgImage>
                                     </div>
