@@ -20,6 +20,7 @@ const PublikationenPage = ( { data } ) => {
             <div>
               <hr style={{width: "100%"}}/>
               <h3>Bücher</h3>
+              <br/>
             </div>
             <div className="mt-3 d-flex flex-wrap" style={{ width: '100%' }}>
               {books.map(book => {
