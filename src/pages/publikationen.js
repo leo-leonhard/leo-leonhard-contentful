@@ -26,7 +26,7 @@ const PublikationenPage = ( { data } ) => {
                   const image = getImage(book.coverImage)
                   console.log("IMAGE: ", image)
                   return(
-                      <Card key={image.slug} style={{ width: '18em', border: 'none', marginBottom: '4em'}}>
+                      <Card key={image.slug} style={{ width: '20em', border: 'none', marginBottom: '4em'}}>
                         <div style={{textAlign: "left", height: "20em"}}>
                           <GatsbyImage
                             className="book-cover"
