@@ -51,6 +51,7 @@ const PublikationenPage = ( { data } ) => {
           <div>
             <hr/>
             <h3>Verzeichnis der Bücher, Kataloge und Zeitschriften mit Abbildungen der Arbeiten Leo Leonhards</h3>
+            <br/>
             <Verzeichniss/>
           </div>
         </Layout>
