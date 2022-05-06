@@ -32,7 +32,9 @@ export default class Slidy extends Component {
                   query SlickQuery {
                     allContentfulSliderImage {
                       nodes {
+                        position
                         imageTitle
+                        color
                         bannerText {
                           bannerText
                         }
@@ -56,11 +58,12 @@ export default class Slidy extends Component {
                       <Slider {...settings}>
                           {data.allContentfulSliderImage.nodes.map((image) => {
                               const slickImage = getImage(image.sliderImage)
-                              console.log(image.page)
                                 return(
-                                    <div key={slickImage.id}>
-                                    <BgImage className="d-flex align-items-end" alt={slickImage.imageTitle} image={slickImage} style={{maxHeight: "100%", objectFit: "contain",height: "93vh"}}>
-                                      <a href={`/${image.page}`} style={{textDecoration: "none",background: "rgba(200, 222, 111, 0.8)", width: "40%", minHeight: "10em", padding: "0.5em 2em", margin: "2em 3em"}}>
+                                    <div key={image.id}>
+                                    <BgImage className="d-flex align-items-end" alt={image.imageTitle} image={slickImage} style={{maxHeight: "100%", objectFit: "contain",height: "93vh"}}>
+                                      <a href={`/${image.page}`}
+                                        className="slider-text-box"
+                                         style={{background: image.color}} >
                                         <hr style={{width: "3em", color: "white"}}/>
                                         <div className="ubuntu-bold" style={{letterSpacing: "0.1em", fontSize: "1.7em", color: "white"}}>{image.imageTitle}</div>
                                           <p style={{color: "black"}}>{image.subtitle}</p>
