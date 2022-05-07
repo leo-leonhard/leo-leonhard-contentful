@@ -23,7 +23,7 @@ const Footer = () => (
                 Build by <a style={{textDecoration: "none", color: "white"}}href="https://hannarosenfeld.com/">Hanna Rosenfeld.</a></p>
             </div>
         </div>
-        <div style={{width: "70%"}}>
+        <div style={{width: "90%"}}>
         <div className="d-flex footer-nav">
             <div className="footer-nav-item">
                 <hr/>
