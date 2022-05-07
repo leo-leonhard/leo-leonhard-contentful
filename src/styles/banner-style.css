@@ -40,6 +40,7 @@
 @media only screen and (min-device-width : 320px) and (max-device-width : 800px) {
     .slider-text-box {
         width: 100%;
+        margin: 1em;
     }
 }
 
