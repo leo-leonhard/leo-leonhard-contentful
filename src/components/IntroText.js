@@ -6,21 +6,21 @@ import MDXRenderer from "gatsby-plugin-mdx/mdx-renderer"
 const IntroText = ({data}) => (
     <StaticQuery
       query={graphql`
-                  query IntroTextQuery {
-                     allContentfulIntroText {
-                       nodes {
-                        id
-                        header
-                        page
-                        text {
-                         childMdx {
-                           body
-                         }
-                       }
-                     }
-                   }
-                  }
-               `}
+        query IntroTextQuery {
+          allContentfulIntroText {
+            nodes {
+              id
+              header
+              page
+              text {
+                childMdx {
+                  body
+                }
+             }
+          }
+        }
+      }
+   `}
       render={data => (
           <div style={{margin: "5em 3em"}}>
             {data.allContentfulIntroText.nodes.map((intro) => {
