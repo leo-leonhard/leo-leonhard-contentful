@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { StaticQuery, graphql } from "gatsby"
+import { StaticQuery, graphql, Link } from "gatsby"
 
 import { getImage } from 'gatsby-plugin-image';
 import { BgImage } from 'gbimage-bridge';
@@ -28,10 +28,11 @@ export default class Slidy extends Component {
         };
         return (
             <StaticQuery
-                query={graphql`
+              query={graphql`
                   query SlickQuery {
                     allContentfulSliderImage (sort: {fields: position, order: ASC}){
                       nodes {
+                        page
                         position
                         imageTitle
                         color
@@ -40,7 +41,6 @@ export default class Slidy extends Component {
                         }
                         subtitle
                         id
-                        page
                         sliderImage {
                           gatsbyImageData(
                           width: 1200,
@@ -53,29 +53,36 @@ export default class Slidy extends Component {
                     }
                   }
                `}
-                render={data => (
-                    <div className="homepage-banner mb-5">
-                      <Slider {...settings}>
-                          {data.allContentfulSliderImage.nodes.map((image) => {
-                              const slickImage = getImage(image.sliderImage)
-                                return(
-                                    <div key={image.id}>
-                                    <BgImage className="d-flex align-items-end" alt={image.imageTitle} image={slickImage} style={{maxHeight: "100%", objectFit: "contain",height: "93vh"}}>
-                                      <a href={`/${image.page}`}
-                                        className="slider-text-box"
-                                         style={{background: image.color}} >
-                                        <hr style={{width: "3em", color: "white"}}/>
-                                        <div className="ubuntu-bold" style={{letterSpacing: "0.1em", fontSize: "1.7em", color: "white"}}>{image.imageTitle}</div>
-                                          <p style={{color: "black"}}>{image.subtitle}</p>
+              render={data => (
+                  <div className="homepage-banner mb-5">
+                    <Slider {...settings}>
+                      {data.allContentfulSliderImage.nodes.map((image) => {
+                          const slickImage = getImage(image.sliderImage)
+                          return(
+                              <div key={image.id}>
+                                <BgImage
+                                  className="d-flex align-items-end"
+                                  alt={image.imageTitle}
+                                  image={slickImage}
+                                  style={{maxHeight: "100%", objectFit: "contain",height: "93vh"}}
+                                >
+                                  <Link
+                                    to={image.page}
+                                    className="slider-text-box"
+                                    style={{background: image.color}}
+                                  >
+                                    <hr style={{width: "3em", color: "white"}}/>
+                                    <div className="ubuntu-bold" style={{letterSpacing: "0.1em", fontSize: "1.7em", color: "white"}}>{image.imageTitle}</div>
+                                    <p style={{color: "black"}}>{image.subtitle}</p>
                                     {image.bannerText ? <p style={{color: "black"}}>{image.bannerText.bannerText}</p> : <section style={{marginBottom: "5em"}}></section>}
-                                        </a>
-                                      </BgImage>
-                                    </div>
-                                    )
-                            })}
-                        </Slider>
-                    </div>
-                )}
+                                  </Link>
+                                </BgImage>
+                              </div>
+                          )
+                      })}
+                    </Slider>
+                  </div>
+              )}
             />
 
         );
