@@ -47,7 +47,7 @@ const Footer = () => (
             </div>
             <div className="footer-nav-item">
                 <hr/>
-                <Link to="">IMPRESSUM</Link>
+                <Link to="/impressum">IMPRESSUM</Link>
                 <Link to="">DATENSCHUTZ</Link>
                 <Link to="">PRESSE</Link>
                 <Link to="">BILDNACHWEIS</Link>
