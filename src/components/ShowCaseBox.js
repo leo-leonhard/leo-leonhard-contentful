@@ -29,12 +29,12 @@ const ShowCaseBox = ({data}) => (
     `}
       render={data => (
 
-          <div className="d-flex" style={{margin: "3em"}}>
+          <div className="d-flex flex-wrap justify-content-between" style={{margin: "3em", maxWidth: "100%"}}>
             {data.allContentfulShowcaseBox.nodes.map((box) => {
                 const image = getImage(box.image)
                 console.log(box.text.childMdx.excerpt)
                 return(
-                    <div key={box.id} style={{width: "25%"}}>
+                    <div key={box.id} style={{width: "200px"}} className="mb-5">
                       <GatsbyImage image={image} style={{marginBottom: "1em"}}/>
                       <h4>{box.header}</h4>
                       <div
