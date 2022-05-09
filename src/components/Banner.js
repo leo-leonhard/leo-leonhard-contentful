@@ -1,6 +1,6 @@
 import React from 'react'
-import { StaticQuery, graphql } from 'gatsby'
-
+import { graphql } from 'gatsby'
+import { getImage, GatsbyImage } from 'gatsby-plugin-image';
 
 function Banner (props) {
     const image = props.image
@@ -10,10 +10,11 @@ function Banner (props) {
     })
     return(
         <div>
-        {image.map(img => {
+          {image.map(img => {
+              const image = getImage(img.image)
             return(
                   <div key={img.slug}>
-                    <img className="mb-5" src={img.image.resize.src} style={{float: "left", width: "100%", height: "90vh", objectFit: "cover"}}/>
+                    <GatsbyImage className="mb-5" image={image} style={{float: "left", width: "100%", height: "90vh", objectFit: "cover"}}/>
                   </div>
             )
         })}

@@ -69,11 +69,7 @@ query getPublikationenContent {
       slug
       image {
         id
-        resize(width: 1200) {
-          width
-          height
-          src
-        }
+        gatsbyImageData(width: 1200, placeholder: BLURRED)
       }
     }
   }
