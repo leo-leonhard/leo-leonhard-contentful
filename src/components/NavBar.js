@@ -10,14 +10,14 @@ import signet from '../images/LL_Signet.png'
 const NavBar = class extends React.Component {
     render() {
         return (
-            <Navbar expand="lg" style={{width: "93%"}}>
+            <Navbar expand="lg" style={{width: "90%", margin: "0 auto"}}>
                 <Container>
                     <Navbar.Brand href="/">
                         <img className="signet" src={signet}/>
                         <img className="logo" style={{margin: "0 0.3em"}} src={logo}/>
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav"/>
-                    <Navbar.Collapse id="basic-navbar-nav">
+                    <Navbar.Collapse>
                         <Nav className="me-auto">
                             <Nav.Link href="/lebenslauf">LEBENSLAUF</Nav.Link>
                             <Nav.Link href="/malerei">MALEREI</Nav.Link>
