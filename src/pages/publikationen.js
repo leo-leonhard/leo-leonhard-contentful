@@ -6,20 +6,22 @@ import {Card} from "react-bootstrap"
 import Layout from '../components/Layout'
 import Banner from '../components/Banner'
 import Verzeichniss from '../components/Verzeichniss'
+import IntroText from '../components/IntroText'
 
 import '../styles/book.css'
 
 
+
 const PublikationenPage = ( { data } ) => {
     const books = data.allContentfulBook.nodes
-
     return(
         <Layout>
           <div className="d-flex flex-column">
             <Banner image={data.allContentfulBannerImage.nodes}/>
+            <IntroText introdata={data.allContentfulIntroText.nodes}/>
             <div>
               <hr style={{width: "100%"}}/>
-              <h3>Bücher</h3>
+              <h2 className="mt-5 mb-5">Bücher</h2>
               <br/>
             </div>
             <div className="mt-3 d-flex flex-wrap" style={{ width: '100%' }}>
@@ -51,7 +53,7 @@ const PublikationenPage = ( { data } ) => {
           </div>
           <div>
             <hr/>
-            <h3>Verzeichnis der Bücher, Kataloge und Zeitschriften mit Abbildungen der Arbeiten Leo Leonhards</h3>
+            <h2 className="mt-5 mb-5">Verzeichnis der Bücher, Kataloge und Zeitschriften mit Abbildungen der Arbeiten Leo Leonhards</h2>
             <br/>
             <Verzeichniss/>
           </div>
@@ -91,6 +93,19 @@ query getPublikationenContent {
       }
     }
   }
+          allContentfulIntroText(filter: {slug: {eq: "publikationen"}}) {
+            nodes {
+              id
+              slug
+              header
+              page
+              text {
+                childMdx {
+                  body
+                }
+             }
+          }
+        }
 }
 `
 
