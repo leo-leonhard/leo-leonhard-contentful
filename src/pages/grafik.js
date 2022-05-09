@@ -50,7 +50,7 @@ query getGrafikContent {
       width
       height
       image {
-        gatsbyImageData(width: 230, placeholder: DOMINANT_COLOR)
+        gatsbyImageData(width: 240, placeholder: DOMINANT_COLOR)
       }
     }
   }
