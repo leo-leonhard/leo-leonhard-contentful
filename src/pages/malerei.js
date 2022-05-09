@@ -3,11 +3,12 @@ import {graphql} from 'gatsby'
 
 import Layout from '../components/Layout'
 import Banner from '../components/Banner'
-
+import IntroText from '../components/IntroText'
 
 const MalereiPage = ( { data } ) => (
     <Layout>
       <Banner image={data.allContentfulBannerImage.nodes}/>
+      <IntroText introdata={data.allContentfulIntroText.nodes}/>
     </Layout>
 )
 
@@ -26,7 +27,23 @@ query getMalereiContent {
       }
     }
   }
+          allContentfulIntroText(filter: {slug: {eq: "malerei"}}) {
+            nodes {
+              id
+              slug
+              header
+              page
+              text {
+                childMdx {
+                  body
+                }
+             }
+          }
+        }
+
 }
+
+
 `
 
 
