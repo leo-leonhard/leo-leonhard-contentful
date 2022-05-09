@@ -21,7 +21,7 @@ const PublikationenPage = ( { data } ) => {
             <IntroText introdata={data.allContentfulIntroText.nodes}/>
             <div>
               <hr style={{width: "100%"}}/>
-              <h1 style={{color: "rgb(60, 159, 187)"}} className="mt-5 mb-5">Bücher</h1>
+              <h1 style={{color: "rgb(60, 159, 187)"}} className="mt-4 mb-2">Bücher</h1>
               <br/>
             </div>
             <div className="mt-3 d-flex flex-wrap justify-content-between" style={{ width: '100%' }}>
@@ -51,9 +51,11 @@ const PublikationenPage = ( { data } ) => {
                         )}
             </div>
           </div>
+          <br/>
+          <br/>
           <div>
             <hr/>
-            <h1 style={{color: "rgb(60, 159, 187)"}} className="mt-5 mb-5">Verzeichnis der Bücher, Kataloge und Zeitschriften mit Abbildungen der Arbeiten Leo Leonhards</h1>
+            <h1 style={{color: "rgb(60, 159, 187)"}}  className="mt-4 mb-2">Verzeichnis der Bücher, Kataloge und Zeitschriften mit Abbildungen der Arbeiten Leo Leonhards</h1>
             <br/>
             <Verzeichniss/>
           </div>
