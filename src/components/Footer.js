@@ -7,15 +7,15 @@ import '../styles/footer-style.css'
 const Footer = () => (
     <div className="footer">
         <div>
-            <Link to="/"><img src={logo}/></Link>
+          <Link to="/"><img src={logo}/></Link>
           <address style={{margin: "1em auto"}}>
-                LEO LEONHARD NACHLASS<br/>
-                c/o Florian Leonhard<br/>
-                Strasse 12<br/>
-                12345 Stadt<br/>
-                info@leoleonhard.de<br/>
-            </address>
-            <div className="copyright visible-on-tablet visible-on-mobile">
+            LEO LEONHARD NACHLASS<br/>
+            Florian Leonhard<br/>
+            Sandstraße 18<br/>
+            64404 Bickenbach<br/>
+            info@leoleonhard.de<br/>
+          </address>
+          <div className="copyright visible-on-tablet visible-on-mobile">
                 <p>Copyright © 2022 Leo Leonhard Nachlass.
                     <br/>
                     All rights reserved.
