@@ -31,6 +31,10 @@ h1 {
 
 }
 
+.slick-slide:not(.slick-active) {
+    pointer-events: none;
+}
+
 h2 {
     font-family: globalfontfett;
     color: #589AAD;
