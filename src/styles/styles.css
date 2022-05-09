@@ -27,8 +27,12 @@ body, html {
     margin: 0 auto;
     padding: 0.5em 0;
 }
-h1 {
 
+h1 {
+    font-size: 1.7em;
+    color: #589AAD;
+    font-family: globalfontfett;
+    text-transform: uppercase;
 }
 
 .slick-slide:not(.slick-active) {
@@ -43,7 +47,7 @@ h2 {
 }
 
 h3 {
-    font-size: 1.2em;
+    font-size: 1em;
     font-family: globalfontfett;
     text-transform: uppercase;
 }

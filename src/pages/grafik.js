@@ -5,22 +5,21 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from '../components/Layout'
 import Banner from '../components/Banner'
 import IntroText from '../components/IntroText'
+import KunstWerk from '../components/KunstWerk'
 
 const GrafikPage = ( { data } ) => {
-    const grafiken = data.allContentfulGrafik.nodes
     return(
         <Layout>
           <Banner image={data.allContentfulBannerImage.nodes}/>
+          <IntroText introdata={data.allContentfulIntroText.nodes}/>
+          <div className="mb-5">
+            <h1 className="">Das Zeichnerische Werk</h1>
+            <hr />
+          </div>
           <div className="d-flex flex-wrap" style={{width: "100%"}}>
-            {grafiken.map(grafik => {
-                const image = getImage(grafik.image)
-                return(
-                    <div>
-                      <GatsbyImage image={image} alt={grafik.title}/>
-                      <IntroText introdata={data.allContentfulIntroText.nodes}/>
-                    </div>
-                )
-            })}
+        <div style={{width: "100%", marginBottom: "2em"}}>
+              <KunstWerk kunstwerk={data.allContentfulGrafik.nodes}/>
+            </div>
           </div>
         </Layout>
     )
@@ -42,8 +41,16 @@ query getGrafikContent {
       id
       year
       title
+      type
+      description {
+        childMdx {
+          body
+        }
+}
+      width
+      height
       image {
-        gatsbyImageData(width: 300, placeholder: DOMINANT_COLOR)
+        gatsbyImageData(width: 230, placeholder: DOMINANT_COLOR)
       }
     }
   }
