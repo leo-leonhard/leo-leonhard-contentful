@@ -24,7 +24,7 @@ const PublikationenPage = ( { data } ) => {
               <h1 style={{color: "rgb(60, 159, 187)"}} className="mt-5 mb-5">Bücher</h1>
               <br/>
             </div>
-            <div className="mt-3 d-flex flex-wrap" style={{ width: '100%' }}>
+            <div className="mt-3 d-flex flex-wrap justify-content-between" style={{ width: '100%' }}>
               {books.map(book => {
                   const image = getImage(book.coverImage)
                   console.log("IMAGE: ", image)
