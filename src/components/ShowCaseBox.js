@@ -34,7 +34,7 @@ const ShowCaseBox = ({data}) => (
                 const image = getImage(box.image)
                 console.log(box.text.childMdx.excerpt)
                 return(
-                    <div key={box.id} style={{width: "200px"}} className="mb-5">
+                    <div key={box.id} style={{width: "14em"}} className="mb-5">
                       <GatsbyImage image={image} style={{marginBottom: "1em"}}/>
                       <h4>{box.header}</h4>
                       <div
