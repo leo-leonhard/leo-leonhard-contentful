@@ -48,7 +48,7 @@ const Footer = () => (
             <div className="footer-nav-item">
                 <hr/>
                 <Link to="/impressum">IMPRESSUM</Link>
-                <Link to="">DATENSCHUTZ</Link>
+                <Link to="/impressum/#datenschutzerklaerung">DATENSCHUTZ</Link>
                 <Link to="">PRESSE</Link>
                 <Link to="">CONTACT</Link>
                 <hr/>
