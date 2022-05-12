@@ -29,19 +29,19 @@ const ShowCaseBox = ({data}) => (
     `}
       render={data => (
 
-          <div className="d-flex flex-wrap justify-content-between" style={{margin: "3em", maxWidth: "100%"}}>
+          <div className="d-flex flex-wrap justify-content-between" style={{margin: "3em", maxWidth: "100%", gap: "1em"}}>
             {data.allContentfulShowcaseBox.nodes.map((box) => {
                 const image = getImage(box.image)
                 console.log(box.text.childMdx.excerpt)
                 return(
                     <div key={box.id} style={{width: "14em"}} className="mb-5">
-                      <GatsbyImage image={image} style={{marginBottom: "1em"}}/>
+                      <GatsbyImage image={image} style={{marginBottom: "1em", width: "12em", height: "12em"}}/>
                       <h4>{box.header}</h4>
                       <div
                         style={{
                             width: "90%"
                         }}>
-                            {box.text.childMdx.excerpt}
+                        <p style={{fontSize: "0.9em"}}>{box.text.childMdx.excerpt}</p>
 
                     </div>
                     </div>
