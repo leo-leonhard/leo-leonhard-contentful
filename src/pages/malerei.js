@@ -4,21 +4,20 @@ import {graphql} from 'gatsby'
 import Layout from '../components/Layout'
 import Banner from '../components/Banner'
 import IntroText from '../components/IntroText'
-import KunstWerk from '../components/KunstWerk'
+import Oelgemaelde from '../components/ArtWork/Malerei/Oelgemaelde'
+import Aquarelle from '../components/ArtWork/Malerei/Aquarelle'
 
-
-const MalereiPage = ( { data } ) => (
+const MalereiPage = ({ data }) => (
     <Layout>
       <Banner image={data.allContentfulBannerImage.nodes}/>
       <IntroText introdata={data.allContentfulIntroText.nodes}/>
       <div className="mb-5">
         <hr />
       </div>
-      <div className="d-flex flex-wrap" style={{width: "100%"}}>
-        <div style={{width: "100%", marginBottom: "2em"}}>
-          <KunstWerk kunstwerk={data.allContentfulMalerei.nodes}/>
-        </div>
-      </div>
+      <h2>Ölgemälde</h2>
+      <Oelgemaelde />
+      <h2>Aquarelle</h2>
+      <Aquarelle/>
     </Layout>
 )
 
@@ -45,24 +44,6 @@ query getMalereiContent {
         childMdx {
           body
         }
-      }
-    }
-  }
-  allContentfulMalerei {
-    nodes {
-      year
-      width
-      type
-      title
-      id
-      height
-      description {
-        childMdx {
-          body
-        }
-      }
-      image {
-        gatsbyImageData(width: 240)
       }
     }
   }
