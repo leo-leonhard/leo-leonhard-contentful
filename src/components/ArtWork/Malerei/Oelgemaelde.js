@@ -1,7 +1,7 @@
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 
-import KunstWerk from '../../KunstWerk'
+import KunstWerk from '../KunstWerk'
 
 
 const Oelgemaelde = ({ data }) => (
