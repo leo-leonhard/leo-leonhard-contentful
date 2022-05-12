@@ -1,6 +1,6 @@
 import React from "react"
-import { MDXProvider } from "@mdx-js/react"
 import { graphql, StaticQuery } from "gatsby"
+import { MDXProvider } from "@mdx-js/react"
 import MDXRenderer from "gatsby-plugin-mdx/mdx-renderer"
 
 function IntroText(props) {
