@@ -17,7 +17,7 @@ const GrafikPage = ( { data } ) => {
             <hr />
           </div>
           <div className="d-flex flex-wrap" style={{width: "100%"}}>
-        <div style={{width: "100%", marginBottom: "2em"}}>
+            <div style={{width: "100%", marginBottom: "2em"}}>
               <KunstWerk kunstwerk={data.allContentfulGrafik.nodes}/>
             </div>
           </div>
@@ -36,7 +36,7 @@ query getGrafikContent {
       }
     }
   }
- allContentfulGrafik {
+  allContentfulGrafik {
     nodes {
       id
       year
@@ -46,7 +46,7 @@ query getGrafikContent {
         childMdx {
           body
         }
-}
+      }
       width
       height
       image {
@@ -54,19 +54,19 @@ query getGrafikContent {
       }
     }
   }
-          allContentfulIntroText(filter: {slug: {eq: "grafik"}}) {
-            nodes {
-              id
-              slug
-              header
-              page
-              text {
-                childMdx {
-                  body
-                }
-             }
-          }
+  allContentfulIntroText(filter: {slug: {eq: "grafik"}}) {
+    nodes {
+      id
+      slug
+      header
+      page
+      text {
+        childMdx {
+          body
         }
+      }
+    }
+  }
 }
 `
 
