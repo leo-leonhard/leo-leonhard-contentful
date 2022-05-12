@@ -29,7 +29,7 @@ const Impressum = ({data}) => {
             <br/>
             <br/>
             <br/>
-            <p>Quelle:</p>
+            <p><b>Quelle:</b></p>
             <p>e-recht24.de</p>
           </div>
           <div id="datenschutzerklaerung">
