@@ -6,9 +6,9 @@ import '../styles/footer-style.css'
 
 const Footer = () => (
     <div className="footer">
-      <div>
-        <Link to="/"><img src={logo}/></Link>
-        <address style={{margin: "1em auto"}}>
+      <div className="d-flex flex-column justify-content-between" style={{height: "10em"}}>
+        <Link to="/"><img style={{width: "10em"}} src={logo}/></Link>
+        <address style={{fontSize: "0.7em"}}>
           LEO LEONHARD NACHLASS<br/>
           Florian Leonhard<br/>
           Sandstraße 18<br/>
@@ -73,9 +73,8 @@ const Footer = () => (
             <hr/>
           </div>
         </div>
-        <div className="copyright hidden-on-tablet">
-          <p>Copyright © 2022 Leo Leonhard Nachlass. All rights reserved.
-            <br/>Build by <a style={{textDecoration: "none", color: "white"}} href="https://hannarosenfeld.com/">Hanna Rosenfeld.</a></p>
+    <div className="mt-3 copyright hidden-on-tablet">
+          <p>Copyright © 2022 Leo Leonhard Nachlass. All rights reserved. Build by <a style={{textDecoration: "none", color: "white"}} href="https://hannarosenfeld.com/">Hanna Rosenfeld.</a></p>
         </div>
       </div>
     </div>
