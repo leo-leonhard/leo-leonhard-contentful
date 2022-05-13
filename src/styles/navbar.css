@@ -2,9 +2,10 @@
     max-width: 100% !important;
 }
 
-h8 {
-
+.dropdown-item:focus, .dropdown-item:active {
+    background: #9ED9EF;
 }
+
 
 .hover-underline-animation {
   display: inline-block;
