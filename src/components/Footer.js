@@ -6,59 +6,78 @@ import '../styles/footer-style.css'
 
 const Footer = () => (
     <div className="footer">
-        <div>
-          <Link to="/"><img src={logo}/></Link>
-          <address style={{margin: "1em auto"}}>
-            LEO LEONHARD NACHLASS<br/>
-            Florian Leonhard<br/>
-            Sandstraße 18<br/>
-            64404 Bickenbach<br/>
-            info@leoleonhard.de<br/>
-          </address>
-          <div className="copyright visible-on-tablet visible-on-mobile">
-                <p>Copyright © 2022 Leo Leonhard Nachlass.
-                    <br/>
-                    All rights reserved.
-                    <br/>
-                Build by <a style={{textDecoration: "none", color: "white"}}href="https://hannarosenfeld.com/">Hanna Rosenfeld.</a></p>
-            </div>
+      <div>
+        <Link to="/"><img src={logo}/></Link>
+        <address style={{margin: "1em auto"}}>
+          LEO LEONHARD NACHLASS<br/>
+          Florian Leonhard<br/>
+          Sandstraße 18<br/>
+          64404 Bickenbach<br/>
+          info@leoleonhard.de<br/>
+        </address>
+        <div className="copyright visible-on-tablet visible-on-mobile">
+          <p>Copyright © 2022 Leo Leonhard Nachlass.
+            <br/>
+            All rights reserved.
+            <br/>
+            Build by <a style={{textDecoration: "none", color: "white"}}href="https://hannarosenfeld.com/">Hanna Rosenfeld.</a></p>
         </div>
-        <div style={{width: "90%"}}>
+      </div>
+      <div style={{width: "90%"}}>
         <div className="d-flex footer-nav">
-            <div className="footer-nav-item">
-                <hr/>
-                <Link to="/lebenslauf">LEBENSLAUF</Link>
-                <hr className="hidden-on-tablet"/>
+          <div className="footer-nav-item">
+            <hr/>
+            <div style={{ height: "100%"}}>
+              <Link to="/lebenslauf">LEBENSLAUF</Link>
             </div>
-            <div className="footer-nav-item">
-                <hr/>
-                <Link to="/malerei">MALEREI</Link>
-                <hr className="hidden-on-tablet"/>
+            <hr className="hidden-on-tablet"/>
+          </div>
+          <div className="footer-nav-item">
+            <hr/>
+            <div style={{ height: "100%"}}>
+              <Link to="/malerei">MALEREI</Link>
+              <div className="d-flex flex-column" style={{fontSize: "0.9em"}}>
+                <Link to="/malerei#oelgemaelde">Ölgemälde</Link>
+                <Link to="/malerei#aquarelle">Aquarelle</Link>
+              </div>
             </div>
-            <div className="footer-nav-item">
-                <hr/>
-                <Link to="/grafik">GRAFIK</Link>
-                <hr className="hidden-on-tablet"/>
+            <hr className="hidden-on-tablet"/>
+          </div>
+          <div className="footer-nav-item">
+            <hr/>
+            <div style={{ height: "100%"}}>
+              <Link to="/grafik">GRAFIK</Link>
+              <div className="d-flex flex-column" style={{fontSize: "0.9em"}}>
+                <Link to="/grafik#zeichnungen">Zeichnungen</Link>
+                <Link to="/grafik#radierungen">Radierungen</Link>
+                <Link to="/grafik#holzschnitte">Holzschnitte</Link>
+              </div>
             </div>
-            <div className="footer-nav-item">
-                <hr/>
-                <Link to="/publikationen">PUBLIKATIONEN</Link>
-                <hr className="hidden-on-tablet"/>
+            <hr className="hidden-on-tablet"/>
+          </div>
+          <div className="footer-nav-item">
+            <hr/>
+            <div style={{ height: "100%"}}>
+              <Link to="/publikationen">PUBLIKATIONEN</Link>
             </div>
-            <div className="footer-nav-item">
-                <hr/>
-                <Link to="/impressum">IMPRESSUM</Link>
-                <Link to="/impressum/#datenschutzerklaerung">DATENSCHUTZ</Link>
-                <Link to="">PRESSE</Link>
-                <Link to="">CONTACT</Link>
-                <hr/>
+            <hr className="hidden-on-tablet"/>
+          </div>
+          <div className="footer-nav-item">
+            <hr/>
+            <div className="d-flex flex-column" style={{ height: "100%"}}>
+              <Link to="/impressum">IMPRESSUM</Link>
+              <Link to="/impressum/#datenschutzerklaerung">DATENSCHUTZ</Link>
+              <Link to="">PRESSE</Link>
+              <Link to="">CONTACT</Link>
             </div>
+            <hr/>
+          </div>
         </div>
-            <div className="copyright hidden-on-tablet">
-                <p>Copyright © 2022 Leo Leonhard Nachlass. All rights reserved.
-                <br/>Build by <a style={{textDecoration: "none", color: "white"}} href="https://hannarosenfeld.com/">Hanna Rosenfeld.</a></p>
-                </div>
-            </div>
+        <div className="copyright hidden-on-tablet">
+          <p>Copyright © 2022 Leo Leonhard Nachlass. All rights reserved.
+            <br/>Build by <a style={{textDecoration: "none", color: "white"}} href="https://hannarosenfeld.com/">Hanna Rosenfeld.</a></p>
+        </div>
+      </div>
     </div>
 )
 
