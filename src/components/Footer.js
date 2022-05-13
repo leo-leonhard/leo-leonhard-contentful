@@ -74,7 +74,7 @@ const Footer = () => (
           </div>
         </div>
     <div className="mt-3 copyright hidden-on-tablet">
-          <p>Copyright © 2022 Leo Leonhard Nachlass. All rights reserved. Build by <a style={{textDecoration: "none", color: "white"}} href="https://hannarosenfeld.com/">Hanna Rosenfeld.</a></p>
+      <p style={{fontSize: "0.8em"}}>Copyright © 2022 Leo Leonhard Nachlass. All rights reserved. Build by <a style={{textDecoration: "none", color: "white"}} href="https://hannarosenfeld.com/">Hanna Rosenfeld.</a></p>
         </div>
       </div>
     </div>
