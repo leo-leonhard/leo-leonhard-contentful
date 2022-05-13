@@ -13,8 +13,8 @@ const NavBar = class extends React.Component {
             <Navbar expand="lg" style={{width: "85%", margin: "0 auto"}}>
                 <Container>
                     <Navbar.Brand href="/">
-                        <img className="signet" src={signet}/>
-                        <img className="logo" style={{margin: "0 0.3em"}} src={logo}/>
+                        <img className="signet" src={signet} style={{width: "2.5em"}} />
+                      <img className="logo" style={{margin: "0 0.3em", width: "5.5em"}} src={logo}/>
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav"/>
             <Navbar.Collapse>
