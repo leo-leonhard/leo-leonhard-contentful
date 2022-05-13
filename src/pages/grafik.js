@@ -19,12 +19,18 @@ const GrafikPage = ({ data }) => {
             <h1 className="">Das Zeichnerische Werk</h1>
             <hr/>
           </div>
-          <h2>Zeichnungen</h2>
-          <Zeichnungen/>
-          <h2>Radierungen</h2>
-          <Radierungen/>
-          <h2>Holzschnitte</h2>
-          <Holzschnitte/>
+          <div id="zeichnungen">
+            <h2>Zeichnungen</h2>
+            <Zeichnungen/>
+          </div>
+          <div id="radierungen">
+            <h2>Radierungen</h2>
+            <Radierungen/>
+          </div>
+          <div id="holzschnitte">
+            <h2>Holzschnitte</h2>
+            <Holzschnitte/>
+          </div>
         </Layout>
     )
 }

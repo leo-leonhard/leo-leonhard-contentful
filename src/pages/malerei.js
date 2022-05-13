@@ -14,10 +14,14 @@ const MalereiPage = ({ data }) => (
       <div className="mb-5">
         <hr />
       </div>
-      <h2>Ölgemälde</h2>
-      <Oelgemaelde />
-      <h2>Aquarelle</h2>
-      <Aquarelle/>
+      <div id="oelgemaelde">
+        <h2>Ölgemälde</h2>
+        <Oelgemaelde />
+      </div>
+      <div id="aquarelle">
+        <h2>Aquarelle</h2>
+        <Aquarelle/>
+      </div>
     </Layout>
 )
 
