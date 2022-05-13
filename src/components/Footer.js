@@ -68,7 +68,7 @@ const Footer = () => (
               <Link to="/impressum">IMPRESSUM</Link>
               <Link to="/impressum/#datenschutzerklaerung">DATENSCHUTZ</Link>
               <Link to="">PRESSE</Link>
-              <Link to="">CONTACT</Link>
+              <Link to="">KONTAKT</Link>
             </div>
             <hr/>
           </div>
