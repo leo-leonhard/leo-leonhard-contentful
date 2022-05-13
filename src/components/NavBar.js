@@ -18,7 +18,7 @@ const NavBar = class extends React.Component {
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                 <Navbar.Collapse>
-                  <Nav className="me-auto">
+                  <Nav className="me-auto" style={{fontSize: "0.9em"}}>
                     <Nav.Link href="/lebenslauf">LEBENSLAUF</Nav.Link>
                     <NavDropdown title="MALEREI" id="basic-nav-dropdown">
                       <NavDropdown.Item href="/malerei#oelgemaelde">Ölgemälde</NavDropdown.Item>
