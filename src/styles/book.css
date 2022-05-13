@@ -2,6 +2,10 @@
     object-fit: contain !important;
 }
 
+.card {
+    background-color: none !important;
+}
+
 
 /* Smartphones (portrait) ----------- */
 @media only screen and (max-width : 380px) {
