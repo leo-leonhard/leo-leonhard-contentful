@@ -11,13 +11,15 @@ function IntroText(props) {
                 console.log(intro)
                 return(
                     <div key={intro.key}>
-                      <h4 style={{fontWeight: "bold", marginBottom: "1em", maxWidth: "65ch"}}>{intro.header}</h4>
                       <div>
+                      <h1 style={{fontWeight: "bold", marginBottom: "1em", maxWidth: "65ch"}}>{intro.header}</h1>
+                    <div style={{fontSize: "1.3em"}}>
                       <MDXProvider>
                         <MDXRenderer>
                             {intro.text.childMdx.body}
                         </MDXRenderer>
                     </MDXProvider>
+                    </div>
                     </div>
                     </div>
                 )
