@@ -17,7 +17,7 @@ const NavBar = class extends React.Component {
                         <img className="logo" style={{margin: "0 0.3em"}} src={logo}/>
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav"/>
-            <Navbar.Collapse style={{width: "40%"}}>
+            <Navbar.Collapse>
               <Nav className="me-auto">
                             <Nav.Link href="/lebenslauf">LEBENSLAUF</Nav.Link>
                             <Nav.Link href="/malerei">MALEREI</Nav.Link>
