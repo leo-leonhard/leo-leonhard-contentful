@@ -5,22 +5,26 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from '../components/Layout'
 import Banner from '../components/Banner'
 import IntroText from '../components/IntroText'
-import KunstWerk from '../components/KunstWerk'
+import Radierungen from '../components/ArtWork/Grafik/Radierungen'
+import Zeichnungen from '../components/ArtWork/Grafik/Zeichnungen'
+import Holzschnitte from '../components/ArtWork/Grafik/Holzschnitte'
 
-const GrafikPage = ( { data } ) => {
+
+const GrafikPage = ({ data }) => {
     return(
         <Layout>
           <Banner image={data.allContentfulBannerImage.nodes}/>
           <IntroText introdata={data.allContentfulIntroText.nodes}/>
           <div className="mb-5">
             <h1 className="">Das Zeichnerische Werk</h1>
-            <hr />
+            <hr/>
           </div>
-          <div className="d-flex flex-wrap" style={{width: "100%"}}>
-            <div style={{width: "100%", marginBottom: "2em"}}>
-              <KunstWerk kunstwerk={data.allContentfulGrafik.nodes}/>
-            </div>
-          </div>
+          <h2>Zeichnungen</h2>
+          <Zeichnungen/>
+          <h2>Radierungen</h2>
+          <Radierungen/>
+          <h2>Holzschnitte</h2>
+          <Holzschnitte/>
         </Layout>
     )
 }
@@ -33,24 +37,6 @@ query getGrafikContent {
       image {
         id
         gatsbyImageData(width: 1200, placeholder: BLURRED)
-      }
-    }
-  }
-  allContentfulGrafik {
-    nodes {
-      id
-      year
-      title
-      type
-      description {
-        childMdx {
-          body
-        }
-      }
-      width
-      height
-      image {
-        gatsbyImageData(width: 240, placeholder: DOMINANT_COLOR)
       }
     }
   }
