@@ -11,6 +11,7 @@ const Aquarelle = ({ data }) => (
       allContentfulMalerei(filter: {type: {eq: "Aquarelle"}}) {
         nodes {
           year
+          slug
           width
           type
           title

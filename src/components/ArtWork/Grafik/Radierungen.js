@@ -11,6 +11,7 @@ const Radierungen = ({ data }) => (
       allContentfulGrafik(filter: {type: {eq: "Radierung"}}) {
         nodes {
           year
+          slug
           width
           type
           title

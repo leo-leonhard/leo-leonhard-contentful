@@ -11,6 +11,7 @@ const Zeichnungen = ({ data }) => (
       allContentfulGrafik(filter: {type: {eq: "Zeichnung"}}) {
         nodes {
           year
+          slug
           width
           type
           title

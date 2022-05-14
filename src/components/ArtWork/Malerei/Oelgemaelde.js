@@ -11,6 +11,7 @@ const Oelgemaelde = ({ data }) => (
       allContentfulMalerei(filter: {type: {eq: "Ölgemälde"}}) {
         nodes {
           year
+          slug
           width
           type
           title

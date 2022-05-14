@@ -1,69 +1,70 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from '../components/Layout'
 
 
+export default function GrafikTemplate({ data }) {
+    const picture = data.allContentfulGrafik.nodes
 
-export const query = graphql`
-    query GrafikPageQuery($grafikId: String){
-      contentfulGrafik(id : { eq: $grafikId }){
-        title
-        type
-        year
-        slug
-        id
-        image {
-          url
-         }
-      }
-    }
-`
-
-
-
-const GrafikTemplate = props => {
-    console.log(props)
     return (
         <Layout>
-            <div className="pt-3">
-            <h2>DAS ZEICHNERISCHE WERK</h2>
-                <hr />
+          {picture.map(pic => {
+              const image = getImage(pic.image)
+              return(
+              <div key={pic.slug}>
+                <div className="pt-3">
+                  <h2>DAS ZEICHNERISCHE WERK</h2>
+                  <hr />
                 </div>
-            <div className="artwork-detail-container d-flex">
-                <div className="artwork-detail-image-container">
-                    <img src={props.data.contentfulGrafik.image.url}/>
-                    </div>
-                <div className="artwork-detail-text">
-                    <h3>{props.data.contentfulGrafik.title}, {props.data.contentfulGrafik.year}</h3>
-                    <h4>{props.data.contentfulGrafik.type}</h4>
+                <div className="artwork-detail-container d-flex">
+                  <div className="artwork-detail-image-container">
+                    <GatsbyImage image={image}/>
+                  </div>
+                  <div className="artwork-detail-text">
+                    <h3>{pic.title}, {pic.year}</h3>
+                    <h4>{pic.type}</h4>
                     <p className="pt-4">
-                         Lorem ipsum dolor sit amet, consectetur
-                         adipiscing elit. In mattis consectetur
-                         ante. Aliquam ac ex vitae odio viverra mattis
-                         nec dictum sem. Duis accumsan, metus ut
-                         porttitor tristique, ante orci molestie arcu,
-                         id feugiat sem erat vel lorem. Donec pharetra
-                         ipsum a ante tempor hendrerit. In eget
-                         posuere nunc. Vivamus orci sapien, vehicula
-                         vel felis at, hendrerit tempus nibh. Vivamus
-                         id tortor convallis, varius nisi vitae,
-                         finibus enim. Nullam consequat urna quis
-                         tortor lobortis feugiat. Morbi nulla tellus,
-                         rhoncus id venenatis facilisis, aliquam at
-                         sapien. Proin tempus eget nisi id rutrum. In
-                         eget mauris ac tortor vestibulum ultricies
-                         sed vel dolor. Phasellus porta dapibus
-                         rhoncus. Phasellus porta tristique dolor, sit
-                         amet pharetra nisl varius id.
+                      Lorem ipsum dolor sit amet, consectetur
+                      adipiscing elit. In mattis consectetur
+                      ante. Aliquam ac ex vitae odio viverra mattis
+                      nec dictum sem. Duis accumsan, metus ut
+                      porttitor tristique, ante orci molestie arcu,
+                      id feugiat sem erat vel lorem. Donec pharetra
+                      ipsum a ante tempor hendrerit. In eget
+                      posuere nunc. Vivamus orci sapien, vehicula
+                      vel felis at, hendrerit tempus nibh. Vivamus
+                      id tortor convallis, varius nisi vitae,
+                      finibus enim. Nullam consequat urna quis
+                      tortor lobortis feugiat. Morbi nulla tellus,
+                      rhoncus id venenatis facilisis, aliquam at
+                      sapien. Proin tempus eget nisi id rutrum. In
+                      eget mauris ac tortor vestibulum ultricies
+                      sed vel dolor. Phasellus porta dapibus
+                      rhoncus. Phasellus porta tristique dolor, sit
+                      amet pharetra nisl varius id.
                     </p>
+                  </div>
                 </div>
-            </div>
-            <hr/>
+                <hr/>
+              </div>
+          )})}
         </Layout>
     )
 }
 
 
-
-export default GrafikTemplate
+export const query = graphql`
+  query($slug: String!) {
+      allContentfulGrafik(filter: { slug: { eq: $slug } }) {
+        nodes {
+          year
+          width
+          title
+          image {
+            gatsbyImageData(width: 600, placeholder: BLURRED)
+          }
+        }
+      }
+    }
+`
