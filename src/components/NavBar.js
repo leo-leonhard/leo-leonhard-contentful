@@ -21,13 +21,13 @@ const NavBar = class extends React.Component {
                   <Nav className="me-auto" style={{fontSize: "0.9em"}}>
                     <Nav.Link href="/lebenslauf">LEBENSLAUF</Nav.Link>
                     <NavDropdown title="MALEREI" id="basic-nav-dropdown">
-                      <NavDropdown.Item href="/malerei#oelgemaelde">Ölgemälde</NavDropdown.Item>
-                      <NavDropdown.Item href="/malerei#aquarelle">Aquarelle</NavDropdown.Item>
+                      <NavDropdown.Item style={{fontSize: "0.9em"}} href="/malerei#oelgemaelde">Ölgemälde</NavDropdown.Item>
+                      <NavDropdown.Item style={{fontSize: "0.9em"}}href="/malerei#aquarelle">Aquarelle</NavDropdown.Item>
                     </NavDropdown>
                     <NavDropdown title="GRAFIK" id="basic-nav-dropdown">
-                      <NavDropdown.Item href="/grafik#zeichnungen">Zeichnungen</NavDropdown.Item>
-                      <NavDropdown.Item href="/grafik#radierungen">Radierungen</NavDropdown.Item>
-                      <NavDropdown.Item href="/grafik/#holzschnitte">Holzschnitte</NavDropdown.Item>
+                      <NavDropdown.Item style={{fontSize: "0.9em"}}href="/grafik#zeichnungen">Zeichnungen</NavDropdown.Item>
+                      <NavDropdown.Item style={{fontSize: "0.9em"}}href="/grafik#radierungen">Radierungen</NavDropdown.Item>
+                      <NavDropdown.Item style={{fontSize: "0.9em"}}href="/grafik/#holzschnitte">Holzschnitte</NavDropdown.Item>
                     </NavDropdown>
                     <Nav.Link href="/publikationen">PUBLIKATIONEN</Nav.Link>
                   </Nav>
