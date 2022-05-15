@@ -12,7 +12,7 @@ export default function GrafikTemplate({ data }) {
           {picture.map(pic => {
               const image = getImage(pic.image)
               return(
-              <div key={pic.slug} className="mb-5">
+              <div key={pic.slug} className="mb-3">
                 <div className="pt-3 d-flex justify-content-between">
                   <h2>DAS ZEICHNERISCHE WERK</h2>
                   <span><Link to="/" style={{textDecoration: "none", color: "#589AAD"}}>&#8592; zurück</Link></span>
