@@ -2,9 +2,11 @@ import React from "react"
 
 import Layout from "../components/Layout"
 
+
+
 const Contact = () => (
     <Layout>
-      <div className="container mt-3 mb-3">
+    <div className="container mt-3 mb-3">
         <form target="_blank" action="https://formsubmit.co/info@leoleonhard.de" method="POST">
           <div className="form-group">
             <div className="form-row d-flex justify-conent-between mb-3" style={{gap: "1em"}}>

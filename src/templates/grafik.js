@@ -12,7 +12,7 @@ export default function GrafikTemplate({ data }) {
           {picture.map(pic => {
               const image = getImage(pic.image)
               return(
-              <div key={pic.slug}>
+              <div key={pic.slug} className="mb-5">
                 <div className="pt-3">
                   <h2>DAS ZEICHNERISCHE WERK</h2>
                   <hr />
