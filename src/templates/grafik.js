@@ -1,5 +1,5 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from '../components/Layout'
 
@@ -13,10 +13,11 @@ export default function GrafikTemplate({ data }) {
               const image = getImage(pic.image)
               return(
               <div key={pic.slug} className="mb-5">
-                <div className="pt-3">
+                <div className="pt-3 d-flex justify-content-between">
                   <h2>DAS ZEICHNERISCHE WERK</h2>
-                  <hr />
+                  <span><Link to="/" style={{textDecoration: "none", color: "#589AAD"}}>&#8592; zurück</Link></span>
                 </div>
+                  <hr />
                 <div className="artwork-detail-container d-flex">
                   <div className="artwork-detail-image-container">
                     <GatsbyImage image={image}/>
