@@ -4,7 +4,7 @@ import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Slidy from '../components/Slick'
 import IntroText from '../components/IntroText'
-import ShowCaseBox from '../components/ShowCaseBox'
+//import ShowCaseBox from '../components/ShowCaseBox'
 
 import '../styles/index.css'
 
@@ -16,7 +16,7 @@ const IndexPage = ({ data }) => {
             <div>
               <Slidy/>
               <IntroText introdata={data.allContentfulIntroText.nodes}/>
-              <ShowCaseBox/>
+              {/* <ShowCaseBox/> */}
             </div>
         </Layout>
     )
