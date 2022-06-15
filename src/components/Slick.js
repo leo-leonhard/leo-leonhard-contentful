@@ -30,10 +30,9 @@ export default class Slidy extends Component {
             <StaticQuery
               query={graphql`
                   query SlickQuery {
-                    allContentfulSliderImage (sort: {fields: position, order: ASC}){
+                    allContentfulSliderImage {
                       nodes {
                         page
-                        position
                         imageTitle
                         color
                         bannerText {
