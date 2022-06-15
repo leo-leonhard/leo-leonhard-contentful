@@ -19,43 +19,36 @@ const PublikationenPage = ( { data } ) => {
           <div className="d-flex flex-column">
             <Banner image={data.allContentfulBannerImage.nodes}/>
             <IntroText introdata={data.allContentfulIntroText.nodes}/>
-            <div>
-              <hr style={{width: "100%"}}/>
-              <h1 style={{color: "rgb(60, 159, 187)"}} className="mt-4 mb-4">Bücher</h1>
-              <br/>
-            </div>
-            <div className="mt-3 d-flex flex-wrap justify-content-between" style={{ width: '100%' }}>
+          </div>
+
+          <div>
+            <hr/>
+            <h1 className="m-2" >Bücher</h1>
+            <div
+              className="d-flex align-items-baseline flex-wrap"
+              style={{minWidth: "100%", gap: "5%"}}>
               {books.map(book => {
                   const image = getImage(book.coverImage)
-                  console.log("IMAGE: ", image)
                   return(
-                      <Card key={image.slug} style={{ width: '30%', border: 'none' ,marginBottom: '4em', backgroundColor: "#FBFBFD"}}>
-                        <div style={{textAlign: "left", height: "20em"}}>
-                          <GatsbyImage
-                            className="book-cover"
-                            image={image}
-                            alt={image.title}
-                            style={{maxHeight: "100%", objectFit: "contain"}}
-                          />
+                      <div className="d-flex flex-column" style={{width: "13em", margin: "1em auto"}}>
+                        <div className="d-flex flex-column">
+                          <GatsbyImage style={{maxWidth: "100%"}} image={image}/>
+                          <div className="mt-2 d-flex flex-column" style={{maxWidth: "100%"}}>
+                            <p style={{margin: "0.1em 0", fontSize: "0.8em"}}><b>{book.year}</b></p>
+                            <p style={{margin: "0.3em 0", color: "#5291A3",fontSize: "0.8em"}}><b>{book.title}</b></p>
+                            <p style={{margin: "0.2em 0", fontSize: "0.8em"}}>{book.subtitle}</p>
                         </div>
-                        <Card.Body style={{textAlign: "left", padding: "0", width: "80%", marginTop: "0.5em"}}>
-                          <Card.Title style={{fontSize: "0.8em", fontWeight: "bold"}}>{book.year}</Card.Title>
-                          <Card.Title style={{fontSize: "0.8em", fontWeight: "bold", color: "#589aad"}}>{book.title}</Card.Title>
-                          <Card.Text style={{fontSize: "0.8em", fontWeight: "bold"}}>
-                            {book.subtitle}
-                          </Card.Text>
-                        </Card.Body>
-                      </Card>
+                      </div>
+                      </div>
                   )
-              }
-                        )}
+              })}
             </div>
           </div>
           <br/>
           <br/>
           <div>
             <hr/>
-            <h1 style={{color: "rgb(60, 159, 187)"}}  className="mt-4 mb-2">Verzeichnis der Bücher, Kataloge und Zeitschriften mit Abbildungen der Arbeiten Leo Leonhards</h1>
+            <h1 style={{color: "rgb(60, 159, 187)"}}  className="">Verzeichnis der Bücher, Kataloge und Zeitschriften mit Abbildungen der Arbeiten Leo Leonhards</h1>
             <br/>
             <Verzeichniss/>
           </div>
@@ -82,10 +75,11 @@ query getPublikationenContent {
       subtitle
       slug
       coverImage {
+        url
         title
         gatsbyImageData(
-          width: 180,
-          placeholder: BLURRED,
+          width: 230,
+          placeholder: DOMINANT_COLOR,
           layout: CONSTRAINED
         )
       }
