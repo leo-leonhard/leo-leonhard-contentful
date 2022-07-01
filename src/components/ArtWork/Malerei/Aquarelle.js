@@ -17,11 +17,7 @@ const Aquarelle = ({ data }) => (
           title
           id
           height
-          description {
-            childMdx {
-              body
-            }
-          }
+
           image {
             gatsbyImageData(width: 240)
           }
