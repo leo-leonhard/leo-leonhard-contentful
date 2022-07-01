@@ -20,7 +20,7 @@ const IndexPage = ({ data }) => {
               <IntroText introdata={data.allContentfulIntroText.nodes}/>
               <Banner image={data.allContentfulBannerImage.nodes}/>
               <ShowCaseBox/>
-              <div style={{background: "#BFD8E5"}}>
+              <div style={{background: "#BFD8E5", padding: "2em 4em"}}>
                 <h2>DIE GRAFISCHEN MAPPENWERKE</h2>
                 <div>
         Lorem ipsum dolor sit amet, consectetuer adipiscing elit.  Donec hendrerit tempor tellus.  Donec pretium posuere tellus.  Proin quam nisl, tincidunt et, mattis eget, convallis nec, purus.  Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.  Nulla posuere.  Donec vitae dolor.  Nullam tristique diam non turpis.  Cras placerat accumsan nulla.  Nullam rutrum.  Nam vestibulum accumsan nisl.
