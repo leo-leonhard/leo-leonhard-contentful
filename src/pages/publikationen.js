@@ -4,7 +4,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import {Card} from "react-bootstrap"
 
 import Layout from '../components/Layout'
-import Banner from '../components/Banner'
+import Banner from '../components/PageBanner'
 import Verzeichniss from '../components/Verzeichniss'
 import IntroText from '../components/IntroText'
 

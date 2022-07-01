@@ -2,7 +2,7 @@ import React from 'react'
 import {graphql} from 'gatsby'
 
 import Layout from '../components/Layout'
-import Banner from '../components/Banner'
+import Banner from '../components/PageBanner'
 
 
 const LebenslaufPage = ( { data } ) => (

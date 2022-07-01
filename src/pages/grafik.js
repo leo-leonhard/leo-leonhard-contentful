@@ -3,7 +3,7 @@ import {graphql} from 'gatsby'
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 import Layout from '../components/Layout'
-import Banner from '../components/Banner'
+import Banner from '../components/PageBanner'
 import IntroText from '../components/IntroText'
 import Radierungen from '../components/ArtWork/Grafik/Radierungen'
 import Zeichnungen from '../components/ArtWork/Grafik/Zeichnungen'

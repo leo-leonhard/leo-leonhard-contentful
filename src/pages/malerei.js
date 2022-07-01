@@ -2,7 +2,7 @@ import React from 'react'
 import {graphql} from 'gatsby'
 
 import Layout from '../components/Layout'
-import Banner from '../components/Banner'
+import Banner from '../components/PageBanner'
 import IntroText from '../components/IntroText'
 import Oelgemaelde from '../components/ArtWork/Malerei/Oelgemaelde'
 import Aquarelle from '../components/ArtWork/Malerei/Aquarelle'
