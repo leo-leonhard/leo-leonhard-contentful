@@ -7,7 +7,7 @@ import Banner from '../components/Banner'
 
 const LebenslaufPage = ( { data } ) => (
     <Layout>
-      <Banner image={data.allContentfulBannerImage.nodes}/>
+      <Banner image={data.allContentfulPageBanner.nodes}/>
     </Layout>
 )
 

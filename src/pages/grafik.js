@@ -13,7 +13,7 @@ import Holzschnitte from '../components/ArtWork/Grafik/Holzschnitte'
 const GrafikPage = ({ data }) => {
     return(
         <Layout>
-          <Banner image={data.allContentfulBannerImage.nodes}/>
+          <Banner image={data.allContentfulPageBanner.nodes}/>
           <IntroText introdata={data.allContentfulIntroText.nodes}/>
           <div className="mb-5">
             <h1 className="">Das Zeichnerische Werk</h1>

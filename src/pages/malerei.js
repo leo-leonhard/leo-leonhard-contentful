@@ -9,7 +9,7 @@ import Aquarelle from '../components/ArtWork/Malerei/Aquarelle'
 
 const MalereiPage = ({ data }) => (
     <Layout>
-      <Banner image={data.allContentfulBannerImage.nodes}/>
+      <Banner image={data.allContentfulPageBanner.nodes}/>
       <br/>
       <IntroText introdata={data.allContentfulIntroText.nodes}/>
       <div className="mb-5">

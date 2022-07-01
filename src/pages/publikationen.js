@@ -17,7 +17,7 @@ const PublikationenPage = ( { data } ) => {
     return(
         <Layout>
           <div className="d-flex flex-column">
-            <Banner image={data.allContentfulBannerImage.nodes}/>
+            <Banner image={data.allContentfulPageBanner.nodes}/>
             <IntroText introdata={data.allContentfulIntroText.nodes}/>
           </div>
 
