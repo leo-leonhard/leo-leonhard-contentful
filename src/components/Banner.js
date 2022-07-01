@@ -1,8 +1,9 @@
 import React from 'react'
-import { graphql } from 'gatsby'
-import { getImage, GatsbyImage } from 'gatsby-plugin-image';
+import { qraphql } from 'gatsby'
+import { getImage, GatsbyImage } from 'gatsby-plugin-image'
 
-function PageBanner (props) {
+
+function Banner (props) {
     const image = props.image
     console.log(image)
     image.map(img => {
@@ -22,4 +23,4 @@ function PageBanner (props) {
     )}
 
 
-export default PageBanner
+export default Banner

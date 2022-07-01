@@ -3,7 +3,7 @@ import {graphql} from 'gatsby'
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 import Layout from '../components/Layout'
-import Banner from '../components/PageBanner'
+import PageBanner from '../components/PageBanner'
 import IntroText from '../components/IntroText'
 import Radierungen from '../components/ArtWork/Grafik/Radierungen'
 import Zeichnungen from '../components/ArtWork/Grafik/Zeichnungen'
@@ -13,7 +13,7 @@ import Holzschnitte from '../components/ArtWork/Grafik/Holzschnitte'
 const GrafikPage = ({ data }) => {
     return(
         <Layout>
-          <Banner image={data.allContentfulPageBanner.nodes}/>
+          <PageBanner image={data.allContentfulPageBanner.nodes}/>
           <IntroText introdata={data.allContentfulIntroText.nodes}/>
           <div className="mb-5">
             <h1 className="">Das Zeichnerische Werk</h1>

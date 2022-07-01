@@ -4,7 +4,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import {Card} from "react-bootstrap"
 
 import Layout from '../components/Layout'
-import Banner from '../components/PageBanner'
+import PageBanner from '../components/PageBanner'
 import Verzeichniss from '../components/Verzeichniss'
 import IntroText from '../components/IntroText'
 
@@ -17,7 +17,7 @@ const PublikationenPage = ( { data } ) => {
     return(
         <Layout>
           <div className="d-flex flex-column">
-            <Banner image={data.allContentfulPageBanner.nodes}/>
+            <PageBanner image={data.allContentfulPageBanner.nodes}/>
             <IntroText introdata={data.allContentfulIntroText.nodes}/>
           </div>
 

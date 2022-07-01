@@ -2,12 +2,12 @@ import React from 'react'
 import {graphql} from 'gatsby'
 
 import Layout from '../components/Layout'
-import Banner from '../components/PageBanner'
+import PageBanner from '../components/PageBanner'
 
 
 const LebenslaufPage = ( { data } ) => (
     <Layout>
-      <Banner image={data.allContentfulPageBanner.nodes}/>
+      <PageBanner image={data.allContentfulPageBanner.nodes}/>
     </Layout>
 )
 
