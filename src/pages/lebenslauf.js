@@ -13,7 +13,7 @@ const LebenslaufPage = ( { data } ) => (
 
 export const query = graphql`
 query getLebenslaufContent {
-  allContentfulBannerImage(filter: {slug: {eq: "lebenslauf"}}) {
+  allContentfulPageBanner(filter: {slug: {eq: "lebenslauf"}}) {
     nodes {
       slug
       image {

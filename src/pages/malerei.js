@@ -30,7 +30,7 @@ const MalereiPage = ({ data }) => (
 
 export const query = graphql`
 query getMalereiContent {
-  allContentfulBannerImage(filter: {slug: {eq: "malerei"}}) {
+  allContentfulPageBanner(filter: {slug: {eq: "malerei"}}) {
     nodes {
       slug
       image {

@@ -37,7 +37,7 @@ const GrafikPage = ({ data }) => {
 
 export const query = graphql`
 query getGrafikContent {
-  allContentfulBannerImage(filter: {slug: {eq: "grafik"}}) {
+  allContentfulPageBanner(filter: {slug: {eq: "grafik"}}) {
     nodes {
       slug
       image {

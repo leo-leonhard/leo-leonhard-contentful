@@ -59,7 +59,7 @@ const PublikationenPage = ( { data } ) => {
 
 export const query = graphql`
 query getPublikationenContent {
-  allContentfulBannerImage(filter: {slug: {eq: "publikationen"}}) {
+  allContentfulPageBanner(filter: {slug: {eq: "publikationen"}}) {
     nodes {
       slug
       image {
