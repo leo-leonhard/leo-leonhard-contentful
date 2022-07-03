@@ -27,11 +27,11 @@ const IndexPage = ({ data }) => {
                   {data.allContentfulGrafik.nodes.map(grafik => {
                           const image = getImage(grafik.image)
                       return(
-                          <div style={{maxWidth: "240px"}}>
-                            <div>
+                          <div className="d-flex flex-column" style={{maxWidth: "240px"}}>
+                            <div style={{height: "4.5em"}}>
                               <h4 style={{textTransform: "uppercase"}}><b>{grafik.title}</b></h4>
-                              <h4 style={{textTransform: "uppercase"}}>{grafik.year}</h4>
-                            </div>
+                          <h4 style={{textTransform: "uppercase"}}>{grafik.year}</h4>
+                          </div>
                             <GatsbyImage image={image}/>
                           </div>
                       )
