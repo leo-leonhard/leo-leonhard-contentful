@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql, StaticQuery } from "gatsby"
+import { Button } from "react-bootstrap"
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import MDXRenderer from "gatsby-plugin-mdx/mdx-renderer"
 import { MDXProvider } from "@mdx-js/react"
@@ -41,6 +42,7 @@ const ShowCaseBox = ({data}) => (
                             width: "90%"
                         }}>
                         <p style={{fontSize: "0.9em"}}>{box.text.childMdx.excerpt}</p>
+                    <Button style={{background: "#589AAD", color: "#FBFBFD", border: "none", fontSize: "0.8em", padding: "0.2em 1.4em", borderRadius: "0"}}>mehr</Button>
                       </div>
                     </div>
                 )

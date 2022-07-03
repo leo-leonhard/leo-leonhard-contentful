@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { graphql } from 'gatsby'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 import Layout from '../components/Layout'
 import Slidy from '../components/Slick'
@@ -21,7 +22,22 @@ const IndexPage = ({ data }) => {
               <Banner image={data.allContentfulBannerImage.nodes}/>
               <ShowCaseBox/>
               <div style={{background: "#BFD8E5", padding: "2em 4em"}}>
-                <h2>DIE GRAFISCHEN MAPPENWERKE</h2>
+                <h2 className="mb-5">DIE GRAFISCHEN MAPPENWERKE</h2>
+                <div className="d-flex justify-content-between mb-4">
+                  {data.allContentfulGrafik.nodes.map(grafik => {
+                          const image = getImage(grafik.image)
+                      return(
+                          <div style={{maxWidth: "240px"}}>
+                            <div>
+                              <h4 style={{textTransform: "uppercase"}}><b>{grafik.title}</b></h4>
+                              <h4 style={{textTransform: "uppercase"}}>{grafik.year}</h4>
+                            </div>
+                            <GatsbyImage image={image}/>
+                          </div>
+                      )
+                      })}
+
+                </div>
                 <div>
         Lorem ipsum dolor sit amet, consectetuer adipiscing elit.  Donec hendrerit tempor tellus.  Donec pretium posuere tellus.  Proin quam nisl, tincidunt et, mattis eget, convallis nec, purus.  Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.  Nulla posuere.  Donec vitae dolor.  Nullam tristique diam non turpis.  Cras placerat accumsan nulla.  Nullam rutrum.  Nam vestibulum accumsan nisl.
             </div>
@@ -33,6 +49,20 @@ const IndexPage = ({ data }) => {
 
 export const query = graphql`
     query IntroTextQuery {
+      allContentfulGrafik(limit: 3) {
+        nodes {
+          year
+          slug
+          width
+          type
+          title
+          id
+          height
+          image {
+            gatsbyImageData(width: 240)
+          }
+        }
+      }
         allContentfulBannerImage {
             nodes {
                 image {
