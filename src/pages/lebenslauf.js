@@ -10,8 +10,10 @@ import portrait from "../images/portrait.jpg"
 const LebenslaufPage = ( { data } ) => (
     <>
       <NavBar/>
-      <PageBanner image={data.allContentfulPageBanner.nodes}/>
-      <div style={{width: "55%", margin: "0 auto"}}>
+      <div style={{width: "75%", margin: "0 auto"}}>
+    <PageBanner image={data.allContentfulPageBanner.nodes}/>
+    </div>
+      <div style={{width: "50%", margin: "0 auto"}}>
         <h2>ÜBER LEO LEONHARD</h2>
         <p>„Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tem-
           por invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
@@ -39,7 +41,7 @@ const LebenslaufPage = ( { data } ) => (
       <br/>
 
       <div className="pt-5 pb-5 mt-5 mb-5" style={{background: "#F8F3EA"}}>
-        <div  style={{width: "55%", margin: "0 auto"}}>
+        <div style={{width: "50%", margin: "0 auto"}}>
           <div className="mb-5">
             <h2>LEBENSSTATIONEN</h2>
             <h2>LEO LEONHARD</h2>
@@ -49,10 +51,9 @@ const LebenslaufPage = ( { data } ) => (
           <img src={portrait}/>
           <div className="mt-5">
             {data.allContentfulLebenslauf.nodes.map(entry => (
-                <div style={{lineHeight: "0.5em"}}>
+                <div>
                   <p><b>{entry.year}</b></p>
-                  <p>{entry.event}</p>
-                  <br/>
+                  <p style={{marginTop: "-0.7em"}}>{entry.event}</p>
                   <br/>
                 </div>
             ))}
@@ -61,7 +62,7 @@ const LebenslaufPage = ( { data } ) => (
       </div>
 
       <div className="pt-5 pb-5 mt-5 mb-5" style={{background: "#F8F3EA"}}>
-        <div style={{width: "55%", margin: "0 auto"}}>
+        <div style={{width: "50%", margin: "0 auto"}}>
           <h2>LEO LEONHARD – EIN NACHRUF</h2>
           <h2>Von Roland Held – 08.08.2011</h2>
           <p>
