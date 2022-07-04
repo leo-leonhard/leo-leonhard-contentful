@@ -17,7 +17,7 @@ function Banner (props) {
               return(
                   <div key={img.slug}>
                     <BgImage className="mb-5 d-flex align-items-end" image={image} style={{maxHeight: "100%", objectFit: "contain",height: "93vh"}}>
-                      <div className="slider-text-box" style={{padding: "1em 2em",color: "#FBFBFD", background: "rgba(95,149,169,0.8)"}}>
+                      <div className="banner-text-box" style={{padding: "1em 2em",color: "#FBFBFD", background: "rgba(95,149,169,0.8)"}}>
                     <p style={{textTransform: "uppercase", fontWeight: "bold"}}>{img.title}</p>
                         <MDXProvider>
                           <MDXRenderer>

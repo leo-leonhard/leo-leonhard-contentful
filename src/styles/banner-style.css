@@ -34,6 +34,14 @@
     margin: 2em 3em;
 }
 
+.banner-text-box {
+    text-decoration: none;
+    width: 30%;
+    min-height: 10em;
+    padding: 0.5em 2em;
+    margin: 1em 8em;
+}
+
 
 
 /* MOBILE Portrait */
