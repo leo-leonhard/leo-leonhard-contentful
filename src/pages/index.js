@@ -20,7 +20,7 @@ const IndexPage = ({ data }) => {
         <>
           <NavBar/>
           <div className="d-flex flex-column">
-            <div className="main-layout">
+            <div  style={{width: "75%", margin: "0 auto"}}>
               <Slidy/>
             </div>
             <div className="main-layout">
