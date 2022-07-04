@@ -170,7 +170,7 @@ query getLebenslaufContent {
       }
     }
   }
- allContentfulLebenslauf {
+ allContentfulLebenslauf(sort: {fields: year, order: ASC}) {
     nodes {
       year
       event
