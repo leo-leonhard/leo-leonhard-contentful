@@ -141,6 +141,8 @@ const LebenslaufPage = ( { data } ) => (
         </div>
       </div>
 
+      <br/>
+
       <div style={{width: "55%", margin: "0 auto 3em auto"}}>
         <h2>AUSZEICHNUNGEN</h2>
         <hr style={{width: "20%", margin: "3em 0 1em 0"}}/>
@@ -157,44 +159,59 @@ const LebenslaufPage = ( { data } ) => (
           ))}
         </div>
       </div>
-      <AusstellungsSection name="hanna"/>
+
+      <br/>
+      <br/>
+
       <div style={{width: "55%", margin: "0 auto 3em auto"}}>
         <h2>EINZELAUSSTELLUNGEN</h2>
         <hr style={{width: "20%", margin: "3em 0 1em 0"}}/>
         <div className="d-flex flex-column">
-          {data.allContentfulEinzelausstellungen.nodes.map(ausstellung => {
-              return(
+          {data.allContentfulEinzelausstellungen.nodes.map(ausstellung => (
                   <div>
                     <h3 className="mt-2 mb-4" style={{color: "#589AAD"}}>{ausstellung.zeitraum}</h3>
                     <div className="d-flex flex-column"  style={{height: ausstellung.height, flexFlow: "wrap"}}>
-                    {ausstellung.ausstellungen.map(x => (
-                        <div className="mb-3" style={{maxWidth: "50%",fontSize: "0.8em"}}>
-                        <p style={{margin: "0"}}>{x.year}</p>
-                          {x.venues.map(v=>(
-                              <p style={{margin: "0"}}>{v.name}</p>
-                          ))}
-                        </div>
-                    ))}
+                      {ausstellung.ausstellungen.map(x => (
+                          <div className="mb-3" style={{maxWidth: "50%",fontSize: "0.8em"}}>
+                            <p style={{margin: "0"}}>{x.year}</p>
+                            {x.venues.map(v=>(
+                                <p style={{margin: "0"}}>{v.name}</p>
+                            ))}
+                          </div>
+                      ))}
                     </div>
-                     <hr style={{width: "20%"}}/>
+                    <hr style={{width: "20%"}}/>
                   </div>
-              )
-          }
-                                                    )}
+              ))}
+        </div>
+      </div>
+      <br/>
+      <br/>
+      <div style={{width: "55%", margin: "0 auto 3em auto"}}>
+        <h2>GRUPPENAUSSTELLUNGEN</h2>
+        <hr style={{width: "20%", margin: "3em 0 1em 0"}}/>
+        <div className="d-flex flex-column">
+          {data.allContentfulGruppenausstellungen.nodes.map(ausstellung => (
+              <div>
+                <h3 className="mt-2 mb-4" style={{color: "#589AAD"}}>{ausstellung.zeitraum}</h3>
+                <div className="d-flex flex-column"  style={{height: ausstellung.height, flexFlow: "wrap"}}>
+                  {ausstellung.gruppenausstellung.map(x => (
+                      <div className="mb-3" style={{maxWidth: "50%",fontSize: "0.8em"}}>
+                        <p style={{margin: "0"}}>{x.year}</p>
+                        {x.venues.map(v=>(
+                            <p style={{margin: "0"}}>{v.name}</p>
+                        ))}
+                      </div>
+                  ))}
+                </div>
+                <hr style={{width: "20%"}}/>
+              </div>
+          ))}
         </div>
       </div>
       <Footer/>
     </>
 )
-
-const AusstellungsSection = (props) => {
-    console.log(props.text)
-    return(
-        <div className="mb-2" style={{lineHeight: "0.4em", fontSize: "0.8em"}}>
-          <p>{props.year}</p>
-        </div>
-    )
-}
 
 
 export const query = graphql`
@@ -229,6 +246,18 @@ allContentfulAuszeichnung(sort: {fields: year, order: ASC}) {
       zeitraum
       height
       ausstellungen {
+        year
+        venues {
+          name
+        }
+      }
+    }
+  }
+  allContentfulGruppenausstellungen(sort: {fields: zeitraum, order: ASC}) {
+    nodes {
+      zeitraum
+      height
+      gruppenausstellung {
         year
         venues {
           name
