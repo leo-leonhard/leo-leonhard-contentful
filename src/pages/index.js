@@ -8,8 +8,9 @@ import Footer from '../components/Footer'
 import Slidy from '../components/Slick'
 import IntroText from '../components/IntroText'
 import ShowCaseBox from '../components/ShowCaseBox'
+import Banner from '../components/Banner'
 
-import Banner from '../components/Banner.js'
+import konzert from '../images/Konzert.jpg'
 
 import '../styles/index.css'
 
@@ -52,7 +53,7 @@ const IndexPage = ({ data }) => {
                 </div>
               </div>
             </div>
-
+            <img src={konzert}/>
           </div>
           <Footer/>
         </>
