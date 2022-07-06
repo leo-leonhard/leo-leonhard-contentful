@@ -8,6 +8,8 @@ import Footer from '../components/Footer'
 import PageBanner from '../components/PageBanner'
 
 import portrait from "../images/portrait.jpg"
+import selbstportraet from "../images/selbstporttraet.png"
+
 
 const LebenslaufPage = ( { data } ) => (
     <>
@@ -15,7 +17,7 @@ const LebenslaufPage = ( { data } ) => (
       <div style={{width: "75%", margin: "0 auto"}}>
         <PageBanner image={data.allContentfulPageBanner.nodes}/>
       </div>
-      <div style={{width: "65%", margin: "0 auto"}}>
+      <div style={{width: "60%", margin: "0 auto"}}>
         <h2>ÜBER LEO LEONHARD</h2>
         <p>„Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tem-
           por invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
@@ -43,7 +45,7 @@ const LebenslaufPage = ( { data } ) => (
       <br/>
 
       <div className="pt-5 pb-5 mt-5 mb-5" style={{background: "#F8F3EA"}}>
-        <div style={{width: "65%", margin: "0 auto"}}>
+        <div style={{width: "60%", margin: "0 auto"}}>
           <div style={{margin: "0 auto"}}>
           <div className="mb-5">
             <h2>LEBENSSTATIONEN</h2>
@@ -54,9 +56,9 @@ const LebenslaufPage = ( { data } ) => (
           <img src={portrait}/>
           <div className="mt-4">
             {data.allContentfulLebenslauf.nodes.map(entry => (
-                <div>
+                <div style={{fontSize: "0.9em"}}>
                   <p><b>{entry.year}</b></p>
-                  <p style={{marginTop: "-0.7em"}}>{entry.event}</p>
+                  <p style={{marginTop: "-1em"}}>{entry.event}</p>
                 </div>
             ))}
     </div>
@@ -65,7 +67,7 @@ const LebenslaufPage = ( { data } ) => (
       </div>
 
       <div className="pt-5 pb-5 mt-5 mb-5" style={{background: "#F8F3EA"}}>
-        <div style={{width: "65%", margin: "0 auto"}}>
+        <div style={{width: "60%", margin: "0 auto"}}>
           <h2>LEO LEONHARD – EIN NACHRUF</h2>
           <h2>Von Roland Held – 08.08.2011</h2>
           <p>
@@ -145,7 +147,7 @@ const LebenslaufPage = ( { data } ) => (
 
       <br/>
 
-      <div style={{width: "65%", margin: "0 auto 3em auto"}}>
+      <div style={{width: "60%", margin: "0 auto 3em auto"}}>
         <h2>AUSZEICHNUNGEN</h2>
         <hr style={{width: "20%", margin: "3em 0 1em 0"}}/>
         <div>
@@ -163,9 +165,15 @@ const LebenslaufPage = ( { data } ) => (
       </div>
 
       <br/>
+      <div style={{width: "60%",margin: "0 auto"}}>
+        <img src={selbstportraet}/>
+      </div>
+      <br/>
+      <br/>
+      <br/>
       <br/>
 
-      <div style={{width: "65%", margin: "0 auto 3em auto"}}>
+      <div style={{width: "60%", margin: "0 auto 3em auto"}}>
         <h2>EINZELAUSSTELLUNGEN</h2>
         <hr style={{width: "20%", margin: "3em 0 1em 0"}}/>
         <div className="d-flex flex-column">
@@ -174,7 +182,7 @@ const LebenslaufPage = ( { data } ) => (
                     <h3 className="mt-2 mb-4" style={{color: "#589AAD"}}>{ausstellung.zeitraum}</h3>
                     <div className="d-flex flex-column"  style={{height: ausstellung.height, flexFlow: "wrap"}}>
                       {ausstellung.ausstellungen.map(x => (
-                          <div className="mb-3" style={{maxWidth: "45%",fontSize: "0.8em"}}>
+                          <div className="mb-3" style={{maxWidth: "45%",fontSize: "0.7em"}}>
                             <p style={{margin: "0"}}>{x.year}</p>
                             {x.venues.map(v=>(
                                 <p style={{margin: "0"}}>{v.name}</p>
@@ -188,8 +196,9 @@ const LebenslaufPage = ( { data } ) => (
         </div>
       </div>
       <br/>
+
       <br/>
-      <div style={{width: "65%", margin: "0 auto 3em auto"}}>
+      <div style={{width: "60%", margin: "0 auto 3em auto"}}>
         <h2>GRUPPENAUSSTELLUNGEN</h2>
         <hr style={{width: "20%", margin: "3em 0 1em 0"}}/>
         <div className="d-flex flex-column">
@@ -198,7 +207,7 @@ const LebenslaufPage = ( { data } ) => (
                 <h3 className="mt-2 mb-4" style={{color: "#589AAD"}}>{ausstellung.zeitraum}</h3>
                 <div className="d-flex flex-column"  style={{height: ausstellung.height, flexFlow: "wrap"}}>
                   {ausstellung.gruppenausstellung.map(x => (
-                      <div className="mb-3" style={{maxWidth: "45%",fontSize: "0.8em"}}>
+                      <div className="mb-3" style={{maxWidth: "45%",fontSize: "0.7em"}}>
                         <p style={{margin: "0"}}>{x.year}</p>
                         {x.venues.map(v=>(
                             <p style={{margin: "0"}}>{v.name}</p>
