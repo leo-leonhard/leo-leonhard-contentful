@@ -53,7 +53,8 @@ const IndexPage = ({ data }) => {
                 </div>
               </div>
             </div>
-            <img src={konzert}/>
+            <div style={{height: "65vw", backgroundImage: `url(${konzert})`, backgroundPosition: "bottom",backgroundSize: "cover"}}>
+            </div>
           </div>
           <Footer/>
         </>
