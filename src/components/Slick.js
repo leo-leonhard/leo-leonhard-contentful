@@ -64,7 +64,7 @@ export default class Slidy extends Component {
                                   className="d-flex align-items-end"
                                   alt={image.imageTitle}
                                   image={slickImage}
-                                  style={{maxHeight: "100%", objectFit: "contain",height: "93vh"}}
+                                  style={{maxHeight: "80%", objectFit: "contain", height: "73vh"}}
                                 >
                                   <Link
                                     to={image.page}
