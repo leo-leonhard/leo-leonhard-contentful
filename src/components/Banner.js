@@ -13,7 +13,7 @@ import '../styles/banner-style.css'
 function Banner (props) {
     const image = props.image
     return(
-        <div>
+        <div className="mt-4">
           {image.map(img => {
               const image = getImage(img.image)
               return(
