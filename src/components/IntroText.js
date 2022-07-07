@@ -6,7 +6,7 @@ import MDXRenderer from "gatsby-plugin-mdx/mdx-renderer"
 function IntroText(props) {
     const introdata = props.introdata
     return(
-          <div style={{margin: "5em 3em"}}>
+          <div style={{margin: "2em 3em"}}>
             {introdata.map((intro) => {
                 console.log(intro)
                 return(
