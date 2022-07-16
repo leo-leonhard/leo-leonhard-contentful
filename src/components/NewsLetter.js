@@ -49,6 +49,7 @@ export default class Newsletter extends React.Component {
             <FontAwesomeIcon icon={faPlay}  style={{backgorund: "#589AAD", color: "#FBFBFD"}}/>
                 </button>
               </div>
+
 		    </form>
         );
     }

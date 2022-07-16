@@ -180,7 +180,7 @@ const LebenslaufPage = ( { data } ) => (
           {data.allContentfulEinzelausstellungen.nodes.map(ausstellung => (
                   <div>
                     <h3 className="mt-2 mb-4" style={{color: "#589AAD"}}>{ausstellung.zeitraum}</h3>
-                    <div className="d-flex flex-column"  style={{height: ausstellung.height, flexFlow: "wrap"}}>
+                    <div className="d-flex flex-column" style={{height: ausstellung.height, flexFlow: "wrap"}}>
                       {ausstellung.ausstellungen.map(x => (
                           <div className="mb-3" style={{maxWidth: "45%",fontSize: "0.7em"}}>
                             <p style={{margin: "0"}}>{x.year}</p>

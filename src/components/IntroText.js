@@ -12,7 +12,7 @@ function IntroText(props) {
                 return(
                     <div key={intro.key}>
                       <div>
-                      <h1 style={{fontWeight: "bold", marginBottom: "1em", maxWidth: "65ch"}}>{intro.header}</h1>
+                      <h1 className="fett" style={{marginBottom: "1em", maxWidth: "65ch"}}>{intro.header}</h1>
                     <div style={{fontSize: "1.3em"}}>
                       <MDXProvider>
                         <MDXRenderer>
