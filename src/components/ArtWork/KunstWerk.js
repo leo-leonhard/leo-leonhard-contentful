@@ -12,9 +12,9 @@ export default function Kunstwerk(props) {
               return(
                   <div className="d-flex flex-column mb-5"  style={{width: "20%"}}>
                     <Link to={werk.slug} style={{textDecoration: "none", color: "black"}}>
-                    <h4 style={{height: "2em"}}>{werk.title}, {werk.year}</h4>
-                  <GatsbyImage image={image}/>
-                  </Link>
+                      <h4 style={{height: "2em"}}>{werk.title}, {werk.year}</h4>
+                      <GatsbyImage image={image}/>
+                    </Link>
                   </div>
               )
           })}

@@ -28,6 +28,10 @@ body, html {
     padding: 0.5em 0;
 }
 
+.fett {
+    font-family: globalfontsuperfett
+}
+
 h1 {
     font-size: 1.7em;
     color: #589AAD;

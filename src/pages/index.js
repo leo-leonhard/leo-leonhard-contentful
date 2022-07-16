@@ -41,7 +41,7 @@ const IndexPage = ({ data }) => {
                       return(
                           <div className="d-flex flex-column" style={{maxWidth: "240px"}}>
                             <div style={{height: "4.5em"}}>
-                              <h4 style={{textTransform: "uppercase"}}><b>{grafik.title}</b></h4>
+                              <h4 className="fett" style={{textTransform: "uppercase"}}>{grafik.title}</h4>
                               <h4 style={{textTransform: "uppercase"}}>{grafik.year}</h4>
                             </div>
                             <GatsbyImage image={image}/>

@@ -36,7 +36,7 @@ const ShowCaseBox = ({data}) => (
                 return(
                     <div key={box.id} style={{width: "14em"}} className="mb-5">
                       <GatsbyImage image={image} style={{marginBottom: "1em", width: "14em", height: "12em"}}/>
-                      <h4><b>{box.header}</b></h4>
+                      <h4 className="fett">{box.header}</h4>
                       <div
                         style={{
                             width: "90%"

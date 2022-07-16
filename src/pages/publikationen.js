@@ -34,8 +34,8 @@ const PublikationenPage = ( { data } ) => {
                         <div className="d-flex flex-column">
                           <GatsbyImage style={{maxWidth: "100%"}} image={image}/>
                           <div className="mt-2 d-flex flex-column" style={{maxWidth: "100%"}}>
-                            <p style={{margin: "0.1em 0", fontSize: "0.8em"}}><b>{book.year}</b></p>
-                            <p style={{margin: "0.3em 0", color: "#5291A3",fontSize: "0.8em"}}><b>{book.title}</b></p>
+                            <p className="fett" style={{margin: "0.1em 0", fontSize: "0.8em"}}>{book.year}</p>
+                            <p className="fett" style={{margin: "0.3em 0", color: "#5291A3",fontSize: "0.8em"}}>{book.title}</p>
                             <p style={{margin: "0.2em 0", fontSize: "0.8em"}}>{book.subtitle}</p>
                         </div>
                       </div>
