@@ -57,7 +57,7 @@ const LebenslaufPage = ( { data } ) => (
           <div className="mt-4">
             {data.allContentfulLebenslauf.nodes.map(entry => (
                 <div style={{fontSize: "0.9em"}}>
-                  <p><b>{entry.year}</b></p>
+                  <p className="fett">{entry.year}</p>
                   <p style={{marginTop: "-1em"}}>{entry.event}</p>
                 </div>
             ))}
@@ -153,7 +153,7 @@ const LebenslaufPage = ( { data } ) => (
         <div>
           {data.allContentfulAuszeichnung.nodes.map(award => (
               <div>
-                <p><b>{award.year}</b></p>
+                <p className="fett">{award.year}</p>
                 <MDXProvider>
                   <MDXRenderer>
                     {award.auszeichnungen.childMdx.body}
