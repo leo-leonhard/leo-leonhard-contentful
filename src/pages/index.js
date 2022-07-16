@@ -4,6 +4,7 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 import NavBar from '../components/NavBar'
 import Footer from '../components/Footer'
+import NewsLetter from '../components/NewsLetter'
 
 import Slidy from '../components/Slick'
 import IntroText from '../components/IntroText'
@@ -53,7 +54,14 @@ const IndexPage = ({ data }) => {
                 </div>
               </div>
             </div>
-            <div style={{height: "65vw", backgroundImage: `url(${konzert})`, backgroundPosition: "bottom",backgroundSize: "cover"}}>
+
+            <div className="d-flex flex-column align-items-center" style={{margin: "1em auto"}}>
+              <p style={{padding: "0", margin: "0"}}>Wir informieren Sie über Neuigkeiten, Ausstellungen und Publikationen zu Leo Leonhard.</p>
+              <p >Einfach hier anmelden:</p>
+              <NewsLetter/>
+            </div>
+
+            <div className="mt-5" style={{height: "65vw", backgroundImage: `url(${konzert})`, backgroundPosition: "bottom",backgroundSize: "cover"}}>
             </div>
           </div>
           <Footer/>
