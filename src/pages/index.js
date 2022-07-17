@@ -55,12 +55,7 @@ const IndexPage = ({ data }) => {
               </div>
             </div>
 
-            <div className="d-flex flex-column align-items-center" style={{margin: "1em auto"}}>
-              <p style={{padding: "0", margin: "0"}}>Wir informieren Sie über Neuigkeiten, Ausstellungen und Publikationen zu Leo Leonhard.</p>
-              <p >Einfach hier anmelden:</p>
               <NewsLetter/>
-
-            </div>
 
             <div className="mt-5" style={{height: "65vw", backgroundImage: `url(${konzert})`, backgroundPosition: "bottom",backgroundSize: "cover"}}>
             </div>
