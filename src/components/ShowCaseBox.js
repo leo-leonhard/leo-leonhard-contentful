@@ -30,7 +30,7 @@ const ShowCaseBox = ({data}) => (
     `}
       render={data => (
 
-          <div className="d-flex flex-wrap justify-content-between" style={{margin: "3em", maxWidth: "100%", gap: "1em"}}>
+          <div className="d-flex flex-wrap justify-content-between" style={{margin: "3em", maxWidth: "100%", gap: "22px"}}>
             {data.allContentfulShowcaseBox.nodes.map((box) => {
                 const image = getImage(box.image)
                 return(
