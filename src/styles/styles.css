@@ -324,17 +324,20 @@ and (orientation: portrait) {
     display: none;
 }
 
-/* Portrait Tablet */
-@media only screen
-and (min-device-width : 768px)
-and (max-device-width : 1024px)
-and (orientation : portrait) {
+@media (max-width : 1024px) {
     #header, #banner-container, .footer {
         width: 100% !important;
     }
     .navbar-nav {
         margin-left: 1em;
     }
+}
+/* Portrait Tablet */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : portrait) {
+
     .visible-on-tablet {
         display: unset;
     }
