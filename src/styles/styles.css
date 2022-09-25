@@ -329,8 +329,11 @@ and (orientation: portrait) {
 and (min-device-width : 768px)
 and (max-device-width : 1024px)
 and (orientation : portrait) {
-    #header {
+    #header, #banner-container, .footer {
         width: 100% !important;
+    }
+    .navbar-nav {
+        margin-left: 1em;
     }
     .visible-on-tablet {
         display: unset;
