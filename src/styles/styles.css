@@ -65,6 +65,104 @@ p {
     font-size: 1em;
 }
 
+.container{
+    max-width: 100% !important;
+}
+
+.dropdown-item:focus, .dropdown-item:active {
+    background: #9ED9EF;
+}
+
+
+.hover-underline-animation {
+  display: inline-block;
+  position: relative;
+
+}
+
+.hover-underline-animation:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #0087ca;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.logo, .signet {
+    max-width: 90%;
+}
+
+
+#basic-navbar-nav {
+    width: 30%;
+    justify-content: space-between;
+}
+
+.navbar-nav {
+    justify-content: space-between;
+    width: 100%;
+}
+
+.navbar-collapse {
+    flex-grow: 0 !important;
+}
+
+.navbar-light .navbar-brand {
+    color: #589AAD;
+    font-size: 2em;
+}
+
+.navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-brand:hover  .navbar-brand:active {
+    color: #9ED9EF;
+}
+
+.navbar-light .navbar-nav .nav-link:active {
+    color: #9ED9EF;
+}
+
+.navbar-light .navbar-brand:focus, .navbar-light .navbar-brand:hover {
+    color: #9ED9EF;
+}
+.navbar-light .navbar-nav .nav-link {
+    color: #212529;
+}
+
+.navbar-light .navbar-toggler {
+    border: none !important;
+}
+
+
+
+/* Portrait Mobile */
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 480px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: portrait) {
+    .navbar-light .navbar-brand {
+        width: 70%;
+    }
+    .logo {
+        max-width: 60%;
+    }
+    .signet {
+        max-width: 30%;
+    }
+}
+
+
+
+
 .ubuntu-bold {
     font-family: globalfontsuperfett;
 }
@@ -102,6 +200,50 @@ hr {
     margin: 0 auto;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&family=Montserrat:wght@100&family=Red+Hat+Mono:wght@300&display=swap');
+
+.banner-text {
+    width: 50%;
+    margin: 6.5em 1.5em;
+    float: right;
+    display: flex;
+    flex-direction: column;
+}
+
+.banner-text h2 {
+    font-family: 'EB Garamond', serif;
+    font-weight: 400;
+    font-size: 2.3em;
+    line-height: 1.4;
+    color: white;
+}
+
+
+.banner-text h2, .banner-text img{
+    margin-left: auto;
+
+}
+
+.banner-text img{
+    padding: 0 4em;
+}
+
+.slider-text-box {
+    text-decoration: none;
+    width: 40%;
+    min-height: 10em;
+    padding: 0.5em 2em;
+    margin: 2em 3em;
+}
+
+.banner-text-box {
+    text-decoration: none;
+    width: 30%;
+    min-height: 10em;
+    padding: 0.5em 2em;
+    margin: 1em 8em;
+}
+
 
 
 /* Desktops and laptops ----------- */
@@ -129,6 +271,10 @@ and (orientation: portrait) {
     }
     .homepage-banner {
         margin: 0;
+    }
+    .slider-text-box {
+        width: 100%;
+        margin: 1em;
     }
     .banner-text {
         width: 100% !important;
@@ -183,6 +329,9 @@ and (orientation: portrait) {
 and (min-device-width : 768px)
 and (max-device-width : 1024px)
 and (orientation : portrait) {
+    #header {
+        width: 100% !important;
+    }
     .visible-on-tablet {
         display: unset;
     }
@@ -218,5 +367,6 @@ and (orientation : portrait) {
     .werk{
         margin-bottom: 4em !important;
     }
+
 
 }

@@ -31,9 +31,6 @@
   transform-origin: bottom left;
 }
 
-
-
-
 .logo, .signet {
     max-width: 90%;
 }
@@ -48,7 +45,6 @@
     justify-content: space-between;
     width: 100%;
 }
-
 
 .navbar-collapse {
     flex-grow: 0 !important;
@@ -80,7 +76,6 @@
 
 
 
-
 /* Portrait Mobile */
 @media only screen
 and (min-device-width: 320px)
@@ -100,9 +95,20 @@ and (orientation: portrait) {
 
 
 /* Portrait Tablet */
-@media only screen
-and (min-device-width : 768px)
-and (max-device-width : 1024px)
-and (orientation : portrait) {
+@media (min-device-width : 768px) and (max-device-width : 1024px) {
+    #header{
+        border: 2px solid red;
+    }
+    .navbar .navbar-expand-lg .navbar-light{
+        width: 100%;
+        border: 2px solid red;
+    }
+}
 
+/* iPads (portrait) ----------- */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    /* Styles */
+        #header {
+            width: 100% !important;
+        }
 }

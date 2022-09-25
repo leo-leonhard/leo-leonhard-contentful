@@ -7,7 +7,6 @@ import { MDXProvider } from "@mdx-js/react"
 import MDXRenderer from "gatsby-plugin-mdx/mdx-renderer"
 import { BgImage } from 'gbimage-bridge';
 import { converToBgImage } from "gbimage-bridge"
-import '../styles/banner-style.css'
 
 
 function Banner (props) {
