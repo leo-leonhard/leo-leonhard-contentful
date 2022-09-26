@@ -141,6 +141,11 @@ p {
     border: none !important;
 }
 
+.slick-arrow {
+    display: none !important;
+}
+
+
 
 
 /* Portrait Mobile */
@@ -201,6 +206,7 @@ hr {
 }
 
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond&family=Montserrat:wght@100&family=Red+Hat+Mono:wght@300&display=swap');
+
 
 .banner-text {
     width: 50%;
