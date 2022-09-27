@@ -19,12 +19,14 @@ function Banner (props) {
                   <div key={img.slug}>
                     <BgImage className="mb-5 d-flex align-items-end" image={image} style={{maxHeight: "100%", objectFit: "contain",height: "93vh"}}>
                       <div className="banner-text-box" style={{padding: "1em 2em",color: "#FBFBFD", background: "rgba(95,149,169,0.8)"}}>
-                        <p className="fett" style={{textTransform: "uppercase"}}>{img.title}</p>
+                        <p className="fett" style={{textTransform: "uppercase", fontSize: "1.8vw"}}>{img.title}</p>
+                  <div style={{fontSize: "1.2vw"}}>
                         <MDXProvider>
                           <MDXRenderer>
                             {img.text.childMdx.body}
                           </MDXRenderer>
-                        </MDXProvider>
+                  </MDXProvider>
+                  </div>
                       </div>
                     </BgImage>
                   </div>
