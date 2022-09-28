@@ -325,7 +325,6 @@ and (orientation: portrait) {
     }
 }
 
-
 .visible-on-tablet {
     display: none;
 }
@@ -336,6 +335,21 @@ and (orientation: portrait) {
     }
     .navbar-nav {
         margin-left: 1em;
+    }
+    .main-layout {
+        width: 85%;
+    }
+    .showcase-box {
+
+    }
+    .showcase-section {
+        width: 45% !important;
+        margin: 0 !important;
+        gap: none;
+    }
+    .showcase-image {
+        width: 100% !important;
+
     }
 }
 /* Portrait Tablet */

@@ -22,7 +22,7 @@ const ShowCaseBox = ({data}) => (
                 }
               }
               image {
-                gatsbyImageData(width: 225, placeholder: BLURRED)
+                gatsbyImageData(width: 525, placeholder: BLURRED)
               }
             }
           }
@@ -30,12 +30,12 @@ const ShowCaseBox = ({data}) => (
     `}
       render={data => (
 
-          <div className="d-flex flex-wrap justify-content-between" style={{margin: "3em", maxWidth: "100%", gap: "22px"}}>
+          <div className="d-flex flex-wrap justify-content-between showcase-box" style={{margin: "3em", maxWidth: "100%", gap: "22px"}}>
             {data.allContentfulShowcaseBox.nodes.map((box) => {
                 const image = getImage(box.image)
                 return(
-                    <div key={box.id} style={{width: "14em"}} className="mb-5">
-                      <GatsbyImage image={image} style={{marginBottom: "1em", width: "14em", height: "12em"}}/>
+                    <div key={box.id} style={{width: "14em"}} className="mb-5 showcase-section">
+                      <GatsbyImage className="showcase-image" image={image} style={{marginBottom: "1em", width: "14em", height: "12em"}}/>
                       <h4 className="fett">{box.header}</h4>
                       <div
                         style={{
