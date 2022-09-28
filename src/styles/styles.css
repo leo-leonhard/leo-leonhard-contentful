@@ -164,10 +164,9 @@ and (orientation: portrait) {
         max-width: 30%;
     }
 }
-
-
-
-
+.main-layout div {
+    margin: 0 !important;
+}
 .ubuntu-bold {
     font-family: globalfontsuperfett;
 }
