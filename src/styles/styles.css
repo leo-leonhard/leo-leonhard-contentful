@@ -115,138 +115,27 @@ p {
 .slick-arrow {
     display: none !important;
 }
-/* Portrait Mobile */
-@media only screen
-and (min-device-width: 320px)
-and (max-device-width: 480px)
-and (-webkit-min-device-pixel-ratio: 2)
-and (orientation: portrait) {
-    .navbar-light .navbar-brand {
-        width: 70%;
-    }
-    .logo {
-        max-width: 60%;
-    }
-    .signet {
-        max-width: 30%;
-    }
-    .main-layout div {
-        margin: 0 !important;
-    }
-    .banner-text-box{
-        margin: 1em !important;
-        width: 80% !important;
-    }
 
-    .banner-text-box p{
-        font-size: 4vw;
-    }
-
+.mappenwerk-title, .mappenwerk-image {
+    max-width: 95%;
 }
 
 
-.ubuntu-bold {
-    font-family: globalfontsuperfett;
-}
-
-.container, .container-lg, .container-md, .container-sm, .container-xl {
-    max-width: 90%;
-    margin: 0 auto;
-    padding: 0;
-}
-
-hr {
-    height: 3px !important;
-    opacity: 1;
-    color: #589AAD;
-    width: 100%;
-}
-
-.index-image-container {
-    background-image: url(../images/index_laptop.png);
-    height: 89vh;
-    background-size: cover;
-}
-
-.artwork-detail-image-container {
-    width: 50%;
-}
-
-.artwork-detail-image-container img {
-    width: 100%;
-}
-
-.artwork-detail-text {
-    width: 50%;
-    padding: 0 1em;
-    margin: 0 auto;
-}
-
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&family=Montserrat:wght@100&family=Red+Hat+Mono:wght@300&display=swap');
-
-
-.banner-text {
-    width: 50%;
-    margin: 6.5em 1.5em;
-    float: right;
-    display: flex;
-    flex-direction: column;
-}
-
-.banner-text h2 {
-    font-family: 'EB Garamond', serif;
-    font-weight: 400;
-    font-size: 2.3em;
-    line-height: 1.4;
-    color: white;
-}
-
-
-.banner-text h2, .banner-text img{
-    margin-left: auto;
-
-}
-
-.banner-text img{
-    padding: 0 4em;
-}
-
-.slider-text-box {
-    text-decoration: none;
-    width: 40%;
-    min-height: 10em;
-    padding: 0.5em 2em;
-    margin: 2em 3em;
-}
-
-.banner-text-box {
-    text-decoration: none;
-    width: 30%;
-    min-height: 10em;
-    padding: 0.5em 2em;
-    margin: 1em 8em;
-}
-
-
-
-/* Desktops and laptops ----------- */
-@media only screen  and (min-width : 1224px) {
-    .artwork-overview img {
-        min-width: 100px;
-        max-width: 270px;
-        margin: 0 auto;
+@media only screen and (max-width: 1000px) {
+    .showcase-section {
+        width: 45% !important;
     }
 }
 
 
 /* Portrait Mobile */
 @media only screen
-and (min-device-width: 320px)
-and (max-device-width: 480px)
+and (min-width: 320px)
+and (max-width: 480px)
 and (-webkit-min-device-pixel-ratio: 2)
 and (orientation: portrait) {
     body, html {
-          max-width: 100%;
+        max-width: 100%;
         overflow-x: hidden;
     }
     .main-layout {
@@ -274,6 +163,22 @@ and (orientation: portrait) {
         width: 100% !important;
         margin: 1em auto;
     }
+    .main-layout {
+        width: 100% !important;
+        margin: 0 auto;
+    }
+    .mappenwerke {
+        flex-direction: column;
+    }
+    .mappenwerk {
+        margin-bottom: 2em;
+    }
+    .mappenwerk-title {
+        height: auto !important;
+    }
+    .mappenwerk-image {
+        width: 100%;
+    }
     .navbar-light .navbar-brand {
         width: 70%;
     }
@@ -283,7 +188,6 @@ and (orientation: portrait) {
         background-size: cover;
         width: 100%;
     }
-
     .artwork-detail-container {
         flex-direction: column;
     }
@@ -299,6 +203,106 @@ and (orientation: portrait) {
     }
     .artwork-overview img {
         max-width: 100%;
+    }
+    .navbar-light .navbar-brand {
+        width: 70%;
+    }
+    .showcase-section {
+        width: 100% !important;
+        margin: 1em 0 !important;
+        gap: none;
+    }
+    .showcase-section h4 {
+        margin-top: 1em;
+    }
+    .logo {
+        max-width: 60%;
+    }
+    .signet {
+        max-width: 30%;
+    }
+    .banner-text-box{
+        margin: 1em !important;
+        width: 80% !important;
+    }
+    .banner-text-box p{
+        font-size: 4vw;
+    }
+}
+
+.ubuntu-bold {
+    font-family: globalfontsuperfett;
+}
+.container, .container-lg, .container-md, .container-sm, .container-xl {
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 0;
+}
+hr {
+    height: 3px !important;
+    opacity: 1;
+    color: #589AAD;
+    width: 100%;
+}
+.index-image-container {
+    background-image: url(../images/index_laptop.png);
+    height: 89vh;
+    background-size: cover;
+}
+.artwork-detail-image-container {
+    width: 50%;
+}
+.artwork-detail-image-container img {
+    width: 100%;
+}
+.artwork-detail-text {
+    width: 50%;
+    padding: 0 1em;
+    margin: 0 auto;
+}
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&family=Montserrat:wght@100&family=Red+Hat+Mono:wght@300&display=swap');
+.banner-text {
+    width: 50%;
+    margin: 6.5em 1.5em;
+    float: right;
+    display: flex;
+    flex-direction: column;
+}
+.banner-text h2 {
+    font-family: 'EB Garamond', serif;
+    font-weight: 400;
+    font-size: 2.3em;
+    line-height: 1.4;
+    color: white;
+}
+.banner-text h2, .banner-text img{
+    margin-left: auto;
+
+}
+.banner-text img{
+    padding: 0 4em;
+}
+.slider-text-box {
+    text-decoration: none;
+    width: 40%;
+    min-height: 10em;
+    padding: 0.5em 2em;
+    margin: 2em 3em;
+}
+.banner-text-box {
+    text-decoration: none;
+    width: 30%;
+    min-height: 10em;
+    padding: 0.5em 2em;
+    margin: 1em 8em;
+}
+
+/* Desktops and laptops ----------- */
+@media only screen  and (min-width : 1224px) {
+    .artwork-overview img {
+        min-width: 100px;
+        max-width: 270px;
+        margin: 0 auto;
     }
 }
 
@@ -319,11 +323,7 @@ and (orientation: portrait) {
     .showcase-box {
 
     }
-    .showcase-section {
-        width: 45% !important;
-        margin: 0 !important;
-        gap: none;
-    }
+
     .showcase-image {
         width: 100% !important;
 
@@ -331,10 +331,14 @@ and (orientation: portrait) {
 }
 /* Portrait Tablet */
 @media only screen
-and (min-device-width : 768px)
-and (max-device-width : 1024px)
+and (min-width : 768px)
+and (max-width : 1024px)
 and (orientation : portrait) {
-
+    .showcase-section {
+        width: 45% !important;
+        margin: 0 !important;
+        gap: none;
+    }
     .visible-on-tablet {
         display: unset;
     }
