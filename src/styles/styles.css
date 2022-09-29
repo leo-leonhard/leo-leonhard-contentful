@@ -140,6 +140,9 @@ and (orientation: portrait) {
         max-width: 100%;
         overflow-x: hidden;
     }
+    .copyright {
+        padding: 0 !important;
+    }
     .main-layout {
         width: 100%;
     }

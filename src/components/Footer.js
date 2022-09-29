@@ -6,7 +6,8 @@ import '../styles/footer-style.css'
 
 const Footer = () => (
     <div className="footer">
-      <div className="d-flex flex-column justify-content-between" style={{height: "10em"}}>
+      <div className="d-flex flex-column justify-content-between" style={{height: "auto"}}>
+        <div>
         <Link to="/"><img style={{width: "10em"}} src={logo}/></Link>
         <address style={{fontSize: "0.7em"}}>
           LEO LEONHARD NACHLASS<br/>
@@ -14,7 +15,8 @@ const Footer = () => (
           Sandstraße 18<br/>
           64404 Bickenbach<br/>
           info@leoleonhard.de<br/>
-        </address>
+    </address>
+    </div>
         <div className="copyright visible-on-tablet visible-on-mobile">
           <p>Copyright © 2022 Leo Leonhard Nachlass.
             <br/>
