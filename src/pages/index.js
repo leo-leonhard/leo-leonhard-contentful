@@ -38,12 +38,12 @@ const IndexPage = ({ data }) => {
                   {data.allContentfulGrafik.nodes.map(grafik => {
                       const image = getImage(grafik.image)
                       return(
-                          <div className="d-flex flex-column" style={{maxWidth: "240px"}} className="mappenwerk">
-                            <div style={{height: "4.5em"}}  className="mappenwerk-title">
+                          <div className="d-flex flex-column" className="mappenwerk">
+                            <div style={{minHeight: "5em"}}  className="mappenwerk-title">
                               <h4 className="fett" style={{textTransform: "uppercase"}}>{grafik.title}</h4>
                               <h4 style={{textTransform: "uppercase"}}>{grafik.year}</h4>
                             </div>
-                          <GatsbyImage image={image} className="mappenwerk-image"/>
+                            <GatsbyImage image={image} className="mappenwerk-image"/>
                           </div>
                       )
                   })}
@@ -74,7 +74,7 @@ export const query = graphql`
           id
           height
           image {
-            gatsbyImageData(width: 240)
+            gatsbyImageData(width: 260)
           }
         }
       }
