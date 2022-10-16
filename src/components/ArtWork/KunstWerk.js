@@ -10,12 +10,12 @@ export default function Kunstwerk(props) {
           <br/>
         <div
           className="d-flex flex-wrap justify-content-between"
-          style={{maxWidth: "100%", gap: "0.5em"}}
+          style={{maxWidth: "100%"}}
         >
           {kunstwerk.map(werk => {
               const image = getImage(werk.image)
               return(
-                  <div className="d-flex flex-column mb-4"  style={{width: "20%"}}>
+                  <div className="d-flex flex-column mb-4"  style={{width: "20%", marginRight: "1em"}}>
                     <Link
                       to={werk.slug}
                       style={{
