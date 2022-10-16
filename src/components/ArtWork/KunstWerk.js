@@ -15,7 +15,7 @@ export default function Kunstwerk(props) {
           {kunstwerk.map(werk => {
               const image = getImage(werk.image)
               return(
-                  <div className="d-flex flex-column mb-4"  style={{width: "20%", marginRight: "1em"}}>
+                  <div className="d-flex flex-column mb-5"  style={{width: "20%", marginRight: "1em"}}>
                     <Link
                       to={werk.slug}
                       style={{
