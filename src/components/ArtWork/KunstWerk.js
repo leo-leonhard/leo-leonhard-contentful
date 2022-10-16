@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link} from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
-
+import { BgImage } from 'gbimage-bridge'
 
 export default function Kunstwerk(props) {
     const kunstwerk = props.kunstwerk
@@ -9,13 +9,19 @@ export default function Kunstwerk(props) {
         <div>
           <br/>
         <div
-          className="d-flex flex-wrap justify-content-between"
-          style={{maxWidth: "100%"}}
+          className="d-flex flex-wrap"
         >
           {kunstwerk.map(werk => {
               const image = getImage(werk.image)
               return(
-                  <div className="d-flex flex-column mb-5"  style={{width: "20%", marginRight: "1em"}}>
+                  <div
+                    className="d-flex flex-column mb-5"
+                    style={{
+                        width: "15em",
+                        marginRight: "8%",
+                        flexWrap: "wrap"
+                    }}
+                  >
                     <Link
                       to={werk.slug}
                       style={{
@@ -28,7 +34,10 @@ export default function Kunstwerk(props) {
                       }}
                     >
                       <h4 style={{minHeight: "2em"}}>{werk.title}, {werk.year}</h4>
-                      <GatsbyImage image={image}/>
+                      <BgImage
+                        image={image}
+                        style={{maxHeight: "100%", objectFit: "contain", height: "15em"}}
+                      />
                     </Link>
                   </div>
               )
