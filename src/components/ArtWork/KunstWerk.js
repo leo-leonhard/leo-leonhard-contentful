@@ -18,7 +18,7 @@ export default function Kunstwerk(props) {
                     className="d-flex flex-column mb-5"
                     style={{
                         width: "15em",
-                        marginRight: "8%",
+                        marginRight: "5%",
                         flexWrap: "wrap"
                     }}
                   >

@@ -6,6 +6,7 @@ import MDXRenderer from "gatsby-plugin-mdx/mdx-renderer"
 import NavBar from '../components/NavBar'
 import Footer from '../components/Footer'
 import PageBanner from '../components/PageBanner'
+import IntroText from '../components/IntroText'
 
 import portrait from "../images/portrait.jpg"
 import selbstportraet from "../images/selbstporttraet.png"
@@ -17,52 +18,29 @@ const LebenslaufPage = ( { data } ) => (
       <div style={{width: "75%", margin: "0 auto"}}>
         <PageBanner image={data.allContentfulPageBanner.nodes}/>
       </div>
-      <div style={{width: "60%", margin: "0 auto"}}>
-        <h2>ÜBER LEO LEONHARD</h2>
-        <p>„Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tem-
-          por invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
-          accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanc-
-          tus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing
-          elitr.“</p>
-
-        <p>„Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tem-
-          por invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
-          accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanc-
-          tus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing
-          elitr „Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-          tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos
-          et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
-          sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadips-
-          cing elitr</p>
-
-        <p>„Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tem-
-          por invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
-          accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanc-
-          tus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing
-          elitr</p>
+      <div style={{width: "75%", margin: "0 auto"}} >
+        <IntroText introdata={data.allContentfulIntroText.nodes}/>
       </div>
-
       <br/>
-
       <div className="pt-5 pb-5 mt-5 mb-5" style={{background: "#F8F3EA"}}>
         <div style={{width: "60%", margin: "0 auto"}}>
           <div style={{margin: "0 auto"}}>
-          <div className="mb-5">
-            <h2>LEBENSSTATIONEN</h2>
-            <h2>LEO LEONHARD</h2>
-            <h2>1939 - 2011</h2>
-            <hr style={{width: "20%", margin: "3em 0 1em 0"}}/>
+            <div className="mb-5">
+              <h2>LEBENSSTATIONEN</h2>
+              <h2>LEO LEONHARD</h2>
+              <h2>1939 - 2011</h2>
+              <hr style={{width: "20%", margin: "3em 0 1em 0"}}/>
+            </div>
+            <img src={portrait}/>
+            <div className="mt-4">
+              {data.allContentfulLebenslauf.nodes.map(entry => (
+                  <div style={{fontSize: "0.9em"}}>
+                    <p className="fett">{entry.year}</p>
+                    <p style={{marginTop: "-1em"}}>{entry.event}</p>
+                  </div>
+              ))}
+            </div>
           </div>
-          <img src={portrait}/>
-          <div className="mt-4">
-            {data.allContentfulLebenslauf.nodes.map(entry => (
-                <div style={{fontSize: "0.9em"}}>
-                  <p className="fett">{entry.year}</p>
-                  <p style={{marginTop: "-1em"}}>{entry.event}</p>
-                </div>
-            ))}
-    </div>
-    </div>
         </div>
       </div>
 
@@ -178,21 +156,21 @@ const LebenslaufPage = ( { data } ) => (
         <hr style={{width: "20%", margin: "3em 0 1em 0"}}/>
         <div className="d-flex flex-column">
           {data.allContentfulEinzelausstellungen.nodes.map(ausstellung => (
-                  <div>
-                    <h3 className="mt-2 mb-4" style={{color: "#589AAD"}}>{ausstellung.zeitraum}</h3>
-                    <div className="d-flex flex-column" style={{height: ausstellung.height, flexFlow: "wrap"}}>
-                      {ausstellung.ausstellungen.map(x => (
-                          <div className="mb-3" style={{maxWidth: "45%",fontSize: "0.7em"}}>
-                            <p style={{margin: "0"}}>{x.year}</p>
-                            {x.venues.map(v=>(
-                                <p style={{margin: "0"}}>{v.name}</p>
-                            ))}
-                          </div>
-                      ))}
-                    </div>
-                    <hr style={{width: "20%"}}/>
-                  </div>
-              ))}
+              <div>
+                <h3 className="mt-2 mb-4" style={{color: "#589AAD"}}>{ausstellung.zeitraum}</h3>
+                <div className="d-flex flex-column" style={{height: ausstellung.height, flexFlow: "wrap"}}>
+                  {ausstellung.ausstellungen.map(x => (
+                      <div className="mb-3" style={{maxWidth: "45%",fontSize: "0.7em"}}>
+                        <p style={{margin: "0"}}>{x.year}</p>
+                        {x.venues.map(v=>(
+                            <p style={{margin: "0"}}>{v.name}</p>
+                        ))}
+                      </div>
+                  ))}
+                </div>
+                <hr style={{width: "20%"}}/>
+              </div>
+          ))}
         </div>
       </div>
       <br/>
@@ -227,6 +205,19 @@ const LebenslaufPage = ( { data } ) => (
 
 export const query = graphql`
 query getLebenslaufContent {
+  allContentfulIntroText(filter: {slug: {eq: "lebenslauf"}}) {
+    nodes {
+      id
+      slug
+      header
+      page
+      text {
+        childMdx {
+          body
+        }
+      }
+    }
+  }
   allContentfulPageBanner(filter: {slug: {eq: "lebenslauf"}}) {
     nodes {
       slug

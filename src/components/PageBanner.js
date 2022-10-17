@@ -14,7 +14,16 @@ function PageBanner (props) {
               const image = getImage(img.image)
             return(
                   <div key={img.slug}>
-                    <GatsbyImage className="mb-5" image={image} style={{float: "left", width: "100%", maxHeight: "100%", objectFit: "cover"}}/>
+                    <GatsbyImage
+                      className="mb-5"
+                      image={image}
+                      style={{
+                          float: "left",
+                          width: "100%",
+                          maxHeight: "100%",
+                          objectFit: "cover"
+                      }}
+                    />
                   </div>
             )
         })}
