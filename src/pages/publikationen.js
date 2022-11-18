@@ -35,6 +35,7 @@ const PublikationenPage = ( { data } ) => {
                         className="d-flex flex-column"
                         style={{
                             width: "13em",
+                            marginRight: "2em",
                             marginBottom: "2em",
                         }}>
                         <div className="d-flex flex-column">
