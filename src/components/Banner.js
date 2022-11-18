@@ -1,5 +1,3 @@
-// Banner with a textbox sourced from contentful model
-
 import React from 'react'
 import { qraphql } from 'gatsby'
 import { getImage, GatsbyImage } from 'gatsby-plugin-image'
