@@ -26,7 +26,7 @@ const PublikationenPage = ( { data } ) => {
             <h1 className="m-2">Bücher</h1>
             <br/>
             <div
-              className="d-flex align-items-baseline flex-wrap"
+              className="d-flex align-items-baseline flex-wrap justify-content-between"
               style={{width: "100%"}}>
               {books.map(book => {
                   const image = getImage(book.coverImage)
@@ -35,7 +35,6 @@ const PublikationenPage = ( { data } ) => {
                         className="d-flex flex-column"
                         style={{
                             width: "13em",
-                            marginRight: "2em",
                             marginBottom: "2em",
                         }}>
                         <div className="d-flex flex-column">
