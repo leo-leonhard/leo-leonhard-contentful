@@ -15,10 +15,12 @@ import img from "../images/Aufgang.jpg"
 
 const Box = () => (
     <div style={{width: "20%", margin: "1em"}}>
-      <img src={img} style={{width: "80%", height: "50%"}}/>
+      <img src={img} style={{width: "100%", height: "40%"}}/>
+      <div className="mt-1">
       <h4 className="fett" style={{fontSize: "0.8vw"}} >Werke zur deutschen Literatur</h4>
       <p style={{fontSize: "0.7em"}}>Neben der Kunst galt Leo Leonhards grosses Interesse der Literatur. Fuer sein Werk...</p>
-      <button style={{width: "100%", fontSize: "1vw", background: "#589AAD", border: "3px solid #589AAD"}}>GRUPPENAUSSTELLUNGEN</button>
+    <button style={{width: "100%", fontSize: "1vw", background: "#589AAD", border: "3px solid #589AAD"}}>GRUPPENAUSSTELLUNGEN</button>
+    </div>
     </div>
 )
 
