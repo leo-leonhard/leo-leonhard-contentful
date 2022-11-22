@@ -31,28 +31,6 @@ const IndexPage = ({ data }) => {
             <div className="main-layout">
               <ShowCaseBox/>
             </div>
-            <div className="mb-5" style={{background: "#BFD8E5", padding: "2em 4em"}}>
-              <div className="main-layout">
-                <h2 className="mb-5">DIE GRAFISCHEN MAPPENWERKE</h2>
-                <div className="d-flex justify-content-between mb-4 mappenwerke">
-                  {data.allContentfulGrafik.nodes.map(grafik => {
-                      const image = getImage(grafik.image)
-                      return(
-                          <div className="d-flex flex-column" className="mappenwerk">
-                            <div style={{minHeight: "5em"}}  className="mappenwerk-title">
-                              <h4 className="fett" style={{textTransform: "uppercase"}}>{grafik.title}</h4>
-                              <h4 style={{textTransform: "uppercase"}}>{grafik.year}</h4>
-                            </div>
-                            <GatsbyImage image={image} className="mappenwerk-image"/>
-                          </div>
-                      )
-                  })}
-                </div>
-                <div>
-                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.  Donec hendrerit tempor tellus.  Donec pretium posuere tellus.  Proin quam nisl, tincidunt et, mattis eget, convallis nec, purus.  Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.  Nulla posuere.  Donec vitae dolor.  Nullam tristique diam non turpis.  Cras placerat accumsan nulla.  Nullam rutrum.  Nam vestibulum accumsan nisl. <span className="fett" style={{margin: "0 0.5em"}}>mehr...</span>
-                </div>
-              </div>
-            </div>
             <NewsLetter/>
             <div className="mt-5" style={{height: "65vw", backgroundImage: `url(${konzert})`, backgroundPosition: "bottom",backgroundSize: "cover"}}>
             </div>
