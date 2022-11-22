@@ -20,7 +20,7 @@ function PageBanner (props) {
                       style={{
                           float: "left",
                           width: "100%",
-                          maxHeight: "100%",
+                          height: "80vh",
                           objectFit: "cover"
                       }}
                     />

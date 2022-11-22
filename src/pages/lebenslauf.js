@@ -1,5 +1,6 @@
 import React from 'react'
 import {graphql} from 'gatsby'
+import { getImage, GatsbyImage } from 'gatsby-plugin-image'
 import { MDXProvider } from "@mdx-js/react"
 import MDXRenderer from "gatsby-plugin-mdx/mdx-renderer"
 
@@ -10,20 +11,37 @@ import IntroText from '../components/IntroText'
 
 import portrait from "../images/portrait.jpg"
 import selbstportraet from "../images/selbstporttraet.png"
+import img from "../images/Aufgang.jpg"
 
+const Box = () => (
+    <div style={{width: "25%", margin: "1em"}}>
+      <img src={img} style={{width: "100%"}}/>
+      <h4 className="fett" >Werke zur deutschen Literatur</h4>
+      <p style={{fontSize: "0.7em"}}>Neben der Kunst galt Leo Leonhards grosses Interesse der Literatur. Fuer sein Werk...</p>
+      <button style={{width: "100%", fontSize: "1vw", background: "#589AAD", border: "3px solid #589AAD"}}>GRUPPENAUSSTELLUNGEN</button>
+    </div>
+)
 
-const LebenslaufPage = ( { data } ) => (
-    <>
+const LebenslaufPage = ({ data }) => (
+      <div style={{width: "75%", margin: "1em auto"}}>
       <NavBar/>
-      <div style={{width: "75%", margin: "0 auto"}}>
         <PageBanner image={data.allContentfulPageBanner.nodes}/>
-      </div>
-      <div style={{width: "75%", margin: "0 auto"}} >
-        <IntroText introdata={data.allContentfulIntroText.nodes}/>
-      </div>
+        <div>
+          <IntroText
+            introdata={data.allContentfulIntroText.nodes}
+            style={{border: "2px solid red"}}
+          />
+          <div className="d-flex justify-between">
+            <Box/>
+            <Box/>
+            <Box/>
+            <Box/>
+          </div>
+        </div>
       <br/>
-      <div className="pt-5 pb-5 mt-5 mb-5" style={{background: "#F8F3EA"}}>
-        <div style={{width: "60%", margin: "0 auto"}}>
+
+        <div style={{background: "#F8F3EA", padding: "3em 0"}}>
+          <div style={{width: "60%", margin: "0 auto"}}>
           <div style={{margin: "0 auto"}}>
             <div className="mb-5">
               <h2>LEBENSSTATIONEN</h2>
@@ -199,7 +217,7 @@ const LebenslaufPage = ( { data } ) => (
         </div>
       </div>
       <Footer/>
-    </>
+    </div>
 )
 
 
