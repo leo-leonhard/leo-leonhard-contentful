@@ -23,8 +23,9 @@ const Box = () => (
 )
 
 const LebenslaufPage = ({ data }) => (
-      <div style={{width: "75%", margin: "1em auto"}}>
-      <NavBar/>
+<>
+    <NavBar/>
+          <div style={{width: "75%", margin: "1em auto"}}>
         <PageBanner image={data.allContentfulPageBanner.nodes}/>
         <div>
           <IntroText
@@ -218,6 +219,7 @@ const LebenslaufPage = ({ data }) => (
       </div>
       <Footer/>
     </div>
+    </>
 )
 
 
