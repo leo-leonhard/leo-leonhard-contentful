@@ -31,8 +31,11 @@ const IndexPage = ({ data }) => {
             <div className="main-layout">
               <ShowCaseBox/>
             </div>
-            <NewsLetter/>
-            <div className="mt-5" style={{height: "65vw", backgroundImage: `url(${konzert})`, backgroundPosition: "bottom",backgroundSize: "cover"}}>
+
+            <div style={{height: "65vw", backgroundImage: `url(${konzert})`, backgroundPosition: "bottom",backgroundSize: "cover"}}>
+            </div>
+            <div style={{margin: "3em auto"}}>
+              <NewsLetter/>
             </div>
           </div>
           <Footer/>
