@@ -19,7 +19,7 @@ const Box = () => (
       <div className="mt-1">
       <h4 className="fett" style={{fontSize: "0.8vw"}} >Werke zur deutschen Literatur</h4>
       <p style={{fontSize: "0.7em"}}>Neben der Kunst galt Leo Leonhards grosses Interesse der Literatur. Fuer sein Werk...</p>
-    <button style={{width: "100%", fontSize: "1vw", background: "#589AAD", border: "3px solid #589AAD"}}>GRUPPENAUSSTELLUNGEN</button>
+    <button style={{width: "100%", fontSize: "1vw", background: "#589AAD", border: "3px solid #589AAD", color: "snow"}}>GRUPPENAUSSTELLUNGEN</button>
     </div>
     </div>
 )
@@ -27,20 +27,21 @@ const Box = () => (
 const LebenslaufPage = ({ data }) => (
 <>
     <NavBar/>
-          <div style={{width: "75%", margin: "1em auto"}}>
+  <div style={{width: "75%", margin: "1em auto"}}>
+    <section style={{background: "#F8F3EA", padding: "1em 2em 3em 2em"}}>
         <PageBanner image={data.allContentfulPageBanner.nodes}/>
-        <div>
           <IntroText
             introdata={data.allContentfulIntroText.nodes}
-            style={{border: "2px solid red"}}
-          />
+        />
+    </section>
+          <br/>
           <div className="d-flex justify-content-between">
             <Box/>
             <Box/>
             <Box/>
             <Box/>
           </div>
-        </div>
+
       <br/>
 
         <div style={{background: "#F8F3EA", padding: "3em 0"}}>
