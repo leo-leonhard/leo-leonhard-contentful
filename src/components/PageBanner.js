@@ -4,10 +4,6 @@ import { getImage, GatsbyImage } from 'gatsby-plugin-image';
 
 function PageBanner (props) {
     const image = props.image
-    console.log(image)
-    image.map(img => {
-        console.log(img.image)
-    })
     return(
         <div>
           {image.map(img => {

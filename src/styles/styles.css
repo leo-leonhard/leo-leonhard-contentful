@@ -26,6 +26,9 @@ body, html {
 .fett {
     font-family: globalfontsuperfett;
 }
+a {
+    text-decoration: none;
+}
 h1 {
     font-size: 1.7em;
     color: #589AAD;
