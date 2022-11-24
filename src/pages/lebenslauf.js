@@ -28,7 +28,7 @@ const Box = (props) => {
             <div className="mt-1">
               <h4 className="fett mt-3">{title}</h4>
               <p style={{fontSize: "0.7em"}}>Neben der Kunst galt Leo Leonhards grosses Interesse der Literatur. Fuer sein Werk...</p>
-              <button style={{width: "100%", fontSize: "1vw", background: "#589AAD", border: "3px solid #589AAD", color: "snow", textTransform: "uppercase"}}>{title}</button>
+              <button className="fett" style={{width: "100%", fontSize: "1vw", background: "#589AAD", border: "3px solid #589AAD", color: "snow", textTransform: "uppercase"}}>{title}</button>
             </div>
           </Link>
         </div>

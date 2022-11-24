@@ -24,13 +24,29 @@ export default function Ausstellungen({ data }) {
           />
             <h2>EINZELAUSSTELLUNGEN</h2>
             <hr style={{width: "20%", margin: "3em 0 1em 0"}}/>
-            <div className="d-flex flex-column">
+            <div className="d-flex flex-wrap justify-content-between">
               {data.allContentfulEinzelausstellungen.nodes.map(ausstellung => (
-                  <div>
-                    <h3 className="mt-2 mb-4" style={{color: "#589AAD"}}>{ausstellung.zeitraum}</h3>
-                    <div className="d-flex flex-column" style={{height: ausstellung.height, flexFlow: "wrap"}}>
+                  <div
+                    style={{
+                        width: "30%"
+                    }}>
+                    <h3
+                      className="mt-2 mb-4"
+                      style={{color: "#589AAD"}}
+                    >
+                      {ausstellung.zeitraum}
+                    </h3>
+                    <div
+                      className="d-flex flex-column"
+                      style={{
+                          flexFlow: "wrap"
+                      }}>
                       {ausstellung.ausstellungen.map(x => (
-                          <div className="mb-3" style={{maxWidth: "45%",fontSize: "0.7em"}}>
+                          <div
+                            className="mb-3"
+                            style={{
+                                fontSize: "0.9em"
+                            }}>
                             <p style={{margin: "0"}}>{x.year}</p>
                             {x.venues.map(v=>(
                                 <p style={{margin: "0"}}>{v.name}</p>
