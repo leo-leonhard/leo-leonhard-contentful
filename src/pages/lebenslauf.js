@@ -52,7 +52,7 @@ const LebenslaufPage = ({ data }) => (
             image={s}/>
           <Box
             title="Nachruf"
-            destination="/nachruf"
+            destination="/test"
             image={portrait}/>
           <Box
             title="Auszeichnungen"
