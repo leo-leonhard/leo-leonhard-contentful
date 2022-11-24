@@ -12,7 +12,7 @@ const MalereiPage = ({ data }) => (
       <PageBanner image={data.allContentfulPageBanner.nodes}/>
       <br/>
       <IntroText introdata={data.allContentfulIntroText.nodes}/>
-      <div className="mb-5">
+      <div className="mt-5 mb-5">
         <hr />
       </div>
       <div id="oelgemaelde">
