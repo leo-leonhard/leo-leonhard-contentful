@@ -13,6 +13,9 @@ import portrait from "../images/portrait.jpg"
 import selbstportraet from "../images/selbstporttraet.png"
 import img from "../images/Aufgang.jpg"
 import auszeichnungen from "../images/Slbst_Öl.jpg"
+import s from "../images/s.png"
+import p from "../images/p.png"
+
 
 const Box = (props) => {
     const title = props.title
@@ -42,11 +45,11 @@ const LebenslaufPage = ({ data }) => (
           />
         </section>
         <br/>
-        <div className="d-flex justify-content-between">
+        <div className="d-flex justify-content-between mt-3 mb-5">
           <Box
             title="Lebensstationen"
             destination="/lebensstationen"
-            image={portrait}/>
+            image={s}/>
           <Box
             title="Nachruf"
             destination="/nachruf"
@@ -54,7 +57,7 @@ const LebenslaufPage = ({ data }) => (
           <Box
             title="Auszeichnungen"
             destination="/auszeichnungen"
-            image={auszeichnungen}/>
+            image={p}/>
           <Box
             title="Ausstellungen"
             destination="/ausstellungen"
