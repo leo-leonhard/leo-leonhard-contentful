@@ -24,13 +24,12 @@ const Box = (props) => {
     return (
         <div style={{width: "20%", margin: "1em"}}>
           <Link to={destination} style={{color: "#212529"}}>
-            <img src={image} style={{width: "100%", height: "40%"}}/>
+            <img src={image} style={{width: "100%",  height: "8em"}}/>
             <div className="mt-1">
-              <h4 className="fett mt-3">{title}</h4>
-              <p style={{fontSize: "0.7em"}}>Neben der Kunst galt Leo Leonhards grosses Interesse der Literatur. Fuer sein Werk...</p>
+
               <button className="fett" style={{width: "100%", fontSize: "1vw", background: "#589AAD", border: "3px solid #589AAD", color: "snow", textTransform: "uppercase"}}>{title}</button>
             </div>
-          </Link>
+        </Link>
         </div>
     )}
 

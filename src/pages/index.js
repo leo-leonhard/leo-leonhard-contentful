@@ -21,7 +21,7 @@ const IndexPage = ({ data }) => {
         <>
           <NavBar/>
           <div className="d-flex flex-column">
-            <div id="banner-container" style={{width: "75%", margin: "0 auto"}}>
+            <div id="banner-container" style={{width: "75%", margin: "1em auto"}}>
               <Slidy/>
             </div>
             <div className="main-layout">
