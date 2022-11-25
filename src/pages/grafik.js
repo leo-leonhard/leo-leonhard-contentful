@@ -29,6 +29,11 @@ const GrafikPage = ({ data }) => {
           </div>
           <div id="holzschnitte">
             <h2>Holzschnitte</h2>
+            <div className="mt-3 mb-4">
+              <h3>Druckgrafik</h3>
+              <p>Leo Leonhard ist ein Künstler, bei dem die Zeichnung und die Druckgrafik eine wichtige Rolle im Werk spielt. Er hat in verschiedensten druckgrafischen Techniken gearbeitet wie etwa Kaltnadelradierung, Lithographie, Holzschnitt oder Farbholzschnitt, hat Einzelblätter geschaffen, aber auch große Mappen zusammengestellt. Leonhard hat die lange Geschichte der Druckgrafik, die in der gotischen Zeit begann und die Albrecht Dürer zu einer frühen Meisterschaft führte, gleichsam durchdrungen – er lehrte lange Jahre, von 1987 bis 2004, als Professor für Zeichnen und Illustration an der Fachhochschule in Mainz.</p>
+              <p>Leonhard war zuvor, von 1966 bis 1969, als freier Grafiker tätig, leitete das Druckatelier der Stadt Darmstadt und war Mitglied der internationalen Holzschneidervereinigung XYLON, des Vereins für Original-Radierung in München, des Werkbundes und des Bundes deutscher Buchkünstler. Seine Radierungen und Holzschnitte wurden 1995 in einem Werkverzeichnis publiziert.  Leonhard war Preisträger verschiedener renommierter internationaler Grafik-Wettbewerbe und Träger diverser Auszeichnungen auf dem Feld der Druckgrafik.</p>
+            </div>
             <Holzschnitte/>
           </div>
         </Layout>
