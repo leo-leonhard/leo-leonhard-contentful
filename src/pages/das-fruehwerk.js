@@ -7,7 +7,7 @@ import Footer from "../components/Footer"
 
 import f from "../images/Das Frühwerk.jpg"
 
-export default function Frühwerk({data}){
+export default function Frühwerk(){
     return(
         <div>
           <NavBar/>
