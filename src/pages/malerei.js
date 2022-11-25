@@ -23,6 +23,21 @@ const MalereiPage = ({ data }) => (
       </div>
       <div id="aquarelle">
         <h2>Aquarelle</h2>
+        <div className="mt-3 mb-4">
+          <h3>Eine lebensbegleitende künstlerische Praxis</h3>
+          <p>Das Aquarell, eine der ältesten Maltechniken überhaupt,
+          nimmt im Werk von Leo Leonhard einen bedeutenden Platz
+          ein. Die Arbeit mit nicht-deckenden Wasserfarben wurde vor
+          allem durch Albrecht Dürer aufgewertet, doch dienten sie ihm
+          vor allem zu Studienzwecken und zur Vorbereitung von
+          Ölgemälden. Schließlich war es der experimentierfreudige
+          William Turner, der das Aquarell zur eigenständigen
+          Kunstform entwickelte. In der Tradition der Kunst des
+          19. Jahrhunderts und vieler Künstler der Klassischen Moderne
+          aquarellierte auch Leo Leonhard vor allem auf seinen Reisen,
+          zum Teil auch unter freiem Himmel: Das Aquarellieren war ihm
+          eine lebensbegleitende künstlerische Praxis.</p>
+        </div>
         <Aquarelle/>
       </div>
     </Layout>
