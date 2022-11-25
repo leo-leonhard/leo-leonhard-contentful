@@ -7,6 +7,8 @@ import IntroText from '../components/IntroText'
 import Oelgemaelde from '../components/ArtWork/Malerei/Oelgemaelde'
 import Aquarelle from '../components/ArtWork/Malerei/Aquarelle'
 
+
+
 const MalereiPage = ({ data }) => (
     <Layout>
       <PageBanner image={data.allContentfulPageBanner.nodes}/>
@@ -25,7 +27,6 @@ const MalereiPage = ({ data }) => (
       </div>
     </Layout>
 )
-
 
 
 export const query = graphql`

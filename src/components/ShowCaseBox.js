@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql, StaticQuery } from "gatsby"
+import { graphql, StaticQuery, Link } from "gatsby"
 import { Button } from "react-bootstrap"
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import MDXRenderer from "gatsby-plugin-mdx/mdx-renderer"
@@ -7,13 +7,15 @@ import { MDXProvider } from "@mdx-js/react"
 
 
 
-const ShowCaseBox = ({data}) => (
-    <StaticQuery
-      query={graphql`
+const ShowCaseBox = ({data, props}) => {
+    return (
+        <StaticQuery
+          query={graphql`
         query ShowCaseBoxQuery {
           allContentfulShowcaseBox {
             nodes {
               id
+              slug
               header
               text {
                 childMdx {
@@ -28,29 +30,31 @@ const ShowCaseBox = ({data}) => (
           }
         }
     `}
-      render={data => (
+          render={data => (
 
-          <div className="d-flex flex-wrap justify-content-between showcase-box" style={{margin: "3em", maxWidth: "100%", gap: "22px"}}>
-            {data.allContentfulShowcaseBox.nodes.map((box) => {
-                const image = getImage(box.image)
-                return(
-                    <div key={box.id} style={{width: "14em"}} className="mb-5 showcase-section">
-                      <GatsbyImage className="showcase-image" image={image} style={{marginBottom: "1em", width: "14em", height: "12em"}}/>
-                      <h4 className="fett">{box.header}</h4>
-                      <div
-                        style={{
-                            width: "90%"
-                        }}>
-                        <p style={{fontSize: "0.9em"}}>{box.text.childMdx.excerpt}</p>
-                    <Button style={{background: "#589AAD", color: "#FBFBFD", border: "none", fontSize: "0.8em", padding: "0.2em 1.4em", borderRadius: "0"}}>mehr</Button>
-                      </div>
-                    </div>
-                )
-            })}
-          </div>
-      )}
-    />
-)
+              <div className="d-flex flex-wrap justify-content-between showcase-box" style={{margin: "3em", maxWidth: "100%", gap: "22px"}}>
+                {data.allContentfulShowcaseBox.nodes.map((box) => {
+                    const image = getImage(box.image)
+                    return(
+                        <div key={box.id} style={{width: "14em"}} className="mb-5 showcase-section">
+                          <Link style={{color: "#212529"}} to={box.slug}>
+                            <GatsbyImage className="showcase-image" image={image} style={{marginBottom: "1em", width: "14em", height: "12em"}}/>
+                            <h4 className="fett">{box.header}</h4>
+                            <div
+                              style={{
+                                  width: "90%"
+                              }}>
+                              <p style={{fontSize: "0.9em"}}>{box.text.childMdx.excerpt}</p>
+                              <Button style={{background: "#589AAD", color: "#FBFBFD", border: "none", fontSize: "0.8em", padding: "0.2em 1.4em", borderRadius: "0"}}>mehr</Button>
+                            </div>
+                          </Link>
+                        </div>
+                    )
+                })}
+              </div>
+          )}
+        />
+    )}
 
 
 export default ShowCaseBox
