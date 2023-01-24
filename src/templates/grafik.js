@@ -14,8 +14,7 @@ export default function GrafikTemplate({ data }) {
               return(
               <div key={pic.slug} className="mb-3">
                 <div className="pt-3 d-flex justify-content-between">
-                  <h2>DAS ZEICHNERISCHE WERK</h2>
-                  <span><Link to="/" style={{textDecoration: "none", color: "#589AAD"}}>&#8592; zurück</Link></span>
+                  <span><Link to="/grafik" style={{textDecoration: "none", color: "#589AAD"}}>&#8592; zurück</Link></span>
                 </div>
                   <hr />
                 <div className="artwork-detail-container d-flex">

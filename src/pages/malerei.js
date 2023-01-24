@@ -25,18 +25,7 @@ const MalereiPage = ({ data }) => (
         <h2>Aquarelle</h2>
         <div className="mt-3 mb-4">
           <h3>Eine lebensbegleitende künstlerische Praxis</h3>
-          <p>Das Aquarell, eine der ältesten Maltechniken überhaupt,
-          nimmt im Werk von Leo Leonhard einen bedeutenden Platz
-          ein. Die Arbeit mit nicht-deckenden Wasserfarben wurde vor
-          allem durch Albrecht Dürer aufgewertet, doch dienten sie ihm
-          vor allem zu Studienzwecken und zur Vorbereitung von
-          Ölgemälden. Schließlich war es der experimentierfreudige
-          William Turner, der das Aquarell zur eigenständigen
-          Kunstform entwickelte. In der Tradition der Kunst des
-          19. Jahrhunderts und vieler Künstler der Klassischen Moderne
-          aquarellierte auch Leo Leonhard vor allem auf seinen Reisen,
-          zum Teil auch unter freiem Himmel: Das Aquarellieren war ihm
-          eine lebensbegleitende künstlerische Praxis.</p>
+          <p>Das Aquarell als eine lebensbegleitende künstlerische Praxis: Auf allen seinen zahlreichen Reisen auch mit der Familie aquarellierte Leo Leonhard. Immer hatte er seine große Aquarellmappe dabei – so entstanden farbenprächtige, sehr detailreiche Aquarelle, deren großes Format auffällig ist. Immer wieder waren diese Aquarelle in Ausstellungen zu sehen. Sie verbinden eine sehr genaue Darstellung mit einer leichten, duftigen Koloratur – und waren daher schon in ihrer Entstehungszeit beim Publikum sehr beliebt. Ein 1985 entstandener Video-Film von Dieter Zeitz, „Neulich in Neutsch. Leo at work“ zeigt Leo Leonhard beim Landschaft-Aquarellieren in Neutsch, einem Ortsteil der Gemeinde Modautal im Odenwald. Hier zeigt sich auf schönste Weise, wie der Künstler Akribie mit hintersinnigem Humor und Witz mit Ernsthaftigkeit verbindet.</p>
         </div>
         <Aquarelle/>
       </div>
