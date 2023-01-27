@@ -7,17 +7,6 @@ import { MDXProvider } from "@mdx-js/react"
 import MDXRenderer from "gatsby-plugin-mdx/mdx-renderer"
 
 
-// const text = (props) => {
-//     const pic = props.pic
-//     return (
-//         <MDXProvider>
-//           <MDXRenderer>
-//             {pic.description.childMdx ? "ja" : "nein"}
-//           </MDXRenderer>
-//         </MDXProvider>
-//     )
-// }
-
 export default function MalreiTemplate({ data }) {
     const picture = data.allContentfulMalerei.nodes
 
@@ -39,11 +28,13 @@ export default function MalreiTemplate({ data }) {
                     <h3>{pic.title}, {pic.year}</h3>
                     <h4>{pic.type}</h4>
                     <p className="pt-4">
-                      <MDXProvider>
-                        <MDXRenderer>
-                          {pic.description.childMdx.body ? pic.description.childMdx.body : <p>.</p>}
-                        </MDXRenderer>
-                      </MDXProvider>
+                    <MDXProvider>
+                      <MDXRenderer>
+                        {pic.description.childMdx.body}
+                      </MDXRenderer>
+                    </MDXProvider>
+
+
                     </p>
                   </div>
                 </div>
