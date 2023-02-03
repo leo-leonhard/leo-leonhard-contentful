@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+// import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 import NavBar from "../components/NavBar"
 import Footer from "../components/Footer"
@@ -13,7 +13,7 @@ export default function Frühwerk(){
           <NavBar/>
           <div style={{width: "75vw", margin: "0 auto"}}>
             <img
-              src={f}
+              src={f} alt="text"
               style={{height: "75vh", width: "75vw", margin: "0 auto"}}
             />
             <div className="mt-4 mb-4">

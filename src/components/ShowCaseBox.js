@@ -2,8 +2,8 @@ import React from "react"
 import { graphql, StaticQuery, Link } from "gatsby"
 import { Button } from "react-bootstrap"
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
-import MDXRenderer from "gatsby-plugin-mdx/mdx-renderer"
-import { MDXProvider } from "@mdx-js/react"
+// import MDXRenderer from "gatsby-plugin-mdx/mdx-renderer"
+// import { MDXProvider } from "@mdx-js/react"
 
 
 

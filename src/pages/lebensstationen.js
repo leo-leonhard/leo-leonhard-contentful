@@ -12,7 +12,7 @@ export default function Lebensstationen({ data }) {
           <div style={{width: "75%", margin: "0 auto"}}>
           <img
             className="mb-5"
-            src={s}
+            src={s} alt="text"
             style={{
                 width: "100%",
                 height: "80vh",

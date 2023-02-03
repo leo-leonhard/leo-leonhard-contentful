@@ -1,8 +1,8 @@
 import React from 'react'
 import {graphql, Link} from 'gatsby'
-import { getImage, GatsbyImage } from 'gatsby-plugin-image'
-import { MDXProvider } from "@mdx-js/react"
-import MDXRenderer from "gatsby-plugin-mdx/mdx-renderer"
+// import { getImage, GatsbyImage } from 'gatsby-plugin-image'
+// import { MDXProvider } from "@mdx-js/react"
+// import MDXRenderer from "gatsby-plugin-mdx/mdx-renderer"
 
 import NavBar from '../components/NavBar'
 import Footer from '../components/Footer'
@@ -10,8 +10,8 @@ import PageBanner from '../components/PageBanner'
 import IntroText from '../components/IntroText'
 
 import portrait from "../images/portrait.jpg"
-import selbstportraet from "../images/selbstporttraet.png"
-import img from "../images/Aufgang.jpg"
+// import selbstportraet from "../images/selbstporttraet.png"
+// import img from "../images/Aufgang.jpg"
 import auszeichnungen from "../images/Slbst_Öl.jpg"
 import s from "../images/s.png"
 import p from "../images/p.png"
@@ -24,7 +24,7 @@ const Box = (props) => {
     return (
         <div style={{width: "20%", margin: "1em"}}>
           <Link to={destination} style={{color: "#212529"}}>
-            <img src={image} style={{width: "100%",  height: "8em"}}/>
+            <img src={image} alt="text" style={{width: "100%",  height: "8em"}}/>
             <div className="mt-1">
 
               <button className="fett" style={{width: "100%", fontSize: "1vw", background: "#589AAD", border: "3px solid #589AAD", color: "snow", textTransform: "uppercase"}}>{title}</button>

@@ -11,7 +11,7 @@ export default function Werke(){
           <NavBar/>
           <div style={{width: "75vw", margin: "0 auto"}}>
             <img
-              src={k}
+              src={k} alt="text"
               style={{height: "75vh", width: "75vw", margin: "0 auto"}}
             />
             <div className="mt-4 mb-5">

@@ -3,7 +3,7 @@ import { StaticQuery, graphql, Link } from "gatsby"
 
 import { getImage } from 'gatsby-plugin-image';
 import { BgImage } from 'gbimage-bridge';
-import { converToBgImage } from "gbimage-bridge"
+// import { converToBgImage } from "gbimage-bridge"
 
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"
@@ -11,7 +11,7 @@ import "slick-carousel/slick/slick-theme.css"
 
 import '../styles/banner-style.css'
 
-import logo from '../images/logo_white.png'
+// import logo from '../images/logo_white.png'
 
 
 export default class Slidy extends Component {

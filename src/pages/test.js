@@ -1,5 +1,5 @@
 import React from "react"
-import {graphql} from 'gatsby'
+// import {graphql} from 'gatsby'
 
 import NavBar from '../components/NavBar'
 import Footer from '../components/Footer'
@@ -13,7 +13,7 @@ export default function Nachruf({data}) {
           <NavBar/>
         <div style={{width: "75%", margin: "0 auto"}}>
         <img
-        src={portrait}
+        src={portrait} alt="text"
         style={{
             width: "100%",
             height: "80vh",
