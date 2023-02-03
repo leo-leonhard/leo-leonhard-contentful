@@ -1,6 +1,6 @@
 import React from 'react'
 import {Link} from 'gatsby'
-import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import { getImage } from 'gatsby-plugin-image'
 import { BgImage } from 'gbimage-bridge'
 
 export default function Kunstwerk(props) {

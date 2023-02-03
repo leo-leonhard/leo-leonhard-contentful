@@ -8,7 +8,7 @@ const Footer = () => (
     <div className="footer">
       <div className="d-flex flex-column justify-content-between" style={{height: "auto"}}>
         <div>
-        <Link to="/"><img style={{width: "10em"}} src={logo}/></Link>
+        <Link to="/"><img style={{width: "10em"}} alt='write something' src={logo}/></Link>
         <address style={{fontSize: "0.7em"}}>
           LEO LEONHARD NACHLASS<br/>
           Florian Leonhard<br/>

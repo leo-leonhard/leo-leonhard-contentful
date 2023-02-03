@@ -15,7 +15,7 @@ export default function Auszeichnungen({ data }) {
           <NavBar/>
           <div style={{width: "75%", margin: "0 auto"}}>
             <img
-              className="mb-5"
+              className="mb-5" alt="text"
               src={p}
               style={{
                   width: "100%",

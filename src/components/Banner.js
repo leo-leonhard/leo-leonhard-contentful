@@ -1,10 +1,10 @@
 import React from 'react'
-import { qraphql } from 'gatsby'
-import { getImage, GatsbyImage } from 'gatsby-plugin-image'
+// import { qraphql } from 'gatsby'
+import { getImage } from 'gatsby-plugin-image'
 import { MDXProvider } from "@mdx-js/react"
 import MDXRenderer from "gatsby-plugin-mdx/mdx-renderer"
 import { BgImage } from 'gbimage-bridge';
-import { converToBgImage } from "gbimage-bridge"
+// import { converToBgImage } from "gbimage-bridge"
 
 
 function Banner (props) {

@@ -3,7 +3,7 @@ import {graphql} from 'gatsby'
 
 import NavBar from '../components/NavBar'
 import Footer from '../components/Footer'
-import { getImage, GatsbyImage } from 'gatsby-plugin-image'
+// import { getImage, GatsbyImage } from 'gatsby-plugin-image'
 
 import ausstellungen from "../images/Slbst_Öl.jpg"
 
@@ -15,6 +15,7 @@ export default function Ausstellungen({ data }) {
           <div style={{width: "75%", margin: "1em auto 3em auto"}}>
           <img
             className="mb-5"
+            alt="text"
             src={ausstellungen}
             style={{
                 width: "100%",
