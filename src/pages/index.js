@@ -15,7 +15,12 @@ import konzert from '../images/Konzert.jpg'
 
 import '../styles/index.css'
 
-
+const musicBacgroundStyle = {
+  height: "100vh", 
+  backgroundImage: `url(${konzert})`, backgroundPosition: "center",
+  backgroundSize: "cover",
+  backgroundRepeat:"no-repeat"
+}
 const IndexPage = ({ data }) => {
     return (
         <>
@@ -32,8 +37,9 @@ const IndexPage = ({ data }) => {
               <ShowCaseBox/>
             </div>
 
-            <div style={{height: "65vw", backgroundImage: `url(${konzert})`, backgroundPosition: "bottom",backgroundSize: "cover"}}>
+            <div style={musicBacgroundStyle}>
             </div>
+            
             <div style={{margin: "3em auto"}}>
               <NewsLetter/>
             </div>
