@@ -26,6 +26,7 @@ export default class Slidy extends Component {
             slidesToShow: 1,
             slidesToScroll: 1
         };
+        
         return (
             <StaticQuery
               query={graphql`
@@ -72,9 +73,9 @@ export default class Slidy extends Component {
                                     style={{background: image.color}}
                                   >
                                     <hr style={{width: "3em", color: "white"}}/>
-                                    <div className="ubuntu-bold" style={{letterSpacing: "0.1em", fontSize: "2vw", color: "white"}}>{image.imageTitle}</div>
-                                    <p style={{color: "black", fontSize: "1.5vw"}}>{image.subtitle}</p>
-                                    {image.bannerText ? <p style={{color: "black", fontSize: "0.8em"}}>{image.bannerText.bannerText}</p> : <section style={{marginBottom: "5em"}}></section>}
+                                    <div className="ubuntu-bold" style={{letterSpacing: "0.1em", fontSize: "3vw", color: "white"}}>{image.imageTitle}</div>
+                                    <p style={{color: "black", fontSize: "2vw"}}>{image.subtitle}</p>
+                                    {image.bannerText ? <p className="home-banner-text">{image.bannerText.bannerText}</p> : <section style={{marginBottom: "5em"}}></section>}
                                   </Link>
                                 </BgImage>
                               </div>
