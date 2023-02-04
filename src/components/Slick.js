@@ -70,7 +70,7 @@ export default class Slidy extends Component {
                                   <Link
                                     to={image.page}
                                     className="slider-text-box"
-                                    style={{background: image.color}}
+                                    style={{background: image.color, width: "min-content"}}
                                   >
                                     <hr style={{width: "3em", color: "white"}}/>
                                     <div className="ubuntu-bold" style={{letterSpacing: "0.1em", fontSize: "3vw", color: "white"}}>{image.imageTitle}</div>
