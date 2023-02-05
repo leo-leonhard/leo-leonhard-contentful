@@ -123,6 +123,17 @@ p {
     max-width: 95%;
 }
 
+
+
+.newsletter-grid { 
+    display: grid;
+    place-items: center;
+}
+
+
+
+
+
 @media only screen and (max-width: 1500px) {
     .showcase-section {
         width: 45% !important;

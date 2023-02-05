@@ -40,7 +40,7 @@ const IndexPage = ({ data }) => {
             <div style={musicBacgroundStyle}>
             </div>
             
-            <div style={{margin: "3em auto"}}>
+            <div style={{minHeight: "70vh", display: "grid", placeItems: "center"}}>
               <NewsLetter/>
             </div>
           </div>
