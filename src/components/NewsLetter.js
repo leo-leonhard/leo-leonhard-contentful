@@ -14,7 +14,7 @@ const Checkbox  = () => {
 
     return (
         <div>
-          <label>
+          <label style={{maxWidth: "50ch", textAlign: "center"}}>
             <input
               type="checkbox"
               checked={checked}
@@ -22,11 +22,15 @@ const Checkbox  = () => {
               required="required"
               style={{marginRight: "0.4em"}}
             />
+
+
             <span style={{fontSize: "0.8em"}}>Mit dem Absenden dieser Anmeldung, bestätigst Du, unsere <Link style={{textDecoration: "none", color: "#589AAD"}} to="impressum/#datenschutzerklaerung">Datenschutzhinweise</Link> gelesen zu haben.</span>
           </label>
         </div>
     );
 };
+
+
 
 export default class Newsletter extends React.Component {
     state = {
@@ -51,37 +55,72 @@ export default class Newsletter extends React.Component {
 
     render() {
         return (
-            <div className="d-flex flex-column align-items-center" style={{margin: "1em auto"}}>
-              <p style={{padding: "0", margin: "0"}}>Wir informieren Sie über Neuigkeiten, Ausstellungen und Publikationen zu Leo Leonhard.</p>
-              <p >Einfach hier anmelden:</p>
-		      <form
-                name="subscribeForm"
-                method="POST"
-                id="subscribe-form"
-                className="subscribe-form"
-                onSubmit={this.handleSubmit}
-                style={{margin: "0 0 0 30%"}}
-              >
-		        <div className="message" dangerouslySetInnerHTML={{__html: this.state.message}} />
-                <div className="form-row mb-1">
-                  <label>
-		            <input
-    	              className="subscribe-email"
-	                  type="email"
-	                  name="email"
-                      style={{width: "99%", border: "2px solid #589AAD"}}
-	                  placeholder="Email"
-	                  value={this.state.email}
-	                  onChange={this.handleInputChange}
-		            />
-                  </label>
-		          <button type="submit" style={{background: "#589AAD", border: "2px solid #589AAD"}}>
-                    <FontAwesomeIcon icon={faPlay}  style={{backgorund: "#589AAD", color: "#FBFBFD"}}/>
-                  </button>
+            <div className="newsletter-grid">
+                <div className="newsletter-grid">
+                    <p>Wir informieren Sie über Neuigkeiten, Ausstellungen und Publikationen zu Leo Leonhard.</p>
+                    <p>Einfach hier anmelden:</p>
                 </div>
-                <Checkbox/>
-		      </form>
-            </div>
+              <form
+                  name="subscribeForm"
+                  method="POST"
+                  id="subscribe-form"
+                  className="newsletter-grid"
+                  /* className="subscribe-form" */
+                /*   style={formStyle} */
+                  onSubmit={this.handleSubmit}
+              >
+                 <div className="message" dangerouslySetInnerHTML={{__html: this.state.message}} />
+
+                
+            {/* 
+                      <label>
+                          <input
+                                  className="subscribe-email"
+                                  type="email"
+                                  name="email"
+                                  style={{width: "99%", border: "2px solid #589AAD"}}
+                                  placeholder="Email"
+                                  value={this.state.email}
+                                  onChange={this.handleInputChange}
+                          />
+                      </label>    
+                      <button type="submit" style={{background: "#589AAD", border: "2px solid #589AAD"}}>
+                          <FontAwesomeIcon icon={faPlay}  style={{backgorund: "#589AAD", color: "#FBFBFD"}}/>
+                      </button>
+            */}
+
+                        <div class="input-group mb-3">
+                            
+                            <input 
+                                type="email" 
+                                name="email" 
+                                class="form-control"  
+                                style={{border: "2px solid #589AAD"}} 
+                                placeholder="Email" 
+                                aria-label="Email" 
+                                aria-describedby="button-addon" 
+                                value={this.state.email}
+                                onChange={this.handleInputChange}
+                            />
+                            
+                            <button 
+                                class="btn btn-outline-secondary" 
+                                type="submit" 
+                                id="button-addon2" 
+                                style={{background: "#589AAD", borderTop: "2px solid #589AAD", borderBottom: "2px solid #589AAD", borderLeft: "2px solid #589AAD", borderRight: "none"}}>
+                                    <FontAwesomeIcon 
+                                        icon={faPlay}  
+                                        style={{backgorund: "#589AAD", color: "#FBFBFD"}}
+                                    />
+                            </button>
+                        </div>
+            
+                  <Checkbox/>
+              
+              </form>
+            
+              </div>
+                
         );
     }
 }
