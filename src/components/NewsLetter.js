@@ -104,13 +104,13 @@ export default class Newsletter extends React.Component {
                             />
                             
                             <button 
-                                class="btn btn-outline-secondary" 
+                                class="btn btn-outline-secondary btn-newsletter " 
                                 type="submit" 
-                                id="button-addon2" 
-                                style={{background: "#589AAD", borderTop: "2px solid #589AAD", borderBottom: "2px solid #589AAD", borderLeft: "2px solid #589AAD", borderRight: "none"}}>
+                                id="button-newsletter" 
+                                >
                                     <FontAwesomeIcon 
                                         icon={faPlay}  
-                                        style={{backgorund: "#589AAD", color: "#FBFBFD"}}
+                                        className="icon-newsletter"
                                     />
                             </button>
                         </div>

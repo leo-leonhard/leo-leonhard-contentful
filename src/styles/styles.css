@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond&family=Montserrat:wght@100&family=Red+Hat+Mono:wght@300&family=Roboto+Condensed:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond&family=Montserrat:wght@100&family=Red+Hat+Mono:wght@300&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&family=Montserrat:wght@100&family=Red+Hat+Mono:wght@300&display=swap');
 @font-face {
     font-family: globalfont;
     src: url(Ubuntu-Light.ttf);
@@ -13,19 +13,49 @@
     font-family: globalfontsuperfett;
     src: url(Ubuntu-Bold.ttf);
 }
+
+/* minimal reset */
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  * {
+    margin: 0;
+  }
+
+  html, body {
+    height: 100%;
+  }
+
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+
+  input, button, textarea, select {
+    font: inherit;
+  }
+
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+
+  #root, #__next {
+    isolation: isolate;
+  }
+/* end rest */
+
 body, html {
     background: #FBFBFD;
     color: #212529;
     font-family: globalfont, monospace;
 }
-.main-layout {
-    width: 75%;
-    margin: 0 auto;
-    padding: 0.5em 0;
-}
-.fett {
-    font-family: globalfontsuperfett;
-}
+
 a {
     text-decoration: none;
 }
@@ -34,9 +64,6 @@ h1 {
     color: #589AAD;
     font-family: globalfontfett;
     text-transform: uppercase;
-}
-.slick-slide:not(.slick-active) {
-    pointer-events: none;
 }
 h2 {
     font-family: globalfontfett;
@@ -55,12 +82,64 @@ h4 {
 p {
     font-size: 1em;
 }
+hr {
+    height: 3px !important;
+    opacity: 1;
+    color: #589AAD;
+    width: 100%;
+}
+
+.fett {
+    font-family: globalfontsuperfett;
+}
+
+.ubuntu-bold {
+    font-family: globalfontsuperfett;
+}
+
+.main-layout {
+    width: 75%;
+    margin: 0 auto;
+    padding: 0.5em 0;
+}
+.card-style {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+  }
 .container{
     max-width: 100% !important;
 }
+.newsletter-grid { 
+    display: grid;
+    place-items: center;
+    text-align: center;
+    padding: 0 2em;
+}
+.container, .container-lg, .container-md, .container-sm, .container-xl {
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.index-image-container {
+    background-image: url(../images/index_laptop.png);
+    height: 89vh;
+    background-size: cover;
+}
+
+.slick-slide:not(.slick-active) {
+    pointer-events: none;
+}
+.slick-arrow {
+    display: none !important;
+}
+
+
 .dropdown-item:focus, .dropdown-item:active {
     background: #9ED9EF;
 }
+
 .hover-underline-animation {
   display: inline-block;
   position: relative;
@@ -82,9 +161,16 @@ p {
   transform: scaleX(1);
   transform-origin: bottom left;
 }
+
 .logo, .signet {
     max-width: 90%;
 }
+.logo-signet {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+
 #basic-navbar-nav {
     width: 30%;
     justify-content: space-between;
@@ -115,24 +201,113 @@ p {
 .navbar-light .navbar-toggler {
     border: none !important;
 }
-.slick-arrow {
-    display: none !important;
-}
 
 .mappenwerk-title, .mappenwerk-image {
     max-width: 95%;
 }
 
+.artwork-detail-image-container {
+    width: 90%;
+}
+.artwork-detail-image-container img {
+    width: 100%;
+}
+.artwork-detail-text {
+    width: 50%;
+    padding: 0 1em;
+    margin: 0 auto;
+}
 
+.banner-text {
+    width: 50%;
+    margin: 6.5em 1.5em;
+    float: right;
+    display: flex;
+    flex-direction: column;
+}
+.banner-text h2 {
+    font-family: 'EB Garamond', serif;
+    font-weight: 400;
+    font-size: 2.3em;
+    line-height: 1.4;
+    color: white;
+    border: 3px solid #000;
+}
+.banner-text h2, .banner-text img{
+    margin-left: auto;
+}
+.banner-text img{
+    padding: 0 4em;
+}
+.slider-text-box {
+    text-decoration: none;
+    min-height: 10em;
+    padding: 0.5em 2em;
+    margin: 2em 3em;
+}
+.home-banner-text {
+    color: black; 
+    font-size: 0.9rem;
+    min-width: 60ch;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4; /* start showing ellipsis when 3rd line is reached */
+    white-space: pre-wrap;
+}
+.banner-text-box {
+    text-decoration: none;
+    width: 30%;
+    min-height: 10em;
+    padding: 0.5em 2em;
+    margin: 1em 8em;
+}
 
-.newsletter-grid { 
-    display: grid;
-    place-items: center;
+/* BUTTONS
+* .btn: modified default style from Bootstrap 
+* .btn-name_section: personalized style buttons
+*/
+
+.btn {
+    background: #589AAD;
+    color: #FBFBFD; 
+    border: none;
+}
+.btn:hover {
+    background: #6fc2da; 
+    color: #FBFBFD; 
+    font-weight: bolder;
+}
+.btn:focus, .btn:active {
+    box-shadow: none;
+}
+.btn-check:active + .btn-outline-secondary:focus, .btn-check:checked + .btn-outline-secondary:focus, .btn-outline-secondary.active:focus, .btn-outline-secondary.dropdown-toggle.show:focus, .btn-outline-secondary:active:focus {
+    box-shadow: none;
+  }
+.btn-show-case-box {
+  border-radius: 0;
+  font-size: 0.95rem;
+  font-weight: bold;
+  padding: 0.4em 1.4em;
+}
+.btn-show-case-box:hover {
+    transform: scale(1.02);
+}
+.btn-newsletter:hover {
+    transform: translate(2px, 0%);
+    background: #589aadee;
+}
+/* end Buttons */
+
+.icon-newsletter {
+    background: #589AAD; 
+    color: #FBFBFD;
 }
 
 
-
-
+.visible-on-tablet {
+    display: none;
+}
 
 @media only screen and (max-width: 1500px) {
     .showcase-section {
@@ -142,7 +317,6 @@ p {
         width: 100% !important;
     }
 }
-
 
 /* Portrait Mobile */
 @media only screen
@@ -249,123 +423,6 @@ and (orientation: portrait) {
     }
 }
 
-.ubuntu-bold {
-    font-family: globalfontsuperfett;
-}
-.container, .container-lg, .container-md, .container-sm, .container-xl {
-    max-width: 90%;
-    margin: 0 auto;
-    padding: 0;
-}
-hr {
-    height: 3px !important;
-    opacity: 1;
-    color: #589AAD;
-    width: 100%;
-}
-.index-image-container {
-    background-image: url(../images/index_laptop.png);
-    height: 89vh;
-    background-size: cover;
-}
-.artwork-detail-image-container {
-    width: 90%;
-}
-.artwork-detail-image-container img {
-    width: 100%;
-}
-.artwork-detail-text {
-    width: 50%;
-    padding: 0 1em;
-    margin: 0 auto;
-}
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&family=Montserrat:wght@100&family=Red+Hat+Mono:wght@300&display=swap');
-.banner-text {
-    width: 50%;
-    margin: 6.5em 1.5em;
-    float: right;
-    display: flex;
-    flex-direction: column;
-}
-.banner-text h2 {
-    font-family: 'EB Garamond', serif;
-    font-weight: 400;
-    font-size: 2.3em;
-    line-height: 1.4;
-    color: white;
-    border: 3px solid #000;
-}
-.banner-text h2, .banner-text img{
-    margin-left: auto;
-
-}
-.banner-text img{
-    padding: 0 4em;
-}
-
-.slider-text-box {
-    text-decoration: none;
-    min-height: 10em;
-    padding: 0.5em 2em;
-    margin: 2em 3em;
-}
-
-.home-banner-text {
-    color: black; 
-    font-size: 0.9rem;
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3; /* start showing ellipsis when 3rd line is reached */
-    white-space: pre-wrap;
-}
-
-.banner-text-box {
-    text-decoration: none;
-    width: 30%;
-    min-height: 10em;
-    padding: 0.5em 2em;
-    margin: 1em 8em;
-}
-
-/* Desktops and laptops ----------- */
-@media only screen  and (min-width : 1224px) {
-    .artwork-overview img {
-        min-width: 100px;
-        max-width: 270px;
-        margin: 0 auto;
-    }
-}
-
-.visible-on-tablet {
-    display: none;
-}
-
-@media (max-width : 1024px) {
-    #header, #banner-container, .footer {
-        width: 100% !important;
-    }
-    .navbar-nav {
-        margin-left: 1em;
-    }
-    .main-layout {
-        width: 85%;
-    }
-    .showcase-image {
-        width: 100% !important;
-    }
-    #banner-title {
-        font-size: 1.5rem !important;
-    }
-    .banner-text-box {
-        min-width: 60% !important;
-        margin: 3em 2em !important;
-    }
-    #banner-text{
-        font-size: 1rem !important;
-    }
-}
-
 /* Portrait Tablet */
 @media only screen
 and (min-width : 768px)
@@ -408,4 +465,38 @@ and (max-width : 1024px) {
     }
 
 
+}
+
+@media (max-width : 1024px) {
+    #header, #banner-container, .footer {
+        width: 100% !important;
+    }
+    .navbar-nav {
+        margin-left: 1em;
+    }
+    .main-layout {
+        width: 85%;
+    }
+    .showcase-image {
+        width: 100% !important;
+    }
+    #banner-title {
+        font-size: 1.5rem !important;
+    }
+    .banner-text-box {
+        min-width: 60% !important;
+        margin: 3em 2em !important;
+    }
+    #banner-text{
+        font-size: 1rem !important;
+    }
+}
+
+/* Desktops and laptops ----------- */
+@media only screen  and (min-width : 1224px) {
+    .artwork-overview img {
+        min-width: 100px;
+        max-width: 270px;
+        margin: 0 auto;
+    }
 }
