@@ -6,12 +6,6 @@ import MDXRenderer from "gatsby-plugin-mdx/mdx-renderer"
 function IntroText(props) {
     const introdata = props.introdata
 
-    const cardStyle = {
-       minHeight: "100vh",
-       display: "grid",
-       placeItems: "center"
-    }
-
     const headingText = {
         marginBottom: "0.8em",
         maxWidth: "65ch",
@@ -19,17 +13,17 @@ function IntroText(props) {
     }
 
     const paragraphStyle = {
-      fontSize: "0.95rem",
+      fontSize: "1.2rem",
       lineHeight: "1.8"
     }
 
-
     return(
-        <div style={cardStyle}>
+      
+      <div>
           {introdata.map((intro) => {
-              return(
-                  <div key={intro.key}>
-                    <div>
+            return(
+              <div>
+                      <div key={intro.key}>
                       <h1
                         className="fett"
                         style={headingText}>

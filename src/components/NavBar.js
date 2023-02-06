@@ -11,19 +11,24 @@ const NavBar = class extends React.Component {
         return (
             <Navbar id="header" expand="lg" style={{width: "75%", margin: "0 auto"}}>
               <Container>
-                <Navbar.Brand href="/">
+                <Navbar.Brand href="/" className="logo-signet">
                   <img className="signet" src={signet} style={{width: "2.5em"}} alt="text"/>
                   <img className="logo" style={{margin: "0 0.3em", width: "5.5em"}} src={logo} alt="text"/>
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                 <Navbar.Collapse>
                   <Nav className="me-auto" style={{fontSize: "0.9em"}}>
+                    <Nav.Link href="/">HOME</Nav.Link>
                     <Nav.Link href="/lebenslauf">LEBENSLAUF</Nav.Link>
+                    
                     <NavDropdown title="MALEREI" id="basic-nav-dropdown">
+                      <Nav.Link href="/Malerei">Malerei</Nav.Link>
                       <NavDropdown.Item style={{fontSize: "0.9em"}} href="/malerei#oelgemaelde">Ölgemälde</NavDropdown.Item>
                       <NavDropdown.Item style={{fontSize: "0.9em"}}href="/malerei#aquarelle">Aquarelle</NavDropdown.Item>
                     </NavDropdown>
+
                     <NavDropdown title="GRAFIK" id="basic-nav-dropdown">
+                    <Nav.Link href="/grafik">Grafik</Nav.Link>
                       <NavDropdown.Item style={{fontSize: "0.9em"}}href="/grafik#zeichnungen">Zeichnungen</NavDropdown.Item>
                       <NavDropdown.Item style={{fontSize: "0.9em"}}href="/grafik#radierungen">Radierungen</NavDropdown.Item>
                       <NavDropdown.Item style={{fontSize: "0.9em"}}href="/grafik/#holzschnitte">Holzschnitte</NavDropdown.Item>

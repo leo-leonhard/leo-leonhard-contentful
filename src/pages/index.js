@@ -21,6 +21,7 @@ const musicBacgroundStyle = {
   backgroundSize: "cover",
   backgroundRepeat:"no-repeat"
 }
+
 const IndexPage = ({ data }) => {
     return (
         <>
@@ -29,7 +30,7 @@ const IndexPage = ({ data }) => {
             <div id="banner-container" style={{width: "75%", margin: "1em auto"}}>
               <Slidy/>
             </div>
-            <div className="main-layout">
+            <div className="main-layout card-style">
               <IntroText introdata={data.allContentfulIntroText.nodes}/>
             </div>
             <Banner image={data.allContentfulBannerImage.nodes}/>
