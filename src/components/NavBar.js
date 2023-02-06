@@ -22,7 +22,7 @@ const NavBar = class extends React.Component {
                     <Nav.Link href="/lebenslauf">LEBENSLAUF</Nav.Link>
                     
                     <NavDropdown title="MALEREI" id="basic-nav-dropdown">
-                      <Nav.Link href="/Malerei">Malerei</Nav.Link>
+                      <Nav.Link href="/malerei">Malerei</Nav.Link>
                       <NavDropdown.Item style={{fontSize: "0.9em"}} href="/malerei#oelgemaelde">Ölgemälde</NavDropdown.Item>
                       <NavDropdown.Item style={{fontSize: "0.9em"}}href="/malerei#aquarelle">Aquarelle</NavDropdown.Item>
                     </NavDropdown>
