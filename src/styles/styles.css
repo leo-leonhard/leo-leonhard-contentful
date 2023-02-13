@@ -99,11 +99,12 @@ hr {
 
 .main-layout {
     width: 75%;
-    margin: 0 auto 5em;
-    padding: 0.5em 0 5em;
+    margin: 0 auto 0;
+    padding: 0;
 }
 .card-style {
-    min-height: 100vh;
+    min-height: 50vh;
+    padding: 7em 0;
     display: grid;
     place-items: center;
   }
@@ -114,7 +115,7 @@ hr {
     display: grid;
     place-items: center;
     text-align: center;
-    padding: 0 2em;
+    /* padding: 0 2em; */
 }
 .container, .container-lg, .container-md, .container-sm, .container-xl {
     max-width: 90%;
@@ -293,6 +294,26 @@ hr {
 .btn-show-case-box:hover {
     transform: scale(1.02);
 }
+
+.btn-stationen {
+    width: 100%;
+    border-radius: 0;
+    font-size: 0.95rem;
+    font-weight: bold;
+    padding: 0.4em 1.4em;
+  }
+  .btn-stationen:hover {
+      transform: scale(1.02);
+  }
+
+
+
+
+
+
+
+
+
 .btn-newsletter:hover {
     transform: translate(2px, 0%);
     background: #589aadee;
