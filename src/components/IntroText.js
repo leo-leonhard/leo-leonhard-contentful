@@ -19,7 +19,7 @@ function IntroText(props) {
 
     return(
       
-      <div>
+      <>
           {introdata.map((intro) => {
             return(
               <div>
@@ -40,7 +40,7 @@ function IntroText(props) {
                   </div>
               )
           })}
-        </div>
+        </>
     )
 }
 
