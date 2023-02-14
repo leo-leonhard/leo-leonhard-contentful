@@ -3,7 +3,7 @@ import React from 'react'
 import NavBar from '../components/NavBar'
 import Footer from '../components/Footer'
 
-import d from '../images/Dialog mit den verehrten alten Meistern.png'
+import d from '../assets/images/Dialog mit den verehrten alten Meistern.png'
 
 export default function Werke() {
     return (

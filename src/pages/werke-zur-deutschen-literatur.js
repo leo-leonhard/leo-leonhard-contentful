@@ -3,7 +3,7 @@ import React from 'react'
 import NavBar from '../components/NavBar'
 import Footer from '../components/Footer'
 
-import w from '../images/Werke zur deutschen Literatur.jpg'
+import w from '../assets/images/Werke zur deutschen Literatur.jpg'
 
 export default function Werke() {
     return (

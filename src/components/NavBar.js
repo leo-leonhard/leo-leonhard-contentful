@@ -3,8 +3,8 @@ import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { NavDropdown, Navbar, Container, Nav } from 'react-bootstrap'
 
-import logo from '../images/logo_blue.png'
-import signet from '../images/LL_Signet.png'
+import logo from '../assets/images/logo_blue.png'
+import signet from '../assets/images/LL_Signet.png'
 
 const NavBar = class extends React.Component {
     render() {

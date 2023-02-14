@@ -5,7 +5,7 @@ import NavBar from '../components/NavBar'
 import Footer from '../components/Footer'
 // import { getImage, GatsbyImage } from 'gatsby-plugin-image'
 
-import ausstellungen from '../images/Slbst_Öl.jpg'
+import ausstellungen from '../assets/images/Slbst_Öl.jpg'
 
 export default function Ausstellungen({ data }) {
     return (
