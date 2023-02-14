@@ -16,56 +16,59 @@ import konzert from '../images/Konzert.jpg'
 import '../styles/index.css'
 
 const musicBacgroundStyle = {
-  height: "100vh", 
-  backgroundImage: `url(${konzert})`, backgroundPosition: "center",
-  backgroundSize: "cover",
-  backgroundRepeat:"no-repeat"
+    height: '100vh',
+    backgroundImage: `url(${konzert})`,
+    backgroundPosition: 'center',
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat'
 }
 
 const IndexPage = ({ data }) => {
     return (
         <>
-          <NavBar/>
-          <div className="d-flex flex-column">
-            <div id="banner-container" style={{width: "75%", margin: "1em auto"}}>
-              <Slidy/>
-            </div>
-            <div className="main-layout card-style">
-              <IntroText introdata={data.allContentfulIntroText.nodes}/>
-            </div>
-            <Banner image={data.allContentfulBannerImage.nodes}/>
-            <div className="main-layout">
-              <ShowCaseBox/>
-            </div>
+            <NavBar />
+            <div className="d-flex flex-column">
+                <div
+                    id="banner-container"
+                    style={{ width: '75%', margin: '1em auto' }}
+                >
+                    <Slidy />
+                </div>
+                <div className="main-layout card-style">
+                    <IntroText introdata={data.allContentfulIntroText.nodes} />
+                </div>
+                <Banner image={data.allContentfulBannerImage.nodes} />
+                <div className="main-layout">
+                    <ShowCaseBox />
+                </div>
 
-            <div style={musicBacgroundStyle}>
+                <div style={musicBacgroundStyle}></div>
+
+                <div className="card-style">
+                    <NewsLetter />
+                </div>
             </div>
-            
-            <div className='card-style'>
-              <NewsLetter/>
-            </div>
-          </div>
-          <Footer/>
+            <Footer />
         </>
     )
 }
 
 export const query = graphql`
     query IntroTextQuery {
-      allContentfulGrafik(limit: 3) {
-        nodes {
-          year
-          slug
-          width
-          type
-          title
-          id
-          height
-          image {
-            gatsbyImageData(width: 260)
-          }
+        allContentfulGrafik(limit: 3) {
+            nodes {
+                year
+                slug
+                width
+                type
+                title
+                id
+                height
+                image {
+                    gatsbyImageData(width: 260)
+                }
+            }
         }
-      }
         allContentfulBannerImage {
             nodes {
                 image {
@@ -73,26 +76,26 @@ export const query = graphql`
                 }
                 title
                 text {
-                  childMdx {
-                    body
-                  }
-               }
+                    childMdx {
+                        body
+                    }
+                }
             }
         }
-          allContentfulIntroText(filter: {slug: {eq: "index"}}) {
+        allContentfulIntroText(filter: { slug: { eq: "index" } }) {
             nodes {
-              id
-              slug
-              header
-              page
-              text {
-                childMdx {
-                  body
+                id
+                slug
+                header
+                page
+                text {
+                    childMdx {
+                        body
+                    }
                 }
-             }
-          }
+            }
         }
-      }
-   `
+    }
+`
 
 export default IndexPage
