@@ -1,50 +1,63 @@
 import React from 'react'
 // import { qraphql } from 'gatsby'
 import { getImage } from 'gatsby-plugin-image'
-import { MDXProvider } from "@mdx-js/react"
-import MDXRenderer from "gatsby-plugin-mdx/mdx-renderer"
-import { BgImage } from 'gbimage-bridge';
+import { MDXProvider } from '@mdx-js/react'
+import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer'
+import { BgImage } from 'gbimage-bridge'
 // import { converToBgImage } from "gbimage-bridge"
 
-
-function Banner (props) {
+function Banner(props) {
     const image = props.image
-    return(
+    return (
         <div className="mt-4">
-          {image.map(img => {
-              const image = getImage(img.image)
-              return(
-                  <div key={img.slug}>
-                    <BgImage
-                      className="mb-5 d-flex align-items-end"
-                      image={image}
-                      style={{maxHeight: "100%", objectFit: "contain",height: "93vh"}}
-                    >
-                      <div
-                        className="banner-text-box"
-                        style={{padding: "1em 2em",color: "#FBFBFD", background: "rgba(95,149,169,0.8)"}}
-                      >
-                        <p
-                          className="fett"
-                          style={{textTransform: "uppercase", fontSize: "1.8vw"}}
-                          id="banner-title"
+            {image.map((img) => {
+                const image = getImage(img.image)
+                return (
+                    <div key={img.slug}>
+                        <BgImage
+                            className="mb-5 d-flex align-items-end"
+                            image={image}
+                            style={{
+                                maxHeight: '100%',
+                                objectFit: 'contain',
+                                height: '93vh'
+                            }}
                         >
-                          {img.title}
-                        </p>
-                        <div style={{fontSize: "1.2vw"}} id="banner-text">
-                          <MDXProvider>
-                            <MDXRenderer>
-                              {img.text.childMdx.body}
-                            </MDXRenderer>
-                          </MDXProvider>
-                        </div>
-                      </div>
-                    </BgImage>
-                  </div>
-              )
-          })}
+                            <div
+                                className="banner-text-box"
+                                style={{
+                                    padding: '1em 2em',
+                                    color: '#FBFBFD',
+                                    background: 'rgba(95,149,169,0.8)'
+                                }}
+                            >
+                                <p
+                                    className="fett"
+                                    style={{
+                                        textTransform: 'uppercase',
+                                        fontSize: '1.8vw'
+                                    }}
+                                    id="banner-title"
+                                >
+                                    {img.title}
+                                </p>
+                                <div
+                                    style={{ fontSize: '1.2vw' }}
+                                    id="banner-text"
+                                >
+                                    <MDXProvider>
+                                        <MDXRenderer>
+                                            {img.text.childMdx.body}
+                                        </MDXRenderer>
+                                    </MDXProvider>
+                                </div>
+                            </div>
+                        </BgImage>
+                    </div>
+                )
+            })}
         </div>
-    )}
-
+    )
+}
 
 export default Banner

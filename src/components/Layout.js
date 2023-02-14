@@ -8,10 +8,8 @@ export default function Layout({ children }) {
     return (
         <>
             <NavBar />
-            <main className="main-layout">
-                {children}
-            </main>
-            <Footer/>
+            <main className="main-layout">{children}</main>
+            <Footer />
         </>
     )
 }
