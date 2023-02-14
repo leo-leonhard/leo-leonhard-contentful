@@ -11,7 +11,7 @@ import IntroText from '../components/IntroText'
 import ShowCaseBox from '../components/ShowCaseBox'
 import Banner from '../components/Banner'
 
-import konzert from '../images/Konzert.jpg'
+import konzert from '../assets/images/Konzert.jpg'
 
 import '../styles/index.css'
 

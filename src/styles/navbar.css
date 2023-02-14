@@ -1,40 +1,39 @@
-.container{
+.container {
     max-width: 100% !important;
 }
 
-.dropdown-item:focus, .dropdown-item:active {
-    background: #9ED9EF;
+.dropdown-item:focus,
+.dropdown-item:active {
+    background: #9ed9ef;
 }
 
-
 .hover-underline-animation {
-  display: inline-block;
-  position: relative;
-
+    display: inline-block;
+    position: relative;
 }
 
 .hover-underline-animation:after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  transform: scaleX(0);
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: #0087ca;
-  transform-origin: bottom right;
-  transition: transform 0.25s ease-out;
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #0087ca;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
 }
 
 .hover-underline-animation:hover:after {
-  transform: scaleX(1);
-  transform-origin: bottom left;
+    transform: scaleX(1);
+    transform-origin: bottom left;
 }
 
-.logo, .signet {
+.logo,
+.signet {
     max-width: 90%;
 }
-
 
 #basic-navbar-nav {
     width: 30%;
@@ -51,20 +50,22 @@
 }
 
 .navbar-light .navbar-brand {
-    color: #589AAD;
+    color: #589aad;
     font-size: 2em;
 }
 
-.navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-brand:hover  .navbar-brand:active {
-    color: #9ED9EF;
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-brand:hover .navbar-brand:active {
+    color: #9ed9ef;
 }
 
 .navbar-light .navbar-nav .nav-link:active {
-    color: #9ED9EF;
+    color: #9ed9ef;
 }
 
-.navbar-light .navbar-brand:focus, .navbar-light .navbar-brand:hover {
-    color: #9ED9EF;
+.navbar-light .navbar-brand:focus,
+.navbar-light .navbar-brand:hover {
+    color: #9ed9ef;
 }
 .navbar-light .navbar-nav .nav-link {
     color: #212529;
@@ -74,14 +75,8 @@
     border: none !important;
 }
 
-
-
 /* Portrait Mobile */
-@media only screen
-and (min-device-width: 320px)
-and (max-device-width: 480px)
-and (-webkit-min-device-pixel-ratio: 2)
-and (orientation: portrait) {
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
     .navbar-light .navbar-brand {
         width: 70%;
     }
@@ -93,13 +88,12 @@ and (orientation: portrait) {
     }
 }
 
-
 /* Portrait Tablet */
-@media (min-device-width : 768px) and (max-device-width : 1024px) {
-    #header{
+@media (min-device-width: 768px) and (max-device-width: 1024px) {
+    #header {
         border: 2px solid red;
     }
-    .navbar .navbar-expand-lg .navbar-light{
+    .navbar .navbar-expand-lg .navbar-light {
         width: 100%;
         border: 2px solid red;
     }
@@ -108,7 +102,7 @@ and (orientation: portrait) {
 /* iPads (portrait) ----------- */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
     /* Styles */
-        #header {
-            width: 100% !important;
-        }
+    #header {
+        width: 100% !important;
+    }
 }

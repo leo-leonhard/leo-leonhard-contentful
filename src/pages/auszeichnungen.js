@@ -6,7 +6,7 @@ import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer'
 import NavBar from '../components/NavBar'
 import Footer from '../components/Footer'
 
-import p from '../images/p.png'
+import p from '../assets/images/p.png'
 
 export default function Auszeichnungen({ data }) {
     return (

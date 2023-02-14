@@ -3,7 +3,7 @@ import { graphql } from 'gatsby'
 import NavBar from '../components/NavBar'
 import Footer from '../components/Footer'
 
-import s from '../images/s.png'
+import s from '../assets/images/s.png'
 
 export default function Lebensstationen({ data }) {
     return (

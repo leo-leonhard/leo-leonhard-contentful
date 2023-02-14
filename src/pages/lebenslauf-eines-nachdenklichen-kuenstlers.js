@@ -3,7 +3,7 @@ import React from 'react'
 import NavBar from '../components/NavBar'
 import Footer from '../components/Footer'
 
-import k from '../images/Lebenslauf eines nachdenklichen Künstlers.jpg'
+import k from '../assets/images/Lebenslauf eines nachdenklichen Künstlers.jpg'
 
 export default function Werke() {
     return (

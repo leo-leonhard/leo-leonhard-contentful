@@ -1,9 +1,14 @@
 {
   "name": "leo-leonhard",
   "version": "1.0.0",
+  "engines": {"node": "16.x"},
   "private": true,
   "description": "leo-leonhard",
   "author": "Hanna Rosenfeld",
+  "bugs": {
+    "url": "https://github.com/hannarosenfeld/leo-leonhard-contentful/issues"
+  },
+  "homepage": "https://",
   "license": "MIT",
   "keywords": [
     "gatsby"
@@ -14,7 +19,8 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "format": "prettier --write '{gatsby-*.js,src/**/*.{js,jsx,json,css}}'",
+    "lint": "./node_modules/.bin/eslint --ext .js,.jsx --ignore-pattern public .",
     "lint:fix": "eslint --fix --max-warnings 0 src"
   },
   "dependencies": {

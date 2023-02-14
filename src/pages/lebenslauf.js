@@ -8,12 +8,10 @@ import PageBanner from '../components/PageBanner'
 import IntroText from '../components/IntroText'
 import Layout from '../components/Layout'
 
-import portrait from '../images/portrait.jpg'
-// import selbstportraet from "../images/selbstporttraet.png"
-// import img from "../images/Aufgang.jpg"
-import auszeichnungen from '../images/Slbst_Öl.jpg'
-import s from '../images/s.png'
-import p from '../images/p.png'
+import portrait from '../assets/images/portrait.jpg'
+import auszeichnungen from '../assets/images/Slbst_Öl.jpg'
+import s from '../assets/images/s.png'
+import p from '../assets/images/p.png'
 
 const Box = ({ title, image, destination }) => {
     return (

@@ -5,7 +5,7 @@ import { graphql } from 'gatsby'
 import NavBar from '../components/NavBar'
 import Footer from '../components/Footer'
 
-import f from '../images/Das Frühwerk.jpg'
+import f from '../assets/images/Das Frühwerk.jpg'
 
 export default function Frühwerk() {
     return (

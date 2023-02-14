@@ -16,13 +16,12 @@
     color: white;
 }
 
-
-.banner-text h2, .banner-text img{
+.banner-text h2,
+.banner-text img {
     margin-left: auto;
-
 }
 
-.banner-text img{
+.banner-text img {
     padding: 0 4em;
 }
 
@@ -42,10 +41,8 @@
     margin: 1em 8em;
 }
 
-
-
 /* MOBILE Portrait */
-@media only screen and (min-device-width : 320px) and (max-device-width : 800px) {
+@media only screen and (min-device-width: 320px) and (max-device-width: 800px) {
     .slider-text-box {
         width: 100%;
         margin: 1em;
@@ -53,11 +50,5 @@
 }
 
 /* TABLET Portrait */
-@media only screen
-  and (min-device-width: 768px)
-  and (max-device-width: 1024px)
-  and (orientation: portrait)
-  and (-webkit-min-device-pixel-ratio: 1) {
-
-
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
 }

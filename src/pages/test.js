@@ -4,7 +4,7 @@ import React from 'react'
 import NavBar from '../components/NavBar'
 import Footer from '../components/Footer'
 
-import portrait from '../images/portrait.jpg'
+import portrait from '../assets/images/portrait.jpg'
 
 export default function Nachruf({ data }) {
     return (
