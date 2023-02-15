@@ -15,21 +15,12 @@ import p from '../assets/images/p.png'
 
 const Box = ({ title, image, destination }) => {
     return (
-        <div style={{ width: '20%', margin: '1em' }}>
-            <Link to={destination} style={{ color: '#212529' }}>
-                <img
-                    src={image}
-                    alt="text"
-                    style={{ width: '100%', height: '8em' }}
-                />
-                <div className="mt-1">
-                    {/* 
-              <button className="fett" style={{width: "100%", fontSize: "1vw", background: "#589AAD", border: "3px solid #589AAD", color: "snow", textTransform: "uppercase"}}>{title}</button> 
-              */}
-                    <button className="btn btn-stationen">{title}</button>
-                </div>
-            </Link>
-        </div>
+        <Link to={destination} style={{ color: '#212529' }}>
+            <img src={image} alt="text" />
+            <div className="mt-1">
+                <button className="btn btn-stationen">{title}</button>
+            </div>
+        </Link>
     )
 }
 
@@ -63,7 +54,7 @@ const LebenslaufPage = ({ data }) => (
             <IntroText introdata={data.allContentfulIntroText.nodes} />
         </section>
 
-        <div className="d-flex justify-content-between mt-5 mb-5">
+        <section className="gallery-lenbenslauf">
             {lebenslaufStationen.map((item) => {
                 return (
                     <Box
@@ -74,7 +65,7 @@ const LebenslaufPage = ({ data }) => (
                     />
                 )
             })}
-        </div>
+        </section>
     </Layout>
 )
 
