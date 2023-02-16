@@ -37,7 +37,11 @@ const IndexPage = ({ data }) => {
                 <div className="main-layout card-style">
                     <IntroText introdata={data.allContentfulIntroText.nodes} />
                 </div>
+
+                {/* gallery */}
+
                 <Banner image={data.allContentfulBannerImage.nodes} />
+
                 <div className="main-layout">
                     <ShowCaseBox />
                 </div>
