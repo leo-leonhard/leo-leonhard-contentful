@@ -1,8 +1,5 @@
 import React from 'react'
 import { graphql, Link } from 'gatsby'
-// import { getImage, GatsbyImage } from 'gatsby-plugin-image'
-// import { MDXProvider } from "@mdx-js/react"
-// import MDXRenderer from "gatsby-plugin-mdx/mdx-renderer"
 
 import PageBanner from '../components/PageBanner'
 import IntroText from '../components/IntroText'
