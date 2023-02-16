@@ -327,9 +327,9 @@ hr {
 .btn-stationen {
     width: 100%;
     border-radius: 0;
-    font-size: 0.95rem;
+    font-size: 1.2rem;
     font-weight: bold;
-    padding: 0.4em 1.4em;
+    padding: 0.5em 1.4em;
 }
 .btn-stationen:hover {
     transform: scale(1.02);
@@ -349,8 +349,8 @@ hr {
 /* gallery responsive */
 .gallery-lenbenslauf {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
+    gap: 1em;
     width: 100%;
     height: auto;
     padding: 2em 0;
@@ -358,7 +358,7 @@ hr {
 .gallery-lenbenslauf img {
     object-fit: cover;
     object-position: 50% 50%;
-    height: 50vh;
+    height: 30vh;
     width: 100%;
     margin: 0;
     padding: 0;
