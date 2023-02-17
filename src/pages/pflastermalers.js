@@ -1,14 +1,16 @@
 import React from 'react'
 import { graphql, Link } from 'gatsby'
 
+import Layout from '../components/Layout'
 import PageBanner from '../components/PageBanner'
 import IntroText from '../components/IntroText'
-import Layout from '../components/Layout'
 
+// images gallery
 import portrait from '../assets/images/portrait.jpg'
 import auszeichnungen from '../assets/images/Slbst_Öl.jpg'
 import s from '../assets/images/s.png'
 import p from '../assets/images/p.png'
+//  ----
 
 const Box = ({ title, image, destination }) => {
     return (
@@ -21,6 +23,7 @@ const Box = ({ title, image, destination }) => {
     )
 }
 
+// image data
 const lebenslaufStationen = [
     {
         title: 'Lebensstationen',
@@ -43,8 +46,9 @@ const lebenslaufStationen = [
         image: `${auszeichnungen}`
     }
 ]
+//  ------
 
-const LebenslaufPage = ({ data }) => (
+const Pflastermalers = ({ data }) => (
     <Layout>
         <section style={{ background: '#F8F3EA', padding: '1em 2em 3em 2em' }}>
             <PageBanner image={data.allContentfulPageBanner.nodes} />
@@ -89,4 +93,4 @@ export const query = graphql`
     }
 `
 
-export default LebenslaufPage
+export default Pflastermalers

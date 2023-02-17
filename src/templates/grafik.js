@@ -29,14 +29,23 @@ export default function GrafikTemplate({ data }) {
                             </span>
                         </div>
                         <hr />
-                        <div className="artwork-detail-container d-flex">
+
+                        <div className="artwork-detail-container">
                             <div className="artwork-detail-image-container">
-                                <GatsbyImage image={image} />
+                                <GatsbyImage
+                                    image={image}
+                                    class="artwort-test"
+                                />
                             </div>
+                            {/* this should be a component */}
                             <div className="artwork-detail-text">
-                                <h3>
-                                    {pic.title}, {pic.year}
-                                </h3>
+                                <h3>{pic.title}</h3>
+                                <h3>{pic.year}</h3>
+                                {/*
+                                 * TODO:
+                                 * check this: h4 is empty
+                                 * *what is the type?
+                                 * */}
                                 <h4>{pic.type}</h4>
                                 <p className="pt-4">
                                     <MDXProvider>
@@ -47,7 +56,8 @@ export default function GrafikTemplate({ data }) {
                                 </p>
                             </div>
                         </div>
-                        <hr />
+
+                        {/* <hr /> */}
                     </div>
                 )
             })}
@@ -68,7 +78,7 @@ export const query = graphql`
                     }
                 }
                 image {
-                    gatsbyImageData(width: 600, placeholder: BLURRED)
+                    gatsbyImageData(placeholder: BLURRED)
                 }
             }
         }

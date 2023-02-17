@@ -1,7 +1,6 @@
 {
   "name": "leo-leonhard",
   "version": "1.0.0",
-  "engines": {"node": "16.x"},
   "private": true,
   "description": "leo-leonhard",
   "author": "Hanna Rosenfeld",
