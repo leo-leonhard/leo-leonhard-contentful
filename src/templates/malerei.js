@@ -29,14 +29,13 @@ export default function MalreiTemplate({ data }) {
                             </span>
                         </div>
                         <hr />
-                        <div className="artwork-detail-container d-flex">
+                        <div className="artwork-detail-container ">
                             <div className="artwork-detail-image-container">
                                 <GatsbyImage image={image} />
                             </div>
                             <div className="artwork-detail-text">
-                                <h3>
-                                    {pic.title}, {pic.year}
-                                </h3>
+                                <h3>{pic.title}</h3>
+                                <h3>{pic.year}</h3>
                                 <h4>{pic.type}</h4>
                                 <p className="pt-4">
                                     <MDXProvider>
@@ -47,7 +46,6 @@ export default function MalreiTemplate({ data }) {
                                 </p>
                             </div>
                         </div>
-                        <hr />
                     </div>
                 )
             })}
@@ -68,7 +66,7 @@ export const query = graphql`
                     }
                 }
                 image {
-                    gatsbyImageData(width: 600, placeholder: BLURRED)
+                    gatsbyImageData(placeholder: BLURRED)
                 }
             }
         }

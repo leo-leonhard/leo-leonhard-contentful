@@ -68,68 +68,20 @@ const LebenslaufPage = ({ data }) => (
 
 export const query = graphql`
     query getLebenslaufContent {
+        allContentfulPageBanner(filter: { slug: { eq: "lebenslauf" } }) {
+            nodes {
+                image {
+                    gatsbyImageData(width: 1200, placeholder: BLURRED)
+                }
+            }
+        }
         allContentfulIntroText(filter: { slug: { eq: "lebenslauf" } }) {
             nodes {
-                id
-                slug
                 header
                 page
                 text {
                     childMdx {
                         body
-                    }
-                }
-            }
-        }
-        allContentfulPageBanner(filter: { slug: { eq: "lebenslauf" } }) {
-            nodes {
-                slug
-                image {
-                    id
-                    gatsbyImageData(width: 1200, placeholder: BLURRED)
-                }
-            }
-        }
-        allContentfulLebenslauf(sort: { fields: year, order: ASC }) {
-            nodes {
-                year
-                event
-            }
-        }
-        allContentfulAuszeichnung(sort: { fields: year, order: ASC }) {
-            nodes {
-                year
-                auszeichnungen {
-                    childMdx {
-                        body
-                    }
-                }
-            }
-        }
-        allContentfulEinzelausstellungen(
-            sort: { fields: zeitraum, order: ASC }
-        ) {
-            nodes {
-                zeitraum
-                height
-                ausstellungen {
-                    year
-                    venues {
-                        name
-                    }
-                }
-            }
-        }
-        allContentfulGruppenausstellungen(
-            sort: { fields: zeitraum, order: ASC }
-        ) {
-            nodes {
-                zeitraum
-                height
-                gruppenausstellung {
-                    year
-                    venues {
-                        name
                     }
                 }
             }
