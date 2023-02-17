@@ -60,22 +60,4 @@ function Banner(props) {
     )
 }
 
-export const query = graphql`
-    query SlickQuery {
-        allContentfulBannerImage {
-            nodes {
-                title
-                text {
-                    id
-                    childMdx {
-                        body
-                    }
-                }
-                image {
-                    gatsbyImageData
-                }
-            }
-        }
-    }
-`
 export default Banner
