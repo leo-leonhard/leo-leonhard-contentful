@@ -8,7 +8,7 @@ import NewsLetter from '../components/NewsLetter'
 
 import Slidy from '../components/Slick'
 import IntroText from '../components/IntroText'
-import ShowCaseBox from '../components/ShowCaseBox'
+import ShowCaseBox from '../components/showCaseBox/ShowCaseBox'
 import Banner from '../components/Banner'
 
 import konzert from '../assets/images/Konzert.jpg'
