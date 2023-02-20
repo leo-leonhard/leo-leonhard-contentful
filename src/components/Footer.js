@@ -25,13 +25,11 @@ const Footer = () => (
                     <br />
                     Sandstraße 18
                     <br />
-                    64404 Bickenbach
-                    <br />
-                    info@leoleonhard.de
+                    info@leo-leonhard.de
                     <br />
                 </address>
             </div>
-            <div className="copyright visible-on-tablet visible-on-mobile">
+            {/* <div className="copyright visible-on-tablet visible-on-mobile">
                 <p>
                     Copyright © 2022 Leo Leonhard Nachlass.
                     <br />
@@ -45,7 +43,7 @@ const Footer = () => (
                         Hanna Rosenfeld.
                     </a>
                 </p>
-            </div>
+            </div> */}
         </div>
         <div style={{ width: '90%' }}>
             <div className="d-flex footer-nav">
@@ -81,6 +79,8 @@ const Footer = () => (
                             <Link to="/grafik#zeichnungen">Zeichnungen</Link>
                             <Link to="/grafik#radierungen">Radierungen</Link>
                             <Link to="/grafik#holzschnitte">Holzschnitte</Link>
+                            <Link to="/grafik#lithografie">Lithografie</Link>
+                            <Link to="/grafik#mappenwerke">Mappenweke</Link>
                         </div>
                     </div>
                     <hr className="hidden-on-tablet" />
@@ -108,7 +108,7 @@ const Footer = () => (
                     <hr />
                 </div>
             </div>
-            <div className="mt-3 copyright hidden-on-tablet">
+            {/* <div className="mt-3 copyright hidden-on-tablet">
                 <p style={{ fontSize: '0.8em' }}>
                     Copyright © 2022 Leo Leonhard Nachlass. All rights reserved.
                     Build by{' '}
@@ -119,7 +119,7 @@ const Footer = () => (
                         Hanna Rosenfeld.
                     </a>
                 </p>
-            </div>
+            </div> */}
         </div>
     </div>
 )

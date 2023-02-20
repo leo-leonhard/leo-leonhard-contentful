@@ -13,7 +13,7 @@ import p from '../assets/images/p.png'
 const Box = ({ title, image, destination }) => {
     return (
         <Link to={destination} style={{ color: '#212529' }}>
-            <img src={image} alt="text" />
+            <img src={image} alt={title} />
             <div className="mt-1">
                 <button className="btn btn-stationen">{title}</button>
             </div>
