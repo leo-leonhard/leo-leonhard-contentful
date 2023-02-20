@@ -234,9 +234,10 @@ hr {
 
 .artwork-detail-container {
     display: flex;
-    align-items: center;
-    gap: 1em;
     justify-content: space-between;
+    gap: 2em;
+    align-items: center;
+    margin-bottom: 10em;
 }
 .artwork-detail-image-container {
     flex-grow: 3;
@@ -261,7 +262,6 @@ hr {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: center;
 }
 
 .banner-text {

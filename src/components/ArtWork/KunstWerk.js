@@ -31,9 +31,6 @@ export default function Kunstwerk(props) {
                                     height: '100%'
                                 }}
                             >
-                                <h4 style={{ minHeight: '2em' }}>
-                                    {werk.title}, {werk.year}
-                                </h4>
                                 <BgImage
                                     image={image}
                                     style={{
@@ -42,6 +39,14 @@ export default function Kunstwerk(props) {
                                         height: '15em'
                                     }}
                                 />
+                                <h4
+                                    style={{
+                                        minHeight: '2em',
+                                        marginTop: '1em'
+                                    }}
+                                >
+                                    {werk.title}, {werk.year}
+                                </h4>
                             </Link>
                         </div>
                     )
