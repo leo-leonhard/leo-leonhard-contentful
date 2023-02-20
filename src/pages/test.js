@@ -1,16 +1,14 @@
 import React from 'react'
 // import {graphql} from 'gatsby'
 
-import NavBar from '../components/NavBar'
-import Footer from '../components/Footer'
+import Layout from '../components/Layout'
 
-import portrait from '../assets/images/portrait.jpg'
+// import portrait from '../assets/images/portrait.jpg'
 
-export default function Nachruf({ data }) {
+export default function Nachruf() {
     return (
-        <>
-            <NavBar />
-            <div style={{ width: '75%', margin: '0 auto' }}>
+        <Layout>
+            {/* <div style={{ width: '75%', margin: '0 auto' }}>
                 <img
                     src={portrait}
                     alt="text"
@@ -20,7 +18,7 @@ export default function Nachruf({ data }) {
                         objectFit: 'cover'
                     }}
                 />
-            </div>
+            </div> */}
             <div
                 className="pt-5 pb-5 mt-5 mb-5"
                 style={{ background: '#F8F3EA' }}
@@ -149,7 +147,6 @@ export default function Nachruf({ data }) {
                     </p>
                 </div>
             </div>
-            <Footer />
-        </>
+        </Layout>
     )
 }

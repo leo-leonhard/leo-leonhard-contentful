@@ -116,7 +116,7 @@ hr {
 
 .main-layout {
     width: 75%;
-    margin: 0 auto 0;
+    margin: 1em auto 2em;
     padding: 0;
 }
 .card-style {
@@ -372,7 +372,7 @@ hr {
 .gallery-lenbenslauf {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
-    gap: 1em;
+    gap: 1.5em;
     width: 100%;
     height: auto;
     padding: 2em 0;

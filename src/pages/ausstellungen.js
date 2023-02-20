@@ -5,14 +5,14 @@ import NavBar from '../components/NavBar'
 import Footer from '../components/Footer'
 // import { getImage, GatsbyImage } from 'gatsby-plugin-image'
 
-import ausstellungen from '../assets/images/Slbst_Öl.jpg'
+// import ausstellungen from '../assets/images/Slbst_Öl.jpg'
 
 export default function Ausstellungen({ data }) {
     return (
         <>
             <NavBar />
             <div style={{ width: '75%', margin: '1em auto 3em auto' }}>
-                <img
+                {/*     <img
                     className="mb-5"
                     alt="text"
                     src={ausstellungen}
@@ -21,7 +21,7 @@ export default function Ausstellungen({ data }) {
                         height: '80vh',
                         objectFit: 'cover'
                     }}
-                />
+                /> */}
                 <h2>EINZELAUSSTELLUNGEN</h2>
                 <hr style={{ width: '20%', margin: '3em 0 1em 0' }} />
                 <div className="d-flex flex-wrap justify-content-between">
