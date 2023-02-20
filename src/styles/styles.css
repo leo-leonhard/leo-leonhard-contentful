@@ -115,10 +115,18 @@ hr {
 }
 
 .main-layout {
-    width: 75%;
+    width: 100vw;
     margin: 1em auto 2em;
     padding: 0;
+    display: flex;
+    flex-direction: column;
 }
+
+.standard-layout-width {
+    width: 75%;
+    margin: 0 auto;
+}
+
 .card-style {
     min-height: 50vh;
     padding: 7em 0;
@@ -144,8 +152,27 @@ hr {
     padding: 0;
 }
 
+/* image band index */
+.image-band-container {
+    height: 100vh;
+    width: 100%;
+    max-width: 1800px; /* o cualquier otro valor que prefieras */
+    margin: 0 auto;
+    border: 1px solid red;
+}
+
+.image-band {
+    background-image: url('../assets/images/Konzert.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+}
+
+/* no está siendo utilizado */
 .index-image-container {
-    background-image: url(../assets/images/index_laptop.png);
+    background-image: url('../assets/images/index_laptop.png');
     height: 89vh;
     background-size: cover;
 }
@@ -409,9 +436,7 @@ hr {
     .copyright {
         padding: 0 !important;
     }
-    .main-layout {
-        width: 100%;
-    }
+
     .homepage-banner {
         margin: 0;
     }
@@ -434,10 +459,7 @@ hr {
         width: 100% !important;
         margin: 1em auto;
     }
-    .main-layout {
-        width: 100% !important;
-        margin: 0 auto;
-    }
+
     .mappenwerke {
         flex-direction: column;
     }
@@ -550,9 +572,7 @@ hr {
     .navbar-nav {
         margin-left: 1em;
     }
-    .main-layout {
-        width: 85%;
-    }
+
     .showcase-image {
         width: 100% !important;
     }
