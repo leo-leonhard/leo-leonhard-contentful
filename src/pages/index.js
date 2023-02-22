@@ -4,6 +4,7 @@ import { graphql } from 'gatsby'
 import '../styles/index.css'
 import Layout from '../components/Layout'
 import IntroText from '../components/IntroText'
+import NextExpoSlider from '../components/slider/NextExpoSlider'
 import Banner from '../components/Banner'
 import ShowCaseBox from '../components/showCaseBox/ShowCaseBox'
 import Slidy from '../components/Slick'
@@ -24,18 +25,22 @@ const IndexPage = ({ data }) => {
                 <IntroText introdata={data.allContentfulIntroText.nodes} />
             </div>
 
-            {/* pagina pflaster */}
-            <div className="standard-layout-width">
-                <Banner image={data.allContentfulBannerImage.nodes} />
-            </div>
-
             {/* showcase box */}
             <div className="standard-layout-width">
                 <ShowCaseBox />
             </div>
 
+            {/* pagina pflaster */}
+            <div className="container-wider">
+                <Banner image={data.allContentfulBannerImage.nodes} />
+            </div>
+
+            <div className="standard-layout-width slider-container">
+                <NextExpoSlider />
+            </div>
+
             {/* image band */}
-            <div>
+            <div className="container-wider">
                 <div className="image-band"></div>
             </div>
 

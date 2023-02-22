@@ -1,0 +1,7 @@
+.next-expo-image {
+    display: flex;
+    align-items: flex-end;
+    max-height: 80%;
+    object-fit: contain;
+    height: 73vh;
+}

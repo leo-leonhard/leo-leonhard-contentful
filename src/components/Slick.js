@@ -20,12 +20,39 @@ const settings = {
 }
 
 export default function Slidy() {
-    const data = useStaticQuery(query)
+    const data = useStaticQuery(graphql`
+        query slickQuery {
+            allContentfulSliderImage(
+                sort: { fields: reihenfolge, order: ASC }
+            ) {
+                nodes {
+                    page
+                    reihenfolge
+                    imageTitle
+                    color
+                    bannerText {
+                        bannerText
+                    }
+                    subtitle
+                    id
+                    sliderImage {
+                        gatsbyImageData(
+                            width: 1200
+                            placeholder: BLURRED
+                            layout: CONSTRAINED
+                        )
+                        url
+                    }
+                }
+            }
+        }
+    `)
     return (
         <div className="homepage-banner mb-5">
             <Slider {...settings}>
                 {data.allContentfulSliderImage.nodes.map((image) => {
                     const slickImage = getImage(image.sliderImage)
+
                     return (
                         <div key={image.id}>
                             <BgImage
@@ -90,29 +117,3 @@ export default function Slidy() {
         </div>
     )
 }
-
-export const query = graphql`
-    query slickQuery {
-        allContentfulSliderImage(sort: { fields: reihenfolge, order: ASC }) {
-            nodes {
-                page
-                reihenfolge
-                imageTitle
-                color
-                bannerText {
-                    bannerText
-                }
-                subtitle
-                id
-                sliderImage {
-                    gatsbyImageData(
-                        width: 1200
-                        placeholder: BLURRED
-                        layout: CONSTRAINED
-                    )
-                    url
-                }
-            }
-        }
-    }
-`
