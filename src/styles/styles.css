@@ -115,10 +115,18 @@ hr {
 }
 
 .main-layout {
-    width: 75%;
+    width: 100vw;
     margin: 1em auto 2em;
     padding: 0;
+    display: flex;
+    flex-direction: column;
 }
+
+.standard-layout-width {
+    width: 75%;
+    margin: 0 auto;
+}
+
 .card-style {
     min-height: 50vh;
     padding: 7em 0;
@@ -126,7 +134,7 @@ hr {
     place-items: center;
 }
 .container {
-    max-width: 100% !important;
+    max-width: 100%;
 }
 .newsletter-grid {
     display: grid;
@@ -144,12 +152,30 @@ hr {
     padding: 0;
 }
 
+.container-wider {
+    height: 100vh;
+    width: 100%;
+    max-width: 1800px; /* o cualquier otro valor que prefieras */
+    margin: 0 auto;
+}
+
+/* image band index */
+.image-band {
+    background-image: url('../assets/images/Konzert.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+/* no está siendo utilizado */
 .index-image-container {
-    background-image: url(../assets/images/index_laptop.png);
+    background-image: url('../assets/images/index_laptop.png');
     height: 89vh;
     background-size: cover;
 }
 
+/* slick slider */
 .slick-slide:not(.slick-active) {
     pointer-events: none;
 }
@@ -286,12 +312,23 @@ hr {
 .banner-text img {
     padding: 0 4em;
 }
+
+.slider-container {
+    padding: 5em 0;
+}
+
+.bgimage {
+    object-fit: cover;
+    width: 100%;
+    min-height: 50vh;
+}
 .slider-text-box {
     text-decoration: none;
     min-height: 10em;
     padding: 0.5em 2em;
     margin: 2em 3em;
 }
+
 .home-banner-text {
     color: black;
     font-size: 0.9rem;
@@ -409,9 +446,7 @@ hr {
     .copyright {
         padding: 0 !important;
     }
-    .main-layout {
-        width: 100%;
-    }
+
     .homepage-banner {
         margin: 0;
     }
@@ -434,10 +469,7 @@ hr {
         width: 100% !important;
         margin: 1em auto;
     }
-    .main-layout {
-        width: 100% !important;
-        margin: 0 auto;
-    }
+
     .mappenwerke {
         flex-direction: column;
     }
@@ -550,9 +582,7 @@ hr {
     .navbar-nav {
         margin-left: 1em;
     }
-    .main-layout {
-        width: 85%;
-    }
+
     .showcase-image {
         width: 100% !important;
     }

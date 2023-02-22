@@ -2,8 +2,50 @@ import React from 'react'
 import { graphql, useStaticQuery, Link } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
+/* 
+import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
+
+export default function Header() {
+  const data = useStaticQuery(graphql`
+    query HeaderQuery {
+      site {
+        siteMetadata {
+          title
+        }
+      }
+    }
+  `)
+
+  return (
+    <header>
+      <h1>{data.site.siteMetadata.title}</h1>
+    </header>
+  )
+}
+*/
+
 export default function ShowCaseBox() {
-    const data = useStaticQuery(query)
+    const data = useStaticQuery(graphql`
+        query ShowCaseBoxQuery {
+            allContentfulShowcaseBox {
+                nodes {
+                    id
+                    slug
+                    header
+                    text {
+                        childMdx {
+                            body
+                            excerpt(pruneLength: 80)
+                        }
+                    }
+                    image {
+                        gatsbyImageData(width: 525, placeholder: BLURRED)
+                    }
+                }
+            }
+        }
+    `)
     return (
         <div
             className="d-flex flex-wrap justify-content-between showcase-box"
@@ -47,24 +89,3 @@ export default function ShowCaseBox() {
         </div>
     )
 }
-
-export const query = graphql`
-    query ShowCaseBoxQuery {
-        allContentfulShowcaseBox {
-            nodes {
-                id
-                slug
-                header
-                text {
-                    childMdx {
-                        body
-                        excerpt(pruneLength: 80)
-                    }
-                }
-                image {
-                    gatsbyImageData(width: 525, placeholder: BLURRED)
-                }
-            }
-        }
-    }
-`

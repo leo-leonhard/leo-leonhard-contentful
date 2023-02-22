@@ -1,59 +1,54 @@
 import * as React from 'react'
 import { graphql } from 'gatsby'
-// import { GatsbyImage, getImage } from 'gatsby-plugin-image'
-
-import NavBar from '../components/NavBar'
-import Footer from '../components/Footer'
-import NewsLetter from '../components/NewsLetter'
-
-import Slidy from '../components/Slick'
-import IntroText from '../components/IntroText'
-import ShowCaseBox from '../components/showCaseBox/ShowCaseBox'
-import Banner from '../components/Banner'
-
-import konzert from '../assets/images/Konzert.jpg'
 
 import '../styles/index.css'
+import Layout from '../components/Layout'
+import IntroText from '../components/IntroText'
+import NextExpoSlider from '../components/slider/NextExpoSlider'
+import Banner from '../components/Banner'
+import ShowCaseBox from '../components/showCaseBox/ShowCaseBox'
+import Slidy from '../components/Slick'
+import NewsLetter from '../components/newsletter/NewsLetter'
 
-const musicBacgroundStyle = {
-    height: '100vh',
-    backgroundImage: `url(${konzert})`,
-    backgroundPosition: 'center',
-    backgroundSize: 'cover',
-    backgroundRepeat: 'no-repeat'
-}
+// TODO: check the graphql, many things not being used
 
 const IndexPage = ({ data }) => {
     return (
-        <>
-            <NavBar />
-            <div className="d-flex flex-column">
-                <div
-                    id="banner-container"
-                    style={{ width: '75%', margin: '1em auto' }}
-                >
-                    <Slidy />
-                </div>
-                <div className="main-layout card-style">
-                    <IntroText introdata={data.allContentfulIntroText.nodes} />
-                </div>
-
-                {/* gallery */}
-
-                <Banner image={data.allContentfulBannerImage.nodes} />
-
-                <div className="main-layout">
-                    <ShowCaseBox />
-                </div>
-
-                <div style={musicBacgroundStyle}></div>
-
-                <div className="card-style">
-                    <NewsLetter />
-                </div>
+        <Layout>
+            {/* slider */}
+            <div id="banner-container" className="standard-layout-width">
+                <Slidy />
             </div>
-            <Footer />
-        </>
+
+            {/* text */}
+            <div className="standard-layout-width card-style">
+                <IntroText introdata={data.allContentfulIntroText.nodes} />
+            </div>
+
+            {/* showcase box */}
+            <div className="standard-layout-width">
+                <ShowCaseBox />
+            </div>
+
+            {/* pagina pflaster */}
+            <div className="container-wider">
+                <Banner image={data.allContentfulBannerImage.nodes} />
+            </div>
+
+            <div className="standard-layout-width slider-container">
+                <NextExpoSlider />
+            </div>
+
+            {/* image band */}
+            <div className="container-wider">
+                <div className="image-band"></div>
+            </div>
+
+            {/* NewsLetter */}
+            <div className="card-style standard-layout-width">
+                <NewsLetter />
+            </div>
+        </Layout>
     )
 }
 
