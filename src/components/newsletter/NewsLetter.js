@@ -6,10 +6,9 @@ import Checkbox from './Checkbox'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlay } from '@fortawesome/free-solid-svg-icons'
 
-/* TODO:
- * create a hook to handle the logic
- * cookie to not show again the newsleter option once the user has logged
- */
+// TODO:
+// * create a hook to handle the logic
+// * cookie to not show again the newsleter option once the user has logged
 
 export default function Newsletter() {
     const [email, setEmail] = useState('')
