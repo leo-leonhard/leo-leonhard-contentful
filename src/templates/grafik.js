@@ -42,7 +42,7 @@ export default function GrafikTemplate({ data }) {
                                 <h3>{pic.title}</h3>
                                 <h3>{pic.year}</h3>
                                 {/*
-                                 * TODO:
+                                 * // TODO:
                                  * check this: h4 is empty
                                  * *what is the type?
                                  * */}

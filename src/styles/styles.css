@@ -115,7 +115,8 @@ hr {
 }
 
 .main-layout {
-    width: 100vw;
+    width: 75%;
+
     margin: 1em auto 2em;
     padding: 0;
     display: flex;
@@ -155,7 +156,6 @@ hr {
 .container-wider {
     height: 100vh;
     width: 100%;
-    max-width: 1800px; /* o cualquier otro valor que prefieras */
     margin: 0 auto;
 }
 
