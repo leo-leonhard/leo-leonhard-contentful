@@ -3,11 +3,11 @@ import { StaticQuery, graphql } from 'gatsby'
 
 import KunstWerk from '../KunstWerk'
 
-const Zeichnungen = () => (
+const Mappenwerke = () => (
     <StaticQuery
         query={graphql`
-            query getZeichnungen {
-                allContentfulGrafik(filter: { type: { eq: "Zeichnung" } }) {
+            query getMappenwerke {
+                allContentfulGrafik(filter: { type: { eq: "mappenwerke" } }) {
                     nodes {
                         year
                         slug
@@ -34,4 +34,4 @@ const Zeichnungen = () => (
     />
 )
 
-export default Zeichnungen
+export default Mappenwerke
