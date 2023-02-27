@@ -52,7 +52,7 @@
 .address-style > ul > li > a {
     color: #fbfbfd !important;
 }
-a:hover {
+.footer a:hover {
     text-decoration: underline;
     font-weight: bold;
 }
