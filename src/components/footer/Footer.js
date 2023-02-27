@@ -1,8 +1,14 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import logo from '../assets/images/logo_white.png'
+import logo from '../../assets/images/logo_white.png'
 
-import '../styles/footer-style.css'
+import './footer-style.css'
+
+// TODO
+// * separate the styles
+// * create a cleaner component
+// and iterate through the elements
+// * use grid to improve performance and responsiveness
 
 const Footer = () => (
     <div className="footer">
@@ -18,32 +24,27 @@ const Footer = () => (
                         src={logo}
                     />
                 </Link>
-                <address style={{ fontSize: '0.7em' }}>
-                    LEO LEONHARD NACHLASS
-                    <br />
-                    Florian Leonhard
-                    <br />
-                    Sandstraße 18
-                    <br />
-                    info@leo-leonhard.de
-                    <br />
+                <address className="address-style">
+                    <ul>
+                        <li>LEO LEONHARD NACHLASS</li>
+                        <li>Florian Leonhard</li>
+                        <li>Sandstraße 18</li>
+                        {/*
+                         * //TODO
+                         * check with time a way to offuscate mailto
+                         * */}
+                        <li>
+                            <a
+                                href="mailto:info@leo-leonhard.de"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                info@leo-leonhard.de
+                            </a>
+                        </li>
+                    </ul>
                 </address>
             </div>
-            {/* <div className="copyright visible-on-tablet visible-on-mobile">
-                <p>
-                    Copyright © 2022 Leo Leonhard Nachlass.
-                    <br />
-                    All rights reserved.
-                    <br />
-                    Build by{' '}
-                    <a
-                        style={{ textDecoration: 'none', color: 'white' }}
-                        href="https://hannarosenfeld.com/"
-                    >
-                        Hanna Rosenfeld.
-                    </a>
-                </p>
-            </div> */}
         </div>
         <div style={{ width: '90%' }}>
             <div className="d-flex footer-nav">
@@ -51,9 +52,20 @@ const Footer = () => (
                     <hr />
                     <div style={{ height: '100%' }}>
                         <Link to="/lebenslauf">LEBENSLAUF</Link>
+                        <div
+                            className="d-flex flex-column"
+                            style={{ fontSize: '0.9em' }}
+                        >
+                            <Link to="/lebensstationen">Lebensstationen</Link>
+                            <Link to="/nachruf">Nachruf</Link>
+                            <Link to="/auszeichnungen">Auszeichnungen</Link>
+                            <Link to="/ausstellungen">Ausstellungen</Link>
+                        </div>
                     </div>
+
                     <hr className="hidden-on-tablet" />
                 </div>
+
                 <div className="footer-nav-item">
                     <hr />
                     <div style={{ height: '100%' }}>
@@ -68,6 +80,7 @@ const Footer = () => (
                     </div>
                     <hr className="hidden-on-tablet" />
                 </div>
+
                 <div className="footer-nav-item">
                     <hr />
                     <div style={{ height: '100%' }}>
@@ -85,13 +98,21 @@ const Footer = () => (
                     </div>
                     <hr className="hidden-on-tablet" />
                 </div>
+
                 <div className="footer-nav-item">
                     <hr />
                     <div style={{ height: '100%' }}>
                         <Link to="/publikationen">PUBLIKATIONEN</Link>
+                        <div
+                            className="d-flex flex-column"
+                            style={{ fontSize: '0.9em' }}
+                        >
+                            <Link to="/verzeichnis">Verzeichnis</Link>
+                        </div>
                     </div>
                     <hr className="hidden-on-tablet" />
                 </div>
+
                 <div className="footer-nav-item">
                     <hr />
                     <div
@@ -102,24 +123,10 @@ const Footer = () => (
                         <Link to="/impressum/#datenschutzerklaerung">
                             DATENSCHUTZ
                         </Link>
-                        <Link to="">PRESSE</Link>
-                        <Link to="/contact">KONTAKT</Link>
                     </div>
                     <hr />
                 </div>
             </div>
-            {/* <div className="mt-3 copyright hidden-on-tablet">
-                <p style={{ fontSize: '0.8em' }}>
-                    Copyright © 2022 Leo Leonhard Nachlass. All rights reserved.
-                    Build by{' '}
-                    <a
-                        style={{ textDecoration: 'none', color: 'white' }}
-                        href="https://hannarosenfeld.com/"
-                    >
-                        Hanna Rosenfeld.
-                    </a>
-                </p>
-            </div> */}
         </div>
     </div>
 )

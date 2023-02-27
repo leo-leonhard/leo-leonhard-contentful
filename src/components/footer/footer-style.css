@@ -11,19 +11,8 @@
     padding: 1em 0;
 }
 
-.footer .address {
-    line-height: 0.4em;
-}
-
-.footer-nav {
-}
-
 .footer-nav hr {
     width: 100%;
-}
-
-.copyright {
-    font-size: 0.8em;
 }
 
 .footer-nav-item {
@@ -36,7 +25,7 @@
 
 .footer-nav-item a {
     letter-spacing: 0.2em;
-    line-height: 2.5em;
+    line-height: 2;
     padding: 0 0.3em;
 }
 
@@ -46,6 +35,26 @@
 .footer-nav-item a {
     color: #fbfbfd !important;
     text-decoration: none;
+}
+
+.address-style {
+    font-size: 0.7rem;
+}
+
+.address-style ul {
+    padding: 0;
+    list-style-type: none;
+}
+
+.address-style > ul > li {
+    margin: 3px 0;
+}
+.address-style > ul > li > a {
+    color: #fbfbfd !important;
+}
+a:hover {
+    text-decoration: underline;
+    font-weight: bold;
 }
 
 @media only screen and (min-device-width: 1050px) {

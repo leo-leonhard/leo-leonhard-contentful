@@ -6,50 +6,54 @@ import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer'
 import Layout from '../components/Layout'
 
 const Impressum = ({ data }) => {
-    console.log(data)
     return (
         <Layout>
-            <div style={{ lineHeight: '0.3', marginBottom: '3em' }}>
-                <h1>IMPRESSUM</h1>
-                <p>Angaben gemäß § 5 TMG</p>
+            <section
+                style={{ marginTop: '5em' }}
+                className="standard-layout-width"
+            >
+                <div style={{ lineHeight: '0.3', marginBottom: '5em' }}>
+                    <h1>IMPRESSUM</h1>
+                    <p>Angaben gemäß § 5 TMG</p>
+                    <br />
+                    <br />
+                    <br />
+                    <p>
+                        <b>Nachlaß Leo Leonhard</b>
+                    </p>
+                    <p>Florian Leonhard</p>
+                    <p>Sandstraße 18</p>
+                    <p>64404 Bickenbach</p>
+                    <br />
+                    <br />
+                    <br />
+                    <p>
+                        <b>Kontakt</b>
+                    </p>
+                    <p>E-Mail: info@leoleonhard.de</p>
+                    <br />
+                    <br />
+                    <br />
+                    <p>
+                        <b>Quelle:</b>
+                    </p>
+                    <p>e-recht24.de</p>
+                </div>
+                <div id="datenschutzerklaerung">
+                    <hr />
+                    <h1>Datenschutzerklärung</h1>
+                    <br />
+                    <MDXProvider>
+                        <MDXRenderer>
+                            {
+                                data.contentfulDatenschutzerklaerung.text
+                                    .childMdx.body
+                            }
+                        </MDXRenderer>
+                    </MDXProvider>
+                </div>
                 <br />
-                <br />
-                <br />
-                <p>
-                    <b>Nachlaß Leo Leonhard</b>
-                </p>
-                <p>Florian Leonhard</p>
-                <p>Sandstraße 18</p>
-                <p>64404 Bickenbach</p>
-                <br />
-                <br />
-                <br />
-                <p>
-                    <b>Kontakt</b>
-                </p>
-                <p>E-Mail: info@leoleonhard.de</p>
-                <br />
-                <br />
-                <br />
-                <p>
-                    <b>Quelle:</b>
-                </p>
-                <p>e-recht24.de</p>
-            </div>
-            <div id="datenschutzerklaerung">
-                <hr />
-                <h1>Datenschutzerklärung</h1>
-                <br />
-                <MDXProvider>
-                    <MDXRenderer>
-                        {
-                            data.contentfulDatenschutzerklaerung.text.childMdx
-                                .body
-                        }
-                    </MDXRenderer>
-                </MDXProvider>
-            </div>
-            <br />
+            </section>
         </Layout>
     )
 }
