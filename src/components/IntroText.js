@@ -2,9 +2,7 @@ import React from 'react'
 import { MDXProvider } from '@mdx-js/react'
 import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer'
 
-function IntroText(props) {
-    const introdata = props.introdata
-
+function IntroText({ introdata }) {
     const headingText = {
         marginBottom: '0.8em',
         maxWidth: '65ch',
@@ -19,8 +17,9 @@ function IntroText(props) {
     return (
         <>
             {introdata.map((intro) => {
+                console.log(intro)
                 return (
-                    <div>
+                    <>
                         <div key={intro.key}>
                             <h1 className="fett" style={headingText}>
                                 {intro.header}
@@ -33,7 +32,7 @@ function IntroText(props) {
                                 </MDXProvider>
                             </div>
                         </div>
-                    </div>
+                    </>
                 )
             })}
         </>
