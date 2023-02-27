@@ -18,60 +18,62 @@ import Mappenwerke from '../components/ArtWork/Grafik/Mappenwerke'
 export default function GrafikPage({ data }) {
     return (
         <Layout>
-            <PageBanner image={data.allContentfulPageBanner.nodes} />
-            <IntroText introdata={data.allContentfulIntroText.nodes} />
+            <section className="standard-layout-width">
+                <PageBanner image={data.allContentfulPageBanner.nodes} />
+                <IntroText introdata={data.allContentfulIntroText.nodes} />
 
-            {/* 
+                {/* 
             * //TODO:
             * to being implemented 
             * add to the graphql this opction to sort the nodes: { fields: order, order: ASC }
             <ArtworkTemplate data={data.allContentfulDescriptionText.nodes} />
             */}
 
-            <div className="mt-5 mb-5">
-                <hr />
-            </div>
+                <div className="mt-5 mb-5">
+                    <hr />
+                </div>
 
-            <div id="zeichnungen">
-                <ZeichnungenText data={data.zeichnungenNodes.nodes} />
-                <Zeichnungen />
-            </div>
+                <div id="zeichnungen">
+                    <ZeichnungenText data={data.zeichnungenNodes.nodes} />
+                    <Zeichnungen />
+                </div>
 
-            <div className="mt-5 mb-5">
-                <hr />
-            </div>
+                <div className="mt-5 mb-5">
+                    <hr />
+                </div>
 
-            <div id="radierungen">
-                <RadierungenText data={data.radierungenNodes.nodes} />
-                <Radierungen />
-            </div>
+                <div id="radierungen">
+                    <RadierungenText data={data.radierungenNodes.nodes} />
+                    <Radierungen />
+                </div>
 
-            <div className="mt-5 mb-5">
-                <hr />
-            </div>
+                <div className="mt-5 mb-5">
+                    <hr />
+                </div>
 
-            <div id="holzschnitte">
-                <HolzschnitteText data={data.holzschnitteNodes.nodes} />
-                <Holzschnitte />
-            </div>
+                <div id="holzschnitte">
+                    <HolzschnitteText data={data.holzschnitteNodes.nodes} />
+                    <Holzschnitte />
+                </div>
 
-            <div className="mt-5 mb-5">
-                <hr />
-            </div>
+                <div className="mt-5 mb-5">
+                    <hr />
+                </div>
 
-            <div id="lithographie">
-                <LithographieText data={data.lithographieNodes.nodes} />
-                <Lithographie />
-            </div>
+                <div id="lithographie">
+                    <LithographieText data={data.lithographieNodes.nodes} />
+                    <Lithographie />
+                </div>
 
-            <div className="mt-5 mb-5">
-                <hr />
-            </div>
+                <div className="mt-5 mb-5">
+                    <hr />
+                </div>
 
-            <div id="mappenwerke">
-                <MappenwerkeText data={data.mappenwerkeNodes.nodes} />
-                <Mappenwerke />
-            </div>
+                <div id="mappenwerke">
+                    <MappenwerkeText data={data.mappenwerkeNodes.nodes} />
+                    <Mappenwerke />
+                </div>
+            </section>
         </Layout>
     )
 }

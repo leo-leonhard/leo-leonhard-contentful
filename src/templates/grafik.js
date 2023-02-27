@@ -14,7 +14,7 @@ export default function GrafikTemplate({ data }) {
             {picture.map((pic) => {
                 const image = getImage(pic.image)
                 return (
-                    <div key={pic.slug} className="mb-3">
+                    <div key={pic.slug} className="mb-3 standard-layout-width">
                         <div className="pt-3 d-flex justify-content-between">
                             <span>
                                 <Link

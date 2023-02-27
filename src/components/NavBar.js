@@ -59,6 +59,18 @@ export default function NavBar() {
                             >
                                 Holzschnitte
                             </NavDropdown.Item>
+                            <NavDropdown.Item
+                                style={{ fontSize: '0.9em' }}
+                                href="/grafik/#lithographie"
+                            >
+                                Lithographie
+                            </NavDropdown.Item>
+                            <NavDropdown.Item
+                                style={{ fontSize: '0.9em' }}
+                                href="/grafik/#mappenwerke"
+                            >
+                                Mappenwerke
+                            </NavDropdown.Item>
                         </NavDropdown>
                         <Nav.Link href="/publikationen">PUBLIKATIONEN</Nav.Link>
                     </Nav>

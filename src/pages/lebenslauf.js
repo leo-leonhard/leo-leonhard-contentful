@@ -46,22 +46,25 @@ const lebenslaufStationen = [
 
 const LebenslaufPage = ({ data }) => (
     <Layout>
-        <section style={{ background: '#F8F3EA', padding: '1em 2em 3em 2em' }}>
+        <section
+            style={{ background: '#F8F3EA', padding: '1em 2em 3em 2em' }}
+            className="standard-layout-width"
+        >
             <PageBanner image={data.allContentfulPageBanner.nodes} />
             <IntroText introdata={data.allContentfulIntroText.nodes} />
-        </section>
 
-        <section className="gallery-lenbenslauf">
-            {lebenslaufStationen.map((item) => {
-                return (
-                    <Box
-                        key={item.title}
-                        title={item.title}
-                        destination={item.destination}
-                        image={item.image}
-                    />
-                )
-            })}
+            <div className="gallery-lenbenslauf ">
+                {lebenslaufStationen.map((item) => {
+                    return (
+                        <Box
+                            key={item.title}
+                            title={item.title}
+                            destination={item.destination}
+                            image={item.image}
+                        />
+                    )
+                })}
+            </div>
         </section>
     </Layout>
 )
