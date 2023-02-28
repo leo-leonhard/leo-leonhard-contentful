@@ -1,6 +1,4 @@
-import React from 'react'
-
-const publications = [
+export const publications = [
     {
         year: 1967,
         elements: [
@@ -284,27 +282,3 @@ const publications = [
         ]
     }
 ]
-
-function Verzeichniss() {
-    console.log(publications)
-    return (
-        <div style={{ margin: '1em' }}>
-            {publications.map((pub) => (
-                <div className="mb-3 d-flex">
-                    <div>
-                        <p>{pub.year}</p>
-                    </div>
-                    <div style={{ margin: 'auto 1em' }}>
-                        {pub.elements.map((element) => (
-                            <p>{element}</p>
-                        ))}
-                    </div>
-                </div>
-            ))}
-        </div>
-    )
-}
-
-console.log(Verzeichniss)
-
-export default Verzeichniss

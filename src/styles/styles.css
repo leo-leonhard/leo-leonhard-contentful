@@ -116,7 +116,7 @@ hr {
 
 .main-layout {
     margin: 1em auto 2em;
-    padding: 0;
+    padding: 1em 0;
     display: flex;
     flex-direction: column;
 }
@@ -409,6 +409,58 @@ hr {
     padding: 0;
 }
 
+.publikationen-container {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.publikationen-container > a > img {
+    border: 1px solid #423d34ea;
+    width: 100%;
+}
+
+@media screen and (min-width: 640px) {
+    .publikationen-container {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+.verzeichnis-header {
+    color: rgb(60, 159, 187);
+    margin: 2em 0;
+    max-width: 60ch;
+}
+
+.verzeichnis-publications {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+.verzeichnis-publications-elements {
+    display: flex;
+    gap: 2em;
+}
+
+/* TODO  
+* media queries possibles
+@media screen and (min-width: 640px) and (max-width: 768px) {
+    .publikationen-container {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+@media screen and (min-width: 639px) {
+    .publikationen-container {
+        grid-template-columns: 3fr 2fr;
+    }
+}
+*/
+
+.container img {
+    /* width: 100%; */
+    height: auto;
+    display: block;
+}
 .impressum-container {
     margin: 5em auto;
 }

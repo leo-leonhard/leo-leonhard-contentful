@@ -1,20 +1,34 @@
-import React, { useEffect, useState } from 'react'
-import { graphql } from 'gatsby'
+import React from 'react'
+import { graphql, Link } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 import Layout from '../components/Layout'
 import PageBanner from '../components/PageBanner'
 import IntroText from '../components/IntroText'
 
-import '../styles/book.css'
+import verzeichnisImage from '../assets/images/Verzeichnis_image.jpg'
 
-// const verzeichnisKataloge = [
-//     {
-//         title: 'Verzeichnis der Bücher, Kataloge und Zeitschriften mit Abbildungen der Arbeiten Leo Leonhards',
-//         destination: '/lebensstationen',
-//         image: ` ${s}`
-//     }
-// ]
+const Box = ({ title, image, destination }) => {
+    return (
+        <Link to={destination} style={{ color: '#212529' }}>
+            <img src={image} alt={title} />
+            <div className="mt-1">
+                <button className="btn btn-stationen">{title}</button>
+            </div>
+        </Link>
+    )
+}
+
+const verzeichnisKataloge = [
+    {
+        title: 'Verzeichnis der Bücher, Kataloge und Zeitschriften mit Abbildungen der Arbeiten Leo Leonhards',
+        destination: '/verzeichnis',
+        image: verzeichnisImage
+    }
+]
+
+// TODO:
+// books are not being well distributed
 
 const PublikationenPage = ({ data }) => {
     const books = data.allContentfulBook.nodes
@@ -85,8 +99,10 @@ const PublikationenPage = ({ data }) => {
                         })}
                     </div>
                 </div>
-                {/*
-                <div className="gallery-lenbenslauf ">
+
+                <hr />
+
+                <div className="publikationen-container">
                     {verzeichnisKataloge.map((item) => {
                         return (
                             <Box
@@ -98,7 +114,6 @@ const PublikationenPage = ({ data }) => {
                         )
                     })}
                 </div>
-                */}
             </section>
         </Layout>
     )
