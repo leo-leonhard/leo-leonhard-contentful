@@ -7,7 +7,10 @@ const Aquarelle = ({ data }) => (
     <StaticQuery
         query={graphql`
             query getAquarelle {
-                allContentfulMalerei(filter: { type: { eq: "Aquarelle" } }) {
+                allContentfulMalerei(
+                    filter: { type: { eq: "Aquarelle" } }
+                    sort: { order: DESC, fields: year }
+                ) {
                     nodes {
                         year
                         slug

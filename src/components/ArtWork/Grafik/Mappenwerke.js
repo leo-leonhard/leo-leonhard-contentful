@@ -7,7 +7,10 @@ const Mappenwerke = () => (
     <StaticQuery
         query={graphql`
             query getMappenwerke {
-                allContentfulGrafik(filter: { type: { eq: "mappenwerke" } }) {
+                allContentfulGrafik(
+                    filter: { type: { eq: "Mappenwerke" } }
+                    sort: { order: DESC, fields: year }
+                ) {
                     nodes {
                         year
                         slug

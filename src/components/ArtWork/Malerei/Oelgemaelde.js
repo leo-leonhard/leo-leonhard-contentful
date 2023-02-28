@@ -7,7 +7,10 @@ const Oelgemaelde = ({ data }) => (
     <StaticQuery
         query={graphql`
             query getOelgemaelde {
-                allContentfulMalerei(filter: { type: { eq: "Ölgemälde" } }) {
+                allContentfulMalerei(
+                    filter: { type: { eq: "Ölgemälde" } }
+                    sort: { order: DESC, fields: year }
+                ) {
                     nodes {
                         year
                         slug

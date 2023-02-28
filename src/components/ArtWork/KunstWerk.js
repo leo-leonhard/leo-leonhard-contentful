@@ -3,8 +3,7 @@ import { Link } from 'gatsby'
 import { getImage } from 'gatsby-plugin-image'
 import { BgImage } from 'gbimage-bridge'
 
-export default function Kunstwerk(props) {
-    const kunstwerk = props.kunstwerk
+export default function Kunstwerk({ kunstwerk }) {
     return (
         <div>
             <br />
