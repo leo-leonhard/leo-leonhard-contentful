@@ -8,11 +8,9 @@ export default function ArtAll() {
                 nodes {
                     year
                     slug
-                    width
                     type
                     title
                     id
-                    height
                     image {
                         gatsbyImageData(width: 240)
                     }

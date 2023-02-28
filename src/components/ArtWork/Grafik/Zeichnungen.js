@@ -14,12 +14,9 @@ const Zeichnungen = () => (
                     nodes {
                         year
                         slug
-                        width
                         type
                         title
                         id
-                        height
-
                         image {
                             gatsbyImageData(width: 240)
                         }
