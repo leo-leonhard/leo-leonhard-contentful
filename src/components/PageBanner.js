@@ -1,9 +1,7 @@
 import React from 'react'
-// import { graphql } from 'gatsby'
 import { getImage, GatsbyImage } from 'gatsby-plugin-image'
 
-function PageBanner(props) {
-    const image = props.image
+function PageBanner({ image }) {
     return (
         <div>
             {image.map((img) => {
@@ -16,7 +14,6 @@ function PageBanner(props) {
                             style={{
                                 float: 'left',
                                 width: '100%',
-                                height: '80vh',
                                 objectFit: 'cover'
                             }}
                         />

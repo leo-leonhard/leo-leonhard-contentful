@@ -268,18 +268,6 @@ hr {
     display: flex;
     max-width: 75%;
 }
-/* .artwort-test {
-    border: 1px solid green;
-    flex-grow: 1;
-} */
-
-/* .artwort-test img {
-    max-width: 2000px;
-} */
-/* .artwork-detail-image-container img {
-    max-width: 100%;
-}
- */
 .artwork-detail-text {
     flex-grow: 1;
     width: 25%;
@@ -419,6 +407,20 @@ hr {
     width: 100%;
     margin: 0;
     padding: 0;
+}
+
+.impressum-container {
+    margin: 5em auto;
+}
+
+.impressum-data {
+    line-height: 0.65;
+    margin-bottom: 5em;
+}
+
+.impressum-data > h1,
+h4 {
+    margin: 1em 0;
 }
 
 .visible-on-tablet {

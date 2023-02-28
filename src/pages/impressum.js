@@ -6,50 +6,34 @@ import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer'
 import Layout from '../components/Layout'
 
 const Impressum = ({ data }) => {
-    console.log(data)
     return (
         <Layout>
-            <div style={{ lineHeight: '0.3', marginBottom: '3em' }}>
-                <h1>IMPRESSUM</h1>
-                <p>Angaben gemäß § 5 TMG</p>
-                <br />
-                <br />
-                <br />
-                <p>
-                    <b>Nachlaß Leo Leonhard</b>
-                </p>
-                <p>Florian Leonhard</p>
-                <p>Sandstraße 18</p>
-                <p>64404 Bickenbach</p>
-                <br />
-                <br />
-                <br />
-                <p>
-                    <b>Kontakt</b>
-                </p>
-                <p>E-Mail: info@leoleonhard.de</p>
-                <br />
-                <br />
-                <br />
-                <p>
-                    <b>Quelle:</b>
-                </p>
-                <p>e-recht24.de</p>
-            </div>
-            <div id="datenschutzerklaerung">
-                <hr />
-                <h1>Datenschutzerklärung</h1>
-                <br />
-                <MDXProvider>
-                    <MDXRenderer>
-                        {
-                            data.contentfulDatenschutzerklaerung.text.childMdx
-                                .body
-                        }
-                    </MDXRenderer>
-                </MDXProvider>
-            </div>
-            <br />
+            <section className="impressum-container standard-layout-width">
+                <div className="impressum-data">
+                    <h1>IMPRESSUM</h1>
+                    <p>Angaben gemäß § 5 TMG</p>
+                    <h3> Nachlaß Leo Leonhard</h3>
+                    <p>Florian Leonhard</p>
+                    <p>Sandstraße 18</p>
+                    <p>64404 Bickenbach</p>
+                    <h3>Kontakt</h3>
+                    <p>E-Mail: info@leo-leonhard.de</p>
+                    <h3>Website:</h3>
+                    <p>E-Mail: hannazrosenfeld@gmail.com</p>
+                    <p>E-Mail: web@darayaq.de</p>
+                </div>
+                <div id="datenschutzerklaerung">
+                    <h1>Datenschutzerklärung</h1>
+                    <MDXProvider>
+                        <MDXRenderer>
+                            {
+                                data.contentfulDatenschutzerklaerung.text
+                                    .childMdx.body
+                            }
+                        </MDXRenderer>
+                    </MDXProvider>
+                </div>
+            </section>
         </Layout>
     )
 }

@@ -40,9 +40,10 @@ const IndexPage = ({ data }) => {
             </div>
 
             {/* image band */}
-            <div className="container-wider">
+            {/* //TODO Delete this */}
+            {/* <div className="container-wider">
                 <div className="image-band"></div>
-            </div>
+            </div> */}
 
             {/* NewsLetter */}
             <div className="card-style standard-layout-width">

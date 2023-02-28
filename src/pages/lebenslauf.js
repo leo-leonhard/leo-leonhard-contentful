@@ -29,7 +29,7 @@ const lebenslaufStationen = [
     },
     {
         title: 'Nachruf',
-        destination: '/test',
+        destination: '/nachruf',
         image: `${portrait}`
     },
     {
