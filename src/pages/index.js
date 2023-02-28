@@ -59,11 +59,9 @@ export const query = graphql`
             nodes {
                 year
                 slug
-                width
                 type
                 title
                 id
-                height
                 image {
                     gatsbyImageData(width: 260)
                 }

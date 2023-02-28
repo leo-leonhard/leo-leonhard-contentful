@@ -7,7 +7,6 @@ exports.createPages = async function ({ actions, graphql }) {
                         gatsbyImageData(width: 800, placeholder: BLURRED)
                     }
                     year
-                    width
                     title
                     slug
                 }
@@ -18,7 +17,6 @@ exports.createPages = async function ({ actions, graphql }) {
                         gatsbyImageData(width: 800, placeholder: BLURRED)
                     }
                     year
-                    width
                     title
                     slug
                 }

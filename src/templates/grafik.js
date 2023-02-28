@@ -70,7 +70,6 @@ export const query = graphql`
         allContentfulGrafik(filter: { slug: { eq: $slug } }) {
             nodes {
                 year
-                width
                 title
                 description {
                     childMdx {
