@@ -1,14 +1,20 @@
 import React, { useEffect, useState } from 'react'
 import { graphql } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
-import { Card } from 'react-bootstrap'
 
 import Layout from '../components/Layout'
 import PageBanner from '../components/PageBanner'
-import Verzeichniss from '../components/Verzeichniss'
 import IntroText from '../components/IntroText'
 
 import '../styles/book.css'
+
+// const verzeichnisKataloge = [
+//     {
+//         title: 'Verzeichnis der Bücher, Kataloge und Zeitschriften mit Abbildungen der Arbeiten Leo Leonhards',
+//         destination: '/lebensstationen',
+//         image: ` ${s}`
+//     }
+// ]
 
 const PublikationenPage = ({ data }) => {
     const books = data.allContentfulBook.nodes
@@ -19,11 +25,8 @@ const PublikationenPage = ({ data }) => {
                     <PageBanner image={data.allContentfulPageBanner.nodes} />
                     <IntroText introdata={data.allContentfulIntroText.nodes} />
                 </div>
-
                 <div>
-                    <hr />
                     <h1 className="m-2">Bücher</h1>
-                    <br />
                     <div
                         className="d-flex align-items-baseline flex-wrap justify-content-between"
                         style={{ width: '100%' }}
@@ -82,17 +85,20 @@ const PublikationenPage = ({ data }) => {
                         })}
                     </div>
                 </div>
-                <br />
-                <br />
-                <div>
-                    <hr />
-                    <h1 style={{ color: 'rgb(60, 159, 187)' }} className="">
-                        Verzeichnis der Bücher, Kataloge und Zeitschriften mit
-                        Abbildungen der Arbeiten Leo Leonhards
-                    </h1>
-                    <br />
-                    <Verzeichniss />
+                {/*
+                <div className="gallery-lenbenslauf ">
+                    {verzeichnisKataloge.map((item) => {
+                        return (
+                            <Box
+                                key={item.title}
+                                title={item.title}
+                                destination={item.destination}
+                                image={item.image}
+                            />
+                        )
+                    })}
                 </div>
+                */}
             </section>
         </Layout>
     )
