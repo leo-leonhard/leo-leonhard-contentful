@@ -16,6 +16,7 @@ import MappenwerkeText from '../components/ArtWork/Grafik/MappenwerkeText'
 import Mappenwerke from '../components/ArtWork/Grafik/Mappenwerke'
 
 export default function GrafikPage({ data }) {
+    // console.log(data)
     return (
         <Layout>
             <section className="standard-layout-width">

@@ -7,7 +7,10 @@ const Radierungen = ({ data }) => (
     <StaticQuery
         query={graphql`
             query getRadierungen {
-                allContentfulGrafik(filter: { type: { eq: "Radierung" } }) {
+                allContentfulGrafik(
+                    filter: { type: { eq: "Radierung" } }
+                    sort: { order: DESC, fields: year }
+                ) {
                     nodes {
                         year
                         slug

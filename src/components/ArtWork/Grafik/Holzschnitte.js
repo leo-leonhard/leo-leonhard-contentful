@@ -6,16 +6,16 @@ const Holzschnitte = ({ data }) => (
     <StaticQuery
         query={graphql`
             query getHolzschnitte {
-                allContentfulGrafik(filter: { type: { eq: "Zeichnung" } }) {
+                allContentfulGrafik(
+                    filter: { type: { eq: "Holzschnitt" } }
+                    sort: { order: DESC, fields: year }
+                ) {
                     nodes {
                         year
                         slug
-                        width
                         type
                         title
                         id
-                        height
-
                         image {
                             gatsbyImageData(width: 240)
                         }

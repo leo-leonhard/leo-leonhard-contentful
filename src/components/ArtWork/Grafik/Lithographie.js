@@ -7,7 +7,10 @@ const Lithographie = () => (
     <StaticQuery
         query={graphql`
             query getLithographie {
-                allContentfulGrafik(filter: { type: { eq: "lithographie" } }) {
+                allContentfulGrafik(
+                    filter: { type: { eq: "Lithographie" } }
+                    sort: { order: DESC, fields: year }
+                ) {
                     nodes {
                         year
                         slug

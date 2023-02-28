@@ -7,7 +7,10 @@ const Zeichnungen = () => (
     <StaticQuery
         query={graphql`
             query getZeichnungen {
-                allContentfulGrafik(filter: { type: { eq: "Zeichnung" } }) {
+                allContentfulGrafik(
+                    filter: { type: { eq: "Zeichnung" } }
+                    sort: { order: DESC, fields: year }
+                ) {
                     nodes {
                         year
                         slug
