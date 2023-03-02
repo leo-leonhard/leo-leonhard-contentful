@@ -15,15 +15,10 @@ const settings = {
     autoplay: true,
     infinite: true,
     fade: true,
-    autoplaySpeed: 8000,
+    autoplaySpeed: 3000,
     slidesToShow: 1,
     slidesToScroll: 1
 }
-
-// revisar lo de BgImage
-// https://www.gatsbyjs.com/plugins/gbimage-bridge/
-// y esto
-// https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image/
 
 export default function NextExpoSlider() {
     const data = useStaticQuery(graphql`
@@ -35,9 +30,9 @@ export default function NextExpoSlider() {
                     nextimage {
                         id
                         gatsbyImageData(
-                            width: 1200
+                            layout: FULL_WIDTH
                             placeholder: BLURRED
-                            layout: CONSTRAINED
+                            aspectRatio: 1.5
                         )
                         filename
                         url
@@ -58,13 +53,7 @@ export default function NextExpoSlider() {
                             <BgImage
                                 alt={element.nexttitle}
                                 image={nextExpoImage}
-                                /* className="bgimage" */
-                                style={{
-                                    objectFit: 'contain',
-                                    maxHeight: '40%',
-                                    height: '53vh',
-                                    width: '100%'
-                                }}
+                                className="bgimage"
                             ></BgImage>
                         </div>
                     )

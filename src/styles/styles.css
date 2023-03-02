@@ -344,11 +344,6 @@ hr {
     padding: 5em 0;
 }
 
-.bgimage {
-    object-fit: cover;
-    width: 100%;
-    min-height: 50vh;
-}
 .slider-text-box {
     text-decoration: none;
     min-height: 10em;
