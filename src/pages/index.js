@@ -40,15 +40,10 @@ const IndexPage = ({ data }) => {
                 <NextExpoSlider />
             </div>
 
-            {/* pagina pflaster */}
+            {/* pagina capriccio */}
             <div className="container-wider">
                 <CapriccioBanner image={data.capriccio.nodes} />
             </div>
-            {/* image band */}
-            {/* //TODO Delete this */}
-            {/* <div className="container-wider">
-                <div className="image-band"></div>
-            </div> */}
 
             {/* NewsLetter */}
             <div className="card-style standard-layout-width">

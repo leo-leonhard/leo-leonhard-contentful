@@ -22,7 +22,7 @@ export default function CapriccioBanner({ image }) {
                             }}
                         >
                             <Link
-                                to="/capriccio-an-der-autobahn"
+                                to="/capriccio"
                                 className="banner-text-box"
                                 style={{
                                     padding: '1em 2em',

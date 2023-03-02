@@ -17,7 +17,7 @@ function IntroText({ introdata }) {
     return (
         <>
             {introdata.map((intro) => {
-                console.log(intro)
+                // console.log(intro)
                 return (
                     <>
                         <div key={intro.key}>

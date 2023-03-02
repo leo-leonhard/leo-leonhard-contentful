@@ -2,6 +2,7 @@ import React from 'react'
 import { getImage, GatsbyImage } from 'gatsby-plugin-image'
 
 function PageBanner({ image }) {
+    console.log(image)
     return (
         <div>
             {image.map((img) => {
