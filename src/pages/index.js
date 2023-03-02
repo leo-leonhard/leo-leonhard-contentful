@@ -5,7 +5,8 @@ import '../styles/index.css'
 import Layout from '../components/Layout'
 import IntroText from '../components/IntroText'
 import NextExpoSlider from '../components/slider/NextExpoSlider'
-import Banner from '../components/Banner'
+import PflasterBanner from '../components/PflasterBanner'
+import CapriccioBanner from '../components/CapriccioBanner'
 import ShowCaseBox from '../components/showCaseBox/ShowCaseBox'
 import Slidy from '../components/Slick'
 import NewsLetter from '../components/newsletter/NewsLetter'
@@ -32,18 +33,17 @@ const IndexPage = ({ data }) => {
 
             {/* pagina pflaster */}
             <div className="container-wider">
-                <Banner image={data.allContentfulBannerImage.nodes} />
+                <PflasterBanner image={data.imitation.nodes} />
             </div>
 
             <div className="standard-layout-width slider-container">
                 <NextExpoSlider />
             </div>
 
-            {/* image band */}
-            {/* //TODO Delete this */}
-            {/* <div className="container-wider">
-                <div className="image-band"></div>
-            </div> */}
+            {/* pagina capriccio */}
+            <div className="container-wider">
+                <CapriccioBanner image={data.capriccio.nodes} />
+            </div>
 
             {/* NewsLetter */}
             <div className="card-style standard-layout-width">
@@ -67,7 +67,24 @@ export const query = graphql`
                 }
             }
         }
-        allContentfulBannerImage {
+        imitation: allContentfulBannerImage(
+            filter: { slug: { eq: "imitation-geprägt-von-hochachtung" } }
+        ) {
+            nodes {
+                image {
+                    gatsbyImageData(width: 1200, placeholder: BLURRED)
+                }
+                title
+                text {
+                    childMdx {
+                        body
+                    }
+                }
+            }
+        }
+        capriccio: allContentfulBannerImage(
+            filter: { slug: { eq: "capriccio-an-der-autobahn" } }
+        ) {
             nodes {
                 image {
                     gatsbyImageData(width: 1200, placeholder: BLURRED)

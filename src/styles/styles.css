@@ -258,23 +258,64 @@ hr {
 
 .artwork-detail-container {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     gap: 2em;
-    align-items: center;
+    align-items: left;
     margin-bottom: 10em;
 }
+
 .artwork-detail-image-container {
-    flex-grow: 3;
+    /* flex-grow: 3; */
     display: flex;
-    max-width: 75%;
+    /* max-width: 75%; */
 }
 .artwork-detail-text {
-    flex-grow: 1;
-    width: 25%;
+    /* flex-grow: 1; */
+    /* width: 25%; */
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
 }
+
+/* bigger than 640 */
+
+@media screen and (min-width: 640px) {
+    .artwork-detail-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 2em;
+        align-items: left;
+        margin-bottom: 10em;
+    }
+    .artwork-detail-image-container {
+        flex-grow: 3;
+        display: flex;
+        max-width: 75%;
+    }
+    .artwork-detail-text {
+        flex-grow: 1;
+        width: 25%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+}
+
+/* 
+ media queries possibles
+@media screen and (min-width: 640px) and (max-width: 768px) {
+    .publikationen-container {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+@media screen and (min-width: 639px) {
+    .publikationen-container {
+        grid-template-columns: 3fr 2fr;
+    }
+}
+*/
 
 .banner-text {
     width: 50%;
@@ -471,7 +512,7 @@ hr {
 }
 
 .impressum-data > h1,
-h4 {
+.impressum-data > h4 {
     margin: 1em 0;
 }
 
@@ -543,7 +584,7 @@ h4 {
         background-size: cover;
         width: 100%;
     }
-
+    /* 
     .artwork-detail-container {
         flex-direction: column;
     }
@@ -559,7 +600,7 @@ h4 {
     }
     .artwork-overview img {
         max-width: 100%;
-    }
+    } */
     .navbar-light .navbar-brand {
         width: 70%;
     }
@@ -601,6 +642,7 @@ h4 {
     .index-image-container {
         background-position: center;
     }
+    /* 
     .artwork-detail-container {
         flex-direction: column;
     }
@@ -619,7 +661,7 @@ h4 {
     }
     .artwork-overview img {
         max-width: 100%;
-    }
+    } */
     .werk {
         margin-bottom: 4em !important;
     }
@@ -651,10 +693,11 @@ h4 {
 }
 
 /* Desktops and laptops ----------- */
-@media only screen and (min-width: 1224px) {
+/* @media only screen and (min-width: 1224px) {
     .artwork-overview img {
         min-width: 100px;
         max-width: 270px;
         margin: 0 auto;
     }
 }
+ */

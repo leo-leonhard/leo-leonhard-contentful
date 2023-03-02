@@ -1,13 +1,11 @@
 import React from 'react'
-// import { qraphql } from 'gatsby'
+import { Link } from 'gatsby'
 import { getImage } from 'gatsby-plugin-image'
 import { MDXProvider } from '@mdx-js/react'
 import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer'
 import { BgImage } from 'gbimage-bridge'
-// import { converToBgImage } from "gbimage-bridge"
 
-function Banner(props) {
-    const image = props.image
+export default function PflasterBanner({ image }) {
     return (
         <div className="mt-4">
             {image.map((img) => {
@@ -23,7 +21,8 @@ function Banner(props) {
                                 height: '93vh'
                             }}
                         >
-                            <div
+                            <Link
+                                to="/pflaster"
                                 className="banner-text-box"
                                 style={{
                                     padding: '1em 2em',
@@ -51,7 +50,7 @@ function Banner(props) {
                                         </MDXRenderer>
                                     </MDXProvider>
                                 </div>
-                            </div>
+                            </Link>
                         </BgImage>
                     </div>
                 )
@@ -59,5 +58,3 @@ function Banner(props) {
         </div>
     )
 }
-
-export default Banner

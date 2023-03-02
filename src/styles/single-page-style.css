@@ -1,0 +1,34 @@
+.single-title {
+    margin: 2em 0 1em;
+}
+.single-description {
+    font-size: 1.2rem;
+    line-height: 1.4;
+}
+.single-text {
+    line-height: 1.4;
+}
+
+.single-container-image {
+    display: flex;
+    flex-direction: column;
+}
+
+.single-descr-image {
+    padding: 1em 0;
+    font-size: 0.85rem;
+    font-weight: lighter;
+}
+.gallery-single-page {
+    height: 100%;
+    padding: 3em 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    justify-content: space-around;
+    gap: 2em;
+}
+.gallery-single-page-img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}

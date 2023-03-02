@@ -32,14 +32,13 @@ export default function GrafikTemplate({ data }) {
 
                         <div className="artwork-detail-container">
                             <div className="artwork-detail-image-container">
-                                <GatsbyImage
-                                    image={image}
-                                    class="artwort-test"
-                                />
+                                <GatsbyImage image={image} />
                             </div>
                             {/* this should be a component */}
                             <div className="artwork-detail-text">
-                                <h3>{pic.title}</h3>
+                                <h3>
+                                    <em>{pic.title}</em>
+                                </h3>
                                 <h3>{pic.year}</h3>
                                 {/*
                                  * // TODO:
@@ -47,7 +46,7 @@ export default function GrafikTemplate({ data }) {
                                  * *what is the type?
                                  * */}
                                 <h4>{pic.type}</h4>
-                                <p className="pt-4">
+                                <p>
                                     <MDXProvider>
                                         <MDXRenderer>
                                             {pic.description.childMdx.body}
