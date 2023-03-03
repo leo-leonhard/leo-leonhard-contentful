@@ -4,7 +4,7 @@ import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer'
 
 import '../style.css'
 
-export default function Lithographie({ data }) {
+export default function AquarelleText({ data }) {
     return (
         <>
             {data.map((elem) => {
