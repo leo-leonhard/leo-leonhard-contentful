@@ -20,10 +20,12 @@ const text = (
         künstlerische Praxis.
     </p>
 )
-export default function Werke() {
+export default function LebenslaufNachdenklichenKunstlers() {
     return (
         <Layout>
-            <Template src={image} text={text} alt={alt} />
+            <section className="standard-layout-width">
+                <Template src={image} text={text} alt={alt} />
+            </section>
         </Layout>
     )
 }

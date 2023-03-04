@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "description": "leo-leonhard",
-  "author": "Hanna Rosenfeld",
+  "author": "Hanna Rosenfeld & Darayaq",
   "bugs": {
     "url": "https://github.com/hannarosenfeld/leo-leonhard-contentful/issues"
   },
@@ -14,7 +14,7 @@
   ],
   "engines": {
     "node": "18.x"
-  }, 
+  },
   "scripts": {
     "develop": "gatsby develop",
     "start": "gatsby develop",
@@ -47,6 +47,7 @@
     "gbimage-bridge": "^0.2.1",
     "react": "^17.0.1",
     "react-bootstrap": "^2.2.1",
+    "react-cookie-consent": "8.0.1",
     "react-dom": "^17.0.1",
     "react-slick": "^0.28.1",
     "slick-carousel": "^1.8.1"
