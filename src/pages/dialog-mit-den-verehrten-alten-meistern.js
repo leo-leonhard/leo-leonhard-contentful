@@ -58,10 +58,12 @@ const text = (
     </>
 )
 
-export default function Werke() {
+export default function DialogVerehrtenAltenMeistern() {
     return (
         <Layout>
-            <Template src={image} text={text} alt={alt} />
+            <section className="standard-layout-width">
+                <Template src={image} text={text} alt={alt} />
+            </section>
         </Layout>
     )
 }

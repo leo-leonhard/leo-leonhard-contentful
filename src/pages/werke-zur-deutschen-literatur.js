@@ -26,7 +26,9 @@ const text = (
 export default function Werke() {
     return (
         <Layout>
-            <Template src={image} text={text} alt={alt} />
+            <section className="standard-layout-width">
+                <Template src={image} text={text} alt={alt} />
+            </section>
         </Layout>
     )
 }
