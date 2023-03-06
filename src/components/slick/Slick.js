@@ -4,6 +4,7 @@ import { useStaticQuery, graphql, Link } from 'gatsby'
 import { getImage } from 'gatsby-plugin-image'
 import { BgImage } from 'gbimage-bridge'
 
+import './slick.css'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'

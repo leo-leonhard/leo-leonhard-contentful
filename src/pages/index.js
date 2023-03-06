@@ -8,7 +8,7 @@ import NextExpoSlider from '../components/slider/NextExpoSlider'
 import PflasterBanner from '../components/PflasterBanner'
 import CapriccioBanner from '../components/CapriccioBanner'
 import ShowCaseBox from '../components/showCaseBox/ShowCaseBox'
-import Slidy from '../components/Slick'
+import Slidy from '../components/slick/Slick'
 import NewsLetter from '../components/newsletter/NewsLetter'
 
 // TODO: check the graphql, many things not being used

@@ -360,7 +360,7 @@ hr {
 .home-banner-text {
     color: black;
     font-size: 0.9rem;
-    min-width: 60ch;
+    min-width: 40ch; /* 60ch */
     overflow: hidden;
     display: -webkit-box;
     -webkit-box-orient: vertical;
@@ -539,6 +539,7 @@ hr {
     .slider-text-box {
         width: 100%;
         margin: 1em;
+        border: 1px solid red;
     }
     .banner-text {
         width: 100% !important;
