@@ -27,6 +27,7 @@ const IndexPage = ({ data }) => {
             </div>
 
             {/* showcase box */}
+            {/* <div> */}
             <div className="standard-layout-width">
                 <ShowCaseBox />
             </div>

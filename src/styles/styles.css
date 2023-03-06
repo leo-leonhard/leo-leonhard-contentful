@@ -126,6 +126,12 @@ hr {
     margin: 0 auto;
 }
 
+@media screen and (min-width: 420px) {
+    .standard-layout-width {
+        width: 85%;
+    }
+}
+
 .card-style {
     min-height: 50vh;
     padding: 7em 0;
@@ -370,6 +376,7 @@ hr {
 }
 
 /* BUTTONS
+/* //TODO if we get rid of Bootstrap is need to fix all buttons 
 * .btn: modified default style from Bootstrap 
 * .btn-name_section: personalized style buttons
 */
@@ -395,7 +402,7 @@ hr {
 .btn-outline-secondary:active:focus {
     box-shadow: none;
 }
-.btn-show-case-box {
+/* .btn-show-case-box {
     border-radius: 0;
     font-size: 0.95rem;
     font-weight: bold;
@@ -403,7 +410,7 @@ hr {
 }
 .btn-show-case-box:hover {
     transform: scale(1.02);
-}
+} */
 
 .btn-stationen {
     width: 100%;
@@ -515,15 +522,6 @@ hr {
     display: none;
 }
 
-@media only screen and (max-width: 1500px) {
-    .showcase-section {
-        width: 45% !important;
-    }
-    .showcase-image {
-        width: 100% !important;
-    }
-}
-
 /* Portrait Mobile */
 @media only screen and (min-width: 320px) and (max-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
     body,
@@ -599,14 +597,7 @@ hr {
     .navbar-light .navbar-brand {
         width: 70%;
     }
-    .showcase-section {
-        width: 100% !important;
-        margin: 1em 0 !important;
-        gap: none;
-    }
-    .showcase-section h4 {
-        margin-top: 1em;
-    }
+
     .logo {
         max-width: 60%;
     }
@@ -670,10 +661,6 @@ hr {
     }
     .navbar-nav {
         margin-left: 1em;
-    }
-
-    .showcase-image {
-        width: 100% !important;
     }
     #banner-title {
         font-size: 1.5rem !important;
