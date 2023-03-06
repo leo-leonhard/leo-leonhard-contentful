@@ -57,8 +57,6 @@ module.exports = {
                 name: `Leo-Leonhard`,
                 short_name: `Leonhard`,
                 start_url: `/`,
-                background_color: `#f7f0eb`,
-                theme_color: `#a2466c`,
                 display: `standalone`
             }
         }

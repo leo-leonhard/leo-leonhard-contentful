@@ -12,9 +12,6 @@
   "keywords": [
     "gatsby"
   ],
-  "engines": {
-    "node": "18.x"
-  },
   "scripts": {
     "develop": "gatsby develop",
     "start": "gatsby develop",
@@ -38,7 +35,7 @@
     "gatsby-image": "^3.11.0",
     "gatsby-plugin-image": "^2.17.0",
     "gatsby-plugin-mailchimp": "^5.2.2",
-    "gatsby-plugin-manifest": "5.7.0",
+    "gatsby-plugin-manifest": "^4.4.0",
     "gatsby-plugin-mdx": "^3.13.0",
     "gatsby-plugin-sharp": "^4.17.0",
     "gatsby-source-contentful": "^7.8.0",
