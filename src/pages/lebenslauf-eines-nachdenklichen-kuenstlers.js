@@ -1,6 +1,6 @@
 import React from 'react'
 import Layout from '../components/Layout'
-import Template from '../components/showCaseBox/ShowCaseBoxCard'
+import Template from '../components/showCaseBox/ShowCaseBoxPage'
 
 import image from '../assets/images/Lebenslauf eines nachdenklichen Künstlers.jpg'
 

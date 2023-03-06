@@ -10,7 +10,7 @@ require('dotenv').config({
 module.exports = {
     siteMetadata: {
         title: `Leo Leonhard`,
-        siteUrl: `https://www.yourdomain.tld`
+        siteUrl: `https://www.leo-leonard.de`
     },
     plugins: [
         {
@@ -49,6 +49,18 @@ module.exports = {
                 path: './src/pages/'
             },
             __key: 'pages'
+        },
+        {
+            resolve: 'gatsby-plugin-manifest',
+            options: {
+                icon: 'src/assets/logo/favicon.svg',
+                name: `Leo-Leonhard`,
+                short_name: `Leonhard`,
+                start_url: `/`,
+                background_color: `#f7f0eb`,
+                theme_color: `#a2466c`,
+                display: `standalone`
+            }
         }
     ]
 }
