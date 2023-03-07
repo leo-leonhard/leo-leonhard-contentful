@@ -16,37 +16,30 @@ import NewsLetter from '../components/newsletter/NewsLetter'
 const IndexPage = ({ data }) => {
     return (
         <Layout>
-            {/* slider */}
             <div id="banner-container" className="standard-layout-width">
                 <Slidy />
             </div>
 
-            {/* text */}
             <div className="standard-layout-width card-style">
                 <IntroText introdata={data.allContentfulIntroText.nodes} />
-            </div>
-
-            {/* showcase box */}
-            {/* <div> */}
-            <div className="standard-layout-width">
-                <ShowCaseBox />
-            </div>
-
-            {/* pagina pflaster */}
-            <div className="container-wider">
-                <PflasterBanner image={data.imitation.nodes} />
             </div>
 
             <div className="standard-layout-width slider-container">
                 <NextExpoSlider />
             </div>
 
-            {/* pagina capriccio */}
+            <div className="container-wider">
+                <PflasterBanner image={data.imitation.nodes} />
+            </div>
+
+            <div className="standard-layout-width">
+                <ShowCaseBox />
+            </div>
+
             <div className="container-wider">
                 <CapriccioBanner image={data.capriccio.nodes} />
             </div>
 
-            {/* NewsLetter */}
             <div className="card-style standard-layout-width">
                 <NewsLetter />
             </div>
