@@ -14,8 +14,7 @@ const Impressum = ({ data }) => {
                     <p>Angaben gemäß § 5 TMG</p>
                     <h3> Nachlaß Leo Leonhard</h3>
                     <p>Florian Leonhard</p>
-                    <p>Sandstraße 18</p>
-                    <p>64404 Bickenbach</p>
+
                     <h3>Kontakt</h3>
                     <p>E-Mail: info@leo-leonhard.de</p>
                     <h3>Website:</h3>
