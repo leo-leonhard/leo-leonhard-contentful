@@ -28,7 +28,6 @@ const Footer = () => (
                     <ul>
                         <li>LEO LEONHARD NACHLASS</li>
                         <li>Florian Leonhard</li>
-                        <li>Sandstraße 18</li>
                         {/*
                          * //TODO
                          * check with time a way to offuscate mailto
