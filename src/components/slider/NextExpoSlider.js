@@ -1,5 +1,5 @@
 import React from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
+import { useStaticQuery, graphql, Link } from 'gatsby'
 import { getImage } from 'gatsby-plugin-image'
 import { BgImage } from 'gbimage-bridge'
 
@@ -26,6 +26,7 @@ export default function NextExpoSlider() {
             allContentfulNextExposition {
                 nodes {
                     nexttitle
+                    link
                     nextorder
                     nextimage {
                         id
@@ -47,14 +48,17 @@ export default function NextExpoSlider() {
             <Slider {...settings}>
                 {data.allContentfulNextExposition.nodes.map((element) => {
                     const nextExpoImage = getImage(element.nextimage)
+                    let link = element.link
 
                     return (
                         <div key={element.nextorder}>
-                            <BgImage
-                                alt={element.nexttitle}
-                                image={nextExpoImage}
-                                className="bgimage"
-                            ></BgImage>
+                            <Link to={link}>
+                                <BgImage
+                                    alt={element.nexttitle}
+                                    image={nextExpoImage}
+                                    className="bgimage"
+                                ></BgImage>
+                            </Link>
                         </div>
                     )
                 })}
