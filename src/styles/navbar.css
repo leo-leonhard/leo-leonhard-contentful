@@ -91,11 +91,11 @@
 /* Portrait Tablet */
 @media (min-device-width: 768px) and (max-device-width: 1024px) {
     #header {
-        border: 2px solid red;
+        border: none;
     }
     .navbar .navbar-expand-lg .navbar-light {
         width: 100%;
-        border: 2px solid red;
+        border: none;
     }
 }
 

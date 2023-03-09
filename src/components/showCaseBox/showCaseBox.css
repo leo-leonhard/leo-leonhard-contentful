@@ -7,21 +7,30 @@
 /* section */
 .showcase {
     display: grid;
+    place-items: center;
     grid-template-columns: 1fr;
     gap: 2em;
     margin: 0 0 4em;
     padding: 2em 0 3em;
 }
 
-@media screen and (min-width: 600px) {
+/* tablets and smaller screens */
+@media screen and (min-width: 768px) and (max-width: 1025px) {
     .showcase {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(12, 1fr);
+    }
+    .showcase > :last-child {
+        justify-self: center;
+        grid-column: 4 / span 6;
+    }
+    .showcase-cards {
+        grid-column: span 6;
     }
 }
 
 @media screen and (min-width: 1024px) {
     .showcase {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
