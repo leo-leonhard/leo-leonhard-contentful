@@ -1,11 +1,16 @@
 import React from 'react'
+
+import { graphql } from 'gatsby'
+import { MDXProvider } from '@mdx-js/react'
+import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer'
+
 import Layout from '../components/Layout'
-import Template from '../components/showCaseBox/ShowCaseBoxPage'
+// import Template from '../components/showCaseBox/ShowCaseBoxPage'
 
 import image from '../assets/images/Das Frühwerk.jpg'
 const alt = 'Das Frühwerk'
 
-const text = (
+/* const text = (
     <>
         <p>
             Nach einem Studium der Germanistik studierte Leo Leonhard 1961 bis
@@ -40,13 +45,52 @@ const text = (
         </p>
     </>
 )
-
-export default function Frühwerk() {
+ */
+export default function Frühwerk({ data }) {
+    // console.log(data)
+    const myNodes = data.allContentfulShowcaseBox.nodes
     return (
         <Layout>
-            <section className="standard-layout-width">
-                <Template src={image} text={text} alt={alt} />
-            </section>
+            {myNodes.map((item) => {
+                // console.log(item.text)
+                return (
+                    <section className="standard-layout-width">
+                        <div className="showcase-page">
+                            <img
+                                src={image}
+                                alt={alt}
+                                className="img-showcase"
+                            />
+                            <div className="showcase-text-page">
+                                <MDXProvider>
+                                    <MDXRenderer>
+                                        {item.text.childMdx.body}
+                                    </MDXRenderer>
+                                </MDXProvider>
+                            </div>
+                        </div>
+                    </section>
+                )
+            })}
         </Layout>
     )
 }
+export const query = graphql`
+    query ShowCaseBoxQuery {
+        allContentfulShowcaseBox(filter: { slug: { eq: "das-fruehwerk" } }) {
+            nodes {
+                id
+                slug
+                header
+                text {
+                    childMdx {
+                        body
+                    }
+                }
+                image {
+                    gatsbyImageData(width: 525, placeholder: BLURRED)
+                }
+            }
+        }
+    }
+`
