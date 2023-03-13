@@ -1,5 +1,5 @@
 import React from 'react'
-import { graphql, useStaticQuery, Link } from 'gatsby'
+import { graphql, Link, useStaticQuery } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 import './showCaseBox.css'
@@ -25,6 +25,8 @@ export default function ShowCaseBox() {
             }
         }
     `)
+    const myNodes = data?.allContentfulShowcaseBox.nodes
+    console.log(myNodes)
     return (
         <section className="showcase">
             {data.allContentfulShowcaseBox.nodes.map((box) => {

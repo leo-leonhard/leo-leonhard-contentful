@@ -49,18 +49,6 @@ const IndexPage = ({ data }) => {
 
 export const query = graphql`
     query IntroTextQuery {
-        allContentfulGrafik(limit: 3) {
-            nodes {
-                year
-                slug
-                type
-                title
-                id
-                image {
-                    gatsbyImageData(width: 260)
-                }
-            }
-        }
         imitation: allContentfulBannerImage(
             filter: { slug: { eq: "imitation-geprägt-von-hochachtung" } }
         ) {
