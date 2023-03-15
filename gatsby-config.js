@@ -10,6 +10,8 @@ require('dotenv').config({
 module.exports = {
     siteMetadata: {
         title: `Leo Leonhard`,
+        description: 'Leo-Leonhard, Malerei und Grafik',
+        image: 'src/assets/images/portrait.jpg',
         siteUrl: `https://www.leo-leonard.de`
     },
     plugins: [

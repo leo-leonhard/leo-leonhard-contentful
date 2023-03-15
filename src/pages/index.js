@@ -10,7 +10,7 @@ import CapriccioBanner from '../components/CapriccioBanner'
 import ShowCaseBox from '../components/showCaseBox/ShowCaseBox'
 import Slidy from '../components/slick/Slick'
 import NewsLetter from '../components/newsletter/NewsLetter'
-
+import { SEO } from '../components/Seo'
 // TODO: check the graphql, many things not being used
 
 const IndexPage = ({ data }) => {
@@ -46,6 +46,8 @@ const IndexPage = ({ data }) => {
         </Layout>
     )
 }
+
+export const Head = () => <SEO />
 
 export const query = graphql`
     query IntroTextQuery {
