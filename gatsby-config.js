@@ -15,6 +15,7 @@ module.exports = {
         siteUrl: `https://www.leo-leonard.de`
     },
     plugins: [
+        `gatsby-plugin-netlify`,
         {
             resolve: 'gatsby-plugin-mailchimp',
             options: {
