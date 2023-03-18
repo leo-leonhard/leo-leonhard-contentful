@@ -33,7 +33,7 @@ const IndexPage = ({ data }) => {
             </div>
 
             <div className="standard-layout-width">
-                <ShowCaseBox />
+                <ShowCaseBox image={data.showcase.nodes} />
             </div>
 
             <div className="container-wider">
@@ -89,6 +89,22 @@ export const query = graphql`
                     childMdx {
                         body
                     }
+                }
+            }
+        }
+        showcase: allContentfulShowcaseBox {
+            nodes {
+                id
+                slug
+                header
+                text {
+                    childMdx {
+                        body
+                        excerpt(pruneLength: 80)
+                    }
+                }
+                image {
+                    gatsbyImageData(width: 525, placeholder: BLURRED)
                 }
             }
         }
