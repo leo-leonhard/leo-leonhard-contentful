@@ -1,6 +1,8 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 
+import { SEO } from '../components/Seo'
+
 import Layout from '../components/Layout'
 import PageBanner from '../components/PageBanner'
 import IntroText from '../components/IntroText'
@@ -186,3 +188,5 @@ export const query = graphql`
         }
     }
 `
+
+export const Head = () => <SEO title="Grafik" />

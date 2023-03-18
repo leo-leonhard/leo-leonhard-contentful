@@ -4,33 +4,13 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 import './showCaseBox.css'
 
-export default function ShowCaseBox() {
-    const data = useStaticQuery(graphql`
-        query ShowCaseBoxQuery {
-            allContentfulShowcaseBox {
-                nodes {
-                    id
-                    slug
-                    header
-                    text {
-                        childMdx {
-                            body
-                            excerpt(pruneLength: 80)
-                        }
-                    }
-                    image {
-                        gatsbyImageData(width: 525, placeholder: BLURRED)
-                    }
-                }
-            }
-        }
-    `)
+export default function ShowCaseBox({ image }) {
     return (
         <section className="showcase">
-            {data.allContentfulShowcaseBox.nodes.map((box) => {
+            {image.map((box) => {
                 const image = getImage(box.image)
                 return (
-                    <div key={box.id} className="showcase-cards">
+                    <div key={box.slug} className="showcase-cards">
                         <Link className="showcase-link" to={box.slug}>
                             <GatsbyImage
                                 className="showcase-img"

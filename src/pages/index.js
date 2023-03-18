@@ -10,7 +10,7 @@ import CapriccioBanner from '../components/CapriccioBanner'
 import ShowCaseBox from '../components/showCaseBox/ShowCaseBox'
 import Slidy from '../components/slick/Slick'
 import NewsLetter from '../components/newsletter/NewsLetter'
-
+import { SEO } from '../components/Seo'
 // TODO: check the graphql, many things not being used
 
 const IndexPage = ({ data }) => {
@@ -21,7 +21,7 @@ const IndexPage = ({ data }) => {
             </div>
 
             <div className="standard-layout-width card-style">
-                <IntroText introdata={data.allContentfulIntroText.nodes} />
+                <IntroText introdata={data.banner.nodes} />
             </div>
 
             <div className="standard-layout-width slider-container">
@@ -33,7 +33,7 @@ const IndexPage = ({ data }) => {
             </div>
 
             <div className="standard-layout-width">
-                <ShowCaseBox />
+                <ShowCaseBox image={data.showcase.nodes} />
             </div>
 
             <div className="container-wider">
@@ -47,17 +47,18 @@ const IndexPage = ({ data }) => {
     )
 }
 
+export const Head = () => <SEO />
+
 export const query = graphql`
     query IntroTextQuery {
-        allContentfulGrafik(limit: 3) {
+        banner: allContentfulIntroText(filter: { slug: { eq: "index" } }) {
             nodes {
-                year
-                slug
-                type
-                title
-                id
-                image {
-                    gatsbyImageData(width: 260)
+                header
+                page
+                text {
+                    childMdx {
+                        body
+                    }
                 }
             }
         }
@@ -91,20 +92,53 @@ export const query = graphql`
                 }
             }
         }
-        allContentfulIntroText(filter: { slug: { eq: "index" } }) {
+        showcase: allContentfulShowcaseBox {
             nodes {
                 id
                 slug
                 header
-                page
                 text {
                     childMdx {
                         body
+                        excerpt(pruneLength: 80)
                     }
+                }
+                image {
+                    gatsbyImageData(width: 525, placeholder: BLURRED)
                 }
             }
         }
     }
 `
+
+// export const query = graphql`
+//     query IntroTextQuery {
+//
+//         allContentfulGrafik(limit: 3) {
+//             nodes {
+//                 year
+//                 slug
+//                 type
+//                 title
+//                 id
+//                 image {
+//                     gatsbyImageData(width: 260)
+//                 }
+//             }
+//         }
+//
+//         allContentfulIntroText(filter: { slug: { eq: "index" } }) {
+//             nodes {
+//                 header
+//                 page
+//                 text {
+//                     childMdx {
+//                         body
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// `
 
 export default IndexPage
