@@ -21,7 +21,7 @@ const IndexPage = ({ data }) => {
             </div>
 
             <div className="standard-layout-width card-style">
-                <IntroText introdata={data.allContentfulIntroText.nodes} />
+                <IntroText introdata={data.banner.nodes} />
             </div>
 
             <div className="standard-layout-width slider-container">
@@ -51,15 +51,14 @@ export const Head = () => <SEO />
 
 export const query = graphql`
     query IntroTextQuery {
-        allContentfulGrafik(limit: 3) {
+        banner: allContentfulIntroText(filter: { slug: { eq: "index" } }) {
             nodes {
-                year
-                slug
-                type
-                title
-                id
-                image {
-                    gatsbyImageData(width: 260)
+                header
+                page
+                text {
+                    childMdx {
+                        body
+                    }
                 }
             }
         }
@@ -93,20 +92,37 @@ export const query = graphql`
                 }
             }
         }
-        allContentfulIntroText(filter: { slug: { eq: "index" } }) {
-            nodes {
-                id
-                slug
-                header
-                page
-                text {
-                    childMdx {
-                        body
-                    }
-                }
-            }
-        }
     }
 `
+
+// export const query = graphql`
+//     query IntroTextQuery {
+//
+//         allContentfulGrafik(limit: 3) {
+//             nodes {
+//                 year
+//                 slug
+//                 type
+//                 title
+//                 id
+//                 image {
+//                     gatsbyImageData(width: 260)
+//                 }
+//             }
+//         }
+//
+//         allContentfulIntroText(filter: { slug: { eq: "index" } }) {
+//             nodes {
+//                 header
+//                 page
+//                 text {
+//                     childMdx {
+//                         body
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// `
 
 export default IndexPage
