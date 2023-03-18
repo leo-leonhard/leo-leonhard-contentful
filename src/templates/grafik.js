@@ -55,8 +55,6 @@ export default function GrafikTemplate({ data }) {
                                 </p>
                             </div>
                         </div>
-
-                        {/* <hr /> */}
                     </div>
                 )
             })}

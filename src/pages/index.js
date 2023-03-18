@@ -111,34 +111,4 @@ export const query = graphql`
     }
 `
 
-// export const query = graphql`
-//     query IntroTextQuery {
-//
-//         allContentfulGrafik(limit: 3) {
-//             nodes {
-//                 year
-//                 slug
-//                 type
-//                 title
-//                 id
-//                 image {
-//                     gatsbyImageData(width: 260)
-//                 }
-//             }
-//         }
-//
-//         allContentfulIntroText(filter: { slug: { eq: "index" } }) {
-//             nodes {
-//                 header
-//                 page
-//                 text {
-//                     childMdx {
-//                         body
-//                     }
-//                 }
-//             }
-//         }
-//     }
-// `
-
 export default IndexPage
