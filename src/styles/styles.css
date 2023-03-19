@@ -361,7 +361,7 @@ hr {
     padding: 5em 0;
 }
 
-@media screen and (min-width: 420px) {
+@media screen and (max-width: 420px) {
     .slider-container {
         width: 100%;
     }
