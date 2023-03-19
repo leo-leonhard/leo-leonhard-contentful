@@ -138,6 +138,17 @@ hr {
     display: grid;
     place-items: center;
 }
+
+@media screen and (max-width: 420px) {
+    .card-style {
+        min-height: 50vh;
+        width: 100%;
+        padding: 7em 0.95em;
+        display: grid;
+        place-items: center;
+    }
+}
+
 .container {
     max-width: 100%;
 }
@@ -348,6 +359,12 @@ hr {
 
 .slider-container {
     padding: 5em 0;
+}
+
+@media screen and (min-width: 420px) {
+    .slider-container {
+        width: 100%;
+    }
 }
 
 .slider-text-box {
