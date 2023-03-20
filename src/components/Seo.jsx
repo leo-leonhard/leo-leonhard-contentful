@@ -20,6 +20,10 @@ export const SEO = ({ title, description, pathname, children }) => {
         <>
             <title>{seo.title}</title>
             <meta name="description" content={seo.description} />
+            <meta
+                name="google-site-verification"
+                content="Ubj3GNHWtTOb0byiLLZWeWYW67IdMFYz-v3dhz9KU4Y"
+            />
             <meta name="image" content={seo.image} />
             <meta name="twitter:card" content="summary_large_image" />
             <meta name="twitter:title" content={seo.title} />

@@ -12,7 +12,9 @@ module.exports = {
         title: `Leo Leonhard`,
         description: 'Leo-Leonhard, Malerei und Grafik',
         image: 'src/assets/images/portrait.jpg',
-        siteUrl: `https://www.leo-leonard.de`
+        siteUrl: `https://www.leo-leonard.de`,
+        nameGoogle: 'google-site-verification',
+        contentGoogle: 'Ubj3GNHWtTOb0byiLLZWeWYW67IdMFYz-v3dhz9KU4Y'
     },
     plugins: [
         `gatsby-plugin-netlify`,
