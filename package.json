@@ -15,7 +15,7 @@
   "scripts": {
     "develop": "gatsby clean && gatsby develop",
     "start": "gatsby develop",
-    "build": "gatsby build",
+    "build": "npm install --legacy-peer-deps && gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "format": "prettier --write '{gatsby-*.js,src/**/*.{js,jsx,json,css}}'",
