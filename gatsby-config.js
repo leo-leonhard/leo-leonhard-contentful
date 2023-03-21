@@ -17,6 +17,7 @@ module.exports = {
         contentGoogle: 'Ubj3GNHWtTOb0byiLLZWeWYW67IdMFYz-v3dhz9KU4Y'
     },
     plugins: [
+        `gatsby-plugin-sitemap`,
         `gatsby-plugin-netlify`,
         {
             resolve: 'gatsby-plugin-mailchimp',
