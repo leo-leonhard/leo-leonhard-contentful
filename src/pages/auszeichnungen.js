@@ -56,4 +56,4 @@ export const query = graphql`
         }
     }
 `
-export const Head = () => <SEO />
+export const Head = () => <SEO title="Auszeichnungen" />
