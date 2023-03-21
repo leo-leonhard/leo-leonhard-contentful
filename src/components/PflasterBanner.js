@@ -4,6 +4,7 @@ import { getImage } from 'gatsby-plugin-image'
 import { MDXProvider } from '@mdx-js/react'
 import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer'
 import { BgImage } from 'gbimage-bridge'
+
 import { SEO } from '../components/Seo'
 
 export default function PflasterBanner({ image }) {
@@ -60,4 +61,4 @@ export default function PflasterBanner({ image }) {
     )
 }
 
-export const Head = () => <SEO />
+export const Head = () => <SEO title="IMITATION GEPRÄGT VON HOCHACHTUNG" />
