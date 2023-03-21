@@ -15,7 +15,7 @@
   "scripts": {
     "develop": "gatsby clean && gatsby develop",
     "start": "gatsby develop",
-    "build": "CI=false gatsby build",
+    "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "format": "prettier --write '{gatsby-*.js,src/**/*.{js,jsx,json,css}}'",
