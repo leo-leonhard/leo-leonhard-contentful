@@ -141,4 +141,4 @@ export default function Nachruf() {
         </>
     )
 }
-export const Head = () => <SEO />
+export const Head = () => <SEO title="Nachruf" />
