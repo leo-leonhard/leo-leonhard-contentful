@@ -2,6 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { MDXProvider } from '@mdx-js/react'
 import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer'
+import { SEO } from '../components/Seo'
 
 import Layout from '../components/Layout'
 // import p from '../assets/images/p.png'
@@ -55,3 +56,4 @@ export const query = graphql`
         }
     }
 `
+export const Head = () => <SEO />

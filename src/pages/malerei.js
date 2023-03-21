@@ -8,6 +8,7 @@ import Oelgemaelde from '../components/ArtWork/Malerei/Oelgemaelde'
 import OelgemaeldeText from '../components/ArtWork/Malerei/OelgemaeldeText'
 import Aquarelle from '../components/ArtWork/Malerei/Aquarelle'
 import AquarelleText from '../components/ArtWork/Malerei/AquarelleText'
+import { SEO } from '../components/Seo'
 
 export default function MalereiPage({ data }) {
     return (
@@ -97,3 +98,4 @@ export const query = graphql`
         }
     }
 `
+export const Head = () => <SEO />

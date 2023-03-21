@@ -4,6 +4,7 @@ import { graphql, Link } from 'gatsby'
 import PageBanner from '../components/PageBanner'
 import IntroText from '../components/IntroText'
 import Layout from '../components/Layout'
+import { SEO } from '../components/Seo'
 
 import portrait from '../assets/images/portrait.jpg'
 import auszeichnungen from '../assets/images/Slbst_Öl.jpg'
@@ -93,3 +94,4 @@ export const query = graphql`
 `
 
 export default LebenslaufPage
+export const Head = () => <SEO />

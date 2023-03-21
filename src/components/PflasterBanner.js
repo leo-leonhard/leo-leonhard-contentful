@@ -4,6 +4,7 @@ import { getImage } from 'gatsby-plugin-image'
 import { MDXProvider } from '@mdx-js/react'
 import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer'
 import { BgImage } from 'gbimage-bridge'
+import { SEO } from '../components/Seo'
 
 export default function PflasterBanner({ image }) {
     return (
@@ -58,3 +59,5 @@ export default function PflasterBanner({ image }) {
         </div>
     )
 }
+
+export const Head = () => <SEO />

@@ -4,6 +4,7 @@ import { graphql } from 'gatsby'
 import NavBar from '../components/NavBar'
 import Footer from '../components/footer/Footer'
 // import { getImage, GatsbyImage } from 'gatsby-plugin-image'
+import { SEO } from '../components/Seo'
 
 // import ausstellungen from '../assets/images/Slbst_Öl.jpg'
 
@@ -114,3 +115,4 @@ export const query = graphql`
         }
     }
 `
+export const Head = () => <SEO />

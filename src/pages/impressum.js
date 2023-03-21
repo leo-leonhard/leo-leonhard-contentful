@@ -4,6 +4,7 @@ import { MDXProvider } from '@mdx-js/react'
 import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer'
 
 import Layout from '../components/Layout'
+import { SEO } from '../components/Seo'
 
 const Impressum = ({ data }) => {
     return (
@@ -50,3 +51,4 @@ export const query = graphql`
 `
 
 export default Impressum
+export const Head = () => <SEO />

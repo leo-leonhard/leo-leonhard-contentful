@@ -4,6 +4,7 @@ import { getImage } from 'gatsby-plugin-image'
 
 import Layout from '../components/Layout'
 import Template from '../components/showCaseBox/ShowCaseBoxPage'
+import { SEO } from '../components/Seo'
 
 export default function Werke({ data }) {
     const myNodes = data.allContentfulShowcaseBox.nodes
@@ -44,3 +45,4 @@ export const query = graphql`
         }
     }
 `
+export const Head = () => <SEO />
