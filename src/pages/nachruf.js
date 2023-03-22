@@ -1,10 +1,11 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+
+import { SEO } from '../components/Seo'
 
 import NavBar from '../components/NavBar'
 import Footer from '../components/footer/Footer'
 
-export default function Nachruf({ data }) {
+export default function Nachruf() {
     return (
         <>
             <NavBar />
@@ -140,3 +141,4 @@ export default function Nachruf({ data }) {
         </>
     )
 }
+export const Head = () => <SEO title="Nachruf" />

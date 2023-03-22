@@ -1,4 +1,5 @@
 import React from 'react'
+import { SEO } from '../components/Seo'
 
 import Layout from '../components/Layout'
 
@@ -53,3 +54,4 @@ const Contact = () => (
 )
 
 export default Contact
+export const Head = () => <SEO />

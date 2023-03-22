@@ -2,25 +2,13 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { MDXProvider } from '@mdx-js/react'
 import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer'
+import { SEO } from '../components/Seo'
 
 import Layout from '../components/Layout'
-// import p from '../assets/images/p.png'
 
 export default function Auszeichnungen({ data }) {
     return (
         <Layout>
-            {/* <div style={{ width: '75%', margin: '0 auto' }}>
-                <img
-                    className="mb-5"
-                    alt="text"
-                    src={p}
-                    style={{
-                        width: '100%',
-                        height: '80vh',
-                        objectFit: 'cover'
-                    }}
-                />
-            </div> */}
             <div style={{ width: '60%', margin: '0 auto 3em auto' }}>
                 <h2>AUSZEICHNUNGEN</h2>
                 <hr style={{ width: '20%', margin: '3em 0 1em 0' }} />
@@ -55,3 +43,4 @@ export const query = graphql`
         }
     }
 `
+export const Head = () => <SEO title="Auszeichnungen" />

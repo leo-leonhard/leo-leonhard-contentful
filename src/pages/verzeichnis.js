@@ -1,5 +1,6 @@
 import React from 'react'
 import Layout from '../components/Layout'
+import { SEO } from '../components/Seo'
 
 import { publications } from '../utils/verzeichnisData'
 
@@ -32,3 +33,4 @@ export default function Verzeichnis() {
         </Layout>
     )
 }
+export const Head = () => <SEO />
