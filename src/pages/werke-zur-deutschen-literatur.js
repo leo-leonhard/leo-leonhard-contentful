@@ -7,7 +7,7 @@ import Template from '../components/showCaseBox/ShowCaseBoxPage'
 import { SEO } from '../components/Seo'
 
 export default function Werke({ data }) {
-    const myNodes = data.allContentfulShowcaseBox.nodes
+    const myNodes = data.werke.nodes
     return (
         <Layout>
             {myNodes.map((item) => {
@@ -25,8 +25,8 @@ export default function Werke({ data }) {
     )
 }
 export const query = graphql`
-    query ShowCaseBoxQuery {
-        allContentfulShowcaseBox(
+    query ShowCaseBoxQueryWerke {
+        werke: allContentfulShowcaseBox(
             filter: { slug: { eq: "werke-zur-deutschen-literatur" } }
         ) {
             nodes {
