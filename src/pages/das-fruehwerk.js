@@ -25,7 +25,7 @@ export default function Frühwerk({ data }) {
     )
 }
 export const query = graphql`
-    query ShowCaseBoxQuery {
+    query ShowCaseBoxQueryFruehwerk {
         allContentfulShowcaseBox(filter: { slug: { eq: "das-fruehwerk" } }) {
             nodes {
                 id

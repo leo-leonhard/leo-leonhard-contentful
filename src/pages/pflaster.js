@@ -65,7 +65,7 @@ export default function PflasterPage({ data }) {
 }
 
 export const query = graphql`
-    query getContent {
+    query getContentPflaster {
         pflasterNodes: allContentfulUniquePage(
             filter: { slug: { eq: "pflaster" } }
         ) {

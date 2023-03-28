@@ -62,7 +62,7 @@ export default function CapriccioPage({ data }) {
 }
 
 export const query = graphql`
-    query getContent {
+    query getContentCappriccio {
         pflasterNodes: allContentfulUniquePage(
             filter: { slug: { eq: "capriccio" } }
         ) {

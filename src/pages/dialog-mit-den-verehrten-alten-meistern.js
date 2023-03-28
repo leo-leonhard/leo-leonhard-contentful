@@ -25,7 +25,7 @@ export default function DialogVerehrtenAltenMeistern({ data }) {
     )
 }
 export const query = graphql`
-    query ShowCaseBoxQuery {
+    query ShowCaseBoxQueryDialog {
         allContentfulShowcaseBox(
             filter: { slug: { eq: "dialog-mit-den-verehrten-alten-meistern" } }
         ) {
