@@ -20,6 +20,7 @@ export default function ShowCaseBoxPage({ src, alt, text, gallery, title }) {
                                     <GatsbyImage
                                         className="gallery-single-page-img"
                                         image={image}
+                                        alt="test random for now"
                                     />
                                 </div>
                             )
