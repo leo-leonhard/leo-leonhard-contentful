@@ -1,5 +1,5 @@
 import React from 'react'
-import { GatsbyImage } from 'gatsby-plugin-image'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 import { MDXProvider } from '@mdx-js/react'
 import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer'
@@ -7,19 +7,37 @@ import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer'
 import './showCaseBox.css'
 import '../../styles/single-page-style.css'
 
-export default function ShowCaseBoxPage({ alt, src, text, newsrc }) {
+export default function ShowCaseBoxPage({ src, alt, text, gallery, title }) {
     return (
         <section className="standard-layout-width">
             <div className="showcase-page">
-                <GatsbyImage alt={alt} className="img-showcase" image={src} />
-
-                <div className="gallery-single-page">
+                {gallery ? (
+                    <div className="gallery-single-page">
+                        {gallery.map((item) => {
+                            const image = getImage(item)
+                            return (
+                                <div className="single-container-image">
+                                    <GatsbyImage
+                                        className="gallery-single-page-img"
+                                        image={image}
+                                    />
+                                </div>
+                            )
+                        })}
+                    </div>
+                ) : (
                     <GatsbyImage
-                        className="gallery-single-page-img"
-                        image={newsrc}
+                        alt={alt}
+                        className="img-showcase"
+                        image={src}
                     />
-                </div>
+                )}
 
+                {title ? (
+                    <div className="title-schowcase">
+                        <h1>{title}</h1>
+                    </div>
+                ) : null}
                 <div className="showcase-text-page">
                     <MDXProvider>
                         <MDXRenderer>{text}</MDXRenderer>
