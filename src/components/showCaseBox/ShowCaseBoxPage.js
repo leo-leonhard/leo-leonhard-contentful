@@ -5,14 +5,21 @@ import { MDXProvider } from '@mdx-js/react'
 import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer'
 
 import './showCaseBox.css'
+import '../../styles/single-page-style.css'
 
-export default function ShowCaseBoxPage({ alt, src, text }) {
+export default function ShowCaseBoxPage({ alt, src, text, newsrc }) {
     return (
         <section className="standard-layout-width">
             <div className="showcase-page">
                 <GatsbyImage alt={alt} className="img-showcase" image={src} />
 
-                {/* <img src={src} alt={alt} className="img-showcase" /> */}
+                <div className="gallery-single-page">
+                    <GatsbyImage
+                        className="gallery-single-page-img"
+                        image={newsrc}
+                    />
+                </div>
+
                 <div className="showcase-text-page">
                     <MDXProvider>
                         <MDXRenderer>{text}</MDXRenderer>
