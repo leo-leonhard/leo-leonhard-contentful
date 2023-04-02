@@ -1,4 +1,5 @@
 [build]
 NODE_VERSION = "18"
 command = "npm install --legacy-peer-deps"
+command = "npm run build"
 publish = "public/"
