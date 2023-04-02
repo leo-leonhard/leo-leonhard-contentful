@@ -12,6 +12,7 @@ export default function Kunstwerk({ kunstwerk }) {
                     const image = getImage(werk.image)
                     return (
                         <div
+                            key={werk.slug}
                             className="d-flex flex-column mb-5"
                             style={{
                                 width: '15em',

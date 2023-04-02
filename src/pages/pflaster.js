@@ -30,7 +30,10 @@ export default function PflasterPage({ data }) {
                                 {item.images.map((elem) => {
                                     const image = getImage(elem)
                                     return (
-                                        <div className="single-container-image">
+                                        <div
+                                            key={elem.id}
+                                            className="single-container-image"
+                                        >
                                             <GatsbyImage
                                                 className="gallery-single-page-img"
                                                 image={image}

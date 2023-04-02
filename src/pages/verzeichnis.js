@@ -17,13 +17,16 @@ export default function Verzeichnis() {
 
                 <div className="verzeichnis-publications">
                     {publications.map(({ year, elements }) => (
-                        <div className="verzeichnis-publications-elements">
+                        <div
+                            className="verzeichnis-publications-elements"
+                            key={elements.id}
+                        >
                             <div>
                                 <p>{year}</p>
                             </div>
                             <div>
                                 {elements.map((element) => (
-                                    <p>{element}</p>
+                                    <p key={element.id}>{element}</p>
                                 ))}
                             </div>
                         </div>

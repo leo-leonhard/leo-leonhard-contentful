@@ -36,7 +36,7 @@ export default function ArtAll() {
     `)
     return (
         <>
-            <h1>acá intentamos renderizar todo junto: {query.header}</h1>
+            <h1>acá intentamos renderizar todo junto: {data.header}</h1>
         </>
     )
 }

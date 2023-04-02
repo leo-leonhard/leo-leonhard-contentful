@@ -34,6 +34,7 @@ export default function Lebensstationen({ data }) {
                         <div className="mt-4  d-flex flex-column">
                             {data.allContentfulLebenslauf.nodes.map((entry) => (
                                 <div
+                                    key={entry.id}
                                     style={{ fontSize: '0.9em', width: '40%' }}
                                 >
                                     <p className="fett">{entry.year}</p>

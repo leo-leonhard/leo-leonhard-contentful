@@ -11,16 +11,16 @@ export default function VernissageRubrechtContemporaryWiesbaden({ data }) {
     return (
         <Layout>
             {myNodes.map((item) => {
-                console.log(item.gallery)
                 const image = getImage(item.image)
-                const image2 = getImage(item.gallery)
+                const newgallery = item.gallery
                 return (
                     <Template
                         key={item.slug}
                         alt={item.header}
                         src={image}
-                        newsrc={image2}
+                        gallery={newgallery}
                         text={item.text.childMdx.body}
+                        title={item.header}
                     />
                 )
             })}

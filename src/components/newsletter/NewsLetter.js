@@ -26,9 +26,6 @@ export default function Newsletter() {
             setStatus(result)
             setMessage(msg)
         } catch (err) {
-            console.log('Error', err)
-
-            // Set status and message
             setStatus('error')
             setMessage('An error occurred. Please try again later.')
         } finally {
@@ -48,9 +45,9 @@ export default function Newsletter() {
                         <p>Einfach hier anmelden:</p>
                     </div>
                     <form onSubmit={handleSubmit} className="newsletter-grid">
-                        <div class="input-group mb-3">
+                        <div className="input-group mb-3">
                             <input
-                                class="form-control"
+                                className="form-control"
                                 type="email"
                                 value={email}
                                 onChange={(event) =>
@@ -60,7 +57,7 @@ export default function Newsletter() {
                             />
 
                             <button
-                                class="btn btn-outline-secondary btn-newsletter "
+                                className="btn btn-outline-secondary btn-newsletter "
                                 type="submit"
                                 id="button-newsletter"
                             >
