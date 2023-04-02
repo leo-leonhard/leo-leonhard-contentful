@@ -50,6 +50,7 @@ const PublikationenPage = ({ data }) => {
                             const image = getImage(book.coverImage)
                             return (
                                 <div
+                                    key={book.id}
                                     className="d-flex flex-column"
                                     style={{
                                         width: '13em',

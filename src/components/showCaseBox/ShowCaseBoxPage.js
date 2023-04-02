@@ -16,7 +16,10 @@ export default function ShowCaseBoxPage({ src, alt, text, gallery, title }) {
                         {gallery.map((item) => {
                             const image = getImage(item)
                             return (
-                                <div className="single-container-image">
+                                <div
+                                    key={item.id}
+                                    className="single-container-image"
+                                >
                                     <GatsbyImage
                                         className="gallery-single-page-img"
                                         image={image}

@@ -14,7 +14,7 @@ export default function Auszeichnungen({ data }) {
                 <hr style={{ width: '20%', margin: '3em 0 1em 0' }} />
                 <div>
                     {data.allContentfulAuszeichnung.nodes.map((award) => (
-                        <div>
+                        <div key={award.id}>
                             <p className="fett">{award.year}</p>
                             <MDXProvider>
                                 <MDXRenderer>

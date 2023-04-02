@@ -51,10 +51,10 @@
     "slick-carousel": "1.8.1"
   },
   "devDependencies": {
-    "eslint": "^7.32.0",
-    "eslint-config-prettier": "8.6.0",
-    "eslint-plugin-prettier": "4.2.1",
-    "eslint-plugin-react": "7.32.2",
+    "eslint": "7.24.0",
+    "eslint-config-prettier": "8.1.0",
+    "eslint-plugin-prettier": "3.3.1",
+    "eslint-plugin-react": "^7.32.2",
     "gatsby-plugin-netlify": "5.1.0",
     "prettier": "2.8.4"
   }
