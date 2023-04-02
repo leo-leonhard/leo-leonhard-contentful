@@ -1,7 +1,5 @@
 import React from 'react'
-import CookieConsent, { Cookies } from 'react-cookie-consent'
-
-console.log(Cookies.get('leoLeonhardCookieWebsite'))
+import CookieConsent from 'react-cookie-consent'
 
 const CookieBanner = () => {
     return (

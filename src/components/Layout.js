@@ -7,11 +7,10 @@ import Footer from './footer/Footer'
 
 import CookieBanner from './Cookie/CookieBanner'
 
-import { Cookies } from 'react-cookie-consent'
-console.log(Cookies.get('leoLeonhardCookieWebsite'))
+// import { Cookies } from 'react-cookie-consent'
 
 export default function Layout({ children }) {
-    const consent = Cookies.get('leoLeonhardCookieWebsite')
+    // const consent = Cookies.get('leoLeonhardCookieWebsite')
     return (
         <>
             <NavBar />

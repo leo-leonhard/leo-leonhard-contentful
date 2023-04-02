@@ -3,7 +3,7 @@ import { StaticQuery, graphql } from 'gatsby'
 
 import KunstWerk from '../KunstWerk'
 
-const Aquarelle = ({ data }) => (
+const Aquarelle = () => (
     <StaticQuery
         query={graphql`
             query getAquarelle {

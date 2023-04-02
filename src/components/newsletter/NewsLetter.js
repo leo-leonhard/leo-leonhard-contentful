@@ -26,9 +26,6 @@ export default function Newsletter() {
             setStatus(result)
             setMessage(msg)
         } catch (err) {
-            console.log('Error', err)
-
-            // Set status and message
             setStatus('error')
             setMessage('An error occurred. Please try again later.')
         } finally {
