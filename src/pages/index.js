@@ -24,9 +24,9 @@ const IndexPage = ({ data }) => {
                 <IntroText introdata={data.banner.nodes} />
             </div>
 
-            <div className="standard-layout-width slider-container">
+            {/*     <div className="standard-layout-width slider-container">
                 <NextExpoSlider />
-            </div>
+            </div> */}
 
             <div className="container-wider">
                 <PflasterBanner image={data.imitation.nodes} />
