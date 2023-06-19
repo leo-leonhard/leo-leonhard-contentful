@@ -19,7 +19,7 @@ Leo Leonhard is a Gatsby website built by Hanna Rosenfeld. It is built using the
 Clone the repository and install the dependencies:
 
 ```bash
-git clone https://github.com/hannarosenfeld/leo-leonhard-contentful.git
+git clone https://github.com/leo-leonhard/leo-leonhard-contentful.git
 cd leo-leonhard-contentful
 npm install 
 ``` 
