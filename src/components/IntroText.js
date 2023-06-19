@@ -22,7 +22,7 @@ function IntroText({ introdata }) {
                     <>
                         <div key={intro.key}>
                             <h1 className="fett" style={headingText}>
-                                {intro.header} !
+                                {intro.header}
                             </h1>
                             <div style={paragraphStyle}>
                                 <MDXProvider>
