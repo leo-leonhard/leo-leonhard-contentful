@@ -1,12 +1,35 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import { getImage } from 'gatsby-plugin-image'
-import { MDXProvider } from '@mdx-js/react'
-import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer'
-import { BgImage } from 'gbimage-bridge'
+// import { getImage } from 'gatsby-plugin-image'
+// import { MDXProvider } from '@mdx-js/react'
+// import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer'
+// import { BgImage } from 'gbimage-bridge'
 
 import { SEO } from '../components/Seo'
+import LaudaFabrik from '../assets/images/Lauda-Fabrikgalerie.png'
 
+export default function PflasterBanner() {
+    return (
+        <div className="mt-4">
+            <div>
+                <Link to="https://www.lauda-fabrikgalerie.de/de/">
+                    <img
+                        className="mb-5 d-flex align-items-end"
+                        src={LaudaFabrik}
+                        style={{
+                            maxHeight: '100%',
+                            objectFit: 'contain',
+                            height: '93vh'
+                        }}
+                    />
+                </Link>
+            </div>
+            )
+        </div>
+    )
+}
+
+/* 
 export default function PflasterBanner({ image }) {
     return (
         <div className="mt-4">
@@ -61,4 +84,5 @@ export default function PflasterBanner({ image }) {
     )
 }
 
+*/
 export const Head = () => <SEO title="IMITATION GEPRÄGT VON HOCHACHTUNG" />

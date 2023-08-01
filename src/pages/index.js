@@ -4,7 +4,7 @@ import { graphql } from 'gatsby'
 import '../styles/index.css'
 import Layout from '../components/Layout'
 import IntroText from '../components/IntroText'
-import NextExpoSlider from '../components/slider/NextExpoSlider'
+// import NextExpoSlider from '../components/slider/NextExpoSlider'
 import PflasterBanner from '../components/PflasterBanner'
 import CapriccioBanner from '../components/CapriccioBanner'
 import ShowCaseBox from '../components/showCaseBox/ShowCaseBox'
@@ -29,7 +29,8 @@ const IndexPage = ({ data }) => {
             </div> */}
 
             <div className="container-wider">
-                <PflasterBanner image={data.imitation.nodes} />
+                {/* <PflasterBanner image={data.imitation.nodes} /> */}
+                <PflasterBanner />
             </div>
 
             <div className="standard-layout-width">
