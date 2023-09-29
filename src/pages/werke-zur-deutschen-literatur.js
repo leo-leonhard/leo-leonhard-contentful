@@ -11,13 +11,13 @@ export default function Werke({ data }) {
     return (
         <Layout>
             {myNodes.map((item) => {
-                const image = getImage(item.image)
+                const image = getImage(item.mainImage)
                 return (
                     <Template
                         key={item.slug}
-                        alt={item.header}
+                        alt={item.title}
                         src={image}
-                        text={item.text.childMdx.body}
+                        text={item.content.childMdx.body}
                     />
                 )
             })}
@@ -26,20 +26,26 @@ export default function Werke({ data }) {
 }
 export const query = graphql`
     query ShowCaseBoxQueryWerke {
-        werke: allContentfulShowcaseBox(
-            filter: { slug: { eq: "werke-zur-deutschen-literatur" } }
+        werke: allContentfulPages(
+            filter: {
+                slug: { eq: "dialog-mit-den-verehrten-alten-meistern" }
+                node_locale: { eq: "de-DE" }
+            }
         ) {
             nodes {
                 id
                 slug
-                header
-                text {
+                title
+                mainImage {
+                    gatsbyImageData
+                }
+                contentImages {
+                    gatsbyImageData(width: 1200, placeholder: BLURRED)
+                }
+                content {
                     childMdx {
                         body
                     }
-                }
-                image {
-                    gatsbyImageData(width: 1200, placeholder: BLURRED)
                 }
             }
         }

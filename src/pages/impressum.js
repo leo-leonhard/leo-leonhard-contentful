@@ -1,7 +1,7 @@
 import React from 'react'
-import { graphql } from 'gatsby'
-import { MDXProvider } from '@mdx-js/react'
-import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer'
+// import { graphql } from 'gatsby'
+// import { MDXProvider } from '@mdx-js/react'
+// import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer'
 
 import Layout from '../components/Layout'
 import { SEO } from '../components/Seo'
@@ -24,14 +24,14 @@ const Impressum = ({ data }) => {
                 </div>
                 <div id="datenschutzerklaerung">
                     <h1>Datenschutzerklärung</h1>
-                    <MDXProvider>
+                    {/* <MDXProvider>
                         <MDXRenderer>
                             {
                                 data.contentfulDatenschutzerklaerung.text
                                     .childMdx.body
                             }
                         </MDXRenderer>
-                    </MDXProvider>
+                    </MDXProvider> */}
                 </div>
             </section>
         </Layout>

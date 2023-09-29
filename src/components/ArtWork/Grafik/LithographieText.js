@@ -10,11 +10,11 @@ export default function Lithographie({ data }) {
             {data.map((elem) => {
                 return (
                     <>
-                        <h1>{elem.header}</h1>
+                        <h1>{elem.lithographieHead}</h1>
                         <div className="paragraph">
                             <MDXProvider>
                                 <MDXRenderer>
-                                    {elem.description.childMdx.body}
+                                    {elem.lithographieDesc.childMdx.body}
                                 </MDXRenderer>
                             </MDXProvider>
                         </div>

@@ -1,25 +1,14 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import Layout from '../components/Layout'
+import { MDXProvider } from '@mdx-js/react'
+import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer'
 
+import Layout from '../components/Layout'
 import { SEO } from '../components/Seo'
 
 export default function Lebensstationen({ data }) {
     return (
         <Layout>
-            {' '}
-            {/* <div style={{ width: '75%', margin: '0 auto' }}>
-                <img
-                    className="mb-5"
-                    src={s}
-                    alt="text"
-                    style={{
-                        width: '100%',
-                        height: '80vh',
-                        objectFit: 'cover'
-                    }}
-                />
-            </div> */}
             <div style={{ background: '#F8F3EA', padding: '3em 0' }}>
                 <div style={{ width: '60%', margin: '0 auto' }}>
                     <div style={{ margin: '0 auto' }}>
@@ -32,17 +21,26 @@ export default function Lebensstationen({ data }) {
                             />
                         </div>
                         <div className="mt-4  d-flex flex-column">
-                            {data.allContentfulLebenslauf.nodes.map((entry) => (
-                                <div
-                                    key={entry.id}
-                                    style={{ fontSize: '0.9em', width: '40%' }}
-                                >
-                                    <p className="fett">{entry.year}</p>
-                                    <p style={{ marginTop: '-1em' }}>
-                                        {entry.event}
-                                    </p>
-                                </div>
-                            ))}
+                            {data.allContentfulLebensstationen.nodes.map(
+                                (entry) => (
+                                    <div
+                                        key={entry.id}
+                                        style={{
+                                            fontSize: '0.9em',
+                                            width: '40%'
+                                        }}
+                                    >
+                                        <p className="fett">{entry.year}</p>
+                                        <p style={{ marginTop: '-1em' }}>
+                                            <MDXProvider>
+                                                <MDXRenderer>
+                                                    {entry.event.childMdx.body}
+                                                </MDXRenderer>
+                                            </MDXProvider>
+                                        </p>
+                                    </div>
+                                )
+                            )}
                         </div>
                     </div>
                 </div>
@@ -53,10 +51,21 @@ export default function Lebensstationen({ data }) {
 
 export const query = graphql`
     query getLebensstationenContent {
-        allContentfulLebenslauf(sort: { fields: year, order: ASC }) {
+        allContentfulLebensstationen(
+            filter: {
+                node_locale: { eq: "de-DE" }
+                category: { eq: "LEBENSSTATIONEN" }
+            }
+            sort: { fields: year, order: ASC }
+        ) {
             nodes {
+                id
                 year
-                event
+                event {
+                    childMdx {
+                        body
+                    }
+                }
             }
         }
     }

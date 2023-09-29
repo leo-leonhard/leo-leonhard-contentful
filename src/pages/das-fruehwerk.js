@@ -7,17 +7,17 @@ import Layout from '../components/Layout'
 import Template from '../components/showCaseBox/ShowCaseBoxPage'
 
 export default function Frühwerk({ data }) {
-    const myNodes = data.allContentfulShowcaseBox.nodes
+    const myNodes = data.fruehwerk.nodes
     return (
         <Layout>
             {myNodes.map((item) => {
-                const image = getImage(item.image)
+                const image = getImage(item.mainImage)
                 return (
                     <Template
                         key={item.slug}
-                        alt={item.header}
+                        alt={item.title}
                         src={image}
-                        text={item.text.childMdx.body}
+                        text={item.content.childMdx.body}
                     />
                 )
             })}
@@ -26,18 +26,28 @@ export default function Frühwerk({ data }) {
 }
 export const query = graphql`
     query ShowCaseBoxQueryFruehwerk {
-        allContentfulShowcaseBox(filter: { slug: { eq: "das-fruehwerk" } }) {
+        fruehwerk: allContentfulPages(
+            filter: {
+                slug: {
+                    eq: "vernissage-bei-rubrecht-contemporary-in-wiesbaden"
+                }
+                node_locale: { eq: "de-DE" }
+            }
+        ) {
             nodes {
                 id
                 slug
-                header
-                text {
+                title
+                mainImage {
+                    gatsbyImageData
+                }
+                contentImages {
+                    gatsbyImageData
+                }
+                content {
                     childMdx {
                         body
                     }
-                }
-                image {
-                    gatsbyImageData(width: 1200, placeholder: BLURRED)
                 }
             }
         }

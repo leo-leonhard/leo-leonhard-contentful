@@ -7,7 +7,7 @@ import { MDXProvider } from '@mdx-js/react'
 import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer'
 
 export default function MalreiTemplate({ data }) {
-    const picture = data.allContentfulMalerei.nodes
+    const picture = data.allContentfulMalereiImages.nodes
 
     return (
         <Layout>
@@ -55,11 +55,13 @@ export default function MalreiTemplate({ data }) {
 
 export const query = graphql`
     query ($slug: String!) {
-        allContentfulMalerei(filter: { slug: { eq: $slug } }) {
+        allContentfulMalereiImages(
+            filter: { node_locale: { eq: "de-DE" }, slug: { eq: $slug } }
+        ) {
             nodes {
                 year
-                width
                 title
+                category
                 description {
                     childMdx {
                         body

@@ -22,22 +22,14 @@ export default function GrafikPage({ data }) {
     return (
         <Layout>
             <section className="standard-layout-width">
-                <PageBanner image={data.allContentfulPageBanner.nodes} />
-                <IntroText introdata={data.allContentfulIntroText.nodes} />
-
-                {/* 
-            * //TODO:
-            * to being implemented 
-            * add to the graphql this opction to sort the nodes: { fields: order, order: ASC }
-            <ArtworkTemplate data={data.allContentfulDescriptionText.nodes} />
-            */}
+                <PageBanner image={data.headerText.nodes} />
+                <IntroText introdata={data.headerText.nodes} />
 
                 <div className="mt-5 mb-5">
                     <hr />
                 </div>
-
                 <div id="zeichnungen">
-                    <ZeichnungenText data={data.zeichnungenNodes.nodes} />
+                    <ZeichnungenText data={data.textGrafik.nodes} />
                     <Zeichnungen />
                 </div>
 
@@ -46,7 +38,7 @@ export default function GrafikPage({ data }) {
                 </div>
 
                 <div id="radierungen">
-                    <RadierungenText data={data.radierungenNodes.nodes} />
+                    <RadierungenText data={data.textGrafik.nodes} />
                     <Radierungen />
                 </div>
 
@@ -55,7 +47,7 @@ export default function GrafikPage({ data }) {
                 </div>
 
                 <div id="holzschnitte">
-                    <HolzschnitteText data={data.holzschnitteNodes.nodes} />
+                    <HolzschnitteText data={data.textGrafik.nodes} />
                     <Holzschnitte />
                 </div>
 
@@ -64,7 +56,7 @@ export default function GrafikPage({ data }) {
                 </div>
 
                 <div id="lithographie">
-                    <LithographieText data={data.lithographieNodes.nodes} />
+                    <LithographieText data={data.textGrafik.nodes} />
                     <Lithographie />
                 </div>
 
@@ -73,7 +65,7 @@ export default function GrafikPage({ data }) {
                 </div>
 
                 <div id="mappenwerke">
-                    <MappenwerkeText data={data.mappenwerkeNodes.nodes} />
+                    <MappenwerkeText data={data.textGrafik.nodes} />
                     <Mappenwerke />
                 </div>
             </section>
@@ -81,105 +73,64 @@ export default function GrafikPage({ data }) {
     )
 }
 
-// TODO: need to simlify: DRY
 export const query = graphql`
     query getGrafikContentWerkeDeutschen {
-        allContentfulPageBanner(filter: { slug: { eq: "grafik" } }) {
+        headerText: allContentfulIntroText(
+            filter: {
+                slug: { eq: "das-grafische-werk" }
+                node_locale: { eq: "de-DE" }
+            }
+        ) {
             nodes {
+                id
                 slug
+                introtextHome
+                content {
+                    childMdx {
+                        body
+                    }
+                }
+                id
                 image {
-                    id
-                    gatsbyImageData(width: 1200, placeholder: BLURRED)
+                    gatsbyImageData
                 }
             }
         }
-        allContentfulIntroText(filter: { slug: { eq: "grafik" } }) {
+        textGrafik: allContentfulGrafik(
+            filter: {
+                slug: { eq: "das-grafische-werk" }
+                node_locale: { eq: "de-DE" }
+            }
+        ) {
             nodes {
                 id
-                slug
-                header
-                page
-                text {
+                holzschnitteHead
+                holzschnitteHeadDesc {
                     childMdx {
                         body
                     }
                 }
-            }
-        }
-        zeichnungenNodes: allContentfulDescriptionText(
-            filter: { slug: { eq: "zeichnungen" } }
-        ) {
-            nodes {
-                id
-                slug
-                header
-                page
-                description {
-                    id
+                lithographieHead
+                lithographieDesc {
                     childMdx {
                         body
                     }
                 }
-            }
-        }
-        radierungenNodes: allContentfulDescriptionText(
-            filter: { slug: { eq: "radierungen" } }
-        ) {
-            nodes {
-                id
-                slug
-                header
-                page
-                description {
-                    id
+                mappenwerkHead
+                mappenwerkeDesc {
                     childMdx {
                         body
                     }
                 }
-            }
-        }
-        holzschnitteNodes: allContentfulDescriptionText(
-            filter: { slug: { eq: "holzschnitte" } }
-        ) {
-            nodes {
-                id
-                slug
-                header
-                page
-                description {
-                    id
+                radierungenHead
+                radierungenDesc {
                     childMdx {
                         body
                     }
                 }
-            }
-        }
-        lithographieNodes: allContentfulDescriptionText(
-            filter: { slug: { eq: "lithographie" } }
-        ) {
-            nodes {
-                id
                 slug
-                header
-                page
-                description {
-                    id
-                    childMdx {
-                        body
-                    }
-                }
-            }
-        }
-        mappenwerkeNodes: allContentfulDescriptionText(
-            filter: { slug: { eq: "mappenwerke" } }
-        ) {
-            nodes {
-                id
-                slug
-                header
-                page
-                description {
-                    id
+                zeichnungenHead
+                zeichnungenHeadDesc {
                     childMdx {
                         body
                     }

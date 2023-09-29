@@ -14,25 +14,20 @@ export default function MalereiPage({ data }) {
     return (
         <Layout>
             <section className="standard-layout-width">
-                <PageBanner image={data.allContentfulPageBanner.nodes} />
-
-                <IntroText introdata={data.allContentfulIntroText.nodes} />
-
+                <PageBanner image={data.headerMalerei.nodes} />
+                <IntroText introdata={data.headerMalerei.nodes} />
                 <div className="mt-5 mb-5">
                     <hr />
                 </div>
-
                 <div id="oelgemaelde">
-                    <OelgemaeldeText data={data.oelgemaeldeNodes.nodes} />
-                    <Oelgemaelde />
+                    <OelgemaeldeText data={data.textMalerei.nodes} />
                 </div>
-
+                <Oelgemaelde />
                 <div className="mt-5 mb-5">
                     <hr />
                 </div>
-
                 <div id="aquarelle">
-                    <AquarelleText data={data.aquarelleNodes.nodes} />
+                    <AquarelleText data={data.textMalerei.nodes} />
                     <Aquarelle />
                 </div>
             </section>
@@ -42,58 +37,36 @@ export default function MalereiPage({ data }) {
 
 export const query = graphql`
     query getMalereiContent {
-        allContentfulPageBanner(filter: { slug: { eq: "malerei" } }) {
+        headerMalerei: allContentfulIntroText(
+            filter: {
+                slug: { eq: "von-der-kunstgeschichte-in-die-gegenwart" }
+                node_locale: { eq: "de-DE" }
+            }
+        ) {
             nodes {
-                slug
+                content {
+                    childMdx {
+                        body
+                    }
+                }
                 image {
-                    id
-                    gatsbyImageData(width: 1200, placeholder: BLURRED)
+                    gatsbyImageData
                 }
+                introtextHome
             }
         }
-        allContentfulIntroText(filter: { slug: { eq: "malerei" } }) {
-            nodes {
-                id
-                slug
-                header
-                page
-                text {
-                    childMdx {
-                        body
-                    }
-                }
-            }
-        }
-        aquarelleNodes: allContentfulDescriptionText(
-            filter: { slug: { eq: "aquarelle" } }
+        textMalerei: allContentfulMalerei(
+            filter: { node_locale: { eq: "de-DE" } }
         ) {
             nodes {
                 id
-                slug
-                header
-                page
-                description {
-                    id
+                aquarelleHead
+                aquarelleDesc {
                     childMdx {
                         body
                     }
                 }
-            }
-        }
-        oelgemaeldeNodes: allContentfulDescriptionText(
-            filter: { slug: { eq: "oelgemaelde" } }
-        ) {
-            nodes {
-                id
-                slug
-                header
-                page
-                description {
-                    id
-                    childMdx {
-                        body
-                    }
-                }
+                OelgemaeldeHead
             }
         }
     }

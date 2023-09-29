@@ -11,24 +11,56 @@ export default function VernissageRubrechtContemporaryWiesbaden({ data }) {
     return (
         <Layout>
             {myNodes.map((item) => {
-                const image = getImage(item.image)
-                const newgallery = item.gallery
+                const image = getImage(item.mainImage)
+                const newgallery = item.contentImages
                 return (
                     <Template
                         key={item.slug}
-                        alt={item.header}
+                        alt={item.title}
                         src={image}
                         gallery={newgallery}
-                        text={item.text.childMdx.body}
-                        title={item.header}
+                        text={item.content.childMdx.body}
+                        title={item.title}
                     />
                 )
             })}
         </Layout>
     )
 }
+
+export const Head = () => <SEO />
+
 export const query = graphql`
     query ShowCaseBoxQueryVersissageRubrecht {
+        Rubrecht: allContentfulPages(
+            filter: {
+                slug: {
+                    eq: "vernissage-bei-rubrecht-contemporary-in-wiesbaden"
+                }
+                node_locale: { eq: "de-DE" }
+            }
+        ) {
+            nodes {
+                id
+                slug
+                title
+                mainImage {
+                    gatsbyImageData
+                }
+                contentImages {
+                    gatsbyImageData
+                }
+                content {
+                    childMdx {
+                        body
+                    }
+                }
+            }
+        }
+    }
+`
+
+/* 
         Rubrecht: allContentfulShowcaseBox(
             filter: {
                 slug: {
@@ -54,5 +86,4 @@ export const query = graphql`
             }
         }
     }
-`
-export const Head = () => <SEO />
+*/

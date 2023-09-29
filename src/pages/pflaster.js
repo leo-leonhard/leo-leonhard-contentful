@@ -1,16 +1,16 @@
 import React from 'react'
-import { graphql } from 'gatsby'
-import { getImage, GatsbyImage } from 'gatsby-plugin-image'
+// import { graphql } from 'gatsby'
+// import { getImage, GatsbyImage } from 'gatsby-plugin-image'
 
-import { MDXProvider } from '@mdx-js/react'
-import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer'
+// import { MDXProvider } from '@mdx-js/react'
+// import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer'
 import { SEO } from '../components/Seo'
 
 import Layout from '../components/Layout'
 import '../styles/single-page-style.css'
 
 export default function PflasterPage({ data }) {
-    const pflasterNodes = data.pflasterNodes.nodes
+    // const pflasterNodes = data.pflasterNodes.nodes
 
     // TODO
     // need to be componetized this page and the capriccio
@@ -18,7 +18,7 @@ export default function PflasterPage({ data }) {
     return (
         <Layout>
             <section className="standard-layout-width">
-                {pflasterNodes.map((item) => {
+                {/* {pflasterNodes.map((item) => {
                     return (
                         <>
                             <h1 className="single-title">{item.title}</h1>
@@ -61,7 +61,7 @@ export default function PflasterPage({ data }) {
                             </div>
                         </>
                     )
-                })}
+                })} */}
             </section>
         </Layout>
     )

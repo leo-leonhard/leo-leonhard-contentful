@@ -5,13 +5,13 @@ import { MDXProvider } from '@mdx-js/react'
 import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer'
 import { BgImage } from 'gbimage-bridge'
 
-export default function CapriccioBanner({ image }) {
+export default function CapriccioBanner({ items }) {
     return (
         <div className="mt-4">
-            {image.map((img) => {
-                const image = getImage(img.image)
+            {items.map((item, index) => {
+                const image = getImage(item.mainImage)
                 return (
-                    <div key={img.slug}>
+                    <div key={index}>
                         <BgImage
                             className="mb-5 d-flex align-items-end"
                             image={image}
@@ -38,7 +38,7 @@ export default function CapriccioBanner({ image }) {
                                     }}
                                     id="banner-title"
                                 >
-                                    {img.title}
+                                    {item.title}
                                 </p>
                                 <div
                                     style={{ fontSize: '1.2vw' }}
@@ -46,7 +46,7 @@ export default function CapriccioBanner({ image }) {
                                 >
                                     <MDXProvider>
                                         <MDXRenderer>
-                                            {img.text.childMdx.body}
+                                            {item.desc.childMdx.body}
                                         </MDXRenderer>
                                     </MDXProvider>
                                 </div>

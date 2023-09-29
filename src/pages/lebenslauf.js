@@ -6,10 +6,10 @@ import IntroText from '../components/IntroText'
 import Layout from '../components/Layout'
 import { SEO } from '../components/Seo'
 
-import portrait from '../assets/images/portrait.jpg'
+import nachruf from '../assets/images/portrait.jpg'
 import auszeichnungen from '../assets/images/Slbst_Öl.jpg'
-import s from '../assets/images/s.png'
-import p from '../assets/images/p.png'
+import lebensstationen from '../assets/images/s.png'
+import ausstellungen from '../assets/images/p.png'
 
 const Box = ({ title, image, destination }) => {
     return (
@@ -26,22 +26,22 @@ const lebenslaufStationen = [
     {
         title: 'Lebensstationen',
         destination: '/lebensstationen',
-        image: ` ${s}`
+        image: ` ${lebensstationen}`
     },
     {
         title: 'Nachruf',
         destination: '/nachruf',
-        image: `${portrait}`
+        image: `${nachruf}`
     },
     {
         title: 'Auszeichnungen',
         destination: '/auszeichnungen',
-        image: `${p}`
+        image: `${auszeichnungen}`
     },
     {
         title: 'Ausstellungen',
         destination: '/ausstellungen',
-        image: `${auszeichnungen}`
+        image: `${ausstellungen}`
     }
 ]
 
@@ -51,8 +51,8 @@ const LebenslaufPage = ({ data }) => (
             style={{ background: '#F8F3EA', padding: '1em 2em 3em 2em' }}
             className="standard-layout-width"
         >
-            <PageBanner image={data.allContentfulPageBanner.nodes} />
-            <IntroText introdata={data.allContentfulIntroText.nodes} />
+            <PageBanner image={data.introLebenslauf.nodes} />
+            <IntroText introdata={data.introLebenslauf.nodes} />
 
             <div className="gallery-lenbenslauf ">
                 {lebenslaufStationen.map((item) => {
@@ -72,21 +72,22 @@ const LebenslaufPage = ({ data }) => (
 
 export const query = graphql`
     query getLebenslaufContent {
-        allContentfulPageBanner(filter: { slug: { eq: "lebenslauf" } }) {
-            nodes {
-                image {
-                    gatsbyImageData(width: 1200, placeholder: BLURRED)
-                }
+        introLebenslauf: allContentfulIntroText(
+            filter: {
+                node_locale: { eq: "de-DE" }
+                slug: { eq: "lebenslauf-ueber" }
             }
-        }
-        allContentfulIntroText(filter: { slug: { eq: "lebenslauf" } }) {
+        ) {
             nodes {
-                header
-                page
-                text {
+                introtextHome
+                id
+                content {
                     childMdx {
                         body
                     }
+                }
+                image {
+                    gatsbyImageData(width: 1200, placeholder: BLURRED)
                 }
             }
         }

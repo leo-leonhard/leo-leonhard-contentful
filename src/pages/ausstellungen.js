@@ -10,109 +10,192 @@ export default function Ausstellungen({ data }) {
         <>
             <NavBar />
             <div style={{ width: '75%', margin: '1em auto 3em auto' }}>
-                {/*     <img
-                    className="mb-5"
-                    alt="text"
-                    src={ausstellungen}
-                    style={{
-                        width: '100%',
-                        height: '80vh',
-                        objectFit: 'cover'
-                    }}
-                /> */}
                 <h2>EINZELAUSSTELLUNGEN</h2>
                 <hr style={{ width: '20%', margin: '3em 0 1em 0' }} />
-                <div className="d-flex flex-wrap justify-content-between">
-                    {data.allContentfulEinzelausstellungen.nodes.map(
-                        (ausstellung) => (
+
+                <section className="d-flex justify-content-between">
+                    <div>
+                        <div
+                            style={{
+                                width: '30%'
+                            }}
+                        >
+                            <h3
+                                className="mt-2 mb-4"
+                                style={{ color: '#589AAD' }}
+                            >
+                                1966 -1979
+                            </h3>
                             <div
-                                key={ausstellung.id}
+                                className="d-flex flex-column"
                                 style={{
-                                    width: '30%'
+                                    flexFlow: 'wrap'
                                 }}
                             >
-                                <h3
-                                    className="mt-2 mb-4"
-                                    style={{ color: '#589AAD' }}
-                                >
-                                    {ausstellung.zeitraum}
-                                </h3>
-                                <div
-                                    className="d-flex flex-column"
-                                    style={{
-                                        flexFlow: 'wrap'
-                                    }}
-                                >
-                                    {ausstellung.ausstellungen.map((x) => (
-                                        <div
-                                            key={x.id}
-                                            className="mb-3"
-                                            style={{
-                                                fontSize: '0.9em'
-                                            }}
-                                        >
-                                            <p style={{ margin: '0' }}>
-                                                {x.year}
-                                            </p>
-                                            {x.venues.map((v) => (
-                                                <p
-                                                    key={v.id}
-                                                    style={{ margin: '0' }}
-                                                >
-                                                    {v.name}
-                                                </p>
-                                            ))}
-                                        </div>
-                                    ))}
-                                </div>
-                                <hr style={{ width: '20%' }} />
+                                {data.firstzeit.nodes.map((items) => (
+                                    <div
+                                        key={items.id}
+                                        className="mb-3"
+                                        style={{
+                                            fontSize: '0.9em'
+                                        }}
+                                    >
+                                        <p style={{ margin: '0' }}>
+                                            {items.year}
+                                        </p>
+
+                                        <p style={{ margin: '0' }}>
+                                            {items.event.childMdx.excerpt}
+                                        </p>
+                                    </div>
+                                ))}
                             </div>
-                        )
-                    )}
-                </div>
+                            <hr style={{ width: '20%' }} />
+                        </div>
+                    </div>
+                    <div>
+                        <div
+                            style={{
+                                width: '30%'
+                            }}
+                        >
+                            <h3
+                                className="mt-2 mb-4"
+                                style={{ color: '#589AAD' }}
+                            >
+                                1980 -1999
+                            </h3>
+                            <div
+                                className="d-flex flex-column"
+                                style={{
+                                    flexFlow: 'wrap'
+                                }}
+                            >
+                                {data.secondzeit.nodes.map((items) => (
+                                    <div
+                                        key={items.id}
+                                        className="mb-3"
+                                        style={{
+                                            fontSize: '0.9em'
+                                        }}
+                                    >
+                                        <p style={{ margin: '0' }}>
+                                            {items.year}
+                                        </p>
+
+                                        <p style={{ margin: '0' }}>
+                                            {items.event.childMdx.excerpt}
+                                        </p>
+                                    </div>
+                                ))}
+                            </div>
+                            <hr style={{ width: '20%' }} />
+                        </div>
+                    </div>
+
+                    <div>
+                        <div
+                            style={{
+                                width: '30%'
+                            }}
+                        >
+                            <h3
+                                className="mt-2 mb-4"
+                                style={{ color: '#589AAD' }}
+                            >
+                                2000 -2011
+                            </h3>
+                            <div
+                                className="d-flex flex-column"
+                                style={{
+                                    flexFlow: 'wrap'
+                                }}
+                            >
+                                {data.thirdzeit.nodes.map((items) => (
+                                    <div
+                                        key={items.id}
+                                        className="mb-3"
+                                        style={{
+                                            fontSize: '0.9em'
+                                        }}
+                                    >
+                                        <p style={{ margin: '0' }}>
+                                            {items.year}
+                                        </p>
+
+                                        <p style={{ margin: '0' }}>
+                                            {items.event.childMdx.excerpt}
+                                        </p>
+                                    </div>
+                                ))}
+                            </div>
+                            <hr style={{ width: '20%' }} />
+                        </div>
+                    </div>
+                </section>
             </div>
+
             <Footer />
         </>
     )
 }
 
 export const query = graphql`
-    query getAusstellungen {
-        allContentfulPageBanner(filter: { slug: { eq: "lebenslauf" } }) {
-            nodes {
-                slug
-                image {
-                    id
-                    gatsbyImageData(width: 1200, placeholder: BLURRED)
-                }
+    query ausstellungenData {
+        firstzeit: allContentfulLebensstationen(
+            filter: {
+                node_locale: { eq: "de-DE" }
+                category: { eq: "1966 -1979" }
             }
-        }
-        allContentfulEinzelausstellungen(
-            sort: { fields: zeitraum, order: ASC }
+            sort: { fields: year, order: ASC }
         ) {
             nodes {
-                zeitraum
-                height
-                ausstellungen {
-                    year
-                    venues {
-                        name
+                id
+                year
+                event {
+                    childMdx {
+                        excerpt
                     }
                 }
+                category
             }
         }
-        allContentfulGruppenausstellungen(
-            sort: { fields: zeitraum, order: ASC }
+
+        secondzeit: allContentfulLebensstationen(
+            filter: {
+                node_locale: { eq: "de-DE" }
+                category: { eq: "1980 -1999" }
+            }
+            sort: { fields: year, order: ASC }
         ) {
             nodes {
-                zeitraum
-                height
-                gruppenausstellung {
-                    year
-                    venues {
-                        name
+                id
+                year
+                event {
+                    childMdx {
+                        excerpt
                     }
                 }
+                category
+            }
+        }
+
+        thirdzeit: allContentfulLebensstationen(
+            filter: {
+                node_locale: { eq: "de-DE" }
+                category: { eq: "2000 -2011" }
+            }
+            sort: { fields: year, order: ASC }
+        ) {
+            nodes {
+                id
+                year
+                event {
+                    childMdx {
+                        excerpt
+                    }
+                }
+                category
             }
         }
     }

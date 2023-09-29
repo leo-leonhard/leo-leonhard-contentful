@@ -1,5 +1,6 @@
 import React from 'react'
 import { graphql, Link } from 'gatsby'
+
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 import Layout from '../components/Layout'
@@ -32,14 +33,15 @@ const verzeichnisKataloge = [
 // books are not being well distributed
 
 const PublikationenPage = ({ data }) => {
-    const books = data.allContentfulBook.nodes
+    // const books = data.allContentfulBook.nodes
     return (
         <Layout>
             <section className="standard-layout-width">
                 <div className="d-flex flex-column">
-                    <PageBanner image={data.allContentfulPageBanner.nodes} />
-                    <IntroText introdata={data.allContentfulIntroText.nodes} />
+                    <PageBanner image={data.intro.nodes} />
+                    <IntroText introdata={data.intro.nodes} />
                 </div>
+                {/* 
                 <div>
                     <h1 className="m-2">Bücher</h1>
                     <div
@@ -100,7 +102,8 @@ const PublikationenPage = ({ data }) => {
                             )
                         })}
                     </div>
-                </div>
+                </div> 
+                */}
 
                 <hr />
 
@@ -123,42 +126,43 @@ const PublikationenPage = ({ data }) => {
 
 export const query = graphql`
     query getPublikationenContent {
-        allContentfulPageBanner(filter: { slug: { eq: "publikationen" } }) {
+        intro: allContentfulIntroText(
+            filter: {
+                node_locale: { eq: "de-DE" }
+                slug: { eq: "leo-leonhard-als-buchillustrator" }
+            }
+        ) {
             nodes {
                 slug
+                introtextHome
+                content {
+                    childMdx {
+                        body
+                    }
+                }
                 image {
-                    id
                     gatsbyImageData(width: 1200, placeholder: BLURRED)
                 }
             }
         }
-        allContentfulBook(sort: { fields: year, order: ASC }) {
+
+        books: allContentfulBooks(
+            filter: { node_locale: { eq: "de-DE" } }
+            sort: { fields: year, order: ASC }
+        ) {
             nodes {
-                year
                 title
-                subtitle
+                year
                 slug
+                subtitle
                 coverImage {
                     url
                     title
                     gatsbyImageData(
                         width: 230
-                        placeholder: DOMINANT_COLOR
+                        placeholder: BLURRED
                         layout: CONSTRAINED
                     )
-                }
-            }
-        }
-        allContentfulIntroText(filter: { slug: { eq: "publikationen" } }) {
-            nodes {
-                id
-                slug
-                header
-                page
-                text {
-                    childMdx {
-                        body
-                    }
                 }
             }
         }

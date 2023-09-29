@@ -10,11 +10,11 @@ export default function HolzschnitteText({ data }) {
             {data.map((elem) => {
                 return (
                     <>
-                        <h1>{elem.header}</h1>
+                        <h1>{elem.holzschnitteHead}</h1>
                         <div className="paragraph">
                             <MDXProvider>
                                 <MDXRenderer>
-                                    {elem.description.childMdx.body}
+                                    {elem.holzschnitteHeadDesc.childMdx.body}
                                 </MDXRenderer>
                             </MDXProvider>
                         </div>

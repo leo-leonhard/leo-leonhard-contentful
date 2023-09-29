@@ -10,11 +10,11 @@ export default function ZeichnungenText({ data }) {
             {data.map((elem) => {
                 return (
                     <>
-                        <h1>{elem.header}</h1>
+                        <h1>{elem.zeichnungenHead}</h1>
                         <div className="paragraph">
                             <MDXProvider>
                                 <MDXRenderer>
-                                    {elem.description.childMdx.body}
+                                    {elem.zeichnungenHeadDesc.childMdx.body}
                                 </MDXRenderer>
                             </MDXProvider>
                         </div>

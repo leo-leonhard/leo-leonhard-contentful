@@ -1,5 +1,7 @@
 import React from 'react'
 import { useStaticQuery, graphql, Link } from 'gatsby'
+import { MDXProvider } from '@mdx-js/react'
+import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer'
 
 import { getImage } from 'gatsby-plugin-image'
 import { BgImage } from 'gbimage-bridge'
@@ -23,26 +25,27 @@ const settings = {
 export default function Slidy() {
     const data = useStaticQuery(graphql`
         query slickQuery {
-            allContentfulSliderImage(
-                sort: { fields: reihenfolge, order: ASC }
+            allContentfulSlider(
+                sort: { fields: order, order: ASC }
+                filter: { node_locale: { eq: "de-DE" } }
             ) {
                 nodes {
-                    page
-                    reihenfolge
-                    imageTitle
-                    color
-                    bannerText {
-                        bannerText
-                    }
-                    subtitle
                     id
-                    sliderImage {
+                    title
+                    subtitle
+                    color
+                    description {
+                        childMdx {
+                            body
+                        }
+                    }
+                    link
+                    image {
                         gatsbyImageData(
                             width: 1200
                             placeholder: BLURRED
                             layout: CONSTRAINED
                         )
-                        url
                     }
                 }
             }
@@ -51,14 +54,14 @@ export default function Slidy() {
     return (
         <div className="homepage-banner mb-5">
             <Slider {...settings}>
-                {data.allContentfulSliderImage.nodes.map((image) => {
-                    const slickImage = getImage(image.sliderImage)
+                {data.allContentfulSlider.nodes.map((item) => {
+                    const slickImage = getImage(item.image)
 
                     return (
-                        <div key={image.id}>
+                        <div key={item.id}>
                             <BgImage
                                 className="d-flex align-items-end"
-                                alt={image.imageTitle}
+                                alt={item.title}
                                 image={slickImage}
                                 style={{
                                     maxHeight: '80%',
@@ -67,10 +70,10 @@ export default function Slidy() {
                                 }}
                             >
                                 <Link
-                                    to={image.page}
+                                    to={item.link}
                                     className="slider-text-box"
                                     style={{
-                                        background: image.color,
+                                        background: `${item.color}`,
                                         width: 'min-content'
                                     }}
                                 >
@@ -88,7 +91,7 @@ export default function Slidy() {
                                             color: 'white'
                                         }}
                                     >
-                                        {image.imageTitle}
+                                        {item.title}
                                     </div>
                                     <p
                                         style={{
@@ -96,11 +99,19 @@ export default function Slidy() {
                                             fontSize: '2vw'
                                         }}
                                     >
-                                        {image.subtitle}
+                                        {item.subtitle}
                                     </p>
-                                    {image.bannerText ? (
+                                    {/* use MDX??? */}
+                                    {item.description ? (
                                         <p className="home-banner-text">
-                                            {image.bannerText.bannerText}
+                                            <MDXProvider>
+                                                <MDXRenderer>
+                                                    {
+                                                        item.description
+                                                            .childMdx.body
+                                                    }
+                                                </MDXRenderer>
+                                            </MDXProvider>
                                         </p>
                                     ) : (
                                         <section

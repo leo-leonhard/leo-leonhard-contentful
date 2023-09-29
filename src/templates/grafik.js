@@ -1,5 +1,6 @@
 import React from 'react'
 import { graphql, Link } from 'gatsby'
+
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Layout from '../components/Layout'
 
@@ -34,17 +35,13 @@ export default function GrafikTemplate({ data }) {
                             <div className="artwork-detail-image-container">
                                 <GatsbyImage image={image} />
                             </div>
-                            {/* this should be a component */}
+
                             <div className="artwork-detail-text">
                                 <h3>
                                     <em>{pic.title}</em>
                                 </h3>
                                 <h3>{pic.year}</h3>
-                                {/*
-                                 * // TODO:
-                                 * check this: h4 is empty
-                                 * *what is the type?
-                                 * */}
+
                                 <h4>{pic.type}</h4>
                                 <p>
                                     <MDXProvider>
@@ -64,10 +61,13 @@ export default function GrafikTemplate({ data }) {
 
 export const query = graphql`
     query ($slug: String!) {
-        allContentfulGrafik(filter: { slug: { eq: $slug } }) {
+        allContentfulGrafikImages(
+            filter: { node_locale: { eq: "de-DE" }, slug: { eq: $slug } }
+        ) {
             nodes {
                 year
                 title
+                category
                 description {
                     childMdx {
                         body

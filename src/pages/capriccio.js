@@ -10,21 +10,24 @@ import Layout from '../components/Layout'
 import '../styles/single-page-style.css'
 
 export default function CapriccioPage({ data }) {
-    const pflasterNodes = data.pflasterNodes.nodes
-
+    const items = data.capriccio.nodes
     return (
         <Layout>
             <section className="standard-layout-width">
-                {pflasterNodes.map((item) => {
+                {items.map((item) => {
                     return (
                         <>
                             <h1 className="single-title">{item.title}</h1>
                             <p className="single-description">
-                                {item.description}
+                                <MDXProvider>
+                                    <MDXRenderer>
+                                        {item.desc.childMdx.body}
+                                    </MDXRenderer>
+                                </MDXProvider>
                             </p>
 
                             <div className="gallery-single-page">
-                                {item.images.map((elem) => {
+                                {item.contentImages.map((elem) => {
                                     const image = getImage(elem)
                                     return (
                                         <div
@@ -42,13 +45,14 @@ export default function CapriccioPage({ data }) {
                                                 </p>
                                             ) : (
                                                 <p className="single-descr-image">
-                                                    {elem.description}
+                                                    {elem.title}
                                                 </p>
                                             )}
                                         </div>
                                     )
                                 })}
                             </div>
+
                             <div className="single-text">
                                 <MDXProvider>
                                     <MDXRenderer>
@@ -65,21 +69,35 @@ export default function CapriccioPage({ data }) {
 }
 
 export const query = graphql`
-    query getContentCappriccio {
-        pflasterNodes: allContentfulUniquePage(
-            filter: { slug: { eq: "capriccio" } }
+    query capriccioPage {
+        capriccio: allContentfulPages(
+            filter: { title: { eq: "CAPRICCIO AN DER AUTOBAHN" } }
         ) {
             nodes {
+                id
                 title
-                description
+                mainImage {
+                    gatsbyImageData(width: 1200, placeholder: BLURRED)
+                    title
+                }
+                desc {
+                    childMdx {
+                        body
+                    }
+                }
                 content {
                     childMdx {
                         body
                     }
                 }
-                images {
-                    gatsbyImageData(placeholder: BLURRED)
-                    description
+                contentImages {
+                    id
+                    title
+                    gatsbyImageData(
+                        width: 800
+                        backgroundColor: ""
+                        placeholder: BLURRED
+                    )
                 }
             }
         }

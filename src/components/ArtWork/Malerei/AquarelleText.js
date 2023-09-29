@@ -7,14 +7,14 @@ import '../style.css'
 export default function AquarelleText({ data }) {
     return (
         <>
-            {data.map((elem) => {
+            {data.map((item) => {
                 return (
                     <>
-                        <h1>{elem.header}</h1>
+                        <h1>{item.aquarelleHead}</h1>
                         <div className="paragraph">
                             <MDXProvider>
                                 <MDXRenderer>
-                                    {elem.description.childMdx.body}
+                                    {item.aquarelleDesc.childMdx.body}
                                 </MDXRenderer>
                             </MDXProvider>
                         </div>

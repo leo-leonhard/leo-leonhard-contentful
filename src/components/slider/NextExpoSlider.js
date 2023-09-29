@@ -1,7 +1,7 @@
 import React from 'react'
-import { useStaticQuery, graphql, Link } from 'gatsby'
-import { getImage } from 'gatsby-plugin-image'
-import { BgImage } from 'gbimage-bridge'
+// import { useStaticQuery, graphql, Link } from 'gatsby'
+// import { getImage } from 'gatsby-plugin-image'
+// import { BgImage } from 'gbimage-bridge'
 
 // The picture data is an array and always should have more than one picture in Model.
 // to get the picture already active you need to change the filter by order.
@@ -10,31 +10,31 @@ import { BgImage } from 'gbimage-bridge'
 import './nextExpoSlider.css'
 
 export default function NextExpoSlider() {
-    const data = useStaticQuery(graphql`
-        query NextExpoQuery {
-            allContentfulNextExposition(filter: { nextorder: { eq: 1 } }) {
-                nodes {
-                    nexttitle
-                    link
-                    nextorder
-                    nextimage {
-                        id
-                        gatsbyImageData(
-                            layout: FULL_WIDTH
-                            placeholder: BLURRED
-                            aspectRatio: 1.5
-                        )
-                        filename
-                        url
-                    }
-                }
-            }
-        }
-    `)
+    // const data = useStaticQuery(graphql`
+    //     query NextExpoQuery {
+    //         allContentfulNextExposition(filter: { nextorder: { eq: 1 } }) {
+    //             nodes {
+    //                 nexttitle
+    //                 link
+    //                 nextorder
+    //                 nextimage {
+    //                     id
+    //                     gatsbyImageData(
+    //                         layout: FULL_WIDTH
+    //                         placeholder: BLURRED
+    //                         aspectRatio: 1.5
+    //                     )
+    //                     filename
+    //                     url
+    //                 }
+    //             }
+    //         }
+    //     }
+    // `)
 
     return (
         <div>
-            {data.allContentfulNextExposition.nodes.map((element) => {
+            {/* {data.allContentfulNextExposition.nodes.map((element) => {
                 const nextExpoImage = getImage(element.nextimage)
                 let link = element.link
                 return (
@@ -48,7 +48,7 @@ export default function NextExpoSlider() {
                         </Link>
                     </div>
                 )
-            })}
+            })} */}
         </div>
     )
 }

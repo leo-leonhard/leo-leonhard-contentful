@@ -28,10 +28,10 @@ module.exports = {
         {
             resolve: 'gatsby-source-contentful',
             options: {
-                accessToken: 'Xr9zQyo4ocpCalDZxpBrRGCLWrMzbzGd67OaMcsh8Bk',
-                spaceId: 'w17q9nasxzwi',
+                accessToken: 'GJPxShkkbSEdwZDeEF7vfFf185KpMwEky04StTCn0TM',
+                spaceId: '38vyszegfq6y',
                 personalAccessToken:
-                    'CFPAT-Hj2lN0UWNFYYhe2-pA0d1eGg2eWKb-TevlWsGdMfF-g'
+                    'CFPAT-vL-1Ufg4yHotCJicQwFnSoKV_5mG3wqkulKzC2uaZBA'
             }
         },
         'gatsby-plugin-image',

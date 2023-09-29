@@ -7,18 +7,19 @@ import { SEO } from '../components/Seo'
 import Layout from '../components/Layout'
 
 export default function Auszeichnungen({ data }) {
+    console.log(data.auszeichnungenData)
     return (
         <Layout>
             <div style={{ width: '60%', margin: '0 auto 3em auto' }}>
                 <h2>AUSZEICHNUNGEN</h2>
                 <hr style={{ width: '20%', margin: '3em 0 1em 0' }} />
                 <div>
-                    {data.allContentfulAuszeichnung.nodes.map((award) => (
+                    {data.auszeichnungenData.nodes.map((award) => (
                         <div key={award.id}>
                             <p className="fett">{award.year}</p>
                             <MDXProvider>
                                 <MDXRenderer>
-                                    {award.auszeichnungen.childMdx.body}
+                                    {award.event.childMdx.body}
                                 </MDXRenderer>
                             </MDXProvider>
                         </div>
@@ -31,10 +32,17 @@ export default function Auszeichnungen({ data }) {
 
 export const query = graphql`
     query auszeichnungenContent {
-        allContentfulAuszeichnung(sort: { fields: year, order: ASC }) {
+        auszeichnungenData: allContentfulLebensstationen(
+            filter: {
+                node_locale: { eq: "de-DE" }
+                category: { eq: "AUSZEICHNUNGEN" }
+            }
+            sort: { fields: year, order: ASC }
+        ) {
             nodes {
+                id
                 year
-                auszeichnungen {
+                event {
                     childMdx {
                         body
                     }

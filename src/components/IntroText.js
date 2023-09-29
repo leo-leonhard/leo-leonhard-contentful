@@ -20,14 +20,14 @@ function IntroText({ introdata }) {
                 // console.log(intro)
                 return (
                     <>
-                        <div key={intro.key}>
+                        <div key={intro.id}>
                             <h1 className="fett" style={headingText}>
-                                {intro.header} !
+                                {intro.introtextHome}
                             </h1>
                             <div style={paragraphStyle}>
                                 <MDXProvider>
                                     <MDXRenderer>
-                                        {intro.text.childMdx.body}
+                                        {intro.content.childMdx.body}
                                     </MDXRenderer>
                                 </MDXProvider>
                             </div>
