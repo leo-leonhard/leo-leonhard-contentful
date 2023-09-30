@@ -1,14 +1,23 @@
-const path = require(`path`)
+import path from 'path'
 
-exports.createPages = async ({ actions, graphql }) => {
+export const createPages = async ({ actions, graphql }) => {
     const { createPage } = actions
 
     const result = await graphql(`
         query {
-            aquarelle: allContentfulMalereiImages filter: {
-                node_locale: { eq: "de-DE" }
-                category: { eq: "Aquarelle" }
-            } {
+            allContentfulGrafik(filter: { node_locale: { eq: "de-DE" } }) {
+                nodes {
+                    image {
+                        gatsbyImageData(width: 800, placeholder: BLURRED)
+                    }
+                    year
+                    title
+                    slug
+                }
+            }
+            allContentfulMalereiImages(
+                filter: { node_locale: { eq: "de-DE" } }
+            ) {
                 nodes {
                     image {
                         gatsbyImageData(width: 800, placeholder: BLURRED)
@@ -20,40 +29,24 @@ exports.createPages = async ({ actions, graphql }) => {
             }
         }
     `)
-    result.data.aquarelle.nodes.forEach((edge) => {
+    result.data.allContentfulGrafik.nodes.forEach((node) => {
+        const slug = node.slug
+        actions.createPage({
+            path: `grafik/${slug}`,
+            component: path.resolve(`./src/templates/grafik.js`),
+            context: { slug: slug }
+        })
+    })
+    result.data.allContentfulMalereiImages.nodes.forEach((edge) => {
         createPage({
-            path: `/malerei/${edge.nodes.slug}`,
+            path: `/malerei/${edge.slug}`,
             component: path.resolve('malereiTemplate.js'),
             context: {
-                slug: edge.nodes.slug
+                slug: edge.slug
             }
         })
     })
 }
-
-/* data.allContentfulGrafik.nodes.forEach((node) => {
-        const slug = node.slug
-        actions.createPage({
-            path: `grafik/${slug}`,
-            component: require.resolve(`./src/templates/grafik.js`),
-            context: { slug: slug }
-        })
-    }) */
-/* 
-
-allContentfulGrafik {
-                nodes {
-                    image {
-                        gatsbyImageData(width: 800, placeholder: BLURRED)
-                    }
-                    year
-                    title
-                    slug
-                }
-            }
-
-            
-*/
 
 /* 
 

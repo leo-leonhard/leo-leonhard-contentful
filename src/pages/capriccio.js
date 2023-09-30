@@ -71,15 +71,14 @@ export default function CapriccioPage({ data }) {
 export const query = graphql`
     query capriccioPage {
         capriccio: allContentfulPages(
-            filter: { title: { eq: "CAPRICCIO AN DER AUTOBAHN" } }
+            filter: {
+                slug: { eq: "capriccio-an-der-Autobahn" }
+                node_locale: { eq: "de-DE" }
+            }
         ) {
             nodes {
                 id
                 title
-                mainImage {
-                    gatsbyImageData(width: 1200, placeholder: BLURRED)
-                    title
-                }
                 desc {
                     childMdx {
                         body
@@ -92,12 +91,7 @@ export const query = graphql`
                 }
                 contentImages {
                     id
-                    title
-                    gatsbyImageData(
-                        width: 800
-                        backgroundColor: ""
-                        placeholder: BLURRED
-                    )
+                    gatsbyImageData(placeholder: BLURRED, width: 800)
                 }
             }
         }

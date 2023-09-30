@@ -1,7 +1,7 @@
 import React from 'react'
-// import { graphql } from 'gatsby'
-// import { MDXProvider } from '@mdx-js/react'
-// import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer'
+import { graphql } from 'gatsby'
+import { MDXProvider } from '@mdx-js/react'
+import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer'
 
 import Layout from '../components/Layout'
 import { SEO } from '../components/Seo'
@@ -24,14 +24,21 @@ const Impressum = ({ data }) => {
                 </div>
                 <div id="datenschutzerklaerung">
                     <h1>Datenschutzerklärung</h1>
-                    {/* <MDXProvider>
-                        <MDXRenderer>
-                            {
-                                data.contentfulDatenschutzerklaerung.text
-                                    .childMdx.body
-                            }
-                        </MDXRenderer>
-                    </MDXProvider> */}
+                    {data.daten.nodes.map((item) => {
+                        console.log(item.Datenschutzerklaerung)
+                        return (
+                            <div key={item.id}>
+                                <MDXProvider>
+                                    <MDXRenderer>
+                                        {
+                                            item.Datenschutzerklaerung.childMdx
+                                                .body
+                                        }
+                                    </MDXRenderer>
+                                </MDXProvider>
+                            </div>
+                        )
+                    })}
                 </div>
             </section>
         </Layout>
@@ -40,10 +47,15 @@ const Impressum = ({ data }) => {
 
 export const query = graphql`
     query DatenschutzQuery {
-        contentfulDatenschutzerklaerung {
-            text {
-                childMdx {
-                    body
+        daten: allContentfulDatenschutzerklarung(
+            filter: { node_locale: { eq: "de-DE" } }
+        ) {
+            nodes {
+                id
+                Datenschutzerklaerung {
+                    childMdx {
+                        body
+                    }
                 }
             }
         }
@@ -51,4 +63,5 @@ export const query = graphql`
 `
 
 export default Impressum
+
 export const Head = () => <SEO />

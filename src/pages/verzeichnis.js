@@ -4,7 +4,7 @@ import { SEO } from '../components/Seo'
 
 import { publications } from '../utils/verzeichnisData'
 
-//import '../styles/book.css'
+import '../styles/book.css'
 
 export default function Verzeichnis() {
     return (

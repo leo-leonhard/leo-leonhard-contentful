@@ -59,31 +59,3 @@ export const query = graphql`
         }
     }
 `
-
-/* 
-        Rubrecht: allContentfulShowcaseBox(
-            filter: {
-                slug: {
-                    eq: "vernissage-bei-rubrecht-contemporary-in-wiesbaden"
-                }
-            }
-        ) {
-            nodes {
-                id
-                slug
-                header
-                text {
-                    childMdx {
-                        body
-                    }
-                }
-                image {
-                    gatsbyImageData(placeholder: BLURRED)
-                }
-                gallery {
-                    gatsbyImageData(placeholder: BLURRED)
-                }
-            }
-        }
-    }
-*/

@@ -1,33 +1,33 @@
 import React from 'react'
-// import { graphql } from 'gatsby'
-// import { getImage, GatsbyImage } from 'gatsby-plugin-image'
+import { graphql } from 'gatsby'
+import { getImage, GatsbyImage } from 'gatsby-plugin-image'
 
-// import { MDXProvider } from '@mdx-js/react'
-// import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer'
+import { MDXProvider } from '@mdx-js/react'
+import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer'
 import { SEO } from '../components/Seo'
 
 import Layout from '../components/Layout'
 import '../styles/single-page-style.css'
 
 export default function PflasterPage({ data }) {
-    // const pflasterNodes = data.pflasterNodes.nodes
-
-    // TODO
-    // need to be componetized this page and the capriccio
-
+    const items = data.pflasterNodes.nodes
     return (
         <Layout>
             <section className="standard-layout-width">
-                {/* {pflasterNodes.map((item) => {
+                {items.map((item) => {
                     return (
                         <>
                             <h1 className="single-title">{item.title}</h1>
                             <p className="single-description">
-                                {item.description}
+                                <MDXProvider>
+                                    <MDXRenderer>
+                                        {item.desc.childMdx.body}
+                                    </MDXRenderer>
+                                </MDXProvider>
                             </p>
 
                             <div className="gallery-single-page">
-                                {item.images.map((elem) => {
+                                {item.contentImages.map((elem) => {
                                     const image = getImage(elem)
                                     return (
                                         <div
@@ -61,7 +61,7 @@ export default function PflasterPage({ data }) {
                             </div>
                         </>
                     )
-                })} */}
+                })}
             </section>
         </Layout>
     )
@@ -69,20 +69,28 @@ export default function PflasterPage({ data }) {
 
 export const query = graphql`
     query getContentPflaster {
-        pflasterNodes: allContentfulUniquePage(
-            filter: { slug: { eq: "pflaster" } }
+        pflasterNodes: allContentfulPages(
+            filter: {
+                slug: { eq: "imitation-gepraegt-von-hochachtung" }
+                node_locale: { eq: "de-DE" }
+            }
         ) {
             nodes {
+                id
                 title
-                description
+                desc {
+                    childMdx {
+                        body
+                    }
+                }
                 content {
                     childMdx {
                         body
                     }
                 }
-                images {
-                    gatsbyImageData(placeholder: BLURRED)
-                    description
+                contentImages {
+                    id
+                    gatsbyImageData(placeholder: BLURRED, width: 800)
                 }
             }
         }
