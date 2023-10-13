@@ -37,13 +37,17 @@ export default function MalreiTemplate({ data }) {
                                 <h3>{pic.title}</h3>
                                 <h3>{pic.year}</h3>
                                 <h4>{pic.type}</h4>
-                                <p className="pt-4">
-                                    <MDXProvider>
-                                        <MDXRenderer>
-                                            {pic.description.childMdx.body}
-                                        </MDXRenderer>
-                                    </MDXProvider>
-                                </p>
+                                {pic.description ? (
+                                    <p className="pt-4">
+                                        <MDXProvider>
+                                            <MDXRenderer>
+                                                {pic.description.childMdx.body}
+                                            </MDXRenderer>
+                                        </MDXProvider>
+                                    </p>
+                                ) : (
+                                    <p className="pt-4"></p>
+                                )}
                             </div>
                         </div>
                     </div>

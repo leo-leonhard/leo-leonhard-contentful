@@ -22,7 +22,7 @@ export default function MalereiPage({ data }) {
                 <div id="oelgemaelde">
                     <OelgemaeldeText data={data.textMalerei.nodes} />
                 </div>
-                ? <Oelgemaelde />
+                <Oelgemaelde />
                 <div className="mt-5 mb-5">
                     <hr />
                 </div>
@@ -71,4 +71,4 @@ export const query = graphql`
         }
     }
 `
-export const Head = () => <SEO />
+export const Head = () => <SEO title="Malerei" />

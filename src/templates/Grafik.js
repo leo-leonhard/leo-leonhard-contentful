@@ -4,8 +4,8 @@ import { graphql, Link } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Layout from '../components/Layout'
 
-// import { MDXProvider } from '@mdx-js/react'
-// import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer'
+import { MDXProvider } from '@mdx-js/react'
+import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer'
 
 export default function GrafikTemplate({ data }) {
     /* const data = useStaticQuery(graphql`
@@ -63,17 +63,21 @@ export default function GrafikTemplate({ data }) {
                                 <h3>
                                     <em>{pic.title}</em>
                                 </h3>
-                                {/*
+
                                 <h3>{pic.year}</h3>
 
-                             <h4>{pic.category}</h4>
-                                <p>
-                                    <MDXProvider>
-                                        <MDXRenderer>
-                                            {pic.description.childMdx.body}
-                                        </MDXRenderer>
-                                    </MDXProvider>
-                                </p> */}
+                                <h4>{pic.category}</h4>
+                                {pic.description ? (
+                                    <p>
+                                        <MDXProvider>
+                                            <MDXRenderer>
+                                                {pic.description.childMdx.body}
+                                            </MDXRenderer>
+                                        </MDXProvider>
+                                    </p>
+                                ) : (
+                                    <p></p>
+                                )}
                             </div>
                         </div>
                     </div>
