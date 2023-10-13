@@ -4,15 +4,38 @@ import { graphql, Link } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Layout from '../components/Layout'
 
-import { MDXProvider } from '@mdx-js/react'
-import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer'
+// import { MDXProvider } from '@mdx-js/react'
+// import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer'
 
 export default function GrafikTemplate({ data }) {
-    const picture = data.allContentfulGrafik.nodes
+    /* const data = useStaticQuery(graphql`
+        query ($slug: String!) {
+            allContentfulGrafikImages(
+                filter: { node_locale: { eq: "de-DE" }, slug: { eq: $slug } }
+            ) {
+                nodes {
+                    year
+                    title
+                    category
+                    description {
+                        childMdx {
+                            body
+                        }
+                    }
+                    image {
+                        gatsbyImageData(width: 800, placeholder: BLURRED)
+                    }
+                }
+            }
+        }
+    `) */
+    const grafikData = data.allContentfulGrafikImages.nodes
 
     return (
         <Layout>
-            {picture.map((pic) => {
+            {grafikData.map((pic) => {
+                // eslint-disable-next-line no-console
+                console.log(pic)
                 const image = getImage(pic.image)
                 return (
                     <div key={pic.slug} className="mb-3 standard-layout-width">
@@ -40,16 +63,17 @@ export default function GrafikTemplate({ data }) {
                                 <h3>
                                     <em>{pic.title}</em>
                                 </h3>
+                                {/*
                                 <h3>{pic.year}</h3>
 
-                                <h4>{pic.type}</h4>
+                             <h4>{pic.category}</h4>
                                 <p>
                                     <MDXProvider>
                                         <MDXRenderer>
                                             {pic.description.childMdx.body}
                                         </MDXRenderer>
                                     </MDXProvider>
-                                </p>
+                                </p> */}
                             </div>
                         </div>
                     </div>
@@ -74,7 +98,7 @@ export const query = graphql`
                     }
                 }
                 image {
-                    gatsbyImageData(placeholder: BLURRED)
+                    gatsbyImageData(width: 800, placeholder: BLURRED)
                 }
             }
         }

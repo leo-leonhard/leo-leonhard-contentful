@@ -60,6 +60,7 @@ export const query = graphql`
         ) {
             nodes {
                 year
+                slug
                 title
                 category
                 description {

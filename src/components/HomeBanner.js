@@ -1,42 +1,17 @@
 import React from 'react'
 import { Link } from 'gatsby'
-// import { getImage } from 'gatsby-plugin-image'
-// import { MDXProvider } from '@mdx-js/react'
-// import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer'
-// import { BgImage } from 'gbimage-bridge'
+import { getImage } from 'gatsby-plugin-image'
+import { MDXProvider } from '@mdx-js/react'
+import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer'
+import { BgImage } from 'gbimage-bridge'
 
-import { SEO } from '../components/Seo'
-import LaudaFabrik from '../assets/images/Lauda-Fabrikgalerie.png'
-
-export default function PflasterBanner() {
+export default function HomeBanner({ items, linkItem }) {
     return (
         <div className="mt-4">
-            <div>
-                <Link to="https://www.lauda-fabrikgalerie.de/de/">
-                    <img
-                        className="mb-5 d-flex align-items-end"
-                        src={LaudaFabrik}
-                        style={{
-                            maxHeight: '100%',
-                            objectFit: 'contain',
-                            height: '93vh'
-                        }}
-                    />
-                </Link>
-            </div>
-            )
-        </div>
-    )
-}
-
-/* 
-export default function PflasterBanner({ image }) {
-    return (
-        <div className="mt-4">
-            {image.map((img) => {
-                const image = getImage(img.image)
+            {items.map((item, index) => {
+                const image = getImage(item.mainImage)
                 return (
-                    <div key={img.slug}>
+                    <div key={index}>
                         <BgImage
                             className="mb-5 d-flex align-items-end"
                             image={image}
@@ -47,7 +22,7 @@ export default function PflasterBanner({ image }) {
                             }}
                         >
                             <Link
-                                to="/pflaster"
+                                to={linkItem}
                                 className="banner-text-box"
                                 style={{
                                     padding: '1em 2em',
@@ -63,7 +38,7 @@ export default function PflasterBanner({ image }) {
                                     }}
                                     id="banner-title"
                                 >
-                                    {img.title}
+                                    {item.title}
                                 </p>
                                 <div
                                     style={{ fontSize: '1.2vw' }}
@@ -71,7 +46,7 @@ export default function PflasterBanner({ image }) {
                                 >
                                     <MDXProvider>
                                         <MDXRenderer>
-                                            {img.text.childMdx.body}
+                                            {item.desc.childMdx.body}
                                         </MDXRenderer>
                                     </MDXProvider>
                                 </div>
@@ -83,6 +58,3 @@ export default function PflasterBanner({ image }) {
         </div>
     )
 }
-
-*/
-export const Head = () => <SEO title="IMITATION GEPRÄGT VON HOCHACHTUNG" />

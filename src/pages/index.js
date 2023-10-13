@@ -4,10 +4,8 @@ import { graphql } from 'gatsby'
 import '../styles/index.css'
 import Layout from '../components/Layout'
 import IntroText from '../components/IntroText'
-// import NextExpoSlider from '../components/slider/NextExpoSlider'
-import PflasterBanner from '../components/PflasterBanner'
-import CapriccioBanner from '../components/CapriccioBanner'
 import ShowCaseBox from '../components/showCaseBox/ShowCaseBox'
+import HomeBanner from '../components/HomeBanner'
 import Slidy from '../components/slick/Slick'
 import NewsLetter from '../components/newsletter/NewsLetter'
 import { SEO } from '../components/Seo'
@@ -21,24 +19,17 @@ const IndexPage = ({ data }) => {
             <div className="standard-layout-width card-style">
                 <IntroText introdata={data.introTextHome.nodes} />
             </div>
-            {/*     <div className="standard-layout-width slider-container">
-                <NextExpoSlider />
-            </div> */}
-            <div
-                className="container-wider"
-                style={{
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center'
-                }}
-            >
-                <PflasterBanner />
+            <div className="container-wider">
+                <HomeBanner items={data.pflaster.nodes} linkItem="/pflaster" />
             </div>
             <div className="standard-layout-width">
                 <ShowCaseBox items={data.showcase.nodes} />
             </div>
             <div className="container-wider">
-                <CapriccioBanner items={data.capriccio.nodes} />
+                <HomeBanner
+                    items={data.capriccio.nodes}
+                    linkItem="/capriccio"
+                />
             </div>
             <div className="card-style standard-layout-width">
                 <NewsLetter />
@@ -47,18 +38,40 @@ const IndexPage = ({ data }) => {
     )
 }
 
-export const Head = () => <SEO />
+export const Head = () => <SEO title="Leo-leonhard" />
 
 export const query = graphql`
     query mainPageQuery {
         capriccio: allContentfulPages(
             filter: {
-                title: { eq: "Capriccio an der Autobahn" }
+                slug: { eq: "capriccio-an-der-Autobahn" }
                 node_locale: { eq: "de-DE" }
             }
         ) {
             nodes {
                 id
+                slug
+                title
+                desc {
+                    childMdx {
+                        body
+                    }
+                }
+                mainImage {
+                    gatsbyImageData(width: 1200, placeholder: BLURRED)
+                    title
+                }
+            }
+        }
+        pflaster: allContentfulPages(
+            filter: {
+                slug: { eq: "imitation-gepraegt-von-hochachtung" }
+                node_locale: { eq: "de-DE" }
+            }
+        ) {
+            nodes {
+                id
+                slug
                 title
                 desc {
                     childMdx {
@@ -110,25 +123,3 @@ export const query = graphql`
 `
 
 export default IndexPage
-
-/* 
-export const query = graphql`
-    query IntroTextQuery {
-        
-        imitation: allContentfulBannerImage(
-            filter: { slug: { eq: "imitation-geprägt-von-hochachtung" } }
-        ) {
-            nodes {
-                image {
-                    gatsbyImageData(width: 1200, placeholder: BLURRED)
-                }
-                title
-                text {
-                    childMdx {
-                        body
-                    }
-                }
-            }
-        }
-    }
-` */
