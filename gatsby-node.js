@@ -6,7 +6,7 @@ exports.createPages = async ({ actions, graphql }) => {
     const grafikTemplate = path.resolve(`./src/templates/Grafik.js`)
     const result = await graphql(`
         query {
-            grefik: allContentfulGrafikImages(
+            grafik: allContentfulGrafikImages(
                 filter: { node_locale: { eq: "de-DE" } }
             ) {
                 nodes {

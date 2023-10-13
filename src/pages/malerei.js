@@ -22,12 +22,12 @@ export default function MalereiPage({ data }) {
                 <div id="oelgemaelde">
                     <OelgemaeldeText data={data.textMalerei.nodes} />
                 </div>
-                <Oelgemaelde />
+                ? <Oelgemaelde />
                 <div className="mt-5 mb-5">
                     <hr />
                 </div>
                 <div id="aquarelle">
-                    <AquarelleText data={data.textMalerei.nodes} />
+                    <AquarelleText data={data.textMalerei?.nodes} />
                     <Aquarelle />
                 </div>
             </section>
