@@ -11,7 +11,7 @@ export default function Werke({ data }) {
     return (
         <Layout>
             {myNodes.map((item) => {
-                const image = getImage(item.mainImage)
+                const image = getImage(item.secondaryImage)
                 return (
                     <Template
                         key={item.slug}
@@ -28,7 +28,7 @@ export const query = graphql`
     query ShowCaseBoxQueryWerke {
         werke: allContentfulPages(
             filter: {
-                slug: { eq: "dialog-mit-den-verehrten-alten-meistern" }
+                slug: { eq: "werke-zur-deutschen-literatur" }
                 node_locale: { eq: "de-DE" }
             }
         ) {
@@ -40,6 +40,9 @@ export const query = graphql`
                     gatsbyImageData
                 }
                 contentImages {
+                    gatsbyImageData(width: 1200, placeholder: BLURRED)
+                }
+                secondaryImage {
                     gatsbyImageData(width: 1200, placeholder: BLURRED)
                 }
                 content {

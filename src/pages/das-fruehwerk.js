@@ -11,7 +11,7 @@ export default function Frühwerk({ data }) {
     return (
         <Layout>
             {myNodes.map((item) => {
-                const image = getImage(item.mainImage)
+                const image = getImage(item.secondaryImage)
                 return (
                     <Template
                         key={item.slug}
@@ -28,9 +28,7 @@ export const query = graphql`
     query ShowCaseBoxQueryFruehwerk {
         fruehwerk: allContentfulPages(
             filter: {
-                slug: {
-                    eq: "vernissage-bei-rubrecht-contemporary-in-wiesbaden"
-                }
+                slug: { eq: "das-fruehwerk" }
                 node_locale: { eq: "de-DE" }
             }
         ) {
@@ -41,8 +39,8 @@ export const query = graphql`
                 mainImage {
                     gatsbyImageData
                 }
-                contentImages {
-                    gatsbyImageData
+                secondaryImage {
+                    gatsbyImageData(width: 1200, placeholder: BLURRED)
                 }
                 content {
                     childMdx {

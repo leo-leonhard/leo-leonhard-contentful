@@ -47,6 +47,9 @@ export const query = graphql`
                 mainImage {
                     gatsbyImageData
                 }
+                secondaryImage {
+                    gatsbyImageData(width: 1200, placeholder: BLURRED)
+                }
                 contentImages {
                     gatsbyImageData
                 }

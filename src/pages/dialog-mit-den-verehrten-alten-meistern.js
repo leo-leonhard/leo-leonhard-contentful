@@ -11,7 +11,7 @@ export default function DialogVerehrtenAltenMeistern({ data }) {
     return (
         <Layout>
             {myNodes.map((item) => {
-                const image = getImage(item.mainImage)
+                const image = getImage(item.secondaryImage)
                 return (
                     <Template
                         key={item.slug}
@@ -39,7 +39,7 @@ export const query = graphql`
                 mainImage {
                     gatsbyImageData
                 }
-                contentImages {
+                secondaryImage {
                     gatsbyImageData(width: 1200, placeholder: BLURRED)
                 }
                 content {
