@@ -7,11 +7,18 @@ import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer'
 import './showCaseBox.css'
 import '../../styles/single-page-style.css'
 
-export default function ShowCaseBoxPage({ src, alt, text, gallery, title }) {
+export default function ShowCaseBoxPage({ src, alt, text, title }) {
     return (
         <section className="standard-layout-width">
             <div className="showcase-page">
-                {gallery ? (
+                <GatsbyImage alt={alt} className="img-showcase" image={src} />
+                {/* {gallery ? (
+                    <GatsbyImage
+                        alt={alt}
+                        className="img-showcase"
+                        image={src}
+                    />
+                ) : (
                     <div className="gallery-single-page">
                         {gallery.map((item) => {
                             const image = getImage(item)
@@ -29,13 +36,7 @@ export default function ShowCaseBoxPage({ src, alt, text, gallery, title }) {
                             )
                         })}
                     </div>
-                ) : (
-                    <GatsbyImage
-                        alt={alt}
-                        className="img-showcase"
-                        image={src}
-                    />
-                )}
+                )} */}
 
                 {title ? (
                     <div className="title-schowcase">

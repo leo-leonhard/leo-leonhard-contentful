@@ -11,14 +11,12 @@ export default function VernissageRubrechtContemporaryWiesbaden({ data }) {
     return (
         <Layout>
             {myNodes.map((item) => {
-                const image = getImage(item.mainImage)
-                const newgallery = item.contentImages
+                const image = getImage(item.secondaryImage)
                 return (
                     <Template
                         key={item.slug}
                         alt={item.title}
                         src={image}
-                        gallery={newgallery}
                         text={item.content.childMdx.body}
                         title={item.title}
                     />
@@ -49,9 +47,6 @@ export const query = graphql`
                 }
                 secondaryImage {
                     gatsbyImageData(width: 1200, placeholder: BLURRED)
-                }
-                contentImages {
-                    gatsbyImageData
                 }
                 content {
                     childMdx {

@@ -18,6 +18,7 @@ export default function Werke({ data }) {
                         alt={item.title}
                         src={image}
                         text={item.content.childMdx.body}
+                        title={item.title}
                     />
                 )
             })}
@@ -38,9 +39,6 @@ export const query = graphql`
                 title
                 mainImage {
                     gatsbyImageData
-                }
-                contentImages {
-                    gatsbyImageData(width: 1200, placeholder: BLURRED)
                 }
                 secondaryImage {
                     gatsbyImageData(width: 1200, placeholder: BLURRED)
